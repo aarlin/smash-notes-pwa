@@ -19,6 +19,16 @@ enum PortraitImageExtension {
   PNG = 'png',
 }
 
+interface IonicSelectableEvent {
+  component: IonicSelectableComponent,
+  value: any
+}
+
+enum PlayerType {
+  PLAYER = 'player',
+  ENEMY = 'enemy'
+}
+
 
 @Component({
   selector: 'smash-feature-character-select',
@@ -50,15 +60,27 @@ export class FeatureCharacterSelectComponent implements OnInit {
     this.fightersService.load(this.pageToLoadNext, this.pageSize)
     .subscribe((fighters: Fighter[]) => {
       this.fighters = fighters;
-      console.log(this.fighters);
     });
   }
 
-  portChange(event: {
-    component: IonicSelectableComponent,
-    value: any
-  }) {
-    console.log('port:', event.value);
+  swapCharacters(): void {
+    console.log(this.player, this.enemy);
+    [this.player, this.enemy] =
+      [this.enemy, this.player];
+    // [this.selectedPlayerImage, this.selectedEnemyImage] =
+    //   [this.selectedEnemyImage, this.selectedPlayerImage];
   }
+
+  characterChange(event: IonicSelectableEvent, playerType: PlayerType) {
+    switch (playerType) {
+      case PlayerType.PLAYER:
+        this.player = event.value;
+        break;
+      case PlayerType.ENEMY:
+        this.enemy = event.value;
+        break;
+    }
+  }
+
 
 }

@@ -1,13 +1,30 @@
-<ion-item>
-  <ion-label>Player</ion-label>
-  <ionic-selectable item-content [(ngModel)]="player" itemValueField="name" itemTextField="name" [items]="fighters"
-    [canSearch]="true" (onChange)="portChange($event)">
-  </ionic-selectable>
-</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Player</ion-label>
+        <ionic-selectable item-content [(ngModel)]="player" itemValueField="name" itemTextField="name"
+          [items]="fighters" [canSearch]="true" (onChange)="characterChange($event, 'player')">
+        </ionic-selectable>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-swap ion-align-self-center">
+        <ion-button color="light" (click)="swapCharacters()">
+          <ion-icon name="swap-vertical"></ion-icon>
+        </ion-button>
+    </ion-col>
+  </ion-row>
 
-<ion-item>
-  <ion-label>Enemy</ion-label>
-  <ionic-selectable item-content [(ngModel)]="enemy" itemValueField="name" itemTextField="name" [items]="fighters"
-    [canSearch]="true" (onChange)="portChange($event)">
-  </ionic-selectable>
-</ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Enemy</ion-label>
+        <ionic-selectable item-content [(ngModel)]="enemy" itemValueField="name" itemTextField="name" [items]="fighters"
+          [canSearch]="true" (onChange)="characterChange($event, 'enemy')">
+        </ionic-selectable>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

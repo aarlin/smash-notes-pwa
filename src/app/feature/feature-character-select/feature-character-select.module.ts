@@ -4,6 +4,7 @@ import { FeatureCharacterSelectComponent } from './feature-character-select.comp
 import { IonicModule } from '@ionic/angular';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { FightersService } from 'src/app/services/fighters.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { FightersService } from 'src/app/services/fighters.service';
   imports: [
     CommonModule,
     IonicModule,
+    FormsModule,
     IonicSelectableModule
   ],
   exports: [
