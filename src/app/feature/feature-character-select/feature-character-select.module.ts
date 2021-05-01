@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeatureCharacterSelectComponent } from './feature-character-select.component';
 import { IonicModule } from '@ionic/angular';
-
-
+import { IonicSelectableModule } from 'ionic-selectable';
+import { FightersService } from 'src/app/services/fighters.service';
 
 @NgModule({
   declarations: [
@@ -11,10 +11,14 @@ import { IonicModule } from '@ionic/angular';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    IonicSelectableModule
   ],
   exports: [
-    FeatureCharacterSelectComponent
+    FeatureCharacterSelectComponent,
+  ],
+  providers: [
+    FightersService
   ]
 })
 export class FeatureCharacterSelectModule { }

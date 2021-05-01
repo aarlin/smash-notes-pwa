@@ -1,10 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicSelectableComponent } from 'ionic-selectable';
+import { FightersService } from 'src/app/services/fighters.service';
 
-interface User {
-  id: number;
-  first: string;
-  last: string;
+
+interface Fighter {
+  name: string;
+  appearsIn: string[]
 }
+
+enum PortraitSize {
+  FULL = 'full',
+  SMALL = 'small_horizontal',
+  THUMBNAIL_HORIZONTAL = 'thumbnail_horizontal',
+}
+
+enum PortraitImageExtension {
+  WEBP = 'webp',
+  PNG = 'png',
+}
+
 
 @Component({
   selector: 'smash-feature-character-select',
@@ -13,48 +27,38 @@ interface User {
 })
 export class FeatureCharacterSelectComponent implements OnInit {
 
-  users: User[] = [
-    {
-      id: 1,
-      first: 'Alice',
-      last: 'Smith',
-    },
-    {
-      id: 2,
-      first: 'Bob',
-      last: 'Davis',
-    },
-    {
-      id: 3,
-      first: 'Charlie',
-      last: 'Rosenburg',
-    }
-  ];
+  fighter: Fighter
+  fighters: Fighter[];
 
-  customAlertOptions: any = {
-    header: 'Pizza Toppings',
-    subHeader: 'Select your toppings',
-    message: '$1.00 per topping',
-    translucent: true
-  };
+  player: Fighter;
+  enemy: Fighter;
 
-  customPopoverOptions: any = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color'
-  };
-
-  customActionSheetOptions: any = {
-    header: 'Colors',
-    subHeader: 'Select your favorite color'
-  };
-
-  compareWith(o1: User, o2: User) {
-    return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  compareWith(o1: Fighter, o2: Fighter) {
+    return o1 && o2 ? o1.name === o2.name : o1 === o2;
   }
 
-  constructor() { }
+  pageToLoadNext: 1;
+  pageSize = 100;
+  isSingleView = false;
 
-  ngOnInit() {}
+  portraitSize: PortraitSize = PortraitSize.SMALL;
+  portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
+
+  constructor(private fightersService: FightersService) { }
+
+  ngOnInit(): void {
+    this.fightersService.load(this.pageToLoadNext, this.pageSize)
+    .subscribe((fighters: Fighter[]) => {
+      this.fighters = fighters;
+      console.log(this.fighters);
+    });
+  }
+
+  portChange(event: {
+    component: IonicSelectableComponent,
+    value: any
+  }) {
+    console.log('port:', event.value);
+  }
 
 }
