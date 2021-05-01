@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeatureToolbarComponent implements OnInit {
 
+  colorTheme = ["", "secondary", "dark"]
+
   constructor() { }
 
   ngOnInit() {}

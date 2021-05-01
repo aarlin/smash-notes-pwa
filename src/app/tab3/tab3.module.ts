@@ -4,18 +4,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
-import { ExploreContainerComponentModule } from '../feature/explore-container/explore-container.module';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { FeatureToolbarModule } from '../feature/feature-toolbar/feature-toolbar.module';
+import { FeatureFloatingActionModule } from '../feature/feature-floating-action/feature-floating-action.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    FeatureToolbarModule,
+    FeatureFloatingActionModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
   ],

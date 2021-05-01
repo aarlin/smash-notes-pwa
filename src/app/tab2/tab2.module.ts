@@ -7,7 +7,7 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../feature/explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
-import { FeatureFloatingActionModule } from '../feature/feature-floating-action/feature-floating-action.module';
+import { FeatureToolbarModule } from '../feature/feature-toolbar/feature-toolbar.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { FeatureFloatingActionModule } from '../feature/feature-floating-action/
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    FeatureFloatingActionModule,
+    FeatureToolbarModule,
     Tab2PageRoutingModule
   ],
   declarations: [Tab2Page]
