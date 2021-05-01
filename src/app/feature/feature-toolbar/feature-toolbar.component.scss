@@ -1,0 +1,29 @@
+.character-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.character-select-dropdown {
+    justify-content: center;
+    align-items: center;
+}
+
+.character {
+    display: block;
+    position: relative;
+    width: 20%;
+    height: 0;
+    padding-bottom: 10%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.player-character {
+    justify-content: flex-start;
+}
+
+.enemy-character {
+    justify-content: flex-end;
+}

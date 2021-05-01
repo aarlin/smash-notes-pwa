@@ -1,0 +1,592 @@
+[
+    {
+        "name": "bayonetta",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "bowser_jr",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "bowser",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "captain_falcon",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "charizard",
+        "appearsIn": [
+            "ssb4"
+        ]
+    },
+    {
+        "name": "chrom",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "cloud",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "daisy",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "dark_pit",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "dark_samus",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "diddy_kong",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "donkey_kong",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "dr_mario",
+        "appearsIn": [
+            "ssbm",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "duck_hunt",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "falco",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "fox",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ganondorf",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "greninja",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ice_climbers",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ike",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "incineroar",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "inkling",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "isabelle",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "jigglypuff",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "joker",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ken",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "king_dedede",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "king_k_rool",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "kirby",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "link",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "little_mac",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "lucario",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "lucas",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "lucina",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "luigi",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mario",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "marth",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mega_man",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "meta_knight",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mewtwo",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mii_swordfighter",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mii_brawler",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mii_gunner",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "mr_game_and_watch",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ness",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "olimar",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "pac_man",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "palutena",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "peach",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "pichu",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "pikachu",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "piranha_plant",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "pit",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "pokemon_trainer",
+        "appearsIn": [
+            "ssbb",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "richter",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ridley",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "rob",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "robin",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "rosalina_and_luma",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "roy",
+        "appearsIn": [
+            "ssbm",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "ryu",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "samus",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "sheik",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "shulk",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "simon",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "snake",
+        "appearsIn": [
+            "ssbb",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "sonic",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "toon_link",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "villager",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "wario",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "wii_fit_trainer",
+        "appearsIn": [
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "wolf",
+        "appearsIn": [
+            "ssbb",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "yoshi",
+        "appearsIn": [
+            "ssb",
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "young_link",
+        "appearsIn": [
+            "ssbm",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "zelda",
+        "appearsIn": [
+            "ssbm",
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "zero_suit_samus",
+        "appearsIn": [
+            "ssbb",
+            "ssb4",
+            "ssbu"
+        ]
+    }
+]

@@ -12,6 +12,21 @@
   <ion-searchbar placeholder="Search Notes"></ion-searchbar>
 </ion-toolbar>
 
+<ion-grid>
+  <ion-row class="ion-align-items-center">
+    <ion-col>
+      <div class="character player-character" [style.background-image]="'url(' + selectedPlayerImage + ')'"></div>
+
+    </ion-col>
+    <ion-col>
+      <div>
+        <div class="character enemy-character" [style.background-image]="'url(' + selectedEnemyImage + ')'"></div>
+      </div>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
 <ion-toolbar>
   <ion-segment value="all">
     <ion-segment-button value="all">
