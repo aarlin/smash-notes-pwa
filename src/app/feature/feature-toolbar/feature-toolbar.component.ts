@@ -7,7 +7,7 @@ interface Character {
 enum PortraitSize {
   FULL = 'full',
   SMALL = 'small_horizontal',
-  THUMBNAIL_HORIZONTAL = 'thumbnail_horizontal',
+  THUMBNAIL_HORIZONTAL = 'thumb_h',
 }
 
 enum PortraitImageExtension {
@@ -28,7 +28,7 @@ export class FeatureToolbarComponent implements OnInit {
   selectedPlayerImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
   selectedEnemyImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
 
-  portraitSize: PortraitSize = PortraitSize.SMALL;
+  portraitSize: PortraitSize = PortraitSize.THUMBNAIL_HORIZONTAL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
 
   constructor() { }
