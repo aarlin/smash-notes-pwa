@@ -12,7 +12,7 @@ export class FeatureFoldersComponent implements OnInit {
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/homura.png",
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/sheik.png",
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/snake.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/pacman.png",
+    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/pac_man.png",
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/mario.png",
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/roy.png",
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/marth.png"

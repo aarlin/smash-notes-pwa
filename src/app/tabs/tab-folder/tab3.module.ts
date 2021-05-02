@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
-import { FeatureFloatingActionModule } from 'src/app/feature/feature-floating-action/feature-floating-action.module';
 import { FeatureCharacterSelectModule } from 'src/app/feature/feature-character-select/feature-character-select.module';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { FeatureCharacterSelectModule } from 'src/app/feature/feature-character-
     IonicModule,
     CommonModule,
     FormsModule,
-    FeatureFloatingActionModule,
     FeatureCharacterSelectModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
