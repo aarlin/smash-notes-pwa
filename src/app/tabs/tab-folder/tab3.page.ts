@@ -9,4 +9,7 @@ export class Tab3Page {
 
   constructor() {}
 
+  doRefresh(event) {
+    console.log(event);
+  }
 }

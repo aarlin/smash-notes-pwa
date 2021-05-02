@@ -6,6 +6,7 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../../feature/explore-container/explore-container.module';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { FeatureFilterSelectModule } from 'src/app/feature/feature-filter-select/feature-filter-select.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    FeatureFilterSelectModule
   ],
   declarations: [Tab1Page]
 })
