@@ -8,6 +8,7 @@ import { Tab2Page } from './tab2.page';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-folders.module';
+import { FeatureDiscoverModule } from 'src/app/feature/feature-discover/feature-discover.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-fo
     CommonModule,
     FormsModule,
     FeatureFoldersModule,
+    FeatureDiscoverModule,
     FeatureToolbarModule,
     Tab2PageRoutingModule
   ],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicSelectableComponent } from 'ionic-selectable';
-import { FightersService } from 'src/app/services/fighters.service';
+import { FighterService } from 'src/app/services/fighter.service';
 
 
 interface Fighter {
@@ -54,10 +54,10 @@ export class FeatureCharacterSelectComponent implements OnInit {
   portraitSize: PortraitSize = PortraitSize.SMALL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
 
-  constructor(private fightersService: FightersService) { }
+  constructor(private fighterService: FighterService) { }
 
   ngOnInit(): void {
-    this.fightersService.load(this.pageToLoadNext, this.pageSize)
+    this.fighterService.load(this.pageToLoadNext, this.pageSize)
     .subscribe((fighters: Fighter[]) => {
       this.fighters = fighters;
     });

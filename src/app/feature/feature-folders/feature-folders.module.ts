@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FeatureFoldersComponent } from './feature-folders.component';
+import { FighterService } from 'src/app/services/fighter.service';
 
 
 
@@ -13,6 +14,9 @@ import { FeatureFoldersComponent } from './feature-folders.component';
   ],
   exports: [
     FeatureFoldersComponent
+  ],
+  providers: [
+    FighterService
   ]
 })
 export class FeatureFoldersModule { }

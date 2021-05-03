@@ -19,7 +19,7 @@ export class Character {
 }
 
 @Injectable()
-export class FightersService {
+export class FighterService {
 
   constructor(private http: HttpClient) {}
 

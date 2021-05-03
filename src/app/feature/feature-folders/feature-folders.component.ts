@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FighterService } from 'src/app/services/fighter.service';
+
+interface Fighter {
+  name: string;
+  appearsIn: string[]
+}
+
 
 @Component({
   selector: 'smash-feature-folders',
@@ -6,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feature-folders.component.scss'],
 })
 export class FeatureFoldersComponent implements OnInit {
+  pageToLoadNext: 1;
+  pageSize = 100;
 
   fighters: any[] = [
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/steve.png",
@@ -18,8 +27,15 @@ export class FeatureFoldersComponent implements OnInit {
     "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/marth.png"
   ]
 
-  constructor() { }
+  constructor(private fighterService: FighterService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fighterService.load(this.pageToLoadNext, this.pageSize)
+    .subscribe((fighters: Fighter[]) => {
+      this.fighters = fighters.map(fighter => {
+        return `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`
+      });
+    });
+  }
 
 }
