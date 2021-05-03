@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
-const TOTAL_PAGES = 8;
+const TOTAL_PAGES = 4;
 
 enum Game {
   First = 'ssb64',

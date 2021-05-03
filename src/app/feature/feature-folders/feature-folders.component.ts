@@ -18,7 +18,7 @@ export class FeatureFoldersComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   pageToLoadNext: number = 1;
-  pageSize: number = 10;
+  pageSize: number = 20;
 
   fighters: Fighter[] = [];
 
@@ -45,7 +45,7 @@ export class FeatureFoldersComponent implements OnInit {
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
       this.loadMoreFighters();
-    }, 500);
+    }, 150);
   }
 
   loadMoreFighters(): void {

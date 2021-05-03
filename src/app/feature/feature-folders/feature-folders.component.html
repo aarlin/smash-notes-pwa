@@ -9,14 +9,20 @@
   </ion-grid> -->
 
   <ion-list>
-    <ion-item *ngFor="let fighter of fighters">
+    <ion-row>
+      <ion-col size="6" 
+        *ngFor="let fighter of fighters; index as position">
+        <ion-img class="avatar" [src]="fighter.url"></ion-img>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-item *ngFor="let fighter of fighters">
       <ion-img class="avatar" [src]="fighter.url"></ion-img>
       <ion-label>
         <ion-text>
           <h2>{{fighter.name}}</h2>
         </ion-text>
       </ion-label>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">

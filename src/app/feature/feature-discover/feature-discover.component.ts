@@ -41,4 +41,8 @@ export class FeatureDiscoverComponent implements OnInit {
     console.log('discover')
   }
 
+  testClick() {
+    
+  }
+
 }

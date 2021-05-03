@@ -1,14 +1,12 @@
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col (click)="discover()" size="6" *ngFor="let block of discovery; index as position">
-        <!-- <ion-img class="discover-bg" [style.background]="block.bg"></ion-img> -->
-          <ion-img class="discover-bg" [src]="block.bgAlt"></ion-img>
-          <ion-img class="discover-svg" [src]="block.svg"></ion-img>
-          <ion-label class="discover-label">{{block.name}}</ion-label>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- ion-fab markup  -->
+  
+  <ion-item *ngFor="let block of discovery; index as position">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="block.svg"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{block.name}}</h2>
+    </ion-label>
+  </ion-item>
+  
 </ion-content>
