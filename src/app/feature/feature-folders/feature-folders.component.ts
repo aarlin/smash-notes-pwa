@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 
 interface Fighter {
-  name: string;
-  appearsIn: string[]
+  name?: string;
+  appearsIn?: string[];
+  url?: string;
 }
 
 
@@ -13,29 +15,51 @@ interface Fighter {
   styleUrls: ['./feature-folders.component.scss'],
 })
 export class FeatureFoldersComponent implements OnInit {
-  pageToLoadNext: 1;
-  pageSize = 100;
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  fighters: any[] = [
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/steve.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/homura.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/sheik.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/snake.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/pac_man.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/mario.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/roy.png",
-    "https://www.smashbros.com/assets_v2/img/fighter/thumb_a/marth.png"
-  ]
+  pageToLoadNext: number = 1;
+  pageSize: number = 10;
+
+  fighters: Fighter[] = [];
 
   constructor(private fighterService: FighterService) { }
 
   ngOnInit() {
     this.fighterService.load(this.pageToLoadNext, this.pageSize)
     .subscribe((fighters: Fighter[]) => {
+      console.log(fighters);
+
+      this.pageToLoadNext += 1;
       this.fighters = fighters.map(fighter => {
-        return `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`
+        fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
+        return fighter;
       });
     });
+  }
+
+  loadData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      this.loadMoreFighters();
+    }, 500);
+  }
+
+  loadMoreFighters(): void {
+    this.fighterService.load(this.pageToLoadNext, this.pageSize)
+      .subscribe((fighters: Fighter[]) => {
+        this.pageToLoadNext++;
+        const loadedFighters: Fighter[] = fighters.map(fighter => {
+          fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`
+          return fighter;
+        });
+        this.fighters = [...this.fighters, ...loadedFighters]
+      }, (err => {
+        console.log('no more pages');
+      }));
   }
 
 }

@@ -1,12 +1,28 @@
 <ion-content>
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
     <ion-col size="6" 
       *ngFor="let fighter of fighters; index as position">
         <ion-img [src]="fighter"></ion-img>
     </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
-  <!-- ion-fab markup  -->
+  <ion-list>
+    <ion-item *ngFor="let fighter of fighters">
+      <ion-img class="avatar" [src]="fighter.url"></ion-img>
+      <ion-label>
+        <ion-text>
+          <h2>{{fighter.name}}</h2>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

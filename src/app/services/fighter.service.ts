@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
-const TOTAL_PAGES = 7;
+const TOTAL_PAGES = 8;
 
 enum Game {
   First = 'ssb64',
@@ -26,11 +26,13 @@ export class FighterService {
   load(page: number, pageSize: number): Observable<Character[]> {
     const startIndex = ((page - 1) % TOTAL_PAGES) * pageSize;
 
-    return this.http
+    if (page < TOTAL_PAGES + 1) {
+      return this.http
       .get<Character[]>('assets/data/fighters.json')
       .pipe(
-        map(news => news.splice(startIndex, pageSize)),
+        map(character => character.splice(startIndex, pageSize)),
         delay(1500),
       );
+    }
   }
 }
