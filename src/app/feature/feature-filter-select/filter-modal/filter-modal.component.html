@@ -1,39 +1,59 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-buttons slot="primary">
       <ion-button (click)="dismiss()" color="primary">
-        Apply
+          <ion-icon name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Filter Notes</ion-title>
+    <ion-title>Filters</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content fullscreen>
 
- 
-    <ion-chip>
-      <ion-icon name="heart" color="dark"></ion-icon>
-      <ion-label>Default</ion-label>
+  <ion-list-header>Colors</ion-list-header>
+  <p>
+    <ion-chip color="primary">
+      <ion-label>Primary</ion-label>
     </ion-chip>
-    
-    <ion-chip>
-      <ion-label>Button Chip</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
+    <ion-chip color="secondary">
+      <ion-label>Secondary</ion-label>
     </ion-chip>
-    
-    <ion-chip>
-      <ion-icon name="pin" color="primary"></ion-icon>
-      <ion-label>Icon Chip</ion-label>
-      <ion-icon name="close"></ion-icon>
+    <ion-chip color="tertiary">
+      <ion-label>Tertiary</ion-label>
     </ion-chip>
+    <ion-chip color="success">
+      <ion-label>Success</ion-label>
+    </ion-chip>
+    <ion-chip color="warning">
+      <ion-label>Warning</ion-label>
+    </ion-chip>
+    <ion-chip color="danger">
+      <ion-label>Danger</ion-label>
+    </ion-chip>
+  </p>
 
+  <ion-list-header>Outline</ion-list-header>
+  <p>
+    <ion-chip outline color="primary">
+      <ion-label>Primary</ion-label>
+    </ion-chip>
+    <ion-chip outline color="secondary">
+      <ion-label>Secondary</ion-label>
+    </ion-chip>
+    <ion-chip outline color="tertiary">
+      <ion-label>Tertiary</ion-label>
+    </ion-chip>
+    <ion-chip outline color="success">
+      <ion-label>Success</ion-label>
+    </ion-chip>
+    <ion-chip outline color="warning">
+      <ion-label>Warning</ion-label>
+    </ion-chip>
+    <ion-chip outline color="danger">
+      <ion-label>Danger</ion-label>
+    </ion-chip>
+  </p>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
