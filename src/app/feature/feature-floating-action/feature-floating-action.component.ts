@@ -7,10 +7,13 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./feature-floating-action.component.scss'],
 })
 export class FeatureFloatingActionComponent implements OnInit {
+
+  stockIcon: string;
+
   constructor(public actionSheetController: ActionSheetController) {}
 
   ngOnInit() {
-    
+    this.stockIcon = 'assets/stock-icons/svg/dark_pit.svg';
   }
 
   async presentActionSheet() {

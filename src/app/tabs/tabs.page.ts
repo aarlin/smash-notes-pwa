@@ -10,6 +10,7 @@ export class TabsPage implements OnInit {
   homeIcon: string;
   discoverIcon: string;
   fighterIcon: string;
+  notebookIcon: string;
 
   constructor() {}
 
@@ -17,6 +18,7 @@ export class TabsPage implements OnInit {
     this.homeIcon = 'assets/navigation/ico_top_g.svg';
     this.discoverIcon = 'assets/navigation/ico_howtoplay_g.svg';
     this.fighterIcon = 'assets/navigation/ico_fighter_g.svg';
+    this.notebookIcon = 'assets/navigation/ico_blog_g.svg'
   }
 
   getChosenFighter(fighter: string) {

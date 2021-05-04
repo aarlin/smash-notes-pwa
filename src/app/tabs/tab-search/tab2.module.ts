@@ -9,6 +9,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-folders.module';
 import { FeatureDiscoverModule } from 'src/app/feature/feature-discover/feature-discover.module';
+import { FeatureCharacterSelectModalModule } from 'src/app/feature/feature-character-select-modal/feature-character-select-modal.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { FeatureDiscoverModule } from 'src/app/feature/feature-discover/feature-
     FormsModule,
     FeatureFoldersModule,
     FeatureDiscoverModule,
+    FeatureCharacterSelectModalModule,
     FeatureToolbarModule,
     Tab2PageRoutingModule
   ],
