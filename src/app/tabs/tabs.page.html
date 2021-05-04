@@ -2,21 +2,21 @@
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1">
-      <ion-icon src="assets/navigation/ico_top_g.svg"></ion-icon>
+      <ion-icon [src]="homeIcon" size="large"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab2">
-      <ion-icon name="assets/navigation/ico_howtoplay_g.svg"></ion-icon>
+      <ion-icon [src]="discoverIcon" size="large"></ion-icon>
       <ion-label>Discover</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab5">
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3">
-      <ion-icon name="folder-outline"></ion-icon>
-      <ion-label>Folder</ion-label>
+    <ion-tab-button (click)="displayFighterModal()" tab="tab3">
+      <ion-icon [src]="fighterIcon"></ion-icon>
+      <ion-label>Fighter</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab4">
