@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FeatureCharacterSelectModalComponent } from './feature-character-select-modal.component';
 import { CharacterSelectModalComponent } from './character-select-modal/character-select-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { CharacterSelectModalComponent } from './character-select-modal/characte
   exports: [FeatureCharacterSelectModalComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    ReactiveFormsModule
   ]
 })
 export class FeatureCharacterSelectModalModule { }

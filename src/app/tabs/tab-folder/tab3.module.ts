@@ -7,6 +7,7 @@ import { Tab3Page } from './tab3.page';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { FeatureCharacterSelectModule } from 'src/app/feature/feature-character-select/feature-character-select.module';
+import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { FeatureCharacterSelectModule } from 'src/app/feature/feature-character-
     CommonModule,
     FormsModule,
     FeatureCharacterSelectModule,
+    FeatureToolbarModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
   ],

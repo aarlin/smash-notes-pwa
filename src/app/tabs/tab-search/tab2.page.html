@@ -1,18 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" collapse="condense">
   <ion-toolbar>
-    <ion-title>
-      Tab Search
-    </ion-title>
+    <app-feature-toolbar></app-feature-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <!-- <smash-feature-discover></smash-feature-discover> -->
 
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <app-feature-toolbar></app-feature-toolbar>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
   <smash-feature-character-select-modal></smash-feature-character-select-modal>
 </ion-content>

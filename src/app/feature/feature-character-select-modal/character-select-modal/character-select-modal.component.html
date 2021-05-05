@@ -4,12 +4,15 @@
 
     <ion-title>Choose Your Fighter</ion-title>
   </ion-toolbar>
-  <ion-searchbar [value]="searchTerm"
-  (ionInput)="setFilteredItems($event)" placeholder="Search Fighters" clearInput></ion-searchbar>
+  <ion-searchbar (ionInput)="setFilteredItems($event)" placeholder="Search Fighters" clearInput></ion-searchbar>
 
 </ion-header>
 
 <ion-content>
+
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
 
   <ion-list>
     <ion-row>
