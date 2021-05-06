@@ -9,13 +9,11 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
-import { HideHeaderDirective } from './directives/hide-header.directive';
-import { ParallaxDirective } from './directives/parallax.directive';
 
 @NgModule({
-  declarations: [AppComponent, HideHeaderDirective, ParallaxDirective],
+  declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, 
+  imports: [BrowserModule,
     HttpClientModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: environment.production,
   // Register the ServiceWorker as soon as the app is stable

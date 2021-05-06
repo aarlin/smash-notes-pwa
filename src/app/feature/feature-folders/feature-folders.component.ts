@@ -32,15 +32,15 @@ export class FeatureFoldersComponent implements OnInit {
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.load(this.pageToLoadNext, this.pageSize)
-    .subscribe((fighters: Fighter[]) => {
-      console.log(fighters);
+      .subscribe((fighters: Fighter[]) => {
+        console.log(fighters);
 
-      this.pageToLoadNext += 1;
-      this.fighters = fighters.map(fighter => {
-        fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
-        return fighter;
+        this.pageToLoadNext += 1;
+        this.fighters = fighters.map(fighter => {
+          fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
+          return fighter;
+        });
       });
-    });
   }
 
   loadData(event) {
@@ -68,19 +68,22 @@ export class FeatureFoldersComponent implements OnInit {
       }));
   }
 
-    // Dummy refresher function
-    doRefresh(event) {
-      setTimeout(() => {
-        event.target.complete();
-      }, 2000);
-    }
-   
-    // show or hide a location string later
-    onScroll(ev) {
-      const offset = ev.detail.scrollTop;
-      this.showLocationDetail = offset > 40;
-    }
+  // Dummy refresher function
+  doRefresh(event) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 
-  
+  // show or hide a location string later
+  onScroll(ev) {
+    const offset = ev.detail.scrollTop;
+    this.showLocationDetail = offset > 40;
+  }
+
+  close() {
+
+  }
+
 
 }

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FeatureFoldersComponent } from './feature-folders.component';
 import { FighterService } from 'src/app/services/fighter.service';
+import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { FighterService } from 'src/app/services/fighter.service';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    SharedDirectivesModule,
+    ExploreContainerComponentModule
   ],
   exports: [
     FeatureFoldersComponent

@@ -50,10 +50,6 @@ export class CharacterSelectModalComponent implements OnInit {
       });
   }
 
-  onSearchInput() {
-    this.searching = true;
-  }
-
   setFilteredItems(event: any) {
     this.fighters = this.backupFighters;
     const searchTerm = event.srcElement.value;

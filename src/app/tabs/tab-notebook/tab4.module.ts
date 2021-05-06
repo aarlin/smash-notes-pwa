@@ -8,6 +8,8 @@ import { Tab4Page } from './tab4.page';
 import { Tab4PageRoutingModule } from './tab4-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-folders.module';
+import { ExploreContainerComponentModule } from 'src/app/feature/explore-container/explore-container.module';
+import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
 @NgModule({
   imports: [
@@ -15,6 +17,8 @@ import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-fo
     CommonModule,
     FormsModule,
     FeatureFoldersModule,
+    SharedDirectivesModule,
+    ExploreContainerComponentModule,
     FeatureToolbarModule,
     Tab4PageRoutingModule
   ],
