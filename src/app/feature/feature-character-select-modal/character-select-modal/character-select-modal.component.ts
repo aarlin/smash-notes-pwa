@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 
 interface Fighter {
@@ -24,8 +25,9 @@ export class CharacterSelectModalComponent implements OnInit {
   searchTerm: string = '';
   searchControl: FormControl;
   searching: boolean;
+  currentFighter: Fighter;
 
-  constructor(private fighterService: FighterService) {
+  constructor(private fighterService: FighterService, private modalController: ModalController) {
     this.searchControl = new FormControl();
   }
 
@@ -40,7 +42,7 @@ export class CharacterSelectModalComponent implements OnInit {
           return fighter;
         });
         this.backupFighters = this.fighters;
-        
+
       }, err => {
         console.log('Error while getting fighters')
       }, () => {
@@ -50,7 +52,7 @@ export class CharacterSelectModalComponent implements OnInit {
 
   onSearchInput() {
     this.searching = true;
-  } 
+  }
 
   setFilteredItems(event: any) {
     this.fighters = this.backupFighters;
@@ -62,6 +64,26 @@ export class CharacterSelectModalComponent implements OnInit {
 
     this.fighters = this.fighters.filter(fighter => {
       return fighter?.name?.toLowerCase().startsWith(searchTerm.toLowerCase());
+    });
+  }
+
+  applyFighter(fighter: Fighter) {
+    if (fighter?.name !== this.currentFighter?.name) {
+      this.currentFighter = fighter;
+    } else {
+      this.currentFighter = undefined;
+    }
+  }
+
+  isFighterSelected(fighter: Fighter) {
+    return fighter === this.currentFighter;
+  }
+
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      'dismissed': true
     });
   }
 

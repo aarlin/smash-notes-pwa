@@ -9,9 +9,11 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { HideHeaderDirective } from './directives/hide-header.directive';
+import { ParallaxDirective } from './directives/parallax.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HideHeaderDirective, ParallaxDirective],
   entryComponents: [],
   imports: [BrowserModule, 
     HttpClientModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {

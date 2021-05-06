@@ -21,10 +21,16 @@ export class FeatureFoldersComponent implements OnInit {
   pageSize: number = 20;
 
   fighters: Fighter[] = [];
+  hideHeader = false;
+
+  showLocationDetail = false;
+
+  homeIcon: string;
 
   constructor(private fighterService: FighterService) { }
 
   ngOnInit() {
+    this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.load(this.pageToLoadNext, this.pageSize)
     .subscribe((fighters: Fighter[]) => {
       console.log(fighters);
@@ -61,5 +67,20 @@ export class FeatureFoldersComponent implements OnInit {
         console.log('no more pages');
       }));
   }
+
+    // Dummy refresher function
+    doRefresh(event) {
+      setTimeout(() => {
+        event.target.complete();
+      }, 2000);
+    }
+   
+    // show or hide a location string later
+    onScroll(ev) {
+      const offset = ev.detail.scrollTop;
+      this.showLocationDetail = offset > 40;
+    }
+
+  
 
 }

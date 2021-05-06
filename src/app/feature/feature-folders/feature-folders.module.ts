@@ -4,10 +4,10 @@ import { IonicModule } from '@ionic/angular';
 import { FeatureFoldersComponent } from './feature-folders.component';
 import { FighterService } from 'src/app/services/fighter.service';
 
-
-
 @NgModule({
-  declarations: [FeatureFoldersComponent],
+  declarations: [
+    FeatureFoldersComponent
+  ],
   imports: [
     CommonModule,
     IonicModule
