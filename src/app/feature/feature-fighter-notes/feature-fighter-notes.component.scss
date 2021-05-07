@@ -25,5 +25,9 @@ ion-avatar {
 }
 
 img { 
-    border-radius: unset;
+    border-radius: 0.5rem;
+}
+
+ion-list-header {
+    color: var(--ion-color-tertiary);
 }
