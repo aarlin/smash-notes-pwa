@@ -32,7 +32,7 @@ export class TabsPage implements OnInit {
   }
 
   displayFighterModal() {
-    this.fighterIcon = 'assets/stock-icons/svg/homura.svg';
+    this.fighterIcon = 'assets/stock-icons/svg/pichu.svg';
   }
 
 }

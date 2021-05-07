@@ -2,16 +2,28 @@ ion-content {
     height: 100vh;
 }
 
+ion-avatar {
+    height: 50px;
+    width: 70px;
+}
+
 .parallax-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 30vh;
+    height: 10vh;
+}
 
+.fighter-image {
+    width: 100%
 }
 
 .main {
     width: 100%;
     position: absolute;
     background-color: white;
+}
+
+img { 
+    border-radius: unset;
 }
