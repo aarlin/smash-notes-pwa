@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
 
 interface Fighter {
   name?: string;
@@ -27,7 +28,7 @@ export class FeatureFoldersComponent implements OnInit {
 
   homeIcon: string;
 
-  constructor(private fighterService: FighterService) { }
+  constructor(private fighterService: FighterService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
@@ -83,6 +84,16 @@ export class FeatureFoldersComponent implements OnInit {
 
   close() {
 
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: FilterModalComponent,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+      presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
+    });
+    return await modal.present();
   }
 
 

@@ -2,10 +2,10 @@ import { Directive, HostListener, Input, Renderer2 } from '@angular/core';
 import { DomController } from '@ionic/angular';
  
 @Directive({
-  selector: '[appParallax]'
+  selector: '[appParallaxHeader]'
 })
 export class ParallaxDirective {
-  @Input('appParallax') imageEl: any;
+  @Input('appParallaxHeader') imageEl: any;
   private moveImage: number;
   private scaleImage: number;
  

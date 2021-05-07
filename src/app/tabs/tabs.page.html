@@ -2,25 +2,26 @@
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1">
-      <ion-icon [src]="homeIcon" size="large"></ion-icon>
+      <ion-icon [src]="homeIcon" size="default"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab2">
-      <ion-icon [src]="discoverIcon" size="large"></ion-icon>
+      <ion-icon [src]="discoverIcon" size="default"></ion-icon>
       <ion-label>Discover</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab5">
+      <ion-icon [src]="createIcon" size="extra-large"></ion-icon>
     </ion-tab-button>
 
     <ion-tab-button (click)="displayFighterModal()" tab="tab3">
-      <ion-icon [src]="fighterIcon"></ion-icon>
+      <ion-icon [src]="fighterIcon" size="default"></ion-icon>
       <ion-label>Fighter</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab4">
-      <ion-icon [src]="notebookIcon"></ion-icon>
+      <ion-icon [src]="notebookIcon" size="default"></ion-icon>
       <ion-label>Notebook</ion-label>
     </ion-tab-button>
 
@@ -30,7 +31,7 @@
 
 </ion-tabs>
 
-<app-feature-floating-action></app-feature-floating-action>
+<!-- <app-feature-floating-action></app-feature-floating-action> -->
 
 <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed" edge="false">
   <ion-fab-button type="button">

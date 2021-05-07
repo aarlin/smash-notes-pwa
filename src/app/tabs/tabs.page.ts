@@ -11,6 +11,7 @@ export class TabsPage implements OnInit {
   discoverIcon: string;
   fighterIcon: string;
   notebookIcon: string;
+  createIcon: string;
 
   constructor() {}
 
@@ -18,7 +19,8 @@ export class TabsPage implements OnInit {
     this.homeIcon = 'assets/navigation/ico_top_g.svg';
     this.discoverIcon = 'assets/navigation/ico_howtoplay_g.svg';
     this.fighterIcon = 'assets/navigation/ico_fighter_g.svg';
-    this.notebookIcon = 'assets/navigation/ico_blog_g.svg'
+    this.notebookIcon = 'assets/navigation/ico_blog_g.svg';
+    this.createIcon = 'assets/navigation/plus-square-outline.svg';
   }
 
   getChosenFighter(fighter: string) {
@@ -30,7 +32,7 @@ export class TabsPage implements OnInit {
   }
 
   displayFighterModal() {
-    this.fighterIcon = 'assets/stock-icons/svg/bayonetta.svg';
+    this.fighterIcon = 'assets/stock-icons/svg/homura.svg';
   }
 
 }

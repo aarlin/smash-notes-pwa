@@ -1,9 +1,9 @@
 
-<ion-header #toolbar>
+<ion-header transparent="true" #toolbar>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="close()" shape="round">
-        <ion-icon [src]="homeIcon"></ion-icon>
+        <ion-icon [src]="homeIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-label>Smash Notes</ion-label>
@@ -11,7 +11,7 @@
       <ion-button (click)="close()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
-      <ion-button (click)="close()" shape="round">
+      <ion-button (click)="presentModal()" shape="round">
         <ion-icon slot="icon-only" name="options"></ion-icon>
       </ion-button>
     </ion-buttons>

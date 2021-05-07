@@ -5,6 +5,7 @@ import { FeatureFoldersComponent } from './feature-folders.component';
 import { FighterService } from 'src/app/services/fighter.service';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { FilterModalModule } from '../feature-filter-select/filter-modal.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
     CommonModule,
     IonicModule,
     SharedDirectivesModule,
+    FilterModalModule,
     ExploreContainerComponentModule
   ],
   exports: [
