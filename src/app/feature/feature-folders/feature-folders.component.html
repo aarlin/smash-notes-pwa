@@ -1,4 +1,3 @@
-
 <ion-header transparent="true" #toolbar>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -20,6 +19,20 @@
 
 
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
-  <!-- <smash-feature-folders></smash-feature-folders> -->
-  <app-explore-container></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let fighter of fighters; index as position">
+        <ion-card>
+          <ion-item>
+            <ion-icon src={{fighter.stockIcon}} slot="start"></ion-icon>
+            <ion-label>{{fighter.name}}</ion-label>
+          </ion-item>
+        
+          <ion-card-content>
+            Total Notes: {{ 1 }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

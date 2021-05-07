@@ -7,6 +7,7 @@ interface Fighter {
   name?: string;
   appearsIn?: string[];
   url?: string;
+  stockIcon?: string;
 }
 
 
@@ -39,6 +40,7 @@ export class FeatureFoldersComponent implements OnInit {
         this.pageToLoadNext += 1;
         this.fighters = fighters.map(fighter => {
           fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
+          fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
       });

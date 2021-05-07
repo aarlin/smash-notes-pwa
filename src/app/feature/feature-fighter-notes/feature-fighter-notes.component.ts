@@ -36,6 +36,18 @@ export class FeatureFighterNotesComponent implements OnInit {
     },
     {
       groupName: "Stage Counterpick",
+      enemy: "mario",
+      title: "Lylatt",
+      body: "Choose lyatt for no ceiling"
+    },
+    {
+      groupName: "Stage Counterpick",
+      enemy: "bowser_jr",
+      title: "Lylatt",
+      body: "Choose lyatt for no ceiling"
+    },
+    {
+      groupName: "Stage Counterpick",
       enemy: "sephiroth",
       title: "Yoshi Island",
       body: "Choose lyatt for no ceiling"
@@ -55,6 +67,18 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       groupName: "Combo",
       enemy: "captain_falcon",
+      title: "60%",
+      body: "down throw to fair"
+    },
+    {
+      groupName: "Combo",
+      enemy: "luigi",
+      title: "60%",
+      body: "down throw to fair"
+    },
+    {
+      groupName: "Combo",
+      enemy: "snake",
       title: "60%",
       body: "down throw to fair"
     }
