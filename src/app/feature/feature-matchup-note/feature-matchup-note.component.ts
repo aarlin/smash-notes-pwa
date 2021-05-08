@@ -27,10 +27,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   ngOnInit() {
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
-    // this.playerIcon = `assets/stock-icons/svg/${this.note.player}.svg`
-    // this.enemyIcon = `assets/stock-icons/svg/${this.note.enemy}.svg`;
-    this.playerIcon = `assets/portraits/thumb_h/dr_mario.webp`;
-    this.enemyIcon = `assets/portraits/thumb_h/shulk.webp`;
+    this.playerIcon = `assets/stock-icons/svg/${this.note.player}.svg`
+    this.enemyIcon = `assets/stock-icons/svg/${this.note.enemy}.svg`;
+    // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
+    // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
   }

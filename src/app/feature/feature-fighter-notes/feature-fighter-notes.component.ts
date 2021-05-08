@@ -37,7 +37,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 1,
       groupName: "Stage Counterpick",
-      player: 'homura,',
+      player: 'homura',
       enemy: "bayonetta",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
@@ -45,7 +45,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 2,
       groupName: "Stage Counterpick",
-      player: 'homura,',
+      player: 'homura',
       enemy: "mario",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
@@ -53,7 +53,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 3,
       groupName: "Stage Counterpick",
-      player: 'homura,',
+      player: 'homura',
       enemy: "bowser_jr",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
@@ -61,7 +61,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 4,
       groupName: "Stage Counterpick",
-      player: 'homura,',
+      player: 'homura',
       enemy: "sephiroth",
       title: "Yoshi Island",
       body: "Choose lyatt for no ceiling"
@@ -69,7 +69,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 5,
       groupName: "Kill Confirm",
-      player: 'homura,',
+      player: 'homura',
       enemy: "donkey_kong",
       title: "60%",
       body: "Down air to up smash"
@@ -77,7 +77,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 6,
       groupName: "Combo",
-      player: 'homura,',
+      player: 'homura',
       enemy: "donkey_kong",
       title: "60%",
       body: "down throw to bair"
@@ -85,7 +85,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 7,
       groupName: "Combo",
-      player: 'homura,',
+      player: 'homura',
       enemy: "captain_falcon",
       title: "60%",
       body: "down throw to fair"
@@ -93,7 +93,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 8,
       groupName: "Combo",
-      player: 'homura,',
+      player: 'homura',
       enemy: "luigi",
       title: "60%",
       body: "down throw to fair"
@@ -101,7 +101,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     {
       id: 9,
       groupName: "Combo",
-      player: 'homura,',
+      player: 'homura',
       enemy: "snake",
       title: "60%",
       body: "down throw to fair"
