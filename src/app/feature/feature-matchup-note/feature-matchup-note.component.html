@@ -1,3 +1,25 @@
-<p>
-  feature-matchup-note works!
-</p>
+<ion-header [translucent]="false" collapse="condense">
+  <ion-toolbar>
+    <ion-icon name="back-arrow" slot="start"></ion-icon>
+    <ion-title>
+      {{ note.player }} vs. {{ note.enemy }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input>{{ note.title}}</ion-input>
+
+    <div class="versus-container">
+      <ion-icon class="player" [src]="playerIcon"></ion-icon>
+      <ion-icon class="enemy" [src]="enemyIcon"></ion-icon>
+    </div>
+
+
+    <!-- <ion-label position="stacked"> Description </ion-label> -->
+    <ion-textarea position="stacked"> {{ note.body}}</ion-textarea>
+  </ion-item>
+
+</ion-content>

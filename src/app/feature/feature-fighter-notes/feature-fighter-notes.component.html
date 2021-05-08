@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="close()" shape="round">
-        <ion-icon [src]="homeIcon" size="large"></ion-icon>
+        <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-label>Fighter Name</ion-label>
@@ -37,7 +37,7 @@
           {{data.key}}
         </ion-list-header>
 
-        <ion-item *ngFor="let singleNote of data.value">
+        <ion-item (click)="openNote(singleNote)" *ngFor="let singleNote of data.value">
           <ion-avatar slot="start">
             <img src={{singleNote.enemyImage}}>
           </ion-avatar>

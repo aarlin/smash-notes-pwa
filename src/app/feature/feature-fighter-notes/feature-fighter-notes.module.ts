@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { FeatureFighterNotesComponent } from './feature-fighter-notes.component';
 import { FeatureCharacterSelectModalModule } from '../feature-character-select-modal/feature-character-select-modal.module';
+import { FeatureMatchupNoteModule } from '../feature-matchup-note/feature-matchup-note.module';
 
 @NgModule({
   declarations: [FeatureFighterNotesComponent],
@@ -11,7 +12,8 @@ import { FeatureCharacterSelectModalModule } from '../feature-character-select-m
     CommonModule,
     IonicModule,
     SharedDirectivesModule,
-    FeatureCharacterSelectModalModule
+    FeatureCharacterSelectModalModule,
+    FeatureMatchupNoteModule
   ],
   exports: [FeatureFighterNotesComponent]
 })

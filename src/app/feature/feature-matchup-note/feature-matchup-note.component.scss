@@ -1,0 +1,11 @@
+.versus-container {
+    display: flex;
+}
+
+.player {
+    justify-content: flex-start;
+}
+
+.enemy {
+    justify-content: flex-end;
+}

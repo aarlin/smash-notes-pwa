@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
+import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 interface Fighter {
   name?: string;
 }
 
 interface Note {
+  id: number,
   groupName: string,
+  player: string,
   enemy: string,
   title: string,
   body: string,
@@ -28,58 +31,77 @@ export class FeatureFighterNotesComponent implements OnInit {
   backgroundImage: string = '';
   background: string;
   fighterImage: string;
+  fighterSeriesIcon: string;
 
   notes: Note[] = [
     {
+      id: 1,
       groupName: "Stage Counterpick",
+      player: 'homura,',
       enemy: "bayonetta",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
     },
     {
+      id: 2,
       groupName: "Stage Counterpick",
+      player: 'homura,',
       enemy: "mario",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
     },
     {
+      id: 3,
       groupName: "Stage Counterpick",
+      player: 'homura,',
       enemy: "bowser_jr",
       title: "Lylatt",
       body: "Choose lyatt for no ceiling"
     },
     {
+      id: 4,
       groupName: "Stage Counterpick",
+      player: 'homura,',
       enemy: "sephiroth",
       title: "Yoshi Island",
       body: "Choose lyatt for no ceiling"
     },
     {
+      id: 5,
       groupName: "Kill Confirm",
+      player: 'homura,',
       enemy: "donkey_kong",
       title: "60%",
       body: "Down air to up smash"
     },
     {
+      id: 6,
       groupName: "Combo",
+      player: 'homura,',
       enemy: "donkey_kong",
       title: "60%",
       body: "down throw to bair"
     },
     {
+      id: 7,
       groupName: "Combo",
+      player: 'homura,',
       enemy: "captain_falcon",
       title: "60%",
       body: "down throw to fair"
     },
     {
+      id: 8,
       groupName: "Combo",
+      player: 'homura,',
       enemy: "luigi",
       title: "60%",
       body: "down throw to fair"
     },
     {
+      id: 9,
       groupName: "Combo",
+      player: 'homura,',
       enemy: "snake",
       title: "60%",
       body: "down throw to fair"
@@ -104,6 +126,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
+    this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
 
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
@@ -131,7 +154,20 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   close() {
-    
+
+  }
+
+  async openNote(note: Note) {
+    const modal = await this.modalController.create({
+      component: FeatureMatchupNoteComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal',
+      componentProps: { 
+        note: note
+      }
+    });
+    return await modal.present();
   }
 
 }
