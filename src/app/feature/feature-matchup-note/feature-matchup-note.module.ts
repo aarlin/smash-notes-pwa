@@ -7,7 +7,7 @@ import { FeatureMatchupNoteComponent } from './feature-matchup-note.component';
   declarations: [FeatureMatchupNoteComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
   ],
   exports: [FeatureMatchupNoteComponent]
 })

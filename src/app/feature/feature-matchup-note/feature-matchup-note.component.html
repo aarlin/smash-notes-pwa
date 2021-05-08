@@ -1,6 +1,6 @@
-<ion-header [translucent]="false" collapse="condense">
+<ion-header [translucent]="false">
   <ion-toolbar>
-    <ion-icon class="back-arrow" [src]="backArrowIcon" slot="start"></ion-icon>
+    <ion-icon (click)="dismiss()" name="chevron-back-outline" size="large" slot="start"></ion-icon>
     <ion-title>
       {{ note.player }} vs. {{ note.enemy }}
     </ion-title>
@@ -8,25 +8,66 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-icon class="back-arrow" [src]="backArrowIcon" slot="start"></ion-icon>
-
-  <ion-item>
-    <ion-label position="floating">Title</ion-label>
-    <ion-input>{{ note.title}}</ion-input>
-    <ion-icon class="back-arrow" [src]="backArrowIcon" slot="start"></ion-icon>
-
-
-    <div class="versus-container">
-      <!-- <ion-icon class="player" [src]="playerIcon"></ion-icon>
-      <ion-icon class="enemy" [src]="enemyIcon"></ion-icon> -->
-      <img class="player" [src]="playerIcon">
-      <img class="enemy" [src]="enemyIcon">
+  <ion-grid>
+    <ion-col size="12">
+      <ion-row>
+        <ion-item>
+          <ion-label position="floating">Title</ion-label>
+          <ion-input>{{ note.title}}</ion-input>
       
-    </div>
+          <div class="versus-container">
+            <!-- <ion-icon class="player" [src]="playerIcon"></ion-icon>
+            <ion-icon class="enemy" [src]="enemyIcon"></ion-icon> -->
+            <img class="player" [src]="playerIcon">
+            <img class="enemy" [src]="enemyIcon">
+            
+          </div>
 
-
-    <!-- <ion-label position="stacked"> Description </ion-label> -->
-    <ion-textarea position="stacked"> {{ note.body}}</ion-textarea>
-  </ion-item>
-
+          <img class="enemy" [src]="enemyIcon">
+      
+      
+          <!-- <ion-label position="stacked"> Description </ion-label> -->
+          <ion-textarea position="stacked"> {{ note.body}}</ion-textarea>
+        </ion-item>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-buttons>
+    <ion-button>
+      <ion-icon (click)="presentActionSheet()" size="large" name="share-outline" slot="end"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-footer>
+
+<!-- <ion-header translucent>
+  <ion-toolbar>
+    <ion-icon [src]="fighterIcon" size="large"></ion-icon>
+
+    <ion-title>Choose Your Fighter</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()" color="primary">
+        <ion-label>Apply</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar (ionInput)="setFilteredItems($event)" placeholder="Search Fighters" clearInput></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list>
+    <ion-row>
+      <ion-col size="3" *ngFor="let fighter of fighters; index as position">
+        <ion-img (click)="applyFighter(fighter)" [class.selected]="isFighterSelected(fighter)" class="avatar" [src]="fighter.url"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content> -->

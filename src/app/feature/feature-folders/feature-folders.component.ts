@@ -29,6 +29,8 @@ export class FeatureFoldersComponent implements OnInit {
 
   homeIcon: string;
 
+  searchBarEnabled = false;
+
   constructor(private fighterService: FighterService, private modalController: ModalController) { }
 
   ngOnInit() {
@@ -98,5 +100,8 @@ export class FeatureFoldersComponent implements OnInit {
     return await modal.present();
   }
 
+  searchOpen() {
+    this.searchBarEnabled = !this.searchBarEnabled;
+  }
 
 }

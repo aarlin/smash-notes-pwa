@@ -5,9 +5,11 @@
         <ion-icon [src]="homeIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-label>Smash Notes</ion-label>
+    <ion-label *ngIf="!searchBarEnabled">Smash Notes</ion-label>
+    <ion-searchbar *ngIf="searchBarEnabled" type="text" placeholder="Search text" clearInput>
+    </ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button (click)="close()" shape="round">
+      <ion-button (click)="searchOpen()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">
