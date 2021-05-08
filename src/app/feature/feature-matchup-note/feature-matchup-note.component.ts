@@ -19,14 +19,20 @@ interface Note {
 export class FeatureMatchupNoteComponent implements OnInit {
   playerIcon: string;
   enemyIcon: string;
+  backArrowIcon: string;
 
   @Input() note: Note;
 
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {
-    this.playerIcon = `assets/stock-icons/svg/${this.note.player}.svg`
-    this.enemyIcon = `assets/stock-icons/svg/${this.note.enemy}.svg`;
+    this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
+    // this.playerIcon = `assets/stock-icons/svg/${this.note.player}.svg`
+    // this.enemyIcon = `assets/stock-icons/svg/${this.note.enemy}.svg`;
+    // this.playerIcon = `assets/portraits/thumb_h/dr_mario.webp`;
+    // this.enemyIcon = `assets/portraits/thumb_h/shulk.webp`;
+    this.playerIcon = `assets/portraits/vertical/byleth.webp`;
+    this.enemyIcon = `assets/portraits/vertical/fox.webp`;
   }
 
   dismiss() {

@@ -4,8 +4,19 @@
 
 .player {
     justify-content: flex-start;
+    // transform: scaleX(-1);
+    &:hover {
+        transform: translate3d(1062px, 1688px, 0px);
+    }
 }
 
 .enemy {
     justify-content: flex-end;
+    &:hover {
+        transform: translate3d(1062px, 1688px, 0px);
+    }
+}
+
+.back-arrow {
+    transform: scaleX(-1);
 }
