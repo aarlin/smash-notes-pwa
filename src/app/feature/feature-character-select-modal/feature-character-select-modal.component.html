@@ -1,8 +1,29 @@
-<ion-content>
-  <ion-col>
-    <ion-row>
-      <ion-button fill="outline"(click)="presentModal()"></ion-button>
-    </ion-row>
-  </ion-col>
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-icon [src]="fighterIcon" size="large"></ion-icon>
 
+    <ion-title>Choose Your Fighter</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()" color="primary">
+        <ion-label>Apply</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar (ionInput)="setFilteredItems($event)" placeholder="Search Fighters" clearInput></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list>
+    <ion-row>
+      <ion-col size="3" *ngFor="let fighter of fighters; index as position">
+        <ion-img (click)="applyFighter(fighter)" [class.selected]="isFighterSelected(fighter)" class="avatar" [src]="fighter.url"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-list>
 </ion-content>

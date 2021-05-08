@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
+import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 
 interface Fighter {
   name?: string;
@@ -86,9 +88,23 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   chunkedData: ChunkedData = this.chunkByGroup(this.notes);
 
-  constructor() { }
+  homeIcon: string;
+
+  constructor( public alertController: AlertController, public modalController: ModalController) {}
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: FeatureCharacterSelectModalComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal'
+    });
+    return await modal.present();
+  }
 
   ngOnInit() {
+    this.homeIcon = 'assets/navigation/header_bar_ico.svg';
+
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
     let chunkedData = this.chunkByGroup(this.notes);
@@ -112,6 +128,10 @@ export class FeatureFighterNotesComponent implements OnInit {
     this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg")`;
     this.background = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg`;
     this.fighterImage = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/main.png`;
+  }
+
+  close() {
+    
   }
 
 }

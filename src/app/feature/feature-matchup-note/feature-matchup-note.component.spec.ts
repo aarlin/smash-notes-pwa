@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MatchupContainerComponent } from './matchup-container.component';
+import { FeatureMatchupNoteComponent } from './feature-matchup-note.component';
 
-describe('MatchupContainerComponent', () => {
-  let component: MatchupContainerComponent;
-  let fixture: ComponentFixture<MatchupContainerComponent>;
+describe('FeatureMatchupNoteComponent', () => {
+  let component: FeatureMatchupNoteComponent;
+  let fixture: ComponentFixture<FeatureMatchupNoteComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MatchupContainerComponent ],
+      declarations: [ FeatureMatchupNoteComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MatchupContainerComponent);
+    fixture = TestBed.createComponent(FeatureMatchupNoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
