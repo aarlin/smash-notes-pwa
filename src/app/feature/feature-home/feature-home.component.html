@@ -4,18 +4,18 @@
 
 <ion-content>
   <ion-list *ngIf="dataLoaded">
-    <ng-container *ngFor="let data of chunkedData | keyvalue">
-      <ion-list-header>
-        {{data.key}}
-      </ion-list-header>
+    <ng-container *ngFor="let note of notes">
 
-      <ion-item (click)="openNote(singleNote)" *ngFor="let singleNote of data.value">
+      <ion-item (click)="openNote(note)">
         <ion-avatar slot="start">
-          <img src={{singleNote.enemyImage}}>
+          <img src={{note.playerImage}}>
+        </ion-avatar>
+        <ion-avatar slot="end">
+          <img src={{note.enemyImage}}>
         </ion-avatar>
         <ion-label>
-          <h2>{{singleNote.title}}</h2>
-          <p>{{singleNote.body}}</p>
+          <h2>{{note.title}}</h2>
+          <p>{{note.body}}</p>
         </ion-label>
       </ion-item>
     </ng-container>
@@ -23,13 +23,16 @@
 
   <ion-list *ngIf="!dataLoaded">
     <ng-container *ngFor="let skeletonRow of [].constructor(10)">
-      <ion-list-header>
+      <!-- <ion-list-header>
         <ion-label>
           <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
         </ion-label>
-      </ion-list-header>
+      </ion-list-header> -->
       <ion-item>
         <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-thumbnail slot="end">
           <ion-skeleton-text animated></ion-skeleton-text>
         </ion-thumbnail>
         <ion-label>
@@ -46,8 +49,8 @@
       </ion-item>
     </ng-container>
   </ion-list>
-  
-  <ion-list>
+
+  <!-- <ion-list>
     <ion-item-sliding>
       <ion-item>
         <ion-label>Item</ion-label>
@@ -65,5 +68,5 @@
         <ion-item-option (click)="unread(item)">Unread</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-  </ion-list>
+  </ion-list> -->
 </ion-content>

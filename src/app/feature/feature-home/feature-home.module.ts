@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FeatureHomeComponent } from './feature-home.component';
 import { IonicModule } from '@ionic/angular';
 import { FeatureToolbarModule } from '../feature-toolbar/feature-toolbar.module';
+import { NoteService } from 'src/app/services/note.service';
 
 @NgModule({
   declarations: [FeatureHomeComponent],
@@ -11,6 +12,7 @@ import { FeatureToolbarModule } from '../feature-toolbar/feature-toolbar.module'
     IonicModule,
     FeatureToolbarModule
   ],
-  exports: [FeatureHomeComponent]
+  exports: [FeatureHomeComponent],
+  providers: [NoteService]
 })
 export class FeatureHomeModule { }
