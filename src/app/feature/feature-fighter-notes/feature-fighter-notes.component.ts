@@ -33,6 +33,8 @@ export class FeatureFighterNotesComponent implements OnInit {
   fighterImage: string;
   fighterSeriesIcon: string;
 
+  dataLoaded: boolean;
+
   notes: Note[] = [
     {
       id: 1,
@@ -108,7 +110,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     }
   ];
 
-  chunkedData: ChunkedData = this.chunkByGroup(this.notes);
+  chunkedData: ChunkedData;
 
   homeIcon: string;
 
@@ -130,8 +132,12 @@ export class FeatureFighterNotesComponent implements OnInit {
 
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
-    let chunkedData = this.chunkByGroup(this.notes);
-    console.log(chunkedData);
+    setTimeout(() => {
+      this.chunkedData = this.chunkByGroup(this.notes);
+      console.log(this.chunkedData);
+      this.dataLoaded = !this.dataLoaded;
+    }, 1000);
+
   }
 
   chunkByGroup(notes: Note[]) {

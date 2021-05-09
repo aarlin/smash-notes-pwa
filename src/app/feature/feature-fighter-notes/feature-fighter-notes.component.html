@@ -21,29 +21,58 @@
   <div #image class="fighter-bg">
     <div class="fighter-bg_inner">
       <div class="parallax-image">
-        <img class="fighter-image" alt="Background Image" [src]="background">
+        <ion-img class="fighter-image" alt="Background Image" [src]="background"></ion-img>
       </div>
       <div class="fighter-main">
-        <img [src]="fighterImage">
+        <ion-img [src]="fighterImage"></ion-img>
       </div>
     </div>
   </div>
 
 
   <div class="main">
-    <ion-list>
+    <ion-list *ngIf="dataLoaded">
       <ng-container *ngFor="let data of chunkedData | keyvalue">
         <ion-list-header>
           {{data.key}}
         </ion-list-header>
 
         <ion-item (click)="openNote(singleNote)" *ngFor="let singleNote of data.value">
+          <!-- <ion-avatar slot="start">
+            <img src={{singleNote.enemyImage}}>
+          </ion-avatar> -->
           <ion-avatar slot="start">
             <img src={{singleNote.enemyImage}}>
           </ion-avatar>
           <ion-label>
             <h2>{{singleNote.title}}</h2>
             <p>{{singleNote.body}}</p>
+          </ion-label>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+
+    <ion-list *ngIf="!dataLoaded">
+      <ng-container *ngFor="let skeletonRow of [].constructor(10)">
+        <ion-list-header>
+          <ion-label>
+            <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
           </ion-label>
         </ion-item>
       </ng-container>
