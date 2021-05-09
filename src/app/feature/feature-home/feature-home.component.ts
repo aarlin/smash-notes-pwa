@@ -33,7 +33,7 @@ export class FeatureHomeComponent implements OnInit {
           note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`;
           note.playerImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.player}.png`;
           return note;
-        })
+        });
       }, err => {
         console.log('error in home')
       }, () => {

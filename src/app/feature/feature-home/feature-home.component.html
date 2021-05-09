@@ -4,7 +4,14 @@
 
 <ion-content>
   <ion-list *ngIf="dataLoaded">
-    <ng-container *ngFor="let note of notes">
+    <ng-container *ngIf="!notes.length">
+      <ion-item>
+        <ion-label>
+          No Notes
+        </ion-label>
+      </ion-item>
+    </ng-container>    
+    <ng-container #elseBlock *ngFor="let note of notes">
 
       <ion-item (click)="openNote(note)">
         <ion-avatar slot="start">
@@ -19,6 +26,7 @@
         </ion-label>
       </ion-item>
     </ng-container>
+
   </ion-list>
 
   <ion-list *ngIf="!dataLoaded">
