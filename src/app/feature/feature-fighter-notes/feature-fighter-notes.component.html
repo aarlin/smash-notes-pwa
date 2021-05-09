@@ -29,7 +29,6 @@
     </div>
   </div>
 
-
   <div class="main">
     <ion-list *ngIf="dataLoaded">
       <ng-container *ngFor="let data of chunkedData | keyvalue">
@@ -38,9 +37,6 @@
         </ion-list-header>
 
         <ion-item (click)="openNote(singleNote)" *ngFor="let singleNote of data.value">
-          <!-- <ion-avatar slot="start">
-            <img src={{singleNote.enemyImage}}>
-          </ion-avatar> -->
           <ion-avatar slot="start">
             <img src={{singleNote.enemyImage}}>
           </ion-avatar>

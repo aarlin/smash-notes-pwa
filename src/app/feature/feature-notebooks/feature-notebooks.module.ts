@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FeatureFoldersComponent } from './feature-folders.component';
+import { FeatureNotebooksComponent } from './feature-notebooks.component';
 import { FighterService } from 'src/app/services/fighter.service';
-import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
 import { FilterModalModule } from '../feature-filter-select/filter-modal.module';
+import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 
 @NgModule({
   declarations: [
-    FeatureFoldersComponent
+    FeatureNotebooksComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
     SharedDirectivesModule,
     FilterModalModule,
-    ExploreContainerComponentModule
+    SharedPipesModule,
   ],
   exports: [
-    FeatureFoldersComponent
+    FeatureNotebooksComponent
   ],
   providers: [
     FighterService
   ]
 })
-export class FeatureFoldersModule { }
+export class FeatureNotebooksModule { }

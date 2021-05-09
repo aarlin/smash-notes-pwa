@@ -27,7 +27,7 @@
         <ion-card>
           <ion-card-header>
             <ion-img src={{fighter.stockIcon}}></ion-img>
-            <ion-card-subtitle>{{fighter.name}}</ion-card-subtitle>
+            <ion-card-subtitle class="fighter-notebook">{{fighter.name | normalizeName }}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             <ion-label>Total Notes: {{ 1 }} </ion-label>

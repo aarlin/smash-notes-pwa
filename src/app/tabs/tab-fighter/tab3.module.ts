@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
-import { FeatureCharacterSelectModule } from 'src/app/feature/feature-character-select/feature-character-select.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureFighterNotesModule } from 'src/app/feature/feature-fighter-notes/feature-fighter-notes.module';
 
@@ -15,7 +14,6 @@ import { FeatureFighterNotesModule } from 'src/app/feature/feature-fighter-notes
     IonicModule,
     CommonModule,
     FormsModule,
-    FeatureCharacterSelectModule,
     FeatureToolbarModule,
     FeatureFighterNotesModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),

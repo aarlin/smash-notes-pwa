@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
+import { NoteService } from 'src/app/services/note.service';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
@@ -35,86 +36,13 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   dataLoaded: boolean;
 
-  notes: Note[] = [
-    {
-      id: 1,
-      groupName: "Stage Counterpick",
-      player: 'homura',
-      enemy: "bayonetta",
-      title: "Lylatt",
-      body: "Choose lyatt for no ceiling"
-    },
-    {
-      id: 2,
-      groupName: "Stage Counterpick",
-      player: 'homura',
-      enemy: "mario",
-      title: "Lylatt",
-      body: "Choose lyatt for no ceiling"
-    },
-    {
-      id: 3,
-      groupName: "Stage Counterpick",
-      player: 'homura',
-      enemy: "bowser_jr",
-      title: "Lylatt",
-      body: "Choose lyatt for no ceiling"
-    },
-    {
-      id: 4,
-      groupName: "Stage Counterpick",
-      player: 'homura',
-      enemy: "sephiroth",
-      title: "Yoshi Island",
-      body: "Choose lyatt for no ceiling"
-    },
-    {
-      id: 5,
-      groupName: "Kill Confirm",
-      player: 'homura',
-      enemy: "donkey_kong",
-      title: "60%",
-      body: "Down air to up smash"
-    },
-    {
-      id: 6,
-      groupName: "Combo",
-      player: 'homura',
-      enemy: "donkey_kong",
-      title: "60%",
-      body: "down throw to bair"
-    },
-    {
-      id: 7,
-      groupName: "Combo",
-      player: 'homura',
-      enemy: "captain_falcon",
-      title: "60%",
-      body: "down throw to fair"
-    },
-    {
-      id: 8,
-      groupName: "Combo",
-      player: 'homura',
-      enemy: "luigi",
-      title: "60%",
-      body: "down throw to fair"
-    },
-    {
-      id: 9,
-      groupName: "Combo",
-      player: 'homura',
-      enemy: "snake",
-      title: "60%",
-      body: "down throw to fair"
-    }
-  ];
+  notes: Note[] = [];
 
   chunkedData: ChunkedData;
 
   homeIcon: string;
 
-  constructor( public alertController: AlertController, public modalController: ModalController) {}
+  constructor( public alertController: AlertController, public modalController: ModalController, private noteService: NoteService) {}
 
   async presentModal() {
     const modal = await this.modalController.create({
@@ -132,12 +60,16 @@ export class FeatureFighterNotesComponent implements OnInit {
 
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
-    setTimeout(() => {
-      this.chunkedData = this.chunkByGroup(this.notes);
-      console.log(this.chunkedData);
-      this.dataLoaded = !this.dataLoaded;
-    }, 1000);
-
+    
+    this.noteService.load()
+      .subscribe((notes: Note[]) => {
+        this.chunkedData = this.chunkByGroup(notes);
+        console.log(this.chunkedData);
+      }, err => {
+        console.log('error')
+      }, () => {
+        this.dataLoaded = !this.dataLoaded;
+      })
   }
 
   chunkByGroup(notes: Note[]) {

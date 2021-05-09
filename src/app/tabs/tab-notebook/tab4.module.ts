@@ -7,18 +7,16 @@ import { Tab4Page } from './tab4.page';
 
 import { Tab4PageRoutingModule } from './tab4-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
-import { FeatureFoldersModule } from 'src/app/feature/feature-folders/feature-folders.module';
-import { ExploreContainerComponentModule } from 'src/app/feature/explore-container/explore-container.module';
-import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { FeatureNotebooksModule } from 'src/app/feature/feature-notebooks/feature-notebooks.module';
+import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    FeatureFoldersModule,
+    FeatureNotebooksModule,
     SharedDirectivesModule,
-    ExploreContainerComponentModule,
     FeatureToolbarModule,
     Tab4PageRoutingModule
   ],

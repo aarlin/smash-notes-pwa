@@ -1,4 +1,4 @@
-<ion-toolbar [color]="colorTheme[0]">
+<!-- <ion-toolbar [color]="colorTheme[0]">
   <ion-buttons slot="secondary">
     <ion-button>
       <ion-icon slot="icon-only" name="person-circle"></ion-icon>
@@ -10,29 +10,21 @@
     </ion-button>
   </ion-buttons>
   <ion-searchbar placeholder="Search Notes"></ion-searchbar>
-</ion-toolbar>
-
-<!-- <ion-grid>
-  <ion-row class="ion-align-items-center">
-    <ion-col>
-      <div class="character player-character" [style.background-image]="'url(' + selectedPlayerImage + ')'"></div>
-    </ion-col>
-    <ion-col>
-      <div>
-        <div class="character enemy-character" [style.background-image]="'url(' + selectedEnemyImage + ')'"></div>
-      </div>
-    </ion-col>
-
-  </ion-row>
-</ion-grid>
+</ion-toolbar> -->
 
 <ion-toolbar>
-  <ion-segment value="all">
-    <ion-segment-button value="all">
-      All
-    </ion-segment-button>
-    <ion-segment-button value="favorites">
-      Favorites
-    </ion-segment-button>
-  </ion-segment>
-</ion-toolbar> -->
+  <ion-buttons slot="start">
+    <ion-button (click)="close()" shape="round">
+      <ion-icon [src]="homeIcon" size="large"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-label>{{ title }}</ion-label>
+  <ion-buttons slot="end">
+    <ion-button (click)="searchOpen()" shape="round">
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+    <ion-button (click)="presentModal()" shape="round">
+      <ion-icon slot="icon-only" name="options"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

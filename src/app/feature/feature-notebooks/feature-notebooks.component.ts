@@ -10,13 +10,12 @@ interface Fighter {
   stockIcon?: string;
 }
 
-
 @Component({
-  selector: 'smash-feature-folders',
-  templateUrl: './feature-folders.component.html',
-  styleUrls: ['./feature-folders.component.scss'],
+  selector: 'smash-feature-notebooks',
+  templateUrl: './feature-notebooks.component.html',
+  styleUrls: ['./feature-notebooks.component.scss'],
 })
-export class FeatureFoldersComponent implements OnInit {
+export class FeatureNotebooksComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   pageToLoadNext: number = 1;
@@ -45,6 +44,10 @@ export class FeatureFoldersComponent implements OnInit {
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
+        let allFighterNotebook = { 
+          name: 'All Fighters'
+        }
+        this.fighters = [allFighterNotebook, ...this.fighters]
       });
   }
 

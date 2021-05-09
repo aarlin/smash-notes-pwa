@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 interface Character {
   name: string;
@@ -23,7 +23,11 @@ enum PortraitImageExtension {
 })
 export class FeatureToolbarComponent implements OnInit {
 
-  colorTheme = ["", "secondary", "dark"]
+  @Input() title: string;
+
+  colorTheme = ["", "secondary", "dark"];
+  
+  homeIcon: string;
 
   selectedPlayerImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
   selectedEnemyImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
@@ -36,6 +40,22 @@ export class FeatureToolbarComponent implements OnInit {
   ngOnInit() {
     this.selectedPlayerImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
     this.selectedEnemyImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
+    this.homeIcon = 'assets/navigation/header_bar_ico.svg';
+
   }
+
+
+  close() {
+
+  }
+
+  searchOpen() {
+
+  }
+
+  presentModal() {
+
+  }
+
 
 }

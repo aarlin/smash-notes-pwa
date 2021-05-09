@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FeatureCharacterSelectComponent } from './feature-character-select.component';
+import { FeatureNotebooksComponent } from './feature-notebooks.component';
 
-describe('FeatureCharacterSelectComponent', () => {
-  let component: FeatureCharacterSelectComponent;
-  let fixture: ComponentFixture<FeatureCharacterSelectComponent>;
+describe('FeatureNotebooksComponent', () => {
+  let component: FeatureNotebooksComponent;
+  let fixture: ComponentFixture<FeatureNotebooksComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeatureCharacterSelectComponent ],
+      declarations: [ FeatureNotebooksComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FeatureCharacterSelectComponent);
+    fixture = TestBed.createComponent(FeatureNotebooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
