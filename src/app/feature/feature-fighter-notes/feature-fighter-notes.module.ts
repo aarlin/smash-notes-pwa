@@ -6,6 +6,7 @@ import { FeatureFighterNotesComponent } from './feature-fighter-notes.component'
 import { FeatureCharacterSelectModalModule } from '../feature-character-select-modal/feature-character-select-modal.module';
 import { FeatureMatchupNoteModule } from '../feature-matchup-note/feature-matchup-note.module';
 import { NoteService } from 'src/app/services/note.service';
+import { FighterService } from 'src/app/services/fighter.service';
 
 @NgModule({
   declarations: [FeatureFighterNotesComponent],
@@ -17,6 +18,6 @@ import { NoteService } from 'src/app/services/note.service';
     FeatureMatchupNoteModule
   ],
   exports: [FeatureFighterNotesComponent],
-  providers: [NoteService]
+  providers: [NoteService, FighterService]
 })
 export class FeatureFighterNotesModule { }

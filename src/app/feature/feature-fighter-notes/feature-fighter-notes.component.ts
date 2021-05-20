@@ -42,7 +42,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   homeIcon: string;
 
-  constructor( public alertController: AlertController, public modalController: ModalController, private noteService: NoteService) {}
+  constructor(public alertController: AlertController, public modalController: ModalController, private noteService: NoteService) { }
 
   async presentModal() {
     const modal = await this.modalController.create({
@@ -60,7 +60,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
-    
+
     this.noteService.load()
       .subscribe((notes: Note[]) => {
         this.chunkedData = this.chunkByGroup(notes);
@@ -78,7 +78,7 @@ export class FeatureFighterNotesComponent implements OnInit {
       console.log(note, groups[note.groupName])
       if (groups[note.groupName] === undefined) {
         groups[note.groupName] = []
-      } 
+      }
       note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`
       groups[note.groupName].push(note);
     }
@@ -101,7 +101,7 @@ export class FeatureFighterNotesComponent implements OnInit {
       showBackdrop: true,
       backdropDismiss: true,
       cssClass: 'character-select-modal',
-      componentProps: { 
+      componentProps: {
         note: note
       }
     });
