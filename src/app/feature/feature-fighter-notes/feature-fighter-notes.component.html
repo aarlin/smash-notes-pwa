@@ -30,7 +30,19 @@
   </div>
 
   <div class="main">
-    <ion-list *ngIf="dataLoaded">
+    <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes" [headerFn]="">
+      <ion-item (click)="openNote(note)" *virtualItem="let note">
+        <ion-avatar slot="start">
+          <img src={{note.enemyImage}}>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{note.title}}</h2>
+          <p>{{note.body}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-virtual-scroll>
+
+    <!-- <ion-list *ngIf="dataLoaded" >
       <ng-container *ngFor="let data of chunkedData | keyvalue">
         <ion-list-header>
           {{data.key}}
@@ -46,7 +58,7 @@
           </ion-label>
         </ion-item>
       </ng-container>
-    </ion-list>
+    </ion-list> -->
 
     <ion-list *ngIf="!dataLoaded">
       <ng-container *ngFor="let skeletonRow of [].constructor(10)">
