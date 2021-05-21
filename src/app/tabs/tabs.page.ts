@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tabs',
@@ -13,7 +14,7 @@ export class TabsPage implements OnInit {
   notebookIcon: string;
   createIcon: string;
 
-  constructor() {}
+  constructor(public actionSheetController: ActionSheetController) {}
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/ico_top_g.svg';
@@ -33,6 +34,37 @@ export class TabsPage implements OnInit {
 
   displayFighterModal() {
     this.fighterIcon = 'assets/stock-icons/svg/pichu.svg';
+  }
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Create',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Create Note',
+        icon: 'trash',
+        handler: () => {
+          console.log('Create Note clicked');
+        }
+      }, {
+        text: 'Create Notebook',
+        icon: 'share',
+        handler: () => {
+          console.log('Create Notebook clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+
+    const { role } = await actionSheet.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 
 }

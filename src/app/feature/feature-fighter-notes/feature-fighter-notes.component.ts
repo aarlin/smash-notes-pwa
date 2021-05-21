@@ -109,9 +109,4 @@ export class FeatureFighterNotesComponent implements OnInit {
     });
     return await modal.present();
   }
-
-  myHeaderFn(record, recordIndex, records) {
-    return 'Header'
-  }
-
 }

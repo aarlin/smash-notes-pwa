@@ -21,16 +21,16 @@
   <div #image class="fighter-bg">
     <div class="fighter-bg_inner">
       <div class="parallax-image">
-        <ion-img class="fighter-image" alt="Background Image" [src]="background"></ion-img>
+        <ion-img class="fighter-bg" alt="Background Image" [src]="background"></ion-img>
       </div>
       <div class="fighter-main">
-        <ion-img [src]="fighterImage"></ion-img>
+        <ion-img class="fighter-image" [src]="fighterImage"></ion-img>
       </div>
     </div>
   </div>
 
   <div class="main">
-    <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes" [headerFn]="">
+    <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes">
       <ion-item (click)="openNote(note)" *virtualItem="let note">
         <ion-avatar slot="start">
           <img src={{note.enemyImage}}>
