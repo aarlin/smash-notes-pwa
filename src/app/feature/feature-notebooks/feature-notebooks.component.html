@@ -20,19 +20,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let fighter of fighters; index as position">
-        <ion-card>
-          <ion-card-header>
-            <ion-img src={{fighter.stockIcon}}></ion-img>
-            <ion-card-subtitle class="fighter-notebook">{{fighter.name | normalizeName }}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label>Total Notes: {{ 1 }} </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+  <ion-virtual-scroll [items]="fighters">
+    <ion-item *virtualItem="let fighter">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src={{fighter.stockIcon}}></ion-img>
+          <ion-card-subtitle class="fighter-notebook">{{fighter.name | normalizeName }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Total Notes: {{ 1 }} </ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-virtual-scroll>
+
 </ion-content>

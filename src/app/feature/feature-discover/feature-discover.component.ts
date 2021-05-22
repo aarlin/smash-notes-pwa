@@ -14,6 +14,7 @@ interface Discover {
   styleUrls: ['./feature-discover.component.scss'],
 })
 export class FeatureDiscoverComponent implements OnInit {
+  
 
   discovery: Discover[] = [
     {
@@ -43,6 +44,10 @@ export class FeatureDiscoverComponent implements OnInit {
 
   testClick() {
     
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
 }
