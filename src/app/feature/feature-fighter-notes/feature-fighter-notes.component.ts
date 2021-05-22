@@ -64,6 +64,8 @@ export class FeatureFighterNotesComponent implements OnInit {
     this.noteService.load()
       .subscribe((notes: Note[]) => {
         this.chunkedData = this.chunkByGroup(notes);
+        this.notes = notes;
+        console.log(notes);
         console.log(this.chunkedData);
       }, err => {
         console.log('error')
@@ -107,5 +109,4 @@ export class FeatureFighterNotesComponent implements OnInit {
     });
     return await modal.present();
   }
-
 }

@@ -21,16 +21,28 @@
   <div #image class="fighter-bg">
     <div class="fighter-bg_inner">
       <div class="parallax-image">
-        <ion-img class="fighter-image" alt="Background Image" [src]="background"></ion-img>
+        <ion-img class="fighter-bg" alt="Background Image" [src]="background"></ion-img>
       </div>
       <div class="fighter-main">
-        <ion-img [src]="fighterImage"></ion-img>
+        <ion-img class="fighter-image" [src]="fighterImage"></ion-img>
       </div>
     </div>
   </div>
 
   <div class="main">
-    <ion-list *ngIf="dataLoaded">
+    <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes">
+      <ion-item (click)="openNote(note)" *virtualItem="let note">
+        <ion-avatar slot="start">
+          <img src={{note.enemyImage}}>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{note.title}}</h2>
+          <p>{{note.body}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-virtual-scroll>
+
+    <!-- <ion-list *ngIf="dataLoaded" >
       <ng-container *ngFor="let data of chunkedData | keyvalue">
         <ion-list-header>
           {{data.key}}
@@ -46,7 +58,7 @@
           </ion-label>
         </ion-item>
       </ng-container>
-    </ion-list>
+    </ion-list> -->
 
     <ion-list *ngIf="!dataLoaded">
       <ng-container *ngFor="let skeletonRow of [].constructor(10)">

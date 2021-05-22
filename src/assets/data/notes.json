@@ -70,5 +70,37 @@
       "enemy": "snake",
       "title": "60%",
       "body": "down throw to fair"
+    },
+    {
+      "id": 10,
+      "groupName": "Combo",
+      "player": "homura",
+      "enemy": "donkey_kong",
+      "title": "60%",
+      "body": "down throw to bair"
+    },
+    {
+      "id":11,
+      "groupName": "Combo",
+      "player": "homura",
+      "enemy": "captain_falcon",
+      "title": "60%",
+      "body": "down throw to fair"
+    },
+    {
+      "id": 12,
+      "groupName": "Combo",
+      "player": "homura",
+      "enemy": "luigi",
+      "title": "60%",
+      "body": "down throw to fair"
+    },
+    {
+      "id": 13,
+      "groupName": "Combo",
+      "player": "homura",
+      "enemy": "snake",
+      "title": "60%",
+      "body": "down throw to fair"
     }
   ]

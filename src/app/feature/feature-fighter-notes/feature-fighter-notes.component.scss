@@ -11,15 +11,21 @@ ion-avatar {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 10vh;
+    height: 1vh;
+    transform: scale(1);
 }
 
 .fighter-image {
-    width: 100%
+    transform: scale(1);
+}
+
+.fighter-bg {
+    // border-radius: 80%;
 }
 
 .main {
     width: 100%;
+    height: 100%;
     position: absolute;
     background-color: white;
 }
