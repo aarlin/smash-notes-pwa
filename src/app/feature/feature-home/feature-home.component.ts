@@ -12,23 +12,38 @@ import { Note } from '../../shared/interface/note';
 export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
-  notes: Note[];
+  notes: Note[] = [];
 
   constructor(private noteService: NoteService, public modalController: ModalController) { }
 
   ngOnInit() {
-    this.noteService.load()
-      .subscribe((notes: Note[]) => {
-        this.notes = notes.map(note => {
-          note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`;
-          note.playerImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.player}.png`;
-          return note;
-        });
-      }, err => {
-        console.log('error in home')
-      }, () => {
-        this.dataLoaded = !this.dataLoaded;
+    // this.noteService.load()
+    //   .subscribe((notes: Note[]) => {
+    //     this.notes = notes.map(note => {
+    //       note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`;
+    //       note.playerImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.player}.png`;
+    //       return note;
+    //     });
+    //   }, err => {
+    //     console.log('error in home')
+    //   }, () => {
+    //     this.dataLoaded = !this.dataLoaded;
+    //   });
+    this.getNotes();
+  }
+
+  getNotes() {
+    this.noteService.getNotes().then((snapshot) => {
+      const data = snapshot.docs.map(doc => {
+        return {
+          // id: doc.id,
+          ...doc.data() as Note
+        };
       });
+      console.log("All data in 'notes' collection", data); 
+      this.notes = data;
+      this.dataLoaded = !this.dataLoaded;
+    });
   }
 
   async openNote(note: Note) {
@@ -37,7 +52,7 @@ export class FeatureHomeComponent implements OnInit {
       showBackdrop: true,
       backdropDismiss: true,
       cssClass: 'character-select-modal',
-      componentProps: { 
+      componentProps: {
         note: note
       }
     });
@@ -45,3 +60,4 @@ export class FeatureHomeComponent implements OnInit {
   }
 
 }
+

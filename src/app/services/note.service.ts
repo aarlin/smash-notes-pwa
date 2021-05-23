@@ -4,12 +4,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Note } from '../shared/interface/note';
+import { AuthenicationService } from './authentication-service';
 
 
 @Injectable()
 export class NoteService {
 
-  constructor(private http: HttpClient, private firestore: AngularFirestore) { }
+  constructor(private http: HttpClient, private firestore: AngularFirestore, private authenticationService: AuthenicationService) { }
 
   load(): Observable<Note[]> {
     return this.http
@@ -19,17 +20,21 @@ export class NoteService {
       );
   }
 
-  createNote(note: any) {
+  async createNote(note: any) {
+    let uid = await this.authenticationService.getUid();
+
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("notes")
-        .add(note)
+        .add({ uid, ...note })
         .then(res => console.log(res), err => reject(err));
     });
   }
 
-  getNotes() {
-    return this.firestore.collection("notes").snapshotChanges();
+  async getNotes() {
+    let uid = await this.authenticationService.getUid();
+
+    return this.firestore.collection("notes").ref.where('uid', '==', uid).get();
   }
 
   updateNote(note: any) {

@@ -53,6 +53,20 @@ export class AuthenicationService {
     })
   }
 
+  getUid() {
+    return new Promise<any>((resolve, reject) => {
+      this.userDetails().subscribe(response => {
+        if (response !== null) {
+          resolve(response.uid);
+        }
+      }, error => {
+        reject();
+        console.log(error);
+      })
+    })
+
+  }
+
   userDetails() {
     return this.angularFireAuth.user
   }

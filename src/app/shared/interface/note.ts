@@ -7,4 +7,6 @@ export interface Note {
     body: string,
     enemyImage?: string
     playerImage?: string
+    uid?: string;
+    visible?: boolean;
 }
