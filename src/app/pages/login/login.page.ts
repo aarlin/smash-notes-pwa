@@ -63,15 +63,31 @@ export class LoginPage implements OnInit {
   }
 
   checkIfLoggedIn() {
-    let user = this.authenticationService.userDetails();
+    this.authenticationService.userDetails().subscribe(response => {
+      if (response !== null) {
+        console.log(response);
+        this.router.navigateByUrl('dashboard');
+      }
+    }, error => {
+      console.log(error);
+    })
 
-    if (user != null) {
-      this.router.navigateByUrl('dashboard');
-    }
   }
 
   signIn(value) {
-    this.authenticationService.signinUser(value)
+    this.authenticationService.signInUser(value)
+      .then((response) => {
+        console.log(response)
+        this.errorMsg = "";
+        this.router.navigateByUrl('dashboard');
+      }, error => {
+        this.errorMsg = error.message;
+        this.successMsg = "";
+      })
+  }
+
+  signInAnonymously() {
+    this.authenticationService.signInAnonymously()
       .then((response) => {
         console.log(response)
         this.errorMsg = "";
