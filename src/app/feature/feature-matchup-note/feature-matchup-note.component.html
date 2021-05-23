@@ -7,39 +7,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-col size="12">
-      <ion-row>
-        <ion-item>
-          <ion-label position="floating">Title</ion-label>
-          <ion-input>{{ note.title}}</ion-input>
+<ion-content>
 
-          <div class="versus-container">
-            <!-- <ion-icon class="player" [src]="playerIcon"></ion-icon>
+  <ion-label position="floating">Title</ion-label>
+  <ion-input>{{ note.title}}</ion-input>
+
+  <div class="versus-container">
+    <!-- <ion-icon class="player" [src]="playerIcon"></ion-icon>
             <ion-icon class="enemy" [src]="enemyIcon"></ion-icon> -->
-            <ion-buttons>
-              <ion-button>
-                <ion-icon [src]="playerIcon" slot="start"></ion-icon>
-              </ion-button>
-              <ion-button>
-                <ion-icon [src]="enemyIcon" slot="end"></ion-icon>
+    <ion-buttons>
+      <ion-button>
+        <ion-icon [src]="playerIcon" slot="start"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon [src]="enemyIcon" slot="end"></ion-icon>
 
-              </ion-button>
-            </ion-buttons>
-            <!-- <img class="player" [src]="playerIcon">
+      </ion-button>
+    </ion-buttons>
+    <!-- <img class="player" [src]="playerIcon">
             <img class="enemy" [src]="enemyIcon"> -->
 
-          </div>
+  </div>
 
 
 
-          <!-- <ion-label position="stacked"> Description </ion-label> -->
-          <ion-textarea position="stacked"> {{ note.body}}</ion-textarea>
-        </ion-item>
-      </ion-row>
-    </ion-col>
-  </ion-grid>
+  <!-- <ion-label position="stacked"> Description </ion-label> -->
+  <ion-textarea position="stacked"> {{ note.body}}</ion-textarea>
+  <ion-textarea position="stacked"> Lopsum ipsum</ion-textarea>
+  <ion-button (click)="saveNote()">Save</ion-button>
+
 </ion-content>
 
 <ion-footer>

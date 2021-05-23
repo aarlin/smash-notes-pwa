@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
+import { NoteService } from 'src/app/services/note.service';
 import { Note } from '../../shared/interface/note';
 
 @Component({
@@ -14,7 +15,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   @Input() note: Note;
 
-  constructor(private modalController: ModalController, private actionSheetController: ActionSheetController) { }
+  constructor(private modalController: ModalController, 
+    private actionSheetController: ActionSheetController,
+    private noteService: NoteService) { }
 
   ngOnInit() {
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
@@ -32,6 +35,16 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.modalController.dismiss({
       'dismissed': true
     });
+  }
+  
+  saveNote() {
+    console.log(this.note);
+    this.noteService.createNote(this.note)
+      .then(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      })
   }
 
   async presentActionSheet() {

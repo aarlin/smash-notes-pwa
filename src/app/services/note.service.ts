@@ -24,7 +24,7 @@ export class NoteService {
       this.firestore
         .collection("notes")
         .add(note)
-        .then(res => { }, err => reject(err));
+        .then(res => console.log(res), err => reject(err));
     });
   }
 
