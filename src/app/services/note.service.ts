@@ -31,10 +31,19 @@ export class NoteService {
     });
   }
 
-  async getNotes() {
+  async getNotesByUser() {
     let uid = await this.authenticationService.getUid();
 
     return this.firestore.collection("notes").ref.where('uid', '==', uid).get();
+  }
+
+  async getNotesByFighter(fighter: any) {
+    let uid = await this.authenticationService.getUid();
+
+    return this.firestore.collection("notes").ref
+      .where('uid', '==', uid)
+      .where('player', '==', fighter)
+      .get();
   }
 
   updateNote(note: any) {

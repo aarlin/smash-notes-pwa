@@ -29,11 +29,12 @@ export class FeatureHomeComponent implements OnInit {
     //   }, () => {
     //     this.dataLoaded = !this.dataLoaded;
     //   });
-    this.getNotes();
+    this.getNotesByUser();
+    // this.setFallback();
   }
 
-  getNotes() {
-    this.noteService.getNotes().then((snapshot) => {
+  getNotesByUser() {
+    this.noteService.getNotesByUser().then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
           // id: doc.id,
@@ -42,6 +43,9 @@ export class FeatureHomeComponent implements OnInit {
       });
       console.log("All data in 'notes' collection", data); 
       this.notes = data;
+      this.dataLoaded = !this.dataLoaded;
+    }, error => {
+      console.log(error);
       this.dataLoaded = !this.dataLoaded;
     });
   }

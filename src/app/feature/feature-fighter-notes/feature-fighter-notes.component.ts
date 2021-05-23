@@ -52,17 +52,33 @@ export class FeatureFighterNotesComponent implements OnInit {
     let sampleFighter: Fighter = { name: 'homura' }
     this.setBackgroundImage(sampleFighter);
 
-    this.noteService.load()
-      .subscribe((notes: Note[]) => {
-        this.chunkedData = this.chunkByGroup(notes);
-        this.notes = notes;
-        console.log(notes);
-        console.log(this.chunkedData);
-      }, err => {
-        console.log('error')
-      }, () => {
-        this.dataLoaded = !this.dataLoaded;
-      })
+    // this.noteService.load()
+    //   .subscribe((notes: Note[]) => {
+    //     this.chunkedData = this.chunkByGroup(notes);
+    //     this.notes = notes;
+    //     console.log(notes);
+    //     console.log(this.chunkedData);
+    //   }, err => {
+    //     console.log('error')
+    //   }, () => {
+    //     this.dataLoaded = !this.dataLoaded;
+    //   })
+
+    this.noteService.getNotesByFighter(sampleFighter.name)
+    .then((snapshot) => {
+      const data = snapshot.docs.map(doc => {
+        return {
+          // id: doc.id,
+          ...doc.data() as Note
+        };
+      });
+      console.log("All data in 'notes' collection", data); 
+      this.notes = data;
+      this.dataLoaded = !this.dataLoaded;
+    }, error => {
+      console.log(error);
+      this.dataLoaded = !this.dataLoaded;
+    });
   }
 
   chunkByGroup(notes: Note[]) {

@@ -5,11 +5,11 @@
 <ion-content>
   <ion-list *ngIf="dataLoaded">
     <ng-container *ngIf="!notes.length">
-      <ion-item>
-        <ion-label>
-          No personal notes
-        </ion-label>
-      </ion-item>
+      <ion-slide>
+        <img src="https://raw.githubusercontent.com/ionic-team/ionic-docs/master/src/demos/api/slides/slide-4.png"/>
+        <h2>Ready to Play?</h2>
+        <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+      </ion-slide>
     </ng-container>    
     <ng-container #elseBlock *ngFor="let note of notes">
 
