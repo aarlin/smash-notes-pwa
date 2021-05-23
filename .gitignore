@@ -30,5 +30,6 @@ npm-debug.log*
 /plugins
 /www
 
-src/environments/firebase.environment.ts
-src/environments/firebase.prod.ts
+environment.prod.ts
+environment.ts
+.env

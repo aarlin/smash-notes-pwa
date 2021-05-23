@@ -5,8 +5,9 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "config": "ts-node ./src/assets/scripts/setEnv.ts",
+    "start": "npm run config -- --environment=dev && ng serve",
+    "build": "npm run config -- --environment=prod && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -47,6 +48,7 @@
     "@types/node": "^15.6.0",
     "@typescript-eslint/eslint-plugin": "4.24.0",
     "@typescript-eslint/parser": "4.24.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.27.0",
     "eslint-plugin-import": "2.23.3",
     "eslint-plugin-jsdoc": "34.8.2",
@@ -61,7 +63,8 @@
     "karma-jasmine-html-reporter": "^1.6.0",
     "protractor": "~7.0.0",
     "ts-node": "~9.1.1",
-    "typescript": "~4.2.4"
+    "typescript": "~4.2.4",
+    "yargs": "^17.0.1"
   },
   "description": "Note taking app for Super Smash Bros."
 }
