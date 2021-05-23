@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
+import { FeatureMatchupNoteComponent } from '../feature/feature-matchup-note/feature-matchup-note.component';
+import { NoteService } from '../services/note.service';
+import { Note } from '../shared/interface/note';
 
 @Component({
   selector: 'app-tabs',
@@ -14,7 +17,7 @@ export class TabsPage implements OnInit {
   notebookIcon: string;
   createIcon: string;
 
-  constructor(public actionSheetController: ActionSheetController) {}
+  constructor(public actionSheetController: ActionSheetController, private modalController: ModalController) {}
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/ico_top_g.svg';
@@ -44,7 +47,7 @@ export class TabsPage implements OnInit {
         text: 'Create Note',
         icon: 'trash',
         handler: () => {
-          console.log('Create Note clicked');
+          this.openNote();
         }
       }, {
         text: 'Create Notebook',
@@ -65,6 +68,20 @@ export class TabsPage implements OnInit {
 
     const { role } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+
+  async openNote() {
+    let newNote: Note;
+    const modal = await this.modalController.create({
+      component: FeatureMatchupNoteComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal',
+      componentProps: { 
+        note: newNote
+      }
+    });
+    return await modal.present();
   }
 
 }

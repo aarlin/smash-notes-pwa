@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Character {
   name: string;
@@ -35,7 +36,7 @@ export class FeatureToolbarComponent implements OnInit {
   portraitSize: PortraitSize = PortraitSize.THUMBNAIL_HORIZONTAL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.selectedPlayerImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
@@ -45,8 +46,9 @@ export class FeatureToolbarComponent implements OnInit {
   }
 
 
-  close() {
-
+  goHome() {
+    console.log('home')
+    this.router.navigateByUrl('login');
   }
 
   searchOpen() {

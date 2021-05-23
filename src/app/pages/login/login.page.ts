@@ -14,27 +14,27 @@ export class LoginPage implements OnInit {
   userForm: FormGroup;
   successMsg: string = '';
   errorMsg: string = '';
-  
+
 
   error_msg = {
     'email': [
-      { 
-        type: 'required', 
-        message: 'Provide email.' 
+      {
+        type: 'required',
+        message: 'Provide email.'
       },
-      { 
-        type: 'pattern', 
-        message: 'Email is not valid.' 
+      {
+        type: 'pattern',
+        message: 'Email is not valid.'
       }
     ],
     'password': [
-      { 
-        type: 'required', 
-        message: 'Password is required.' 
+      {
+        type: 'required',
+        message: 'Password is required.'
       },
-      { 
-        type: 'minlength', 
-        message: 'Password length should be 6 characters long.' 
+      {
+        type: 'minlength',
+        message: 'Password length should be 6 characters long.'
       }
     ]
   };
@@ -46,6 +46,8 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.checkIfLoggedIn();
+
     this.userForm = this.fb.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -56,6 +58,16 @@ export class LoginPage implements OnInit {
         Validators.required
       ])),
     });
+
+
+  }
+
+  checkIfLoggedIn() {
+    let user = this.authenticationService.userDetails();
+
+    if (user != null) {
+      this.router.navigateByUrl('dashboard');
+    }
   }
 
   signIn(value) {

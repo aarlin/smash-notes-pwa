@@ -2,16 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { Note } from '../shared/interface/note';
 
-interface Note {
-  id: number,
-  groupName: string,
-  player: string,
-  enemy: string,
-  title: string,
-  body: string,
-  enemyImage?: string
-}
 
 @Injectable()
 export class NoteService {

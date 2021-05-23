@@ -1,15 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
-
-interface Note {
-  id: number,
-  groupName: string,
-  player: string
-  enemy: string,
-  title: string,
-  body: string,
-  enemyImage?: string
-}
+import { Note } from '../../shared/interface/note';
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -27,8 +18,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   ngOnInit() {
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
-    this.playerIcon = `assets/stock-icons/svg/${this.note.player}.svg`
-    this.enemyIcon = `assets/stock-icons/svg/${this.note.enemy}.svg`;
+    this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
+    this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;

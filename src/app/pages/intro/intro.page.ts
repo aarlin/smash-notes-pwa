@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'smash-intro',
@@ -11,9 +12,15 @@ export class IntroPage implements OnInit {
     speed: 400
   };
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  goToDashboard() {
+    this.router.navigateByUrl('dashboard');
   }
 
   

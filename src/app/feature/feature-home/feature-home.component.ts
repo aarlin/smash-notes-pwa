@@ -2,17 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
-
-interface Note {
-  id: number,
-  groupName: string,
-  player: string,
-  enemy: string,
-  title: string,
-  body: string,
-  enemyImage?: string
-  playerImage?: string
-}
+import { Note } from '../../shared/interface/note';
 
 @Component({
   selector: 'smash-feature-home',

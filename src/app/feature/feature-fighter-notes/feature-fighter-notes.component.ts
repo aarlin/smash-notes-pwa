@@ -3,19 +3,10 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
+import { Note } from '../../shared/interface/note';
 
 interface Fighter {
   name?: string;
-}
-
-interface Note {
-  id: number,
-  groupName: string,
-  player: string,
-  enemy: string,
-  title: string,
-  body: string,
-  enemyImage?: string
 }
 
 interface ChunkedData {
