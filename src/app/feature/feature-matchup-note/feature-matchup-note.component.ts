@@ -23,14 +23,21 @@ export class FeatureMatchupNoteComponent implements OnInit {
   ngOnInit() {
     console.log(this.note);
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
-    // this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
-    // this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;
-    this.playerIcon = `assets/stock-icons/svg/captain_falcon.svg`
-    this.enemyIcon = `assets/stock-icons/svg/mii_swordfighter.svg`;
+    this.assignIcons();
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
+  }
+
+  assignIcons() {
+    this.note?.player ? 
+      this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg` :
+      this.playerIcon = `assets/navigation/ico_fighter_g.svg`;
+
+    this.note?.enemy ?
+      this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`:
+      this.enemyIcon = `assets/navigation/ico_fighter_g.svg`;
   }
 
   changeTitle(event) {
@@ -44,14 +51,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   changeEnemy() {
     this.note.enemy = 'mii_swordfighter';
-  }
-
-  dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    this.modalController.dismiss({
-      'dismissed': true
-    });
   }
 
   dismissModal() {
@@ -70,6 +69,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   saveNote() {
     console.log(this.note);
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
+    this.dismissModal();
   }
 
   updateNote(note) {

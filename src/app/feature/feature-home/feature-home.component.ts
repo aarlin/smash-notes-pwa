@@ -42,7 +42,6 @@ export class FeatureHomeComponent implements OnInit {
   getNotesByUser() {
     this.noteService.getNotesByUser().then((snapshot) => {
       const data = snapshot.docs.map(doc => {
-        console.log(doc);
         return {
           id: doc.id,
           ...doc.data() as Note
@@ -51,9 +50,12 @@ export class FeatureHomeComponent implements OnInit {
       console.log("All data in 'notes' collection for home", data);
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
+      console.log(this.dataLoaded);
     }, error => {
       console.log(error);
       this.dataLoaded = !this.dataLoaded;
+      console.log(this.dataLoaded);
+
     });
   }
 

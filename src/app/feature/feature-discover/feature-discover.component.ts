@@ -70,7 +70,6 @@ export class FeatureDiscoverComponent implements OnInit {
   getNotesByOthers(isFirstLoad, event) {
     this.noteService.getNotesByOthers().then((snapshot) => {
       const data = snapshot.docs.map(doc => {
-        console.log(doc);
         return {
           id: doc.id,
           ...doc.data() as Note
