@@ -1,12 +1,9 @@
+// Icons
+
 .sns-bnr__item--twitter .sns-bnr__btn-ico {
     background: #1b95e0;
     display: inline-block;
     fill: #FFF;
-}
-
-.sns-bnr__item--twitter .sns-bnr__body {
-    background: #1b95e0 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
-    background-size: 6px;
 }
 
 .sns-bnr__item--facebook .sns-bnr__btn-ico {
@@ -15,8 +12,59 @@
     fill: #FFF;
 }
 
+.sns-bnr__item--microsoft .sns-bnr__btn-ico {
+    background: #737373;
+    display: inline-block;
+}
+
+.sns-bnr__item--google .sns-bnr__btn-ico {
+    background: #fff;
+    border-color: #4285F4;
+    display: inline-block;
+    fill: #FFF;
+}
+
+.sns-bnr__item--github .sns-bnr__btn-ico {
+    background: #24292e;
+    display: inline-block;
+    fill: #FFF;
+}
+
+.sns-bnr__item--apple .sns-bnr__btn-ico {
+    background: black;
+    display: inline-block;
+    fill: #FFF;
+}
+
+// Body
+
+.sns-bnr__item--twitter .sns-bnr__body {
+    background: #1b95e0 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
 .sns-bnr__item--facebook .sns-bnr__body {
     background: #4267b2 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__item--microsoft .sns-bnr__body {
+    background: #737373 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__item--google .sns-bnr__body {
+    background: #4285F4 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__item--github .sns-bnr__body {
+    background: #24292e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__item--apple .sns-bnr__body {
+    background: black url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
     background-size: 6px;
 }
 
@@ -26,14 +74,13 @@
 }
 
 .sns-br__item {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    font-size: 62.5%;
+
     -webkit-font-smoothing: antialiased;
     font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
     list-style: none;
     box-sizing: border-box;
     margin-top: 0;
+    padding: 0.5rem;
 }
 
 .sns-bnr__btn {
@@ -93,9 +140,7 @@
 }
 
 .sns-bnr {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    font-size: 62.5%;
+
     -webkit-font-smoothing: antialiased;
     font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
     box-sizing: border-box;
@@ -103,5 +148,4 @@
     padding-left: 0;
     list-style: none;
     margin-left: 12%;
-    max-width: 314px;
 }
