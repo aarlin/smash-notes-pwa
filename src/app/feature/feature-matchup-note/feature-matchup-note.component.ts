@@ -14,8 +14,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
   backArrowIcon: string;
 
   @Input() note: Note;
+  @Input() update: boolean;
 
-  constructor(private modalController: ModalController, 
+  constructor(private modalController: ModalController,
     private actionSheetController: ActionSheetController,
     private noteService: NoteService) { }
 
@@ -36,15 +37,28 @@ export class FeatureMatchupNoteComponent implements OnInit {
       'dismissed': true
     });
   }
-  
+
   saveNote() {
     console.log(this.note);
-    this.noteService.createNote(this.note)
-      .then(response => {
-        console.log(response);
-      }, error => {
-        console.log(error);
-      })
+    this.update ? this.updateNote(this.note) : this.createNote(this.note);
+  }
+
+  updateNote(note) {
+    this.noteService.updateNote(note)
+    .then(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  createNote(note) {
+    this.noteService.createNote(note)
+    .then(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    })
   }
 
   async presentActionSheet() {

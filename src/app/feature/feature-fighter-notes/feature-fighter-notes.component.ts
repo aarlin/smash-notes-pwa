@@ -68,7 +68,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     .then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
-          // id: doc.id,
+          id: doc.id,
           ...doc.data() as Note
         };
       });

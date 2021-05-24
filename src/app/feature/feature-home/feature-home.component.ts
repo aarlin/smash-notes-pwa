@@ -38,7 +38,7 @@ export class FeatureHomeComponent implements OnInit {
       const data = snapshot.docs.map(doc => {
         console.log(doc);
         return {
-          // id: doc.id,
+          id: doc.id,
           ...doc.data() as Note
         };
       });
@@ -58,7 +58,8 @@ export class FeatureHomeComponent implements OnInit {
       backdropDismiss: true,
       cssClass: 'character-select-modal',
       componentProps: {
-        note: note
+        note: note,
+        update: true
       }
     });
     return await modal.present();

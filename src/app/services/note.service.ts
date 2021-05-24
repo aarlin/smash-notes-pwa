@@ -21,12 +21,15 @@ export class NoteService {
   }
 
   async createNote(note: any) {
-    let uid = await this.authenticationService.getUid();
+    console.log('create', note);
+
+    const uid = await this.authenticationService.getUid();
+    const id = this.firestore.createId();
 
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("notes")
-        .add({ uid, ...note })
+        .add({ id, uid, ...note })
         .then(res => console.log(res), err => reject(err));
     });
   }
@@ -57,16 +60,17 @@ export class NoteService {
   }
 
   updateNote(note: any) {
+    console.log('update', note);
     return this.firestore
       .collection("notes")
-      .doc(note.payload.doc.id)
+      .doc(note.id)
       .set({ completed: true }, { merge: true });
   }
 
   deleteNote(note: any) {
     return this.firestore
       .collection("notes")
-      .doc(note.payload.doc.id)
+      .doc(note.id)
       .delete();
   }
 }

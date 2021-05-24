@@ -72,7 +72,7 @@ export class FeatureDiscoverComponent implements OnInit {
       const data = snapshot.docs.map(doc => {
         console.log(doc);
         return {
-          // id: doc.id,
+          id: doc.id,
           ...doc.data() as Note
         };
       });
