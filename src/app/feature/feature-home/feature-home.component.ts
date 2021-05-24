@@ -42,7 +42,7 @@ export class FeatureHomeComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection", data); 
+      console.log("All data in 'notes' collection for home", data); 
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
     }, error => {

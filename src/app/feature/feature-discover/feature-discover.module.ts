@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FeatureDiscoverComponent } from './feature-discover.component';
+import { NoteService } from 'src/app/services/note.service';
 
 
 
@@ -11,6 +12,7 @@ import { FeatureDiscoverComponent } from './feature-discover.component';
     CommonModule,
     IonicModule
   ],
-  exports: [FeatureDiscoverComponent]
+  exports: [FeatureDiscoverComponent],
+  providers: [NoteService]
 })
 export class FeatureDiscoverModule { }

@@ -8,7 +8,7 @@
       <ion-label>Enemies</ion-label>
     </ion-segment-button>
   </ion-segment>
-  
+
   <ion-item *ngFor="let block of discovery; index as position">
     <ion-thumbnail slot="start">
       <ion-img [src]="block.svg"></ion-img>
@@ -17,5 +17,30 @@
       <h2>{{block.name}}</h2>
     </ion-label>
   </ion-item>
+
+
+  <ion-list>
+    <ion-item (click)="openNote(note)" *ngFor="let note of notes">
+      <ion-avatar slot="start">
+        <img src={{note.playerImage}}>
+      </ion-avatar>
+      <ion-avatar slot="end">
+        <img src={{note.enemyImage}}>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{note.title}}</h2>
+        <p>{{note.body}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
   
 </ion-content>

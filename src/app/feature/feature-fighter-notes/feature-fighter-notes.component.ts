@@ -72,7 +72,7 @@ export class FeatureFighterNotesComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection", data); 
+      console.log("All data in 'notes' collection for fighter: ", sampleFighter.name, data); 
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
     }, error => {

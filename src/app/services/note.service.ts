@@ -48,6 +48,14 @@ export class NoteService {
       .get();
   }
 
+  async getNotesByOthers() {
+    let uid = await this.authenticationService.getUid();
+
+    return this.firestore.collection("notes").ref
+      .where('uid', '!=', uid)
+      .get();
+  }
+
   updateNote(note: any) {
     return this.firestore
       .collection("notes")

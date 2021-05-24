@@ -16,6 +16,6 @@ import { FeatureFloatingActionModule } from '../feature/feature-floating-action/
     TabsPageRoutingModule,
     FeatureFloatingActionModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage],
 })
 export class TabsPageModule {}

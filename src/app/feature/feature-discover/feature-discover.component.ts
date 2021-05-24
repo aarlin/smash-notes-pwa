@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { NoteService } from 'src/app/services/note.service';
+import { Note } from 'src/app/shared/interface/note';
+import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 interface Discover {
   name: string,
@@ -15,6 +19,10 @@ interface Discover {
 })
 export class FeatureDiscoverComponent implements OnInit {
   
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+
+  public dataLoaded: boolean;
+  public notes: Note[] = [];
 
   discovery: Discover[] = [
     {
@@ -34,16 +42,69 @@ export class FeatureDiscoverComponent implements OnInit {
 
   ]
 
-  constructor() { }
+  constructor(private noteService: NoteService, private modalController: ModalController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getNotesByOthers(false, "");
+  }
 
   discover() {
     console.log('discover')
   }
 
+  loadData(event) {
+    // setTimeout(() => {
+      // console.log('Done');
+      // event.target.complete();
+
+      this.getNotesByOthers(true, event);
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      // if (data.length == 1000) {
+        // event.target.disabled = true;
+      // }
+    // }, 500);
+  }
+
+  getNotesByOthers(isFirstLoad, event) {
+    this.noteService.getNotesByOthers().then((snapshot) => {
+      const data = snapshot.docs.map(doc => {
+        console.log(doc);
+        return {
+          // id: doc.id,
+          ...doc.data() as Note
+        };
+      });
+      console.log("All data discovered in 'notes' collection", data); 
+      this.notes = [...data, ...this.notes];
+      this.dataLoaded = !this.dataLoaded;
+
+      if (isFirstLoad) {
+        event.target.complete();
+      }
+
+    }, error => {
+      console.log(error);
+      this.dataLoaded = !this.dataLoaded;
+    });
+  }
+
   testClick() {
     
+  }
+
+  async openNote(note: Note) {
+    const modal = await this.modalController.create({
+      component: FeatureMatchupNoteComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal',
+      componentProps: {
+        note: note
+      }
+    });
+    return await modal.present();
   }
 
   segmentChanged(ev: any) {
