@@ -1,0 +1,66 @@
+.sns-br__item {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.sns-bnr__btn {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: inherit;
+    outline: 0;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+.sns-bnr__body {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    list-style: none;
+    color: inherit;
+    box-sizing: border-box;
+    display: block;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    position: relative;
+    margin-left: 2px;
+    background: #1b95e0 url("assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__label {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0.93);
+    width: 100%;
+    font-size: 12px;
+}
