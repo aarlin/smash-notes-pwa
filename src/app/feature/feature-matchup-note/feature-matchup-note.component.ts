@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
-import { Note } from '../../shared/interface/note';
+import { Note } from '../../shared/interface/note.interface';
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -22,12 +22,27 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   ngOnInit() {
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
-    this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
-    this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;
+    // this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
+    // this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;
+    this.playerIcon = `assets/stock-icons/svg/captain_falcon.svg`
+    this.enemyIcon = `assets/stock-icons/svg/mii_swordfighter.svg`;
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
+  }
+
+  changeTitle(event) {
+    console.log(event);
+    this.note.title = event.target.value
+  }
+
+  changePlayer() {
+    this.note.player = 'captain_falcon';
+  }
+
+  changeEnemy() {
+    this.note.enemy = 'mii_swordfighter';
   }
 
   dismiss() {
@@ -37,6 +52,19 @@ export class FeatureMatchupNoteComponent implements OnInit {
       'dismissed': true
     });
   }
+
+  dismissModal() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
+
+  // select one least one character
+  // does not require title, note
+  // category??
+
 
   saveNote() {
     console.log(this.note);

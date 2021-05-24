@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
-import { Note } from 'src/app/shared/interface/note';
+import { Note } from 'src/app/shared/interface/note.interface';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 interface Discover {

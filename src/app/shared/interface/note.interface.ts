@@ -1,5 +1,5 @@
 export interface Note {
-    id: number,
+    id?: string | number,
     groupName: string,
     player: string,
     enemy: string,

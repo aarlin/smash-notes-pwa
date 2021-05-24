@@ -1,7 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
-import { Note } from 'src/app/shared/interface/note';
+import { Note as NoteInterface } from 'src/app/shared/interface/note.interface';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
+
+class Note implements NoteInterface {
+  groupName: string;
+  player: string;
+  enemy: string;
+  title: string;
+  body: string;
+  enemyImage?: string;
+  playerImage?: string;
+  visible?: boolean;
+}
 
 @Component({
   selector: 'smash-feature-tabs',
@@ -71,7 +82,8 @@ export class FeatureTabsComponent implements OnInit {
   }
 
   async openNote() {
-    let newNote: Note;
+    let newNote: Note = new Note();
+    console.log(newNote);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,

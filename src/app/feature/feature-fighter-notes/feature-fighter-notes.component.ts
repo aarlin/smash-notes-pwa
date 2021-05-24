@@ -3,7 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
-import { Note } from '../../shared/interface/note';
+import { Note } from '../../shared/interface/note.interface';
 
 interface Fighter {
   name?: string;

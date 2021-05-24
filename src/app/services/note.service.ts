@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { Note } from '../shared/interface/note';
+import { Note } from '../shared/interface/note.interface';
 import { AuthenicationService } from './authentication-service';
 
 
@@ -25,7 +25,6 @@ export class NoteService {
 
     const uid = await this.authenticationService.getUid();
     const id = this.firestore.createId();
-
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("notes")
