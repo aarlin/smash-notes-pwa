@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import { FeatureFloatingActionModule } from '../feature/feature-floating-action/feature-floating-action.module';
+import { FeatureTabsModule } from '../feature/feature-tabs/feature-tabs.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { FeatureFloatingActionModule } from '../feature/feature-floating-action/
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    FeatureFloatingActionModule
+    FeatureFloatingActionModule,
+    FeatureTabsModule
   ],
   declarations: [TabsPage],
 })
