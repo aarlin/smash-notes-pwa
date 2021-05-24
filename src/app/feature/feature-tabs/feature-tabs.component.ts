@@ -27,6 +27,7 @@ export class FeatureTabsComponent implements OnInit {
   fighterIcon: string;
   notebookIcon: string;
   createIcon: string;
+  settingsIcon: string;
 
   constructor(public actionSheetController: ActionSheetController, private modalController: ModalController) {}
 
@@ -36,6 +37,7 @@ export class FeatureTabsComponent implements OnInit {
     this.fighterIcon = 'assets/navigation/ico_fighter_g.svg';
     this.notebookIcon = 'assets/navigation/ico_blog_g.svg';
     this.createIcon = 'assets/navigation/plus-square-outline.svg';
+    this.settingsIcon = 'assets/navigation/settings.svg';
   }
 
   getChosenFighter(fighter: string) {

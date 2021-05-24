@@ -35,6 +35,7 @@ export class NoteService {
 
   async getNotesByUser() {
     let uid = await this.authenticationService.getUid();
+    console.log(uid);
 
     return this.firestore.collection("notes").ref
       .where('uid', '==', uid)

@@ -9,6 +9,7 @@ import { Tab4PageRoutingModule } from './tab4-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureNotebooksModule } from 'src/app/feature/feature-notebooks/feature-notebooks.module';
 import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
+import { FeatureSettingsModule } from 'src/app/feature/feature-settings/feature-settings.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directi
     FeatureNotebooksModule,
     SharedDirectivesModule,
     FeatureToolbarModule,
-    Tab4PageRoutingModule
+    Tab4PageRoutingModule,
+    FeatureSettingsModule
   ],
   declarations: [Tab4Page]
 })

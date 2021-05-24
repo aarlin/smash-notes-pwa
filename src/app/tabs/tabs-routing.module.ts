@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'tab4',
-        loadChildren: () => import('./tab-notebook/tab4.module').then(m => m.Tab4PageModule)
+        loadChildren: () => import('./tab-settings/tab4.module').then(m => m.Tab4PageModule)
       },
       {
         path: '',
