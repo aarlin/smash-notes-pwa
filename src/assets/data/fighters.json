@@ -33,12 +33,6 @@
         ]
     },
     {
-        "name": "charizard",
-        "appearsIn": [
-            "ssb4"
-        ]
-    },
-    {
         "name": "chrom",
         "appearsIn": [
             "ssbu"
@@ -586,6 +580,60 @@
         "appearsIn": [
             "ssbb",
             "ssb4",
+            "ssbu"
+        ]
+    },
+    {
+        "name": "packun_flower",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "homura",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "sephiroth",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "steve",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "minmin",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "byleth",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "terry",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "banjo_and_kazooie",
+        "appearsIn": [
+            "ssbu"
+        ]
+    },
+    {
+        "name": "dq_hero",
+        "appearsIn": [
             "ssbu"
         ]
     }

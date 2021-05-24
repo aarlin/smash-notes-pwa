@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'tab3',
-        loadChildren: () => import('./tab-fighter/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('./tab-fighters/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: 'tab4',

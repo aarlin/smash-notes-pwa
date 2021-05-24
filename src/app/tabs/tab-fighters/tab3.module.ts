@@ -8,6 +8,7 @@ import { Tab3Page } from './tab3.page';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-toolbar.module';
 import { FeatureFighterNotesModule } from 'src/app/feature/feature-fighter-notes/feature-fighter-notes.module';
+import { FeatureNotebooksModule } from 'src/app/feature/feature-notebooks/feature-notebooks.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FeatureFighterNotesModule } from 'src/app/feature/feature-fighter-notes
     FeatureFighterNotesModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
+    FeatureNotebooksModule,
   ],
   declarations: [Tab3Page]
 })

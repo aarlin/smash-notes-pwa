@@ -5,7 +5,7 @@
         <ion-icon [src]="homeIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-label *ngIf="!searchBarEnabled">Smash Notes</ion-label>
+    <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
     <ion-searchbar *ngIf="searchBarEnabled" type="text" placeholder="Search text" clearInput>
     </ion-searchbar>
     <ion-buttons slot="end">
@@ -21,7 +21,7 @@
 
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
 
-  <ion-virtual-scroll [items]="fighters">
+  <!-- <ion-virtual-scroll [items]="fighters">
     <ion-item *virtualItem="let fighter">
       <ion-card>
         <ion-card-header>
@@ -33,6 +33,17 @@
         </ion-card-content>
       </ion-card>
     </ion-item>
-  </ion-virtual-scroll>
+  </ion-virtual-scroll> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let fighter of fighters" size-xl="3" size-lg="4" size-md="6" size-sm="12" size="12">
+        <ion-item (click)="loadFighterPage(fighter)">
+          <ion-img src={{fighter.stockIcon}}></ion-img>
+          <ion-card-subtitle class="fighter-notebook">{{fighter.name | normalizeName }}</ion-card-subtitle>
+          <ion-badge color="primary">11</ion-badge>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
@@ -33,6 +33,8 @@ export class FeatureFighterNotesComponent implements OnInit {
   chunkedData: ChunkedData;
 
   homeIcon: string;
+
+  @Input() fighter: Fighter;
 
   sampleFighter: Fighter = { name: 'homura' }
 
