@@ -21,6 +21,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     private noteService: NoteService) { }
 
   ngOnInit() {
+    console.log(this.note);
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     // this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
     // this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;

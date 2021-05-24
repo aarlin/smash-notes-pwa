@@ -56,6 +56,7 @@ export class NoteService {
 
     return this.firestore.collection("notes").ref
       .where('uid', '!=', uid)
+      .where('visible', '==', true)
       .get();
   }
 
