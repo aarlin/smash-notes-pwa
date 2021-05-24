@@ -37,14 +37,49 @@
   <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
   <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button>
 
-  <li class="sns-bnr__item sns-bnr__item--twitter"><a href="https://twitter.com/NintendoVS"
-      class="sns-bnr__btn js-twitterModal" target="_blank"><span class="sns-bnr__btn-ico"><i
-          class="sns-bnr__sns-ico"><svg class="sns-bnr__twitter" role="img" title="twitter">
-            <use xlink:href="/assets_v2/img/common/sprite.svg#box-twitter"></use>
-          </svg></i></span><span class="sns-bnr__body"><span class="sns-bnr__label">Official Twitter Account</span><i
-          class="sns-bnr__arrow"><svg role="img" title="">
-            <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-          </svg></i></span></a></li>
+  <ul class="sns-bnr">
+    <li class="sns-bnr__item sns-bnr__item--twitter">
+       <a href="https://twitter.com/NintendoVS" class="sns-bnr__btn js-twitterModal" target="_blank">
+          <span class="sns-bnr__btn-ico">
+             <i class="sns-bnr__sns-ico">
+                <!-- <svg class="sns-bnr__twitter" role="img" title="twitter">
+                  <use xlink:href="/assets/navigation/login/twitter.svg"></use>
+                </svg> -->
+                <ion-img class="sns-bnr__twitter" src="assets/navigation/login/twitter.svg"></ion-img>
+
+             </i>
+          </span>
+          <span class="sns-bnr__body">
+             <span class="sns-bnr__label">Official Twitter Account</span>
+             <!-- <i class="sns-bnr__arrow">
+                <svg role="img" title="">
+                   <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                </svg>
+             </i> -->
+          </span>
+       </a>
+    </li>
+    <li class="sns-bnr__item sns-bnr__item--facebook">
+       <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+          <span class="sns-bnr__btn-ico">
+             <i class="sns-bnr__sns-ico">
+                <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                   <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                </svg> -->
+                <ion-img class="sns-bnr__facebook" src="assets/navigation/login/facebook.svg"></ion-img>
+             </i>
+          </span>
+          <span class="sns-bnr__body">
+             <span class="sns-bnr__label">Official Facebook Account</span>
+             <!-- <i class="sns-bnr__arrow">
+                <svg role="img" title="">
+                   <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                </svg>
+             </i> -->
+          </span>
+       </a>
+    </li>
+ </ul>
 
 
 

@@ -1,3 +1,30 @@
+.sns-bnr__item--twitter .sns-bnr__btn-ico {
+    background: #1b95e0;
+    display: inline-block;
+    fill: #FFF;
+}
+
+.sns-bnr__item--twitter .sns-bnr__body {
+    background: #1b95e0 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__item--facebook .sns-bnr__btn-ico {
+    background: #4267b2;
+    display: inline-block;
+    fill: #FFF;
+}
+
+.sns-bnr__item--facebook .sns-bnr__body {
+    background: #4267b2 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-size: 6px;
+}
+
+.sns-bnr__label {
+    width: 100%;
+    font-size: 12px;
+}
+
 .sns-br__item {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -41,7 +68,7 @@
     flex: 1 1 auto;
     position: relative;
     margin-left: 2px;
-    background: #1b95e0 url("assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background: #1b95e0 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
     background-size: 6px;
 }
 
@@ -63,4 +90,18 @@
     transform: translateY(-50%) scaleX(0.93);
     width: 100%;
     font-size: 12px;
+}
+
+.sns-bnr {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-left: 12%;
+    max-width: 314px;
 }
