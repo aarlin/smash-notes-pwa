@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
-import { Note } from '../../shared/interface/note';
+import { Note } from '../../shared/interface/note.interface';
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -14,37 +14,80 @@ export class FeatureMatchupNoteComponent implements OnInit {
   backArrowIcon: string;
 
   @Input() note: Note;
+  @Input() update: boolean;
 
-  constructor(private modalController: ModalController, 
+  constructor(private modalController: ModalController,
     private actionSheetController: ActionSheetController,
     private noteService: NoteService) { }
 
   ngOnInit() {
+    console.log(this.note);
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
-    this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg`
-    this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`;
+    this.assignIcons();
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
   }
 
-  dismiss() {
+  assignIcons() {
+    this.note?.player ? 
+      this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg` :
+      this.playerIcon = `assets/navigation/ico_fighter_g.svg`;
+
+    this.note?.enemy ?
+      this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`:
+      this.enemyIcon = `assets/navigation/ico_fighter_g.svg`;
+  }
+
+  changeTitle(event) {
+    console.log(event);
+    this.note.title = event.target.value
+  }
+
+  changePlayer() {
+    this.note.player = 'captain_falcon';
+  }
+
+  changeEnemy() {
+    this.note.enemy = 'mii_swordfighter';
+  }
+
+  dismissModal() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
       'dismissed': true
     });
   }
-  
+
+  // select one least one character
+  // does not require title, note
+  // category??
+
+
   saveNote() {
     console.log(this.note);
-    this.noteService.createNote(this.note)
-      .then(response => {
-        console.log(response);
-      }, error => {
-        console.log(error);
-      })
+    this.update ? this.updateNote(this.note) : this.createNote(this.note);
+    this.dismissModal();
+  }
+
+  updateNote(note) {
+    this.noteService.updateNote(note)
+    .then(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  createNote(note) {
+    this.noteService.createNote(note)
+    .then(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    })
   }
 
   async presentActionSheet() {

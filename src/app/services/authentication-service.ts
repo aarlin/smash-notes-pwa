@@ -56,11 +56,14 @@ export class AuthenicationService {
   getUid() {
     return new Promise<any>((resolve, reject) => {
       this.userDetails().subscribe(response => {
+        console.log(response);
         if (response !== null) {
           resolve(response.uid);
+        } else {
+          resolve('')
         }
       }, error => {
-        reject();
+        resolve('');
         console.log(error);
       })
     })

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { Note } from '../shared/interface/note';
+import { Note } from '../shared/interface/note.interface';
 import { AuthenicationService } from './authentication-service';
 
 
@@ -21,18 +21,21 @@ export class NoteService {
   }
 
   async createNote(note: any) {
-    let uid = await this.authenticationService.getUid();
+    console.log('create', note);
 
+    const uid = await this.authenticationService.getUid();
+    const id = this.firestore.createId();
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("notes")
-        .add({ uid, ...note })
+        .add({ id, uid, ...note })
         .then(res => console.log(res), err => reject(err));
     });
   }
 
   async getNotesByUser() {
     let uid = await this.authenticationService.getUid();
+    console.log(uid);
 
     return this.firestore.collection("notes").ref
       .where('uid', '==', uid)
@@ -50,23 +53,26 @@ export class NoteService {
 
   async getNotesByOthers() {
     let uid = await this.authenticationService.getUid();
+    console.log('uid', uid)
 
     return this.firestore.collection("notes").ref
       .where('uid', '!=', uid)
+      .where('visible', '==', true)
       .get();
   }
 
   updateNote(note: any) {
+    console.log('update', note);
     return this.firestore
       .collection("notes")
-      .doc(note.payload.doc.id)
+      .doc(note.id)
       .set({ completed: true }, { merge: true });
   }
 
   deleteNote(note: any) {
     return this.firestore
       .collection("notes")
-      .doc(note.payload.doc.id)
+      .doc(note.id)
       .delete();
   }
 }

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
-import { Note } from '../../shared/interface/note';
+import { Note } from '../../shared/interface/note.interface';
+import { NavigationEnd, Router } from '@angular/router';
 
 interface Fighter {
   name?: string;
@@ -33,7 +34,14 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   homeIcon: string;
 
-  constructor(public alertController: AlertController, public modalController: ModalController, private noteService: NoteService) { }
+  @Input() fighter: Fighter;
+
+  sampleFighter: Fighter = { name: 'homura' }
+
+
+  constructor(public alertController: AlertController, 
+    public modalController: ModalController,
+    private noteService: NoteService, private router: Router) { }
 
   async presentModal() {
     const modal = await this.modalController.create({
@@ -49,8 +57,7 @@ export class FeatureFighterNotesComponent implements OnInit {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
 
-    let sampleFighter: Fighter = { name: 'homura' }
-    this.setBackgroundImage(sampleFighter);
+    this.setBackgroundImage(this.sampleFighter);
 
     // this.noteService.load()
     //   .subscribe((notes: Note[]) => {
@@ -64,15 +71,24 @@ export class FeatureFighterNotesComponent implements OnInit {
     //     this.dataLoaded = !this.dataLoaded;
     //   })
 
-    this.noteService.getNotesByFighter(sampleFighter.name)
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.getNotesByFighter(this.sampleFighter.name);
+      }
+    });
+
+  }
+
+  getNotesByFighter(fighterName) {
+    this.noteService.getNotesByFighter(fighterName)
     .then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
-          // id: doc.id,
+          id: doc.id,
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection for fighter: ", sampleFighter.name, data); 
+      console.log("All data in 'notes' collection for fighter: ", fighterName.name, data); 
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
     }, error => {

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
 
 interface Fighter {
@@ -34,7 +35,7 @@ export class FeatureNotebooksComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
-    this.fighterService.load(this.pageToLoadNext, this.pageSize)
+    this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
         console.log(fighters);
 
@@ -51,6 +52,19 @@ export class FeatureNotebooksComponent implements OnInit {
       });
   }
 
+  async loadFighterPage(fighter: Fighter) {
+    const modal = await this.modalController.create({
+      component: FeatureFighterNotesComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal',
+      componentProps: { 
+        fighter
+      }
+    });
+    return await modal.present();
+  }
+
   loadData(event) {
     setTimeout(() => {
       console.log('Done');
@@ -63,7 +77,7 @@ export class FeatureNotebooksComponent implements OnInit {
   }
 
   loadMoreFighters(): void {
-    this.fighterService.load(this.pageToLoadNext, this.pageSize)
+    this.fighterService.loadPartial(this.pageToLoadNext, this.pageSize)
       .subscribe((fighters: Fighter[]) => {
         this.pageToLoadNext++;
         const loadedFighters: Fighter[] = fighters.map(fighter => {

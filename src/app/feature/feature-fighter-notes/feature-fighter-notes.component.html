@@ -42,24 +42,6 @@
       </ion-item>
     </ion-virtual-scroll>
 
-    <!-- <ion-list *ngIf="dataLoaded" >
-      <ng-container *ngFor="let data of chunkedData | keyvalue">
-        <ion-list-header>
-          {{data.key}}
-        </ion-list-header>
-
-        <ion-item (click)="openNote(singleNote)" *ngFor="let singleNote of data.value">
-          <ion-avatar slot="start">
-            <img src={{singleNote.enemyImage}}>
-          </ion-avatar>
-          <ion-label>
-            <h2>{{singleNote.title}}</h2>
-            <p>{{singleNote.body}}</p>
-          </ion-label>
-        </ion-item>
-      </ng-container>
-    </ion-list> -->
-
     <ion-list *ngIf="!dataLoaded">
       <ng-container *ngFor="let skeletonRow of [].constructor(10)">
         <ion-list-header>

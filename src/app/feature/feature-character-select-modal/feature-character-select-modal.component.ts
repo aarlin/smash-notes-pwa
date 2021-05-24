@@ -36,7 +36,7 @@ export class FeatureCharacterSelectModalComponent  {
     this.searching = true;
     this.fighterIcon = 'assets/navigation/ico_fighter_g.svg';
 
-    this.fighterService.load(this.pageToLoadNext, this.pageSize)
+    this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
         this.fighters = fighters.map(fighter => {
           fighter.url = `assets/stock-icons/svg/${fighter.name}.svg`;

@@ -26,3 +26,11 @@ https://codecanyon.net/item/ionic-grocery-ionic-5-angular-ui-theme-template-app-
 https://itnext.io/github-actions-hide-and-set-angular-environment-variables-e753d06d16a8
 
 https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
+
+
+# Todos
+
+- [ ] ion router outlet, 
+- [ ] ion nav link
+- [ ] ion backdrop
+- [ ] ion item sliding

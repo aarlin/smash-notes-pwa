@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
-import { Note } from 'src/app/shared/interface/note';
+import { Note } from 'src/app/shared/interface/note.interface';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 interface Discover {
@@ -70,9 +70,8 @@ export class FeatureDiscoverComponent implements OnInit {
   getNotesByOthers(isFirstLoad, event) {
     this.noteService.getNotesByOthers().then((snapshot) => {
       const data = snapshot.docs.map(doc => {
-        console.log(doc);
         return {
-          // id: doc.id,
+          id: doc.id,
           ...doc.data() as Note
         };
       });

@@ -23,7 +23,7 @@ export class FighterService {
 
   constructor(private http: HttpClient) {}
 
-  load(page: number, pageSize: number): Observable<Character[]> {
+  loadPartial(page: number, pageSize: number): Observable<Character[]> {
     const startIndex = ((page - 1) % TOTAL_PAGES) * pageSize;
 
     if (page < TOTAL_PAGES + 1) {
@@ -34,5 +34,10 @@ export class FighterService {
         delay(1500),
       );
     }
+  }
+
+  loadAll(): Observable<Character[]> {
+    return this.http
+      .get<Character[]>('assets/data/fighters.json')
   }
 }
