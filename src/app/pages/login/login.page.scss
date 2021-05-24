@@ -13,7 +13,7 @@
 }
 
 .sns-bnr__item--microsoft .sns-bnr__btn-ico {
-    background: #737373;
+    background: #2f2f2f;
     display: inline-block;
 }
 
@@ -49,8 +49,9 @@
 }
 
 .sns-bnr__item--microsoft .sns-bnr__body {
-    background: #737373 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background: #2f2f2f url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
     background-size: 6px;
+    border: 1px #8c8c8c
 }
 
 .sns-bnr__item--google .sns-bnr__body {
@@ -74,20 +75,12 @@
 }
 
 .sns-br__item {
-
-    -webkit-font-smoothing: antialiased;
-    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
-    list-style: none;
-    box-sizing: border-box;
-    margin-top: 0;
-    padding: 0.5rem;
+    display: block;
+    height: 1rem;
 }
 
 .sns-bnr__btn {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    font-size: 62.5%;
-    -webkit-font-smoothing: antialiased;
+
     font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
     list-style: none;
     box-sizing: border-box;
@@ -99,6 +92,24 @@
     overflow: hidden;
     position: relative;
     text-decoration: none;
+    :hover {
+        ::before {
+            display: block;
+            -webkit-transition: top,.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: top,.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+            -webkit-transform: skewY(-29deg);
+            transform: skewY(-29deg);
+            position: absolute;
+            top: -350px;
+            left: 0;
+            background-color: rgba(255,255,255,0.15);
+            content: "";
+            width: 100%;
+            height: 260px;
+            z-index: 1;
+        }
+
+    }
 }
 
 .sns-bnr__body {
@@ -140,10 +151,6 @@
 }
 
 .sns-bnr {
-
-    -webkit-font-smoothing: antialiased;
-    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
-    box-sizing: border-box;
     margin: 0;
     padding-left: 0;
     list-style: none;
