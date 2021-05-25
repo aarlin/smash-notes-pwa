@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, PickerController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 
@@ -46,7 +47,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   constructor(private modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private noteService: NoteService, private pickerController: PickerController) { }
+    private noteService: NoteService, private pickerController: PickerController, private fighterImagePipe: FighterImagePipe) { }
 
   ngOnInit() {
     console.log(this.note);
@@ -112,6 +113,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       this.enemyIcon = `assets/navigation/ico_fighter_g.svg`;
   }
 
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '');
+  }
+
   changeTitle(event) {
     console.log(event);
     this.note.title = event.target.value
@@ -127,7 +132,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
-        this.note.player = modelData.data.fighter
+        this.note.player = modelData.data.fighter.name
         this.assignIcons();
       }
     });
@@ -146,7 +151,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
-        this.note.enemy = modelData.data.fighter
+        this.note.enemy =  modelData.data.fighter.name
         this.assignIcons();
       }
     });

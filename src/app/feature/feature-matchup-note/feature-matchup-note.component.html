@@ -16,11 +16,11 @@
 
   <div class="versus-container">
     <ion-avatar (click)="changePlayer()" slot="start">
-      <img [src]="playerIcon">
+      <img [src]="loadFighterImage(note?.player)">
     </ion-avatar>
 
     <ion-avatar (click)="changeEnemy()" slot="end">
-      <img [src]="enemyIcon">
+      <img [src]="loadFighterImage(note?.enemy)">
     </ion-avatar>
   </div>
 
