@@ -16,7 +16,6 @@ export class NormalizeNamePipe implements PipeTransform {
   }
 
   private internationalize = (s) => {
-    console.log(s);
     const englishNames = {
       'homura': 'Pyra / Mythra',
       'packun_flower': 'piranha_plant',
