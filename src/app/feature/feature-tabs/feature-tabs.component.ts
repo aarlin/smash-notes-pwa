@@ -58,13 +58,13 @@ export class FeatureTabsComponent implements OnInit {
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'Create Note',
-        icon: 'trash',
+        icon: 'duplicate-outline',
         handler: () => {
           this.openNote();
         }
       }, {
         text: 'Create Notebook',
-        icon: 'share',
+        icon: 'folder-outline',
         handler: () => {
           console.log('Create Notebook clicked');
         }

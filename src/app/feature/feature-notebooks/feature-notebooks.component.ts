@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
 
@@ -31,7 +32,9 @@ export class FeatureNotebooksComponent implements OnInit {
 
   searchBarEnabled = false;
 
-  constructor(private fighterService: FighterService, private modalController: ModalController) { }
+  constructor(private fighterService: FighterService,
+      private modalController: ModalController,
+      private fighterImagePipe: FighterImagePipe) { }
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
@@ -46,7 +49,8 @@ export class FeatureNotebooksComponent implements OnInit {
           return fighter;
         });
         let allFighterNotebook = { 
-          name: 'All Fighters'
+          name: 'All Fighters',
+          stockIcon: 'assets/navigation/ico_fighter_g.svg'
         }
         this.fighters = [allFighterNotebook, ...this.fighters]
       });
@@ -63,6 +67,10 @@ export class FeatureNotebooksComponent implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  loadFighterImage(fighter: Fighter) {
+    return this.fighterImagePipe.transform(fighter.name, '')
   }
 
   loadData(event) {

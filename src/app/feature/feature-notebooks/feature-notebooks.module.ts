@@ -6,6 +6,7 @@ import { FighterService } from 'src/app/services/fighter.service';
 import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
 import { FilterModalModule } from '../feature-filter-select/filter-modal.module';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
     FeatureNotebooksComponent
   ],
   providers: [
-    FighterService
+    FighterService,
+    FighterImagePipe
   ]
 })
 export class FeatureNotebooksModule { }
