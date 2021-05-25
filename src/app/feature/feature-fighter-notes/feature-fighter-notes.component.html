@@ -5,7 +5,7 @@
         <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-label>Fighter Name</ion-label>
+    <ion-label>{{fighter?.name | normalizeName}}</ion-label>
     <ion-buttons slot="end">
       <ion-button (click)="close()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
