@@ -56,8 +56,9 @@ export class FeatureFighterNotesComponent implements OnInit {
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
-
-    this.setBackgroundImage(this.sampleFighter);
+    
+    this.setSeriesIcon(this.fighter);
+    this.setBackgroundImage(this.fighter);
 
     // this.noteService.load()
     //   .subscribe((notes: Note[]) => {
@@ -114,6 +115,15 @@ export class FeatureFighterNotesComponent implements OnInit {
     this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg")`;
     this.background = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg`;
     this.fighterImage = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/main.png`;
+
+    if (fighter.name.includes('mii')) {
+      this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/mii_fighter/bg.jpg")`
+      this.background = `https://www.smashbros.com/assets_v2/img/fighter/mii_fighter/bg.jpg`;
+    }
+  }
+
+  setSeriesIcon(fighter: Fighter) {
+    this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
   }
 
   close() {
