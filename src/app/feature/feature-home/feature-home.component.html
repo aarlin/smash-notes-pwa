@@ -15,10 +15,10 @@
 
       <ion-item (click)="openNote(note)">
         <ion-avatar slot="start">
-          <img src={{note.playerImage}}>
+          <img [src]="loadFighterImage(note?.player)">
         </ion-avatar>
         <ion-avatar slot="end">
-          <img src={{note.enemyImage}}>
+          <img [src]="loadFighterImage(note?.enemy)">
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>

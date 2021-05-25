@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, PickerController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { Note } from '../../shared/interface/note.interface';
+import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -57,7 +58,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
   }
 
-  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions){
+  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
       buttons: [
@@ -102,12 +103,12 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   assignIcons() {
-    this.note?.player ? 
+    this.note?.player ?
       this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg` :
       this.playerIcon = `assets/navigation/ico_fighter_g.svg`;
 
     this.note?.enemy ?
-      this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg`:
+      this.enemyIcon = `assets/stock-icons/svg/${this.note?.enemy}.svg` :
       this.enemyIcon = `assets/navigation/ico_fighter_g.svg`;
   }
 
@@ -116,12 +117,41 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.note.title = event.target.value
   }
 
-  changePlayer() {
-    this.note.player = 'captain_falcon';
+  async changePlayer() {
+    const modal = await this.modalController.create({
+      component: FeatureCharacterSelectModalComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal'
+    });
+    modal.onDidDismiss().then((modelData) => {
+      if (modelData !== null) {
+        console.log('Modal Data : ' + JSON.stringify(modelData.data));
+        this.note.player = modelData.data.fighter
+        this.assignIcons();
+      }
+    });
+    return await modal.present();
+
   }
 
-  changeEnemy() {
-    this.note.enemy = 'mii_swordfighter';
+  async changeEnemy() {
+    const modal = await this.modalController.create({
+      component: FeatureCharacterSelectModalComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal'
+    });
+    modal.onDidDismiss().then((modelData) => {
+      if (modelData !== null) {
+        console.log('Modal Data : ' + JSON.stringify(modelData.data));
+
+        this.note.enemy = modelData.data.fighter
+        this.assignIcons();
+      }
+    });
+    return await modal.present();
+
   }
 
   dismissModal() {
@@ -143,8 +173,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.dismissModal();
   }
 
-  updateNote(note) {
-    this.noteService.updateNote(note)
+  deleteNote(note) {
+    // TODO: show alert message, delete, dismiss modal, show toast
+    this.noteService.deleteNote(note)
     .then(response => {
       console.log(response);
     }, error => {
@@ -152,13 +183,22 @@ export class FeatureMatchupNoteComponent implements OnInit {
     })
   }
 
+  updateNote(note) {
+    this.noteService.updateNote(note)
+      .then(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      })
+  }
+
   createNote(note) {
     this.noteService.createNote(note)
-    .then(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    })
+      .then(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      })
   }
 
   async presentActionSheet() {

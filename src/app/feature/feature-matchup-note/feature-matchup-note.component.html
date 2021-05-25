@@ -42,6 +42,8 @@
     <ion-icon src="eye-outline"></ion-icon>
     <ion-label>Visiblility</ion-label>
     <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
+    <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
+
   </ion-item>
 </ion-content>
 

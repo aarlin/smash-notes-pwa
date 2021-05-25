@@ -1,16 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
 
-interface Fighter {
-  name?: string;
-  appearsIn?: string[];
-  url?: string;
-  stockIcon?: string;
-}
 
 @Component({
   selector: 'smash-feature-notebooks',
@@ -69,8 +64,8 @@ export class FeatureNotebooksComponent implements OnInit {
     return await modal.present();
   }
 
-  loadFighterImage(fighter: Fighter) {
-    return this.fighterImagePipe.transform(fighter.name, '')
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   loadData(event) {

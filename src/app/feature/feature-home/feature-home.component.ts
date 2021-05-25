@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IonNav, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
+import { Fighter } from 'src/app/shared/interface/fighter.interface';
 
 @Component({
   selector: 'smash-feature-home',
@@ -16,7 +18,7 @@ export class FeatureHomeComponent implements OnInit {
   notes: Note[] = [];
   
 
-  constructor(private noteService: NoteService, public modalController: ModalController, private router: Router) { }
+  constructor(private noteService: NoteService, public modalController: ModalController, private router: Router, private fighterImagePipe: FighterImagePipe) { }
 
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
@@ -25,6 +27,10 @@ export class FeatureHomeComponent implements OnInit {
       }
     });
 
+  }
+
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByUser() {
@@ -55,7 +61,6 @@ export class FeatureHomeComponent implements OnInit {
       cssClass: 'character-select-modal',
       componentProps: {
         note: note,
-        update: true
       }
     });
     modal.onWillDismiss().then(dataReturned => {

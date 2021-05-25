@@ -5,10 +5,8 @@ import { FeatureCharacterSelectModalComponent } from '../feature-character-selec
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
+import { Fighter } from 'src/app/shared/interface/fighter.interface';
 
-interface Fighter {
-  name?: string;
-}
 
 interface ChunkedData {
   [key: string]: Note[];
@@ -35,10 +33,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   homeIcon: string;
 
   @Input() fighter: Fighter;
-
-  sampleFighter: Fighter = { name: 'homura' }
-
-
+  
   constructor(public alertController: AlertController, 
     public modalController: ModalController,
     private noteService: NoteService, private router: Router) { }
@@ -74,7 +69,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.getNotesByFighter(this.sampleFighter.name);
+        this.getNotesByFighter(this.fighter.name);
       }
     });
 

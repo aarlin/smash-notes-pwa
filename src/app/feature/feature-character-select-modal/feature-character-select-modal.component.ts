@@ -2,12 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
-
-interface Fighter {
-  name?: string;
-  appearsIn?: string[];
-  url?: string;
-}
+import { Fighter } from 'src/app/shared/interface/fighter.interface';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 
 
 @Component({
@@ -28,7 +24,7 @@ export class FeatureCharacterSelectModalComponent  {
   searching: boolean;
   currentFighter: Fighter;
 
-  constructor(private fighterService: FighterService, private modalController: ModalController) {
+  constructor(private fighterService: FighterService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {
     this.searchControl = new FormControl();
   }
 
@@ -38,12 +34,7 @@ export class FeatureCharacterSelectModalComponent  {
 
     this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
-        this.fighters = fighters.map(fighter => {
-          fighter.url = `assets/stock-icons/svg/${fighter.name}.svg`;
-          return fighter;
-        });
-        this.backupFighters = this.fighters;
-
+        this.fighters = fighters;
       }, err => {
         console.log('Error while getting fighters')
       }, () => {
@@ -64,6 +55,10 @@ export class FeatureCharacterSelectModalComponent  {
     });
   }
 
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '') 
+  }
+
   applyFighter(fighter: Fighter) {
     if (fighter?.name !== this.currentFighter?.name) {
       this.currentFighter = fighter;
@@ -80,7 +75,7 @@ export class FeatureCharacterSelectModalComponent  {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
-      'dismissed': true
+      'fighter': this.currentFighter
     });
   }
 

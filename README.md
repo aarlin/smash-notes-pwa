@@ -34,6 +34,9 @@ https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 - [ ] ion nav link
 - [ ] ion backdrop
 - [ ] ion item sliding
+- [ ] active route - follow using smash design
+- [ ] menu for desktop
+
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height
 https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-703c5dd0d0e7
