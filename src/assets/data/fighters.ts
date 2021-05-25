@@ -49,7 +49,7 @@ export enum Fighters {
     PEACH = 'peach',
     PICHU = 'pichu',
     PIKACHU = 'pikachu',
-    PIRANHA_PLANT = 'packun_flower',
+    PACKUN_FLOWER = 'piranha_plant',
     PIT = 'pit',
     POKEMON_TRAINER = 'pokemon_trainer',
     RICHTER = 'richter',
@@ -74,12 +74,12 @@ export enum Fighters {
     YOUNG_LINK = 'young_link',
     ZELDA = 'zelda',
     ZERO_SUIT_SAMUS = 'zero_suit_samus',
-    HOMURA = 'homura',
+    HOMURA = 'pyra_mythra',
     SEPHIROTH = 'sephiroth',
     STEVE = 'steve',
     MINMIN = 'minmin',
     BYLETH = 'byleth',
     TERRY = 'terry',
     BANJO_AND_KAZOOIE = 'banjo_and_kazooie',
-    HERO = 'dq_hero'
+    DQ_HERO = 'hero'
 }
