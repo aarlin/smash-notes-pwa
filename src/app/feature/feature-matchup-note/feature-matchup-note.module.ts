@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FeatureMatchupNoteComponent } from './feature-matchup-note.component';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FighterService } from 'src/app/services/fighter.service';
 
 @NgModule({
   declarations: [FeatureMatchupNoteComponent],
@@ -14,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [FeatureMatchupNoteComponent]
+  exports: [FeatureMatchupNoteComponent],
+  providers: [FighterService]
 })
 export class FeatureMatchupNoteModule { }

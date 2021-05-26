@@ -10,6 +10,7 @@ import { FeatureToolbarModule } from 'src/app/feature/feature-toolbar/feature-to
 import { FeatureNotebooksModule } from 'src/app/feature/feature-notebooks/feature-notebooks.module';
 import { FeatureDiscoverModule } from 'src/app/feature/feature-discover/feature-discover.module';
 import { FeatureCharacterSelectModalModule } from 'src/app/feature/feature-character-select-modal/feature-character-select-modal.module';
+import { FeatureFloatingActionModule } from 'src/app/feature/feature-floating-action/feature-floating-action.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { FeatureCharacterSelectModalModule } from 'src/app/feature/feature-chara
     FeatureDiscoverModule,
     FeatureCharacterSelectModalModule,
     FeatureToolbarModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    FeatureFloatingActionModule
   ],
   declarations: [Tab2Page]
 })

@@ -4,6 +4,8 @@ import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
+import { Fighter } from 'src/app/shared/interface/fighter.interface';
 
 @Component({
   selector: 'smash-feature-home',
@@ -14,29 +16,21 @@ export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
   notes: Note[] = [];
+  
 
-  constructor(private noteService: NoteService, public modalController: ModalController, private router: Router) { }
+  constructor(private noteService: NoteService, public modalController: ModalController, private router: Router, private fighterImagePipe: FighterImagePipe) { }
 
   ngOnInit() {
-    // this.noteService.load()
-    //   .subscribe((notes: Note[]) => {
-    //     this.notes = notes.map(note => {
-    //       note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`;
-    //       note.playerImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.player}.png`;
-    //       return note;
-    //     });
-    //   }, err => {
-    //     console.log('error in home')
-    //   }, () => {
-    //     this.dataLoaded = !this.dataLoaded;
-    //   });
-    // this.setFallback();
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         this.getNotesByUser();
       }
     });
 
+  }
+
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByUser() {
@@ -67,8 +61,11 @@ export class FeatureHomeComponent implements OnInit {
       cssClass: 'character-select-modal',
       componentProps: {
         note: note,
-        update: true
       }
+    });
+    modal.onWillDismiss().then(dataReturned => {
+      // trigger when about to close the modal
+      console.log(dataReturned.data);
     });
     return await modal.present();
   }

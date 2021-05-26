@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import { ActionSheetController, ModalController, Platform } from '@ionic/angular';
 import { Note as NoteInterface } from 'src/app/shared/interface/note.interface';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
@@ -29,7 +29,15 @@ export class FeatureTabsComponent implements OnInit {
   createIcon: string;
   settingsIcon: string;
 
-  constructor(public actionSheetController: ActionSheetController, private modalController: ModalController) {}
+  tabsPlacement: string = 'bottom';
+  tabsLayout: string = 'icon-top';
+
+  constructor(public actionSheetController: ActionSheetController, private modalController: ModalController, private platform: Platform) {
+    if (!this.platform.is('mobile')) {
+      this.tabsPlacement = 'top';
+      this.tabsLayout = 'icon-left';
+    }
+  }
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/ico_top_g.svg';

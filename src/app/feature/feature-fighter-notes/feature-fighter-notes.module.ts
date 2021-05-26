@@ -7,6 +7,7 @@ import { FeatureCharacterSelectModalModule } from '../feature-character-select-m
 import { FeatureMatchupNoteModule } from '../feature-matchup-note/feature-matchup-note.module';
 import { NoteService } from 'src/app/services/note.service';
 import { FighterService } from 'src/app/services/fighter.service';
+import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 
 @NgModule({
   declarations: [FeatureFighterNotesComponent],
@@ -15,7 +16,8 @@ import { FighterService } from 'src/app/services/fighter.service';
     IonicModule,
     SharedDirectivesModule,
     FeatureCharacterSelectModalModule,
-    FeatureMatchupNoteModule
+    FeatureMatchupNoteModule,
+    SharedPipesModule
   ],
   exports: [FeatureFighterNotesComponent],
   providers: [NoteService, FighterService]
