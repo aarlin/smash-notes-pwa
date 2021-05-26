@@ -22,10 +22,10 @@
   <ion-list>
     <ion-item (click)="openNote(note)" *ngFor="let note of notes">
       <ion-avatar slot="start">
-        <img src={{note.playerImage}}>
+        <img alt={{note.player}} src={{note.playerImage}}>
       </ion-avatar>
       <ion-avatar slot="end">
-        <img src={{note.enemyImage}}>
+        <img alt={{note.enemy}} src={{note.enemyImage}}>
       </ion-avatar>
       <ion-label>
         <h2>{{note.title}}</h2>

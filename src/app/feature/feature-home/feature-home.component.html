@@ -6,19 +6,18 @@
   <ion-list *ngIf="dataLoaded">
     <ng-container *ngIf="!notes.length">
       <ion-slide>
-        <img src="https://raw.githubusercontent.com/ionic-team/ionic-docs/master/src/demos/api/slides/slide-4.png"/>
-        <h2>Ready to Play?</h2>
-        <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        <h2>No Notes</h2>
+        <ion-button fill="clear">Get started by creating a note<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
       </ion-slide>
     </ng-container>    
     <ng-container #elseBlock *ngFor="let note of notes">
 
       <ion-item (click)="openNote(note)">
         <ion-avatar slot="start">
-          <img [src]="loadFighterImage(note?.player)">
+          <img alt={{note?.player}} [src]="loadFighterImage(note?.player)">
         </ion-avatar>
         <ion-avatar slot="end">
-          <img [src]="loadFighterImage(note?.enemy)">
+          <img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)">
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
