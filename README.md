@@ -40,3 +40,7 @@ https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height
 https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-703c5dd0d0e7
+
+note?.enemyImage
+
+https://masteringionic.com/blog/2017-04-01-implementing-the-ionic-splitpane-component/

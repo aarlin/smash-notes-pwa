@@ -33,7 +33,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   homeIcon: string;
 
   @Input() fighter: Fighter;
-  
+
   constructor(public alertController: AlertController, 
     public modalController: ModalController,
     private noteService: NoteService, private router: Router) { }
@@ -66,6 +66,8 @@ export class FeatureFighterNotesComponent implements OnInit {
     //   }, () => {
     //     this.dataLoaded = !this.dataLoaded;
     //   })
+    this.getNotesByFighter(this.fighter.name);
+
 
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
@@ -108,8 +110,8 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   setBackgroundImage(fighter: Fighter) {
     this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg")`;
-    this.background = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg`;
-    this.fighterImage = `https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/main.png`;
+    this.background = `assets/background/${fighter.name}.jpg`;
+    this.fighterImage = `assets/portraits/fighter_image/${fighter.name}.png`;
 
     if (fighter.name.includes('mii')) {
       this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/mii_fighter/bg.jpg")`
