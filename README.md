@@ -44,3 +44,7 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 note?.enemyImage
 
 https://masteringionic.com/blog/2017-04-01-implementing-the-ionic-splitpane-component/
+
+https://meumobi.github.io/ionic/2018/11/13/side-menu-tabs-login-page-ionic4.html
+
+https://fdezromero.com/tips-and-tricks-for-ionic-on-desktop/

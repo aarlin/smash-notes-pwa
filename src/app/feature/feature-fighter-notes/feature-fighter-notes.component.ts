@@ -50,7 +50,6 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
-    this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
     
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
@@ -120,7 +119,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   setSeriesIcon(fighter: Fighter) {
-    this.fighterSeriesIcon = `assets/series-symbols/svg/xenoblade.svg`;
+    this.fighterSeriesIcon = `assets/series-symbols/series-logo/${fighter.name}.svg`;
   }
 
   close() {
