@@ -49,6 +49,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
+    console.log(this.fighter);
     
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
