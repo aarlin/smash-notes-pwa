@@ -24,7 +24,7 @@
     </ion-avatar>
   </div>
 
-  <ion-button expand="block" (click)="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button>
+  <!-- <ion-button expand="block" (click)="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button> -->
 
   <ion-item>
     <ion-label position="floating">Note Title</ion-label>
@@ -42,8 +42,10 @@
     <ion-icon src="eye-outline"></ion-icon>
     <ion-label>Visiblility</ion-label>
     <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
-    <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
 
+  </ion-item>
+  <ion-item>
+    <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
   </ion-item>
 </ion-content>
 
