@@ -19,7 +19,6 @@ interface ChunkedData {
 })
 export class FeatureFighterNotesComponent implements OnInit {
 
-  backgroundImage: string = '';
   background: string;
   fighterImage: string;
   fighterSeriesIcon: string;
@@ -50,6 +49,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
+    console.log(this.fighter);
     
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
@@ -108,12 +108,10 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   setBackgroundImage(fighter: Fighter) {
-    this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/${fighter.name}/bg.jpg")`;
     this.background = `assets/background/${fighter.name}.jpg`;
     this.fighterImage = `assets/portraits/fighter_image/${fighter.name}.png`;
 
     if (fighter.name.includes('mii')) {
-      this.backgroundImage = `url("https://www.smashbros.com/assets_v2/img/fighter/mii_fighter/bg.jpg")`
       this.background = `https://www.smashbros.com/assets_v2/img/fighter/mii_fighter/bg.jpg`;
     }
   }

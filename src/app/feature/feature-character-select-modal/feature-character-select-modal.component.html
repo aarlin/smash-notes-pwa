@@ -22,7 +22,7 @@
   <ion-list>
     <ion-row>
       <ion-col size="3" *ngFor="let fighter of fighters; index as position">
-        <ion-img (click)="applyFighter(fighter)" [class.selected]="isFighterSelected(fighter)" class="avatar" [src]="loadFighterImage(fighter?.name)"></ion-img>
+        <ion-img alt={{fighter?.name}} (click)="applyFighter(fighter)" [class.selected]="isFighterSelected(fighter)" class="avatar" [src]="loadFighterImage(fighter?.name)"></ion-img>
       </ion-col>
     </ion-row>
   </ion-list>

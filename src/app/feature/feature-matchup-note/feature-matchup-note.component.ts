@@ -132,7 +132,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
-        this.note.player = modelData.data.fighter.name
+        this.note.player = modelData.data?.fighter?.name
         this.assignIcons();
       }
     });
@@ -151,7 +151,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
-        this.note.enemy =  modelData.data.fighter.name
+        this.note.enemy = modelData.data?.fighter?.name
         this.assignIcons();
       }
     });

@@ -15,16 +15,16 @@
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-button (click)="goHome()" shape="round">
-      <ion-icon [src]="homeIcon" size="large"></ion-icon>
+      <ion-icon alt="home" [src]="homeIcon" size="large"></ion-icon>
     </ion-button>
   </ion-buttons>
   <ion-label>{{ title }}</ion-label>
   <ion-buttons slot="end">
     <ion-button (click)="searchOpen()" shape="round">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
+      <ion-icon alt="search" slot="icon-only" name="search"></ion-icon>
     </ion-button>
     <ion-button (click)="presentModal()" shape="round">
-      <ion-icon slot="icon-only" name="options"></ion-icon>
+      <ion-icon alt="options" slot="icon-only" name="options"></ion-icon>
     </ion-button>
   </ion-buttons>
 </ion-toolbar>
