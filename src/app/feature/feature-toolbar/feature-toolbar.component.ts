@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 interface Character {
@@ -24,7 +25,7 @@ enum PortraitImageExtension {
 })
 export class FeatureToolbarComponent implements OnInit {
 
-  @Input() title: string;
+  @Input() headerTitle: string;
 
   colorTheme = ["", "secondary", "dark"];
   
@@ -36,13 +37,25 @@ export class FeatureToolbarComponent implements OnInit {
   portraitSize: PortraitSize = PortraitSize.THUMBNAIL_HORIZONTAL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
 
-  constructor(private router: Router) { }
+  constructor(private title: Title, private meta: Meta, private router: Router) { }
 
   ngOnInit() {
+    this.addMetaTags();
     this.selectedPlayerImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
     this.selectedEnemyImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
 
+  }
+
+  addMetaTags() {
+    this.title.setTitle(this.headerTitle);
+    this.meta.addTags([
+      { name: 'twitter:card', content: this.headerTitle },
+      { name: 'og:url', content: this.router.url },
+      { name: 'og:title', content: this.headerTitle },
+      { name: 'og:description', content: this.headerTitle },
+      { name: 'og:image', content: 'assets/navigation/header_bar_ico.svg' }
+    ]);
   }
 
 
