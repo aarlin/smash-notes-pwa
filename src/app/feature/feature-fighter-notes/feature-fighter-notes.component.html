@@ -33,7 +33,7 @@
     <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes">
       <ion-item #note (click)="openNote(note)" *virtualItem="let note">
         <ion-avatar slot="start">
-          <img src={{note.enemyImage}}>
+          <img [src]="loadFighterImage(note.enemy)">
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>

@@ -36,15 +36,22 @@ https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 - [ ] ion item sliding
 - [ ] active route - follow using smash design
 - [ ] menu for desktop
+- [ ] issues with search based on international names
+- [ ] micro interactions
+- [ ] document read cache
+- [ ] offline support
+- [ ] ssr
+- [ ] seo
 
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height
 https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-703c5dd0d0e7
-
-note?.enemyImage
 
 https://masteringionic.com/blog/2017-04-01-implementing-the-ionic-splitpane-component/
 
 https://meumobi.github.io/ionic/2018/11/13/side-menu-tabs-login-page-ionic4.html
 
 https://fdezromero.com/tips-and-tricks-for-ionic-on-desktop/
+
+I'm really late on this, but I did some digging and found it to be FOT-RodinBokutohPro-EB rather than UB. They look very similar, but both are actually used. EB is used for the Nicknames (Player 1, etc.) while UB is the character names.
+

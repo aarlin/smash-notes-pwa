@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { Note } from 'src/app/shared/interface/note.interface';
+import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 interface Discover {
@@ -42,7 +43,7 @@ export class FeatureDiscoverComponent implements OnInit {
 
   ]
 
-  constructor(private noteService: NoteService, private modalController: ModalController) {}
+  constructor(private noteService: NoteService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {}
 
   ngOnInit() {
     this.getNotesByOthers(false, "");
@@ -65,6 +66,10 @@ export class FeatureDiscoverComponent implements OnInit {
         // event.target.disabled = true;
       // }
     // }, 500);
+  }
+
+  loadFighterImage(fighterName: string) {
+    return this.fighterImagePipe.transform(fighterName, '') 
   }
 
   getNotesByOthers(isFirstLoad, event) {
