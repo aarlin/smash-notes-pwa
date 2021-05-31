@@ -4,7 +4,7 @@ Create Super Smash Bros. Ultimate match up notes
 
 Installable PWA  
 
-Firebase + Angular + Ionic + PWA + SSR
+Firebase + Angular + Ionic  
 
 ## Install
 
