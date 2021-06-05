@@ -70,6 +70,7 @@ export class NoteService {
   }
 
   deleteNote(note: any) {
+    console.log(note.id)
     return this.firestore
       .collection("notes")
       .doc(note.id)

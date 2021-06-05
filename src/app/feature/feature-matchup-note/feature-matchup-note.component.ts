@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController, PickerController } from '@ionic/angular';
+import { ActionSheetController, AlertController, ModalController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
@@ -22,7 +22,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   constructor(private modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private noteService: NoteService, private pickerController: PickerController, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService) { }
+    private noteService: NoteService, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService,
+    public alertController: AlertController,
+    public toastController: ToastController) { }
 
   async ngOnInit() {
     console.log(this.note);
@@ -118,6 +120,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     }, error => {
       console.log(error);
     })
+
   }
 
   updateNote(note) {
@@ -138,48 +141,42 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+  async deleteConfirm() {
+    const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
-        handler: () => {
-          console.log('Delete clicked');
+      header: 'Delete',
+      message: 'Delete Note',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Delete',
+          cssClass: 'danger',
+          handler: () => {
+            this.deleteNote(this.note);
+            this.dismissModal();
+            this.presentToast();
+          }
         }
-      }, {
-        text: 'Share',
-        icon: 'share',
-        handler: () => {
-          console.log('Share clicked');
-        }
-      }, {
-        text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
-        handler: () => {
-          console.log('Play clicked');
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
+      ]
     });
-    await actionSheet.present();
 
-    const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    await alert.present();
   }
+
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Your note has been deleted.',
+      duration: 2000
+    });
+    toast.present();
+  }
+
 
 }
