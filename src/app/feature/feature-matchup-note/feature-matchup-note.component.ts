@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActionSheetController, AlertController, ModalController, ToastController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
@@ -16,12 +16,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
   enemyIcon: string;
   backArrowIcon: string;
   uid: string;
+  dirty: boolean;
+  originalNote: Note;
 
   @Input() note: Note;
   @Input() update: boolean;
 
   constructor(private modalController: ModalController,
-    private actionSheetController: ActionSheetController,
     private noteService: NoteService, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService,
     public alertController: AlertController,
     public toastController: ToastController) { }
@@ -35,6 +36,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
+    this.originalNote = { ... this.note };
+    console.log(this.update)
   }
 
   assignIcons() {
@@ -53,7 +56,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   changeTitle(event) {
     console.log(event);
-    this.note.title = event.target.value
+    this.note.title = event.target.value;
+    this.dirty = true;
+  }
+
+  onChange(event: any) {
+    console.log(event);
+    this.dirty = true;
   }
 
   async changePlayer() {
@@ -66,8 +75,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
-        this.note.player = modelData.data?.fighter?.name
+        this.note.player = modelData.data?.fighter?.name;
+        console.log(this.originalNote, this.note)
         this.assignIcons();
+        this.dirty = true;
       }
     });
     return await modal.present();
@@ -85,8 +96,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
-        this.note.enemy = modelData.data?.fighter?.name
+        this.note.enemy = modelData.data?.fighter?.name;
+        console.log(this.originalNote, this.note)
         this.assignIcons();
+        this.dirty = true;
       }
     });
     return await modal.present();
@@ -96,9 +109,14 @@ export class FeatureMatchupNoteComponent implements OnInit {
   dismissModal() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
-    this.modalController.dismiss({
-      'dismissed': true, 'note': this.note
-    });
+    if (!this.dirty) {
+      this.modalController.dismiss({
+        'dismissed': true, 'note': this.note
+      });
+    } else {
+      this.exitWithoutSaving();
+    }
+
   }
 
   // select one least one character
@@ -108,7 +126,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   saveNote() {
     console.log(this.note);
+    console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
+    this.dirty = false;
     this.dismissModal();
   }
 
@@ -141,6 +161,32 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
+  async exitWithoutSaving() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Unsaved',
+      message: 'Exit without saving, did you want to save this note?',
+      buttons: [
+        {
+          text: 'No',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.dismissModal();
+          }
+        }, {
+          text: 'Yes',
+          cssClass: 'danger',
+          handler: () => {
+            this.dirty = true;
+            this.saveNote();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   async deleteConfirm() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -159,6 +205,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
           cssClass: 'danger',
           handler: () => {
             this.deleteNote(this.note);
+            this.dirty = false;
             this.dismissModal();
             this.presentToast();
           }

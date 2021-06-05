@@ -99,8 +99,9 @@ export class FeatureTabsComponent implements OnInit {
       showBackdrop: true,
       backdropDismiss: true,
       cssClass: 'character-select-modal',
-      componentProps: { 
-        note: newNote
+      componentProps: {
+        note: newNote,
+        update: false
       }
     });
     return await modal.present();

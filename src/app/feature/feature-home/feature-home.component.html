@@ -19,11 +19,11 @@
   </ion-list>
 
   <ng-template #noNotes *ngIf="dataLoaded && !notes.length">
-    <ion-slide class="slides">
+    <ion-item class="slides">
       <h2>No Notes</h2>
       <ion-button fill="clear">Get started by creating a note<ion-icon slot="end" name="arrow-forward"></ion-icon>
       </ion-button>
-    </ion-slide>
+    </ion-item>
   </ng-template>
 
   <ion-list *ngIf="!dataLoaded">

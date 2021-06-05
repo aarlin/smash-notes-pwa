@@ -61,6 +61,7 @@ export class FeatureHomeComponent implements OnInit {
       cssClass: 'character-select-modal',
       componentProps: {
         note: note,
+        update: true
       }
     });
     modal.onWillDismiss().then(dataReturned => {
