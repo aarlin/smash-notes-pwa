@@ -35,6 +35,12 @@
     --border-radius: 0.75rem;
 }
 
+ion-avatar {
+  --border-radius: none;
+  --height: 5rem;
+  --width: 5rem;
+}
+
 
 @font-face {
     font-family: "Rodin";
