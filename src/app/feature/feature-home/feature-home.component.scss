@@ -1,5 +1,7 @@
 ion-content {
     height: 100vh;
+    --padding-start: 20px;
+    --padding-end: 20px;
 }
 
 
@@ -16,4 +18,17 @@ img {
   justify-content: center !important;
   align-items: center !important;
   height: 100%;
+}
+
+ion-card {
+  padding: 7px;
+  margin: 0px;
+  max-height: 500px !important;
+}
+
+ion-card-content,
+p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

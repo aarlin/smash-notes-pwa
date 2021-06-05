@@ -2,11 +2,6 @@
   <ion-toolbar>
     <ion-icon [src]="fighterIcon" size="large" slot="start"></ion-icon>
     <ion-title>Choose Your Fighter</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button (click)="dismiss()" color="primary">
-        <ion-label>Apply</ion-label>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
   <ion-searchbar (ionInput)="setFilteredItems($event)" placeholder="Search Fighters" clearInput></ion-searchbar>
 

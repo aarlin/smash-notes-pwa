@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
+import * as faker from "faker";
+
 
 @Component({
   selector: 'smash-feature-home',
@@ -17,8 +19,20 @@ export class FeatureHomeComponent implements OnInit {
   dataLoaded: boolean;
   notes: Note[] = [];
 
+  @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  constructor(private noteService: NoteService, public modalController: ModalController, private router: Router, private fighterImagePipe: FighterImagePipe) { }
+  dataList = [];
+  vColMinWidth = 200; // virtual list columns min width as pixel
+  exteraCol = 1; // how many columns should be add to virtual list
+  nextPipe = 0;
+  screenWidth: number;
+
+  constructor(private noteService: NoteService, public modalController: ModalController,
+    private router: Router, private fighterImagePipe: FighterImagePipe) {
+      this.getScreenSize();
+      this.getEmployees();
+    }
 
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
@@ -29,8 +43,38 @@ export class FeatureHomeComponent implements OnInit {
 
   }
 
+  getEmployees() {
+    for (let i = 0; i < 250; i++) {
+      this.dataList.push({
+        id: this.dataList.length,
+        image: faker.image.image(),
+        name: faker.name.firstName(),
+        address: faker.address.streetAddress(),
+        intro: faker.lorem.words()
+      });
+    }
+    this.nextPipe = this.dataList.length;
+  }
+
+  @HostListener("window:resize", ["$event"])
+  getScreenSize(event?) {
+    this.screenWidth = window.innerWidth;
+    this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) -1;
+    this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
+    this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
+  }
+
+  itemHeightFn(item, index) {
+    // better performance if setting item height
+    return 500;
+  }
+
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '')
+    // console.log(fighterName);
+    // console.log(this.fighterImagePipe.transform(fighterName, ''));
+    if (fighterName) {
+      return this.fighterImagePipe.transform(fighterName, '')
+    }
   }
 
   getNotesByUser() {
@@ -73,6 +117,19 @@ export class FeatureHomeComponent implements OnInit {
 
   trackNotes(index: number, itemObject: any) {
     return itemObject.id;
+  }
+
+  loadData(event: any) {
+    setTimeout(() => {
+      // load more data
+      this.getEmployees();
+      this.virtualScroll.checkEnd(); // trigger end of virtual list
+      event.target.complete();
+
+      if (this.dataList.length === 1000) {
+        event.target.disabled = true;
+      }
+    }, 500);
   }
 
 }

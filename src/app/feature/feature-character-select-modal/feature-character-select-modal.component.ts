@@ -70,6 +70,7 @@ export class FeatureCharacterSelectModalComponent  {
     } else {
       this.currentFighter = undefined;
     }
+    this.dismiss();
   }
 
   isFighterSelected(fighter: Fighter) {

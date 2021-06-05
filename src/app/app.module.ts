@@ -29,7 +29,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })],
-    
+
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestoreModule],
   bootstrap: [AppComponent],
 })

@@ -43,11 +43,6 @@ export class FeatureNotebooksComponent implements OnInit {
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
-        let allFighterNotebook = {
-          name: 'All Fighters',
-          stockIcon: 'assets/navigation/ico_fighter_g.svg'
-        }
-        this.fighters = [allFighterNotebook, ...this.fighters]
       });
   }
 
