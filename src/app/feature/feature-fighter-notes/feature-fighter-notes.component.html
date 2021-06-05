@@ -34,10 +34,10 @@
   </div> -->
 
   <div class="main">
-    <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes">
+    <ion-virtual-scroll *ngIf="dataLoaded && notes.length > 0; else noNotes" [items]="notes">
       <ion-item #note (click)="openNote(note)" *virtualItem="let note">
         <ion-avatar slot="start">
-          <img [src]="loadFighterImage(note.enemy)">
+          <ion-img [src]="loadFighterImage(note.enemy)"></ion-img>
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
@@ -45,6 +45,15 @@
         </ion-label>
       </ion-item>
     </ion-virtual-scroll>
+
+    <ng-template #noNotes>
+      <ion-item>
+        <ion-label>
+          <h2>No Notes</h2>
+          <p>Create a note for this fighter</p>
+        </ion-label>
+      </ion-item>
+    </ng-template>
 
     <ion-list *ngIf="!dataLoaded">
       <ng-container *ngFor="let skeletonRow of [].constructor(10)">

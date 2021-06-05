@@ -127,6 +127,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   close() {
+    console.log('close')
     this.modalController.dismiss({
       'dismissed': true
     });
@@ -139,13 +140,16 @@ export class FeatureFighterNotesComponent implements OnInit {
       backdropDismiss: true,
       cssClass: 'character-select-modal',
       componentProps: {
-        note: note
+        note: note,
+        update: true
       }
     });
     return await modal.present();
   }
 
   dismissModal() {
+    console.log('dismiss')
+
     this.modalController.dismiss({
       'dismissed': true
     });

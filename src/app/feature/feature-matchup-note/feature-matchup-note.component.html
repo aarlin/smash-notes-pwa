@@ -16,11 +16,11 @@
 
   <div class="versus-container">
     <ion-avatar (click)="changePlayer()" slot="start">
-      <img alt={{note?.player}} [src]="loadFighterImage(note?.player)">
+      <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
     </ion-avatar>
 
     <ion-avatar (click)="changeEnemy()" slot="end">
-      <img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)">
+      <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
     </ion-avatar>
   </div>
 
@@ -28,12 +28,12 @@
 
   <ion-item>
     <ion-label position="floating">Note Title</ion-label>
-    <ion-input type="text" clearInput [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
+    <ion-input type="text" clearInput [(ngModel)]="note.title" (ngModelChange)="onChange($event)" placeholder="Note Title"></ion-input>
   </ion-item>
 
   <ion-item class="note-textarea">
     <ion-label position="floating">Your Note</ion-label>
-    <ion-textarea placeholder="Your Note" position="stacked" [(ngModel)]="note.body"></ion-textarea>
+    <ion-textarea [(ngModel)]="note.body" position="stacked" (ngModelChange)="onChange($event)" placeholder="Your Note"></ion-textarea>
 
   </ion-item>
 
@@ -45,24 +45,24 @@
       <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
 
     </ion-item>
+
     <ion-item>
-      <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
+      <ion-button color="danger" fill="outline" expand="block" (click)="deleteConfirm()">Delete Note</ion-button>
     </ion-item>
 
   </ng-container>
 
+  <ion-item>
+    <ion-buttons>
+      <ion-button>
+        <ion-icon (click)="presentActionSheet()" size="large" name="share-outline" slot="end"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon (click)="presentActionSheet()" size="large" name="qr-code-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+
 </ion-content>
 
-<ion-footer>
-  <ion-buttons>
-    <ion-button>
-      <ion-icon (click)="presentActionSheet()" size="large" name="share-outline" slot="end"></ion-icon>
-    </ion-button>
-    <ion-button>
-      <ion-icon (click)="presentActionSheet()" size="large" name="qr-code-outline" slot="end"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-</ion-footer>
