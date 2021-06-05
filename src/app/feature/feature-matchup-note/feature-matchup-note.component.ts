@@ -15,6 +15,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   playerIcon: string;
   enemyIcon: string;
   backArrowIcon: string;
+  uid: string;
 
   @Input() note: Note;
   @Input() update: boolean;
@@ -31,8 +32,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
-    let uid = await this.authenticationService.getUid();
-    console.log(uid);
+    this.uid = await this.authenticationService.getUid();
   }
 
   assignIcons() {
