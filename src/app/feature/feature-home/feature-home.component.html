@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="dataLoaded && notes.length > 0; else noNotes">
+  <ion-list *ngIf="dataLoaded && notes.length > 0">
     <ion-item (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
       <ion-avatar slot="start">
         <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
@@ -16,9 +16,10 @@
         <p>{{note.body}}</p>
       </ion-label>
     </ion-item>
+
   </ion-list>
 
-  <ng-template #noNotes *ngIf="dataLoaded && !notes.length">
+  <ng-template *ngIf="dataLoaded && !notes.length">
     <ion-item class="slides">
       <h2>No Notes</h2>
       <ion-button fill="clear">Get started by creating a note<ion-icon slot="end" name="arrow-forward"></ion-icon>
