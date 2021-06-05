@@ -43,7 +43,7 @@ export class FeatureNotebooksComponent implements OnInit {
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
-        let allFighterNotebook = { 
+        let allFighterNotebook = {
           name: 'All Fighters',
           stockIcon: 'assets/navigation/ico_fighter_g.svg'
         }
@@ -57,7 +57,7 @@ export class FeatureNotebooksComponent implements OnInit {
       showBackdrop: true,
       backdropDismiss: true,
       cssClass: 'character-select-modal',
-      componentProps: { 
+      componentProps: {
         fighter
       }
     });
@@ -122,6 +122,10 @@ export class FeatureNotebooksComponent implements OnInit {
 
   searchOpen() {
     this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
+  trackFighters(index: number, itemObject: any) {
+    return itemObject.name;
   }
 
 }

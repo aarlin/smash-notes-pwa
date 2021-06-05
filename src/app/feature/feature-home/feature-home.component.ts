@@ -16,7 +16,7 @@ export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
   notes: Note[] = [];
-  
+
 
   constructor(private noteService: NoteService, public modalController: ModalController, private router: Router, private fighterImagePipe: FighterImagePipe) { }
 
@@ -68,6 +68,10 @@ export class FeatureHomeComponent implements OnInit {
       console.log(dataReturned.data);
     });
     return await modal.present();
+  }
+
+  trackNotes(index: number, itemObject: any) {
+    return itemObject.id;
   }
 
 }

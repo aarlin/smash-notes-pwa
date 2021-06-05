@@ -37,22 +37,32 @@
 
   </ion-item>
 
-  <ion-item>
-    <ion-icon src="eye-off-outline"></ion-icon>
-    <ion-icon src="eye-outline"></ion-icon>
-    <ion-label>Visiblility</ion-label>
-    <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
+  <ng-container *ngIf="uid === note.uid">
+    <ion-item>
+      <ion-icon src="eye-off-outline"></ion-icon>
+      <ion-icon src="eye-outline"></ion-icon>
+      <ion-label>Visiblility</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
 
-  </ion-item>
-  <ion-item>
-    <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
-  </ion-item>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" (click)="deleteNote(note)">Delete Note</ion-button>
+    </ion-item>
+
+  </ng-container>
+
 </ion-content>
 
 <ion-footer>
   <ion-buttons>
     <ion-button>
       <ion-icon (click)="presentActionSheet()" size="large" name="share-outline" slot="end"></ion-icon>
+    </ion-button>
+    <ion-button>
+      <ion-icon (click)="presentActionSheet()" size="large" name="qr-code-outline" slot="end"></ion-icon>
     </ion-button>
   </ion-buttons>
 </ion-footer>

@@ -2,6 +2,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="close()" shape="round">
+        <ion-icon (click)="dismissModal()" name="chevron-back-outline" size="large" slot="start"></ion-icon>
+      </ion-button>
+      <ion-button (click)="close()" shape="round">
         <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,8 +20,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [appParallaxHeader]="image" [scrollEvents]="true">
-  <div #image class="fighter-bg">
+<ion-content [scrollEvents]="true">
+<!-- <ion-content [appParallaxHeader]="image" [scrollEvents]="true"> -->
+  <!-- <div #image class="fighter-bg">
     <div class="fighter-bg_inner">
       <div class="parallax-image">
         <ion-img alt="background" class="fighter-bg" alt="Background Image" [src]="background"></ion-img>
@@ -27,7 +31,7 @@
         <ion-img alt="fighter-image" class="fighter-image" [src]="fighterImage"></ion-img>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="main">
     <ion-virtual-scroll *ngIf="dataLoaded" [items]="notes">

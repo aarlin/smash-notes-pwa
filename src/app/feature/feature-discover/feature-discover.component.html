@@ -20,7 +20,7 @@
 
 
   <ion-list>
-    <ion-item (click)="openNote(note)" *ngFor="let note of notes">
+    <ion-item (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
       <ion-avatar slot="start">
         <img alt={{note.player}} [src]="loadFighterImage(note.player)">
       </ion-avatar>
@@ -41,6 +41,6 @@
       loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-  
-  
+
+
 </ion-content>

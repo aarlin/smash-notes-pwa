@@ -5,12 +5,12 @@
 <ion-content>
   <ion-list *ngIf="dataLoaded">
     <ng-container *ngIf="!notes.length">
-      <ion-slide>
+      <ion-slide class="slides">
         <h2>No Notes</h2>
         <ion-button fill="clear">Get started by creating a note<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
       </ion-slide>
-    </ng-container>    
-    <ng-container #elseBlock *ngFor="let note of notes">
+    </ng-container>
+    <ng-container #elseBlock *ngFor="let note of notes; trackBy: trackNotes">
 
       <ion-item (click)="openNote(note)">
         <ion-avatar slot="start">
@@ -66,7 +66,7 @@
         <ion-item-option (click)="unread(item)">Unread</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-  
+
     <ion-item-sliding>
       <ion-item>
         <ion-label>Item</ion-label>

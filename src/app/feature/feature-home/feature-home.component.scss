@@ -7,6 +7,13 @@ ion-avatar {
     width: 80px;
 }
 
-img { 
+img {
     border-radius: 0.5rem;
+}
+
+.slides {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%;
 }

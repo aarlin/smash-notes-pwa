@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, PickerController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
@@ -18,38 +19,11 @@ export class FeatureMatchupNoteComponent implements OnInit {
   @Input() note: Note;
   @Input() update: boolean;
 
-  multiColumnOptions = [
-    [
-      'Minified',
-      'Responsive',
-      'Full Stack',
-      'Mobile First',
-      'Serverless'
-    ],
-    [
-      'Tomato',
-      'Avocado',
-      'Onion',
-      'Potato',
-      'Artichoke'
-    ]
-  ]
-
-  defaultColumnOptions = [
-    [
-      'Dog',
-      'Cat',
-      'Bird',
-      'Lizard',
-      'Chinchilla'
-    ]
-  ]
-
   constructor(private modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private noteService: NoteService, private pickerController: PickerController, private fighterImagePipe: FighterImagePipe) { }
+    private noteService: NoteService, private pickerController: PickerController, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log(this.note);
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
@@ -57,50 +31,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
-  }
-
-  async openPicker(numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
-    const picker = await this.pickerController.create({
-      columns: this.getColumns(numColumns, numOptions, columnOptions),
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`Got Value ${value}`);
-          }
-        }
-      ]
-    });
-
-    await picker.present();
-  }
-
-  getColumns(numColumns, numOptions, columnOptions) {
-    let columns = [];
-    for (let i = 0; i < numColumns; i++) {
-      columns.push({
-        name: `col-${i}`,
-        options: this.getColumnOptions(i, numOptions, columnOptions)
-      });
-    }
-
-    return columns;
-  }
-
-  getColumnOptions(columnIndex, numOptions, columnOptions) {
-    let options = [];
-    for (let i = 0; i < numOptions; i++) {
-      options.push({
-        text: columnOptions[columnIndex][i % numOptions],
-        value: i
-      })
-    }
-
-    return options;
+    let uid = await this.authenticationService.getUid();
+    console.log(uid);
   }
 
   assignIcons() {

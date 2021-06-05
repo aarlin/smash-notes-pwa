@@ -34,7 +34,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   @Input() fighter: Fighter;
 
-  constructor(public alertController: AlertController, 
+  constructor(public alertController: AlertController,
     public modalController: ModalController,
     private noteService: NoteService, private router: Router,
     private fighterImagePipe: FighterImagePipe) { }
@@ -52,7 +52,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     console.log(this.fighter);
-    
+
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
 
@@ -79,7 +79,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '') 
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByFighter(fighterName) {
@@ -91,7 +91,7 @@ export class FeatureFighterNotesComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection for fighter: ", fighterName.name, data); 
+      console.log("All data in 'notes' collection for fighter: ", fighterName.name, data);
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
     }, error => {
@@ -127,7 +127,9 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   close() {
-
+    this.modalController.dismiss({
+      'dismissed': true
+    });
   }
 
   async openNote(note: Note) {
@@ -141,5 +143,11 @@ export class FeatureFighterNotesComponent implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  dismissModal() {
+    this.modalController.dismiss({
+      'dismissed': true
+    });
   }
 }

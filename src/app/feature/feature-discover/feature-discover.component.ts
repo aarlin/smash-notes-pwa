@@ -19,7 +19,7 @@ interface Discover {
   styleUrls: ['./feature-discover.component.scss'],
 })
 export class FeatureDiscoverComponent implements OnInit {
-  
+
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   public dataLoaded: boolean;
@@ -69,7 +69,7 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '') 
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByOthers(isFirstLoad, event) {
@@ -80,7 +80,7 @@ export class FeatureDiscoverComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data discovered in 'notes' collection", data); 
+      console.log("All data discovered in 'notes' collection", data);
       this.notes = [...data, ...this.notes];
       this.dataLoaded = !this.dataLoaded;
 
@@ -95,7 +95,7 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   testClick() {
-    
+
   }
 
   async openNote(note: Note) {
@@ -113,6 +113,10 @@ export class FeatureDiscoverComponent implements OnInit {
 
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
+  }
+
+  trackNotes(index: number, itemObject: any) {
+    return itemObject.id;
   }
 
 }

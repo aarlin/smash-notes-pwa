@@ -61,7 +61,7 @@ export class FeatureCharacterSelectModalComponent  {
   }
 
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '') 
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   applyFighter(fighter: Fighter) {
@@ -82,6 +82,10 @@ export class FeatureCharacterSelectModalComponent  {
     this.modalController.dismiss({
       'fighter': this.currentFighter
     });
+  }
+
+  trackItems(index: number, itemObject: any) {
+    return itemObject.name;
   }
 
 }

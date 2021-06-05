@@ -26,5 +26,8 @@
     <ion-button (click)="presentModal()" shape="round">
       <ion-icon alt="options" slot="icon-only" name="options"></ion-icon>
     </ion-button>
+    <ion-button (click)="switchViewOption()" shape="round">
+      <ion-icon alt="options" slot="icon-only" [name]="viewOptionIcon"></ion-icon>
+    </ion-button>
   </ion-buttons>
 </ion-toolbar>

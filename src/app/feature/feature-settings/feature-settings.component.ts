@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenicationService } from 'src/app/services/authentication-service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'smash-feature-settings',
@@ -9,7 +9,9 @@ import { AuthenicationService } from 'src/app/services/authentication-service';
 })
 export class FeatureSettingsComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenicationService, private router: Router) { }
+  themeMode: string = 'sunny-outline';
+
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {}
 
@@ -17,7 +19,7 @@ export class FeatureSettingsComponent implements OnInit {
     this.authenticationService.signOutUser()
     .then((response) => {
       console.log(response)
-  
+
       this.router.navigateByUrl('login');
     }, error => {
       // this.errorMsg = error.message;
@@ -34,11 +36,13 @@ export class FeatureSettingsComponent implements OnInit {
     else{
       document.body.setAttribute('data-theme', 'light');
     }
+
+    this.themeMode = (this.themeMode === 'sunny-outline' ? 'moon-outline': 'sunny-outline')
   }
 
    colorTest(systemInitiatedDark) {
     if (systemInitiatedDark.matches) {
-      document.body.setAttribute('data-theme', 'dark');		
+      document.body.setAttribute('data-theme', 'dark');
     } else {
       document.body.setAttribute('data-theme', 'light');
     }

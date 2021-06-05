@@ -6,7 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root'
 })
 
-export class AuthenicationService {
+export class AuthenticationService {
 
   constructor(
     private angularFireAuth: AngularFireAuth

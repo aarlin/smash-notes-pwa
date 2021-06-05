@@ -4,13 +4,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Note } from '../shared/interface/note.interface';
-import { AuthenicationService } from './authentication-service';
+import { AuthenticationService } from './authentication.service';
 
 
 @Injectable()
 export class NoteService {
 
-  constructor(private http: HttpClient, private firestore: AngularFirestore, private authenticationService: AuthenicationService) { }
+  constructor(private http: HttpClient, private firestore: AngularFirestore, private authenticationService: AuthenticationService) { }
 
   load(): Observable<Note[]> {
     return this.http

@@ -42,6 +42,11 @@ https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 - [ ] offline support
 - [ ] ssr
 - [ ] seo
+- [ ] fix issue with dataLoaded with global store
+- [ ] add no notes on fighter notebooks, add back button
+- [ ] add vertical align to slides
+- [ ] fix settings tab
+
 
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height

@@ -28,23 +28,32 @@ export class FeatureToolbarComponent implements OnInit {
   @Input() headerTitle: string;
 
   colorTheme = ["", "secondary", "dark"];
-  
+
   homeIcon: string;
 
-  selectedPlayerImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
-  selectedEnemyImage = 'assets/portraits/thumbnail_horizontal/ico_dlc_cs.svg';
 
   portraitSize: PortraitSize = PortraitSize.THUMBNAIL_HORIZONTAL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
+
+  viewOptionIcon = 'grid-outline';
 
   constructor(private title: Title, private meta: Meta, private router: Router) { }
 
   ngOnInit() {
     this.addMetaTags();
-    this.selectedPlayerImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
-    this.selectedEnemyImage = `assets/portraits/${this.portraitSize}/homura.${this.portraitImageExtension}`;
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
 
+  }
+
+  switchViewOption() {
+    switch (this.viewOptionIcon) {
+      case 'grid-outline':
+        this.viewOptionIcon = 'list-outline';
+        break;
+      case 'list-outline':
+        this.viewOptionIcon = 'grid-outline';
+        break;
+    }
   }
 
   addMetaTags() {
