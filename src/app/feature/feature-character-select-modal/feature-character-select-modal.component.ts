@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
@@ -23,6 +23,8 @@ export class FeatureCharacterSelectModalComponent  {
   searchControl: FormControl;
   searching: boolean;
   currentFighter: Fighter;
+
+  @Input() input: string;
 
   constructor(private fighterService: FighterService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {
     this.searchControl = new FormControl();
@@ -74,7 +76,15 @@ export class FeatureCharacterSelectModalComponent  {
   }
 
   isFighterSelected(fighter: Fighter) {
-    return fighter === this.currentFighter;
+    if (this.input === 'fighter') {
+      if (fighter === this.currentFighter) {
+        return 'selected-player';
+      }
+    } else if (this.input === 'enemy') {
+      if (fighter === this.currentFighter) {
+        return 'selected-enemy';
+      }
+    }
   }
 
   dismiss() {

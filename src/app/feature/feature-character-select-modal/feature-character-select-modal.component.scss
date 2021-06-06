@@ -3,11 +3,18 @@
     text-align: center;
     padding: 10px;
   }
-  
-  .selected {
-    background-color: red;
+
+  .selected-player {
+    // background-color: red;
+    // background-image: url('/assets/navigation/page_title_bg.svg');
+    background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
   }
-  
-  .avatar { 
+
+  .selected-enemy {
+    background: #bd2e41 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+
+  }
+
+  .avatar {
     border-radius: 0.5rem;
   }

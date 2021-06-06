@@ -70,7 +70,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       component: FeatureCharacterSelectModalComponent,
       showBackdrop: true,
       backdropDismiss: true,
-      cssClass: 'character-select-modal'
+      cssClass: 'character-select-modal',
+      componentProps: {
+        input: 'fighter'
+      }
     });
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
@@ -90,7 +93,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       component: FeatureCharacterSelectModalComponent,
       showBackdrop: true,
       backdropDismiss: true,
-      cssClass: 'character-select-modal'
+      cssClass: 'character-select-modal',
+      componentProps: {
+        input: 'enemy'
+      }
     });
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {

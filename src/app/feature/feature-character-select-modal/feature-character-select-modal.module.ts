@@ -9,7 +9,7 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 
 
 @NgModule({
-  declarations: [FeatureCharacterSelectModalComponent ],
+  declarations: [FeatureCharacterSelectModalComponent],
   exports: [FeatureCharacterSelectModalComponent],
   imports: [
     CommonModule,
