@@ -28,7 +28,7 @@
 
   <ion-virtual-scroll [items]="notes | virtualListIndex: exteraCol : nextPipe">
     <div *virtualItem="let note; let i = index">
-      <ion-row class="ion-nowrap">
+      <ion-row class="ion-nowrap ion-align-self-start">
         <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of note;">
           <ion-card *ngIf="gridLayout" (click)="openNote(notes[j])">
             <ion-card-header>

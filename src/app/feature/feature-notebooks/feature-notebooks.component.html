@@ -6,7 +6,8 @@
       </ion-button>
     </ion-buttons>
     <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
-    <ion-searchbar *ngIf="searchBarEnabled" (ionCancel)="cancelSearch($event)" showCancelButton="focus" type="text" placeholder="Search text" clearInput>
+    <ion-searchbar *ngIf="searchBarEnabled" (ionCancel)="cancelSearch($event)" showCancelButton="focus" type="text"
+      placeholder="Search text" clearInput>
     </ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!searchBarEnabled" (click)="searchOpen()" shape="round">
@@ -21,6 +22,22 @@
 
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
 
+
+  <ion-virtual-scroll [items]="fighters | virtualListIndex: exteraCol : nextPipe">
+    <div *virtualItem="let fighter; let i = index">
+      <ion-row class="ion-nowrap">
+        <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of fighter;">
+          <ion-item lines="inset" (click)="loadFighterPage(fighters[j])">
+            <ion-img alt={{fighters[j]?.name}} class="stock-icon-image" [src]="loadFighterImage(fighters[j]?.name)"></ion-img>
+            <ion-card-subtitle class="fighter-notebook">{{fighters[j]?.name | normalizeName }}</ion-card-subtitle>
+            <ion-badge color="primary">40</ion-badge>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-virtual-scroll>
+
+
   <!-- <ion-virtual-scroll [items]="fighters">
     <ion-item *virtualItem="let fighter">
       <ion-card>
@@ -34,7 +51,8 @@
       </ion-card>
     </ion-item>
   </ion-virtual-scroll> -->
-  <ion-grid>
+
+  <!-- <ion-grid>
     <ion-row>
       <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" size-xl="3" size-lg="4" size-md="6" size-sm="12" size="12">
         <ion-item lines="inset" (click)="loadFighterPage(fighter)">
@@ -44,6 +62,6 @@
         </ion-item>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
 </ion-content>

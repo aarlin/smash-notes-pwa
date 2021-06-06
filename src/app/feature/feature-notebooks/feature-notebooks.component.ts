@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
@@ -27,9 +27,21 @@ export class FeatureNotebooksComponent implements OnInit {
 
   searchBarEnabled = false;
 
+  @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
+  // @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+
+  dataList = [];
+  vColMinWidth = 200; // virtual list columns min width as pixel
+  exteraCol = 1; // how many columns should be add to virtual list
+  nextPipe = 0;
+  screenWidth: number;
+
+
   constructor(private fighterService: FighterService,
-      private modalController: ModalController,
-      private fighterImagePipe: FighterImagePipe) { }
+    private modalController: ModalController,
+    private fighterImagePipe: FighterImagePipe) {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
@@ -44,6 +56,19 @@ export class FeatureNotebooksComponent implements OnInit {
           return fighter;
         });
       });
+  }
+
+  @HostListener("window:resize", ["$event"])
+  getScreenSize(event?) {
+    this.screenWidth = window.innerWidth;
+    this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
+    this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
+    this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
+  }
+
+  itemHeightFn(item, index) {
+    // better performance if setting item height
+    return 215;
   }
 
   async loadFighterPage(fighter: Fighter) {
