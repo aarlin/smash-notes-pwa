@@ -6,7 +6,6 @@ import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
-import * as faker from "faker";
 
 
 @Component({
@@ -18,6 +17,9 @@ export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
   notes: Note[] = [];
+  gridLayout: boolean;
+  defaultLayout: boolean;
+  itemLayout: boolean;
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -31,7 +33,6 @@ export class FeatureHomeComponent implements OnInit {
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, private fighterImagePipe: FighterImagePipe) {
       this.getScreenSize();
-      this.getEmployees();
     }
 
   ngOnInit() {
@@ -40,20 +41,10 @@ export class FeatureHomeComponent implements OnInit {
         this.getNotesByUser();
       }
     });
+    // this.defaultLayout = true;
+    // this.gridLayout = true;
+    this.itemLayout = true;
 
-  }
-
-  getEmployees() {
-    for (let i = 0; i < 250; i++) {
-      this.dataList.push({
-        id: this.dataList.length,
-        image: faker.image.image(),
-        name: faker.name.firstName(),
-        address: faker.address.streetAddress(),
-        intro: faker.lorem.words()
-      });
-    }
-    this.nextPipe = this.dataList.length;
   }
 
   @HostListener("window:resize", ["$event"])
@@ -66,12 +57,10 @@ export class FeatureHomeComponent implements OnInit {
 
   itemHeightFn(item, index) {
     // better performance if setting item height
-    return 500;
+    return 215;
   }
 
   loadFighterImage(fighterName: string) {
-    // console.log(fighterName);
-    // console.log(this.fighterImagePipe.transform(fighterName, ''));
     if (fighterName) {
       return this.fighterImagePipe.transform(fighterName, '')
     }
@@ -122,7 +111,6 @@ export class FeatureHomeComponent implements OnInit {
   loadData(event: any) {
     setTimeout(() => {
       // load more data
-      this.getEmployees();
       this.virtualScroll.checkEnd(); // trigger end of virtual list
       event.target.complete();
 

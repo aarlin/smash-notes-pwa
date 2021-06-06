@@ -35,25 +35,12 @@ export class FeatureToolbarComponent implements OnInit {
   portraitSize: PortraitSize = PortraitSize.THUMBNAIL_HORIZONTAL;
   portraitImageExtension: PortraitImageExtension = PortraitImageExtension.WEBP;
 
-  viewOptionIcon = 'grid-outline';
-
   constructor(private title: Title, private meta: Meta, private router: Router) { }
 
   ngOnInit() {
     this.addMetaTags();
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
 
-  }
-
-  switchViewOption() {
-    switch (this.viewOptionIcon) {
-      case 'grid-outline':
-        this.viewOptionIcon = 'list-outline';
-        break;
-      case 'list-outline':
-        this.viewOptionIcon = 'grid-outline';
-        break;
-    }
   }
 
   addMetaTags() {
