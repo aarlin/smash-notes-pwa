@@ -10,6 +10,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class FeatureSettingsComponent implements OnInit {
 
   themeMode: string = 'sunny-outline';
+  hideNotesIcon: string = 'eye-outline';
+  dataSyncIcon: string = 'cloud-upload-outline';
 
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
@@ -38,6 +40,15 @@ export class FeatureSettingsComponent implements OnInit {
     }
 
     this.themeMode = (this.themeMode === 'sunny-outline' ? 'moon-outline': 'sunny-outline')
+  }
+
+  onChangeDataSync(event) {
+    this.dataSyncIcon = event.detail.checked ? 'cloud-upload-outline': 'cloud-offline-outline';
+  }
+
+  onChangeHideNotes(event: any) {
+    console.log(event);
+    this.hideNotesIcon = event.detail.checked ? 'eye-off-outline': 'eye-outline'
   }
 
    colorTest(systemInitiatedDark) {

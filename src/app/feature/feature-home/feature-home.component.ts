@@ -6,7 +6,6 @@ import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
-import * as faker from "faker";
 
 
 @Component({
@@ -62,8 +61,6 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    // console.log(fighterName);
-    // console.log(this.fighterImagePipe.transform(fighterName, ''));
     if (fighterName) {
       return this.fighterImagePipe.transform(fighterName, '')
     }
