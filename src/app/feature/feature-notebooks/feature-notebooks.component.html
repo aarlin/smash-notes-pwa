@@ -6,10 +6,10 @@
       </ion-button>
     </ion-buttons>
     <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
-    <ion-searchbar *ngIf="searchBarEnabled" type="text" placeholder="Search text" clearInput>
+    <ion-searchbar *ngIf="searchBarEnabled" (ionCancel)="cancelSearch($event)" showCancelButton="focus" type="text" placeholder="Search text" clearInput>
     </ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button (click)="searchOpen()" shape="round">
+      <ion-button *ngIf="!searchBarEnabled" (click)="searchOpen()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">

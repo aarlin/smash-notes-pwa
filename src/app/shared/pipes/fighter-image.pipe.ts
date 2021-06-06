@@ -10,6 +10,9 @@ export class FighterImagePipe implements PipeTransform {
     if (dlcFighters.includes(value)) {
       return `assets/stock-icons/webp/${value}.webp`
     }
+    if (!value) {
+      return 'assets/navigation/ico_fighter_g.svg';
+    }
     return `assets/stock-icons/svg/${value}.svg`;
   }
 

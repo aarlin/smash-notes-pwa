@@ -1,16 +1,28 @@
 ion-content {
-    height: 100vh;
-    --padding-start: 20px;
-    --padding-end: 20px;
+  height: 100vh;
+  --padding-start: 20px;
+  --padding-end: 20px;
 }
 
-
-ion-avatar {
-  height: 5rem;
-  width: 5rem;
+@media only screen and (min-width: --ion-grid-width-sm) {
+  ion-avatar {
+    height: 5rem;
+    width: 5rem;
+  }
 }
+
+.ion-col {
+  align-self: stretch;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vw;
+}
+
 img {
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .slides {

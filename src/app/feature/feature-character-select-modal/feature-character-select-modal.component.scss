@@ -1,13 +1,17 @@
 .spinner-container {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .selected {
-    background-color: red;
-  }
-  
-  .avatar { 
-    border-radius: 0.5rem;
-  }
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.selected-player {
+  background: #bd2e41 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
+
+.selected-enemy {
+  background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
+
+.avatar {
+  border-radius: 0.5rem;
+}

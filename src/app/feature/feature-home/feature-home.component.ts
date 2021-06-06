@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
+import { IonInfiniteScroll, IonVirtualScroll, ModalController, Platform } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
@@ -31,9 +31,9 @@ export class FeatureHomeComponent implements OnInit {
   screenWidth: number;
 
   constructor(private noteService: NoteService, public modalController: ModalController,
-    private router: Router, private fighterImagePipe: FighterImagePipe) {
-      this.getScreenSize();
-    }
+    private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform) {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
@@ -41,16 +41,21 @@ export class FeatureHomeComponent implements OnInit {
         this.getNotesByUser();
       }
     });
-    // this.defaultLayout = true;
-    // this.gridLayout = true;
-    this.itemLayout = true;
 
+    this.platform.ready().then(() => {
+      if (this.platform.is('android') || this.platform.is('ios') || this.platform.is('mobileweb')) {
+        this.defaultLayout = true;
+      } else {
+        this.gridLayout = true;
+      }
+
+    });
   }
 
   @HostListener("window:resize", ["$event"])
   getScreenSize(event?) {
     this.screenWidth = window.innerWidth;
-    this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) -1;
+    this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
     this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
   }
@@ -61,9 +66,7 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    if (fighterName) {
-      return this.fighterImagePipe.transform(fighterName, '')
-    }
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByUser() {
