@@ -8,15 +8,16 @@
 </ion-header>
 
 <ion-content>
-
   <div *ngIf="searching" class="spinner-container">
     <ion-spinner></ion-spinner>
   </div>
 
   <ion-list>
     <ion-row>
-      <ion-col size-xl="2" size-lg="3" size-md="3" size-sm="4" size="12" *ngFor="let fighter of fighters; index as position; trackBy: trackItems">
-        <ion-img alt={{fighter?.name}} (click)="applyFighter(fighter)" [ngClass]="isFighterSelected(fighter)" class="avatar" [src]="loadFighterImage(fighter?.name)"></ion-img>
+      <ion-col size-xl="2" size-lg="3" size-md="3" size-sm="4" size="12"
+        *ngFor="let fighter of fighters; index as position; trackBy: trackItems">
+        <ion-img alt={{fighter?.name}} (click)="applyFighter(fighter)" [ngClass]="isFighterSelected(fighter)"
+          class="avatar" [src]="loadFighterImage(fighter?.name)"></ion-img>
       </ion-col>
     </ion-row>
   </ion-list>

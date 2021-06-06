@@ -66,9 +66,7 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    if (fighterName) {
-      return this.fighterImagePipe.transform(fighterName, '')
-    }
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByUser() {

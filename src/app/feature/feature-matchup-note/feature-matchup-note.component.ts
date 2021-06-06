@@ -17,7 +17,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
   backArrowIcon: string;
   uid: string;
   dirty: boolean;
-  originalNote: Note;
 
   @Input() note: Note;
   @Input() update: boolean;
@@ -36,7 +35,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
-    this.originalNote = { ... this.note };
     console.log(this.update)
   }
 
@@ -51,7 +49,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '');
+    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   changeTitle(event) {
@@ -63,6 +61,14 @@ export class FeatureMatchupNoteComponent implements OnInit {
   onChange(event: any) {
     console.log(event);
     this.dirty = true;
+  }
+
+  hasOwnership() {
+    return this.uid === this.note?.uid;
+  }
+
+  onChangeVisibility(event: any) {
+    console.log(event);
   }
 
   async changePlayer() {
@@ -79,7 +85,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
         this.note.player = modelData.data?.fighter?.name;
-        console.log(this.originalNote, this.note)
         this.assignIcons();
         this.dirty = true;
       }
@@ -103,7 +108,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
         this.note.enemy = modelData.data?.fighter?.name;
-        console.log(this.originalNote, this.note)
         this.assignIcons();
         this.dirty = true;
       }
@@ -150,6 +154,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   updateNote(note) {
+    console.log(note);
     this.noteService.updateNote(note)
       .then(response => {
         console.log(response);

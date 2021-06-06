@@ -43,7 +43,7 @@ export class FeatureDiscoverComponent implements OnInit {
 
   ]
 
-  constructor(private noteService: NoteService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {}
+  constructor(private noteService: NoteService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) { }
 
   ngOnInit() {
     this.getNotesByOthers(false, "");
@@ -55,16 +55,16 @@ export class FeatureDiscoverComponent implements OnInit {
 
   loadData(event) {
     // setTimeout(() => {
-      // console.log('Done');
-      // event.target.complete();
+    // console.log('Done');
+    // event.target.complete();
 
-      this.getNotesByOthers(true, event);
+    this.getNotesByOthers(true, event);
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      // if (data.length == 1000) {
-        // event.target.disabled = true;
-      // }
+    // App logic to determine if all data is loaded
+    // and disable the infinite scroll
+    // if (data.length == 1000) {
+    // event.target.disabled = true;
+    // }
     // }, 500);
   }
 

@@ -1,20 +1,17 @@
 .spinner-container {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
 
-  .selected-player {
-    // background-color: red;
-    // background-image: url('/assets/navigation/page_title_bg.svg');
-    background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
-  }
+.selected-player {
+  background: #bd2e41 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
 
-  .selected-enemy {
-    background: #bd2e41 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+.selected-enemy {
+  background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
 
-  }
-
-  .avatar {
-    border-radius: 0.5rem;
-  }
+.avatar {
+  border-radius: 0.5rem;
+}

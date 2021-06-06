@@ -60,7 +60,7 @@ export class FeatureNotebooksComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
-    return this.fighterImagePipe.transform(fighterName, '')
+    return this.fighterImagePipe.transform(fighterName, '');
   }
 
   loadData(event) {
@@ -116,6 +116,11 @@ export class FeatureNotebooksComponent implements OnInit {
   }
 
   searchOpen() {
+    this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
+  cancelSearch(event) {
+    console.log(event);
     this.searchBarEnabled = !this.searchBarEnabled;
   }
 
