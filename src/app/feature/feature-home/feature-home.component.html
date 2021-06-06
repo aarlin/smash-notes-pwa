@@ -22,7 +22,7 @@
   <ion-virtual-scroll [items]="notes | virtualListIndex: exteraCol : nextPipe">
     <div *virtualItem="let note; let i = index">
       <ion-row class="ion-nowrap">
-        <ion-col [size]="12/exteraCol" *ngFor="let j of note;">
+        <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of note;">
           <ion-card *ngIf="gridLayout" (click)="openNote(notes[j])">
             <ion-card-header>
               <ion-item lines="none">
@@ -38,20 +38,6 @@
               <ion-card-title>{{notes[j]?.body}}</ion-card-title>
             </ion-card-header>
           </ion-card>
-
-          <ion-item lines="none" *ngIf="itemLayout" (click)="openNote(notes[j])">
-            <ion-avatar slot="start">
-              <ion-img alt={{notes[j]?.player}} [src]="loadFighterImage(notes[j]?.player)"></ion-img>
-            </ion-avatar>
-            <ion-avatar slot="end">
-              <ion-img alt={{notes[j]?.enemy}} [src]="loadFighterImage(notes[j]?.enemy)"></ion-img>
-            </ion-avatar>
-            <ion-label>
-              <h2>{{notes[j]?.title}}</h2>
-              <p>{{notes[j]?.body}}</p>
-            </ion-label>
-          </ion-item>
-
         </ion-col>
       </ion-row>
     </div>

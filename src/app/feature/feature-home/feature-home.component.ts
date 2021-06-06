@@ -47,7 +47,6 @@ export class FeatureHomeComponent implements OnInit {
         this.defaultLayout = true;
       } else {
         this.gridLayout = true;
-        // this.itemLayout = true;
       }
 
     });
