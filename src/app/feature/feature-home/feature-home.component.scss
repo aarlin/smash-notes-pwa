@@ -4,11 +4,20 @@ ion-content {
     --padding-end: 20px;
 }
 
-
-ion-avatar {
-  height: 5rem;
-  width: 5rem;
+@media only screen and (min-width: --ion-grid-width-sm) {
+  ion-avatar {
+    height: 5rem;
+    width: 5rem;
+  }
 }
+
+// ion-item {
+//   box-shadow: 0 0 3px 0 var(--ion-color-medium);
+//   padding-top: 5px;
+// }
+
+
+
 img {
     border-radius: 0.5rem;
 }
@@ -26,8 +35,7 @@ ion-card {
   max-height: 208px !important;
 }
 
-ion-card-content,
-p {
+ion-card-content, p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

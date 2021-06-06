@@ -35,12 +35,19 @@
     --border-radius: 0.75rem;
 }
 
+@media only screen and (min-width: --ion-grid-width-sm) {
+  ion-avatar {
+    --border-radius: none;
+    --height: 5rem;
+    --width: 5rem;
+  }
+}
+
 ion-avatar {
   --border-radius: none;
   --height: 5rem;
   --width: 5rem;
 }
-
 
 @font-face {
     font-family: "Rodin";
