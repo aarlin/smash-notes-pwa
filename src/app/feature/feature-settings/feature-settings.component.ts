@@ -20,6 +20,7 @@ export class FeatureSettingsComponent implements OnInit {
   signOut() {
     this.authenticationService.signOutUser()
     .then((response) => {
+      console.log(response)
 
       this.router.navigateByUrl('login');
     }, error => {
@@ -46,6 +47,7 @@ export class FeatureSettingsComponent implements OnInit {
   }
 
   onChangeHideNotes(event: any) {
+    console.log(event);
     this.hideNotesIcon = event.detail.checked ? 'eye-off-outline': 'eye-outline'
   }
 

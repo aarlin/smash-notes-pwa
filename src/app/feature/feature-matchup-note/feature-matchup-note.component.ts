@@ -27,9 +27,15 @@ export class FeatureMatchupNoteComponent implements OnInit {
     public toastController: ToastController) { }
 
   async ngOnInit() {
+    console.log(this.note);
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
+    // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
+    // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
+    // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
+    // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
+    console.log(this.update)
   }
 
   assignIcons() {
@@ -47,11 +53,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   changeTitle(event) {
+    console.log(event);
     this.note.title = event.target.value;
     this.dirty = true;
   }
 
   onChange(event: any) {
+    console.log(event);
     this.dirty = true;
   }
 
@@ -60,6 +68,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   onChangeVisibility(event: any) {
+    console.log(event);
   }
 
   async changePlayer() {
@@ -74,6 +83,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     });
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
+        console.log('Modal Data : ' + JSON.stringify(modelData.data));
         this.note.player = modelData.data?.fighter?.name;
         this.assignIcons();
         this.dirty = true;
@@ -95,6 +105,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
     });
     modal.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
+        console.log('Modal Data : ' + JSON.stringify(modelData.data));
+
         this.note.enemy = modelData.data?.fighter?.name;
         this.assignIcons();
         this.dirty = true;
@@ -123,6 +135,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
 
   saveNote() {
+    console.log(this.note);
+    console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
     this.dirty = false;
     this.dismissModal();
@@ -132,22 +146,29 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // TODO: show alert message, delete, dismiss modal, show toast
     this.noteService.deleteNote(note)
     .then(response => {
+      console.log(response);
     }, error => {
+      console.log(error);
     })
 
   }
 
   updateNote(note) {
+    console.log(note);
     this.noteService.updateNote(note)
       .then(response => {
+        console.log(response);
       }, error => {
+        console.log(error);
       })
   }
 
   createNote(note) {
     this.noteService.createNote(note)
       .then(response => {
+        console.log(response);
       }, error => {
+        console.log(error);
       })
   }
 
@@ -187,7 +208,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: () => {
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
           }
         }, {
           text: 'Delete',

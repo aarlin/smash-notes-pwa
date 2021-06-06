@@ -35,6 +35,7 @@ export class FeatureNotebooksComponent implements OnInit {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
+        console.log(fighters);
 
         this.pageToLoadNext += 1;
         this.fighters = fighters.map(fighter => {
@@ -64,6 +65,7 @@ export class FeatureNotebooksComponent implements OnInit {
 
   loadData(event) {
     setTimeout(() => {
+      console.log('Done');
       event.target.complete();
 
       // App logic to determine if all data is loaded
@@ -82,6 +84,7 @@ export class FeatureNotebooksComponent implements OnInit {
         });
         this.fighters = [...this.fighters, ...loadedFighters]
       }, (err => {
+        console.log('no more pages');
       }));
   }
 
@@ -117,6 +120,7 @@ export class FeatureNotebooksComponent implements OnInit {
   }
 
   cancelSearch(event) {
+    console.log(event);
     this.searchBarEnabled = !this.searchBarEnabled;
   }
 

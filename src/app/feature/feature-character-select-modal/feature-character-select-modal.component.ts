@@ -39,6 +39,7 @@ export class FeatureCharacterSelectModalComponent  {
         this.fighters = fighters;
         this.backupFighters = fighters;
       }, err => {
+        console.log('Error while getting fighters')
       }, () => {
         this.searching = false;
       });
@@ -48,13 +49,17 @@ export class FeatureCharacterSelectModalComponent  {
     this.fighters = this.backupFighters;
     const searchTerm = event.srcElement.value;
 
+    console.log(searchTerm);
+
     if (!searchTerm) {
       return;
     }
 
+    console.log(this.fighters);
     this.fighters = this.fighters.filter(fighter => {
       return fighter?.name?.toLowerCase().startsWith(searchTerm.toLowerCase());
     });
+    console.log(this.fighters);
   }
 
   loadFighterImage(fighterName: string) {

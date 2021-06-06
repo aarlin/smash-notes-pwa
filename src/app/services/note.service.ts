@@ -21,6 +21,7 @@ export class NoteService {
   }
 
   async createNote(note: any) {
+    console.log('create', note);
 
     const uid = await this.authenticationService.getUid();
     const id = this.firestore.createId();
@@ -28,12 +29,13 @@ export class NoteService {
       this.firestore
         .collection("notes")
         .add({ id, uid, ...note })
-        .then(res => { }, err => reject(err));
+        .then(res => console.log(res), err => reject(err));
     });
   }
 
   async getNotesByUser() {
     let uid = await this.authenticationService.getUid();
+    console.log(uid);
 
     return this.firestore.collection("notes").ref
       .where('uid', '==', uid)
@@ -51,6 +53,7 @@ export class NoteService {
 
   async getNotesByOthers() {
     let uid = await this.authenticationService.getUid();
+    console.log('uid', uid)
 
     return this.firestore.collection("notes").ref
       .where('uid', '!=', uid)
@@ -59,6 +62,7 @@ export class NoteService {
   }
 
   updateNote(note: any) {
+    console.log('update', note);
     return this.firestore
       .collection("notes")
       .doc(note.id)
@@ -66,6 +70,7 @@ export class NoteService {
   }
 
   deleteNote(note: any) {
+    console.log(note.id)
     return this.firestore
       .collection("notes")
       .doc(note.id)

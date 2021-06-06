@@ -50,9 +50,13 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   discover() {
+    console.log('discover')
   }
 
   loadData(event) {
+    // setTimeout(() => {
+    // console.log('Done');
+    // event.target.complete();
 
     this.getNotesByOthers(true, event);
 
@@ -76,6 +80,7 @@ export class FeatureDiscoverComponent implements OnInit {
           ...doc.data() as Note
         };
       });
+      console.log("All data discovered in 'notes' collection", data);
       this.notes = [...data, ...this.notes];
       this.dataLoaded = !this.dataLoaded;
 
@@ -84,6 +89,7 @@ export class FeatureDiscoverComponent implements OnInit {
       }
 
     }, error => {
+      console.log(error);
       this.dataLoaded = !this.dataLoaded;
     });
   }
@@ -106,6 +112,7 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
   trackNotes(index: number, itemObject: any) {
