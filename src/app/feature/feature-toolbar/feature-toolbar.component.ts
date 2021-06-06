@@ -56,7 +56,6 @@ export class FeatureToolbarComponent implements OnInit {
 
 
   goHome() {
-    console.log('home')
     this.router.navigateByUrl('login');
   }
 

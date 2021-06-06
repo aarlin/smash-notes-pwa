@@ -74,26 +74,22 @@ export class FeatureTabsComponent implements OnInit {
         text: 'Create Notebook',
         icon: 'folder-outline',
         handler: () => {
-          console.log('Create Notebook clicked');
         }
       }, {
         text: 'Cancel',
         icon: 'close',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
         }
       }]
     });
     await actionSheet.present();
 
     const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 
   async openNote() {
     let newNote: Note = new Note();
-    console.log(newNote);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,

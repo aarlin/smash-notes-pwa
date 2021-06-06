@@ -57,6 +57,5 @@ export class FeatureFloatingActionComponent implements OnInit {
     await actionSheet.present();
 
     const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 }

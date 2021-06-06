@@ -65,11 +65,9 @@ export class LoginPage implements OnInit {
   checkIfLoggedIn() {
     this.authenticationService.userDetails().subscribe(response => {
       if (response !== null) {
-        console.log(response);
         this.router.navigateByUrl('dashboard');
       }
     }, error => {
-      console.log(error);
     })
 
   }
@@ -77,7 +75,6 @@ export class LoginPage implements OnInit {
   signIn(value) {
     this.authenticationService.signInUser(value)
       .then((response) => {
-        console.log(response)
         this.errorMsg = "";
         this.router.navigateByUrl('dashboard');
       }, error => {
@@ -89,7 +86,6 @@ export class LoginPage implements OnInit {
   signInAnonymously() {
     this.authenticationService.signInAnonymously()
       .then((response) => {
-        console.log(response)
         this.errorMsg = "";
         this.router.navigateByUrl('dashboard');
       }, error => {

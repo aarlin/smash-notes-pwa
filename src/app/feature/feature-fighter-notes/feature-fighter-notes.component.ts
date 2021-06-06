@@ -51,7 +51,6 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
-    console.log(this.fighter);
 
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
@@ -91,11 +90,9 @@ export class FeatureFighterNotesComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection for fighter: ", fighterName.name, data);
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
     }, error => {
-      console.log(error);
       this.dataLoaded = !this.dataLoaded;
     });
   }
@@ -103,7 +100,6 @@ export class FeatureFighterNotesComponent implements OnInit {
   chunkByGroup(notes: Note[]) {
     let groups = {};
     for (let note of notes) {
-      console.log(note, groups[note.groupName])
       if (groups[note.groupName] === undefined) {
         groups[note.groupName] = []
       }
@@ -127,7 +123,6 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   close() {
-    console.log('close')
     this.modalController.dismiss({
       'dismissed': true
     });
@@ -148,7 +143,6 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   dismissModal() {
-    console.log('dismiss')
 
     this.modalController.dismiss({
       'dismissed': true

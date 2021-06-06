@@ -44,7 +44,6 @@ export class AuthenticationService {
       if (this.angularFireAuth.currentUser) {
         this.angularFireAuth.signOut()
           .then(() => {
-            console.log("Sign out");
             resolve();
           }).catch(() => {
             reject();
@@ -56,7 +55,6 @@ export class AuthenticationService {
   getUid() {
     return new Promise<any>((resolve, reject) => {
       this.userDetails().subscribe(response => {
-        console.log(response);
         if (response !== null) {
           resolve(response.uid);
         } else {
@@ -64,7 +62,6 @@ export class AuthenticationService {
         }
       }, error => {
         resolve('');
-        console.log(error);
       })
     })
 

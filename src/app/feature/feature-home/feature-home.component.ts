@@ -77,15 +77,10 @@ export class FeatureHomeComponent implements OnInit {
           ...doc.data() as Note
         };
       });
-      console.log("All data in 'notes' collection for home", data);
       this.notes = data;
       this.dataLoaded = !this.dataLoaded;
-      console.log(this.dataLoaded);
     }, error => {
-      console.log(error);
       this.dataLoaded = !this.dataLoaded;
-      console.log(this.dataLoaded);
-
     });
   }
 
@@ -102,7 +97,6 @@ export class FeatureHomeComponent implements OnInit {
     });
     modal.onWillDismiss().then(dataReturned => {
       // trigger when about to close the modal
-      console.log(dataReturned.data);
     });
     return await modal.present();
   }
