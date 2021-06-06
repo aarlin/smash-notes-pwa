@@ -24,16 +24,14 @@
     </ion-avatar>
   </div>
 
-  <!-- <ion-button expand="block" (click)="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button> -->
-
   <ion-item>
     <ion-label position="floating">Note Title</ion-label>
-    <ion-input type="text" clearInput [ngModel]="note?.title" (ngModelChange)="onChange($event)" placeholder="Note Title"></ion-input>
+    <ion-input type="text" clearInput [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
   </ion-item>
 
   <ion-item class="note-textarea">
     <ion-label position="floating">Your Note</ion-label>
-    <ion-textarea [ngModel]="note?.body" position="stacked" (ngModelChange)="onChange($event)" placeholder="Your Note"></ion-textarea>
+    <ion-textarea [(ngModel)]="note.body" clearInput position="stacked" placeholder="Your Note"></ion-textarea>
 
   </ion-item>
 
@@ -42,8 +40,7 @@
       <ion-icon src="eye-off-outline"></ion-icon>
       <ion-icon src="eye-outline"></ion-icon>
       <ion-label>Visiblility</ion-label>
-      <ion-checkbox slot="start" [ngModel]="note?.visible" (ngModelChange)="onChangeVisibility($event)"></ion-checkbox>
-
+      <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
     </ion-item>
 
     <ion-item>

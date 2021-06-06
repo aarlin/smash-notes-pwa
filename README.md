@@ -27,6 +27,8 @@ https://itnext.io/github-actions-hide-and-set-angular-environment-variables-e753
 
 https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 
+https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-703c5dd0d0e7
+
 
 # Todos
 
@@ -47,7 +49,7 @@ https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
 - [ ] add vertical align to slides
 - [ ] fix settings tab
 
-
+https://stackoverflow.com/questions/23001679/css-columns-flexbox-with-no-gaps-between-items
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height
 https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-703c5dd0d0e7

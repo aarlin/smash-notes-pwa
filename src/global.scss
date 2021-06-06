@@ -25,14 +25,13 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 /* Ionic Modals */
 
 .character-select-modal {
-    --backdrop-opacity: 0.5;
-    --height: 80%;
-    --width: 80%;
-    --border-radius: 0.75rem;
+  --backdrop-opacity: 0.5;
+  --height: 80%;
+  --width: 80%;
+  --border-radius: 0.75rem;
 }
 
 @media only screen and (min-width: --ion-grid-width-sm) {
@@ -50,9 +49,10 @@ ion-avatar {
 }
 
 @font-face {
-    font-family: "Rodin";
-    src: local("Rodin"), url('assets/fonts/Rodin Bokutoh Pro UB.ttf') format("truetype");
-    //"Roboto Condensed",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif
+  font-family: "Rodin";
+  src: local("Rodin"),
+    url("assets/fonts/Rodin Bokutoh Pro UB.ttf") format("truetype");
+  //"Roboto Condensed",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif
 }
 
 @media only screen and (max-width: 375px) {
@@ -61,4 +61,104 @@ ion-avatar {
   }
 }
 
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the element in the app.
 
+/// Check the browser supports flexbox wrap property
+/// the containing style rules will only be triggered on browsers
+/// that offer support for this feature
+@supports (flex-wrap: wrap) {
+  /// Parent container for the masonry tiles
+  /// Uses flex columns with a set height to create
+  /// a masonry interface effect
+  .wrapper {
+    width: 98.5%;
+    display: flex;
+    flex-flow: column wrap; /* Force column elements to wrap */
+    height: 100vw; /* Without the height property/value we get a single column / NO masonry! */
+
+    // The rules for each tile within the layout
+    section {
+      margin: 0 0.5em 0.5em 0;
+      padding: 1em;
+
+      img {
+        display: block;
+        margin: 0 auto 2em auto;
+        width: 90px;
+      }
+    }
+  }
+
+  /// Define height of parent container and width of each tile
+  /// for screen sizes above 1201 pixels in width
+  /// 4 column layout
+  @media only screen and (min-width: 1201px) {
+    .wrapper {
+      height: 100vw;
+
+      section {
+        width: 25%;
+      }
+    }
+  }
+
+  /// Define height of parent container and width of each tile
+  /// for screen sizes up to 1200 pixels in width
+  /// 3 column layout
+  @media only screen and (max-width: 1200px) {
+    .wrapper {
+      height: 150vw;
+
+      section {
+        width: 33.3%;
+      }
+    }
+  }
+
+  /// Define height of parent container and width of each tile
+  /// for screen sizes up to 900 pixels in width
+  /// 3 column layout
+  @media only screen and (max-width: 900px) {
+    .wrapper {
+      height: 220vw;
+    }
+  }
+
+  /// Define height of parent container and width of each tile
+  /// for screen sizes up to 700 pixels in width
+  /// 2 column layout
+  @media only screen and (max-width: 700px) {
+    .wrapper {
+      height: 450vw;
+
+      section {
+        width: 50%;
+      }
+    }
+  }
+
+  /// Define height of parent container and width of each tile
+  /// for screen sizes up to 600 pixels in width
+  /// 1 column layout
+  @media only screen and (max-width: 600px) {
+    .wrapper {
+      height: 950vw;
+
+      section {
+        width: 100%;
+      }
+    }
+  }
+}
