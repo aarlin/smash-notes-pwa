@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'smash-feature-settings',
@@ -13,7 +14,7 @@ export class FeatureSettingsComponent implements OnInit {
   hideNotesIcon: string = 'eye-outline';
   dataSyncIcon: string = 'cloud-upload-outline';
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router, private storage: StorageService) { }
 
   ngOnInit() {}
 
@@ -29,17 +30,32 @@ export class FeatureSettingsComponent implements OnInit {
     })
   }
 
-  onClick(event){
+  onClick(event) {
     let systemDark = window.matchMedia("(prefers-color-scheme: dark)");
     systemDark.addListener(this.colorTest);
-    if(event.detail.checked){
+    if (event.detail.checked) {
       document.body.setAttribute('data-theme', 'dark');
     }
-    else{
+    else {
       document.body.setAttribute('data-theme', 'light');
     }
 
-    this.themeMode = (this.themeMode === 'sunny-outline' ? 'moon-outline': 'sunny-outline')
+    if (this.themeMode === 'sunny-outline') {
+      this.themeMode = 'moon-outline';
+      this.storage.set(`setting:theme }`, 'dark');
+    } else {
+      this.themeMode = 'sunny-outline';
+      this.storage.set(`setting:theme }`, 'light');
+    }
+  }
+
+  async notebookLayoutChangeEvent(event: any) {
+    console.log(event);
+    await this.storage.set('notebookLayout', event.detail.value);
+  }
+
+  async homeLayoutChangeEvent(event: any) {
+    await this.storage.set('homeLayout', event.detail.value);
   }
 
   onChangeDataSync(event) {

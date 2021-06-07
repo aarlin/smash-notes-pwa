@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
@@ -13,22 +14,16 @@ import { FilterModalComponent } from '../feature-filter-select/filter-modal.comp
   styleUrls: ['./feature-notebooks.component.scss'],
 })
 export class FeatureNotebooksComponent implements OnInit {
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   pageToLoadNext: number = 1;
   pageSize: number = 20;
-
   fighters: Fighter[] = [];
   hideHeader = false;
-
   showLocationDetail = false;
-
   homeIcon: string;
-
   searchBarEnabled = false;
 
-  @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
-  // @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  noteBookLayout: any;
 
   dataList = [];
   vColMinWidth = 200; // virtual list columns min width as pixel
@@ -36,14 +31,20 @@ export class FeatureNotebooksComponent implements OnInit {
   nextPipe = 0;
   screenWidth: number;
 
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+
+  @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
+
+
 
   constructor(private fighterService: FighterService,
     private modalController: ModalController,
-    private fighterImagePipe: FighterImagePipe) {
-    this.getScreenSize();
+    private fighterImagePipe: FighterImagePipe,
+    private storage: StorageService) {
+      this.getScreenSize();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
@@ -56,6 +57,8 @@ export class FeatureNotebooksComponent implements OnInit {
           return fighter;
         });
       });
+    this.noteBookLayout = await this.storage.get('notebookLayout');
+    console.log(this.noteBookLayout);
   }
 
   @HostListener("window:resize", ["$event"])
@@ -86,31 +89,6 @@ export class FeatureNotebooksComponent implements OnInit {
 
   loadFighterImage(fighterName: string) {
     return this.fighterImagePipe.transform(fighterName, '');
-  }
-
-  loadData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
-
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      this.loadMoreFighters();
-    }, 150);
-  }
-
-  loadMoreFighters(): void {
-    this.fighterService.loadPartial(this.pageToLoadNext, this.pageSize)
-      .subscribe((fighters: Fighter[]) => {
-        this.pageToLoadNext++;
-        const loadedFighters: Fighter[] = fighters.map(fighter => {
-          fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`
-          return fighter;
-        });
-        this.fighters = [...this.fighters, ...loadedFighters]
-      }, (err => {
-        console.log('no more pages');
-      }));
   }
 
   // Dummy refresher function
