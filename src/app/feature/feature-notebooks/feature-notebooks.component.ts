@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
+import { Settings } from 'src/app/shared/interface/settings.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
@@ -13,37 +15,58 @@ import { FilterModalComponent } from '../feature-filter-select/filter-modal.comp
   styleUrls: ['./feature-notebooks.component.scss'],
 })
 export class FeatureNotebooksComponent implements OnInit {
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-
-  pageToLoadNext: number = 1;
-  pageSize: number = 20;
-
   fighters: Fighter[] = [];
   hideHeader = false;
-
   showLocationDetail = false;
-
   homeIcon: string;
-
   searchBarEnabled = false;
 
+  notebookLayout: any;
+
+  dataList = [];
+  vColMinWidth = 200; // virtual list columns min width as pixel
+  exteraCol = 1; // how many columns should be add to virtual list
+  nextPipe = 0;
+  screenWidth: number;
+
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
+
+
+
   constructor(private fighterService: FighterService,
-      private modalController: ModalController,
-      private fighterImagePipe: FighterImagePipe) { }
+    private modalController: ModalController,
+    private fighterImagePipe: FighterImagePipe,
+    private storage: StorageService) {
+    this.getScreenSize();
+  }
 
   ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
-        console.log(fighters);
-
-        this.pageToLoadNext += 1;
         this.fighters = fighters.map(fighter => {
           fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
       });
+    this.storage.get('settings').then((settings: Settings) => {
+      this.notebookLayout = settings.selectedNotebookLayout;
+    });
+  }
+
+  @HostListener("window:resize", ["$event"])
+  getScreenSize(event?) {
+    this.screenWidth = window.innerWidth;
+    this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
+    this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
+    this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
+  }
+
+  itemHeightFn(item, index) {
+    // better performance if setting item height
+    return 215;
   }
 
   async loadFighterPage(fighter: Fighter) {
@@ -61,31 +84,6 @@ export class FeatureNotebooksComponent implements OnInit {
 
   loadFighterImage(fighterName: string) {
     return this.fighterImagePipe.transform(fighterName, '');
-  }
-
-  loadData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
-
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      this.loadMoreFighters();
-    }, 150);
-  }
-
-  loadMoreFighters(): void {
-    this.fighterService.loadPartial(this.pageToLoadNext, this.pageSize)
-      .subscribe((fighters: Fighter[]) => {
-        this.pageToLoadNext++;
-        const loadedFighters: Fighter[] = fighters.map(fighter => {
-          fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`
-          return fighter;
-        });
-        this.fighters = [...this.fighters, ...loadedFighters]
-      }, (err => {
-        console.log('no more pages');
-      }));
   }
 
   // Dummy refresher function
