@@ -49,6 +49,11 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] add vertical align to slides
 - [ ] fix settings tab
 
+ionViewWillEnter()
+ionViewDidLeave()
+
+https://www.linkedin.com/pulse/make-your-angular-ionic-app-offline-runnable-using-storage-takode/
+
 https://stackoverflow.com/questions/23001679/css-columns-flexbox-with-no-gaps-between-items
 
 https://www.codegrepper.com/code-examples/html/ion-textarea+height

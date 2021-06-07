@@ -4,7 +4,7 @@
 
 <ion-content class="ion-padding">
   <ion-card>
-    <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)">
+    <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)" [value]="settings?.selectedHomeLayout">
       <ion-list-header>
         <ion-label>
           Home Layout Configuration
@@ -27,7 +27,7 @@
   </ion-card>
 
   <ion-card>
-    <ion-radio-group (ionChange)="notebookLayoutChangeEvent($event)">
+    <ion-radio-group (ionChange)="notebookLayoutChangeEvent($event)" [value]="settings?.selectedNotebookLayout">
       <ion-list-header>
         <ion-label>
           Notebook Layout Configuration
@@ -65,20 +65,20 @@
     <ion-item class="ion-activated">
       <ion-icon [name]="dataSyncIcon" slot="start"></ion-icon>
       <ion-label>Online Sync</ion-label>
-      <ion-toggle (ionChange)="onChangeDataSync($event)" slot="end"></ion-toggle>
+      <ion-toggle [checked]="settings?.onlineSync" (ionChange)="onChangeDataSync($event)" slot="end"></ion-toggle>
 
     </ion-item>
 
     <ion-item class="ion-activated">
       <ion-icon [name]="hideNotesIcon" slot="start"></ion-icon>
       <ion-label>Hide Notes</ion-label>
-      <ion-toggle (ionChange)="onChangeHideNotes($event)" slot="end"></ion-toggle>
+      <ion-toggle [checked]="settings?.hideNotes" (ionChange)="onChangeHideNotes($event)" slot="end"></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-icon [name]="themeMode" slot="start"></ion-icon>
       <ion-label>Dark Mode</ion-label>
-      <ion-toggle (ionChange)="onClick($event)" slot="end"></ion-toggle>
+      <ion-toggle [checked]="settings?.darkMode" (ionChange)="onChangeDarkMode($event)" slot="end"></ion-toggle>
     </ion-item>
 
   </ion-card>

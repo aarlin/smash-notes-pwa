@@ -22,7 +22,7 @@
 
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
 
-  <ng-container *ngIf="noteBookLayout === 'virtual-div-grid'">
+  <ng-container *ngIf="notebookLayout === 'virtual-div-grid'">
     <ion-virtual-scroll [items]="fighters | virtualListIndex: exteraCol : nextPipe">
       <div *virtualItem="let fighter; let i = index">
         <ion-row class="ion-nowrap">
@@ -38,7 +38,7 @@
     </ion-virtual-scroll>
   </ng-container>
 
-  <ng-container *ngIf="noteBookLayout === 'virtual-grid'">
+  <ng-container *ngIf="notebookLayout === 'virtual-grid'">
     <ion-virtual-scroll [items]="fighters | virtualListIndex: exteraCol : nextPipe">
       <ion-row *virtualItem="let fighter; let i = index">
         <ion-col *ngFor="let j of fighter" size-xl="3" size-lg="3" size-md="6" size-sm="12" size="12">
@@ -53,7 +53,7 @@
   </ng-container>
 
 
-  <ng-container *ngIf="noteBookLayout === 'virtual-item'">
+  <ng-container *ngIf="notebookLayout === 'virtual-item'">
     <ion-virtual-scroll [items]="fighters">
       <ion-item *virtualItem="let fighter">
         <ion-card>
@@ -69,7 +69,7 @@
     </ion-virtual-scroll>
   </ng-container>
 
-    <ng-container *ngIf="noteBookLayout === 'grid'">
+    <ng-container *ngIf="notebookLayout === 'grid'">
       <ion-grid>
         <ion-row>
           <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" size-xl="3" size-lg="4" size-md="6" size-sm="12" size="12">

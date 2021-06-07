@@ -3,6 +3,7 @@ import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/ang
 import { FighterService } from 'src/app/services/fighter.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
+import { Settings } from 'src/app/shared/interface/settings.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { FeatureFighterNotesComponent } from '../feature-fighter-notes/feature-fighter-notes.component';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
@@ -14,16 +15,13 @@ import { FilterModalComponent } from '../feature-filter-select/filter-modal.comp
   styleUrls: ['./feature-notebooks.component.scss'],
 })
 export class FeatureNotebooksComponent implements OnInit {
-
-  pageToLoadNext: number = 1;
-  pageSize: number = 20;
   fighters: Fighter[] = [];
   hideHeader = false;
   showLocationDetail = false;
   homeIcon: string;
   searchBarEnabled = false;
 
-  noteBookLayout: any;
+  notebookLayout: any;
 
   dataList = [];
   vColMinWidth = 200; // virtual list columns min width as pixel
@@ -32,7 +30,6 @@ export class FeatureNotebooksComponent implements OnInit {
   screenWidth: number;
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
 
 
@@ -41,24 +38,22 @@ export class FeatureNotebooksComponent implements OnInit {
     private modalController: ModalController,
     private fighterImagePipe: FighterImagePipe,
     private storage: StorageService) {
-      this.getScreenSize();
+    this.getScreenSize();
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.homeIcon = 'assets/navigation/header_bar_ico.svg';
     this.fighterService.loadAll()
       .subscribe((fighters: Fighter[]) => {
-        console.log(fighters);
-
-        this.pageToLoadNext += 1;
         this.fighters = fighters.map(fighter => {
           fighter.url = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${fighter.name}.png`;
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
       });
-    this.noteBookLayout = await this.storage.get('notebookLayout');
-    console.log(this.noteBookLayout);
+    this.storage.get('settings').then((settings: Settings) => {
+      this.notebookLayout = settings.selectedNotebookLayout;
+    });
   }
 
   @HostListener("window:resize", ["$event"])

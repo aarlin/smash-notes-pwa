@@ -9,22 +9,23 @@ export class StorageService {
   private _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
-    this.init();
   }
 
   async init() {
-    // If using, define drivers here: await this.storage.defineDriver(/*...*/);
+    if(this._storage != null) {
+      return;
+    }
     const storage = await this.storage.create();
     this._storage = storage;
   }
 
-  // Create and expose methods that users of this service can
-  // call, for example:
-  public set(key: string, value: any) {
-    this._storage?.set(key, value);
+  public async set(key: string, value: any): Promise<any> {
+    await this.init();
+    return await this._storage?.set(key, value);
   }
 
-  public get(key: string) {
-    this._storage?.get(key);
+  public async get(key: string): Promise<any> {
+    await this.init();
+    return await this._storage?.get(key);
   }
 }
