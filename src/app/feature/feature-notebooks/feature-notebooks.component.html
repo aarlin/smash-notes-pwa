@@ -6,12 +6,15 @@
       </ion-button>
     </ion-buttons>
     <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
-    <ion-searchbar *ngIf="searchBarEnabled" (ionCancel)="cancelSearch($event)" showCancelButton="focus" type="text"
+    <ion-searchbar *ngIf="searchBarEnabled" (ionCancel)="cancelSearch($event)" type="text"
       placeholder="Search text" clearInput>
     </ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button *ngIf="!searchBarEnabled" (click)="searchOpen()" shape="round">
+      <ion-button *ngIf="!searchBarEnabled" (click)="toggleSearch()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="searchBarEnabled" (click)="toggleSearch()" shape="round">
+       Cancel
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">
         <ion-icon slot="icon-only" name="options"></ion-icon>
@@ -29,7 +32,9 @@
           <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of fighter;">
             <ion-item lines="inset" (click)="loadFighterPage(fighters[j])">
               <ion-img alt={{fighters[j]?.name}} class="stock-icon-image" [src]="loadFighterImage(fighters[j]?.name)"></ion-img>
-              <ion-card-subtitle class="fighter-notebook">{{fighters[j]?.name | normalizeName }}</ion-card-subtitle>
+              <ion-card-subtitle class="fighter-notebook">{{fighters[j]?.name | normalizeName | uppercase}}</ion-card-subtitle>
+            </ion-item>
+            <ion-item>
               <ion-badge color="primary">40</ion-badge>
             </ion-item>
           </ion-col>

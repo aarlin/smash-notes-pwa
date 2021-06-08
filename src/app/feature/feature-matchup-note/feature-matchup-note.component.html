@@ -24,23 +24,23 @@
     </ion-avatar>
   </div>
 
-  <ion-item>
+  <ion-item lines="none">
     <ion-label position="floating">Note Title</ion-label>
     <ion-input type="text" clearInput [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
   </ion-item>
 
-  <ion-item class="note-textarea">
-    <ion-label position="floating">Your Note</ion-label>
-    <ion-textarea [(ngModel)]="note.body" clearInput position="stacked" placeholder="Your Note"></ion-textarea>
+  <!-- <ion-item lines="none"> -->
 
-  </ion-item>
+    <quill-editor [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
+  <!-- </ion-item> -->
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item>
-      <ion-icon src="eye-off-outline"></ion-icon>
-      <ion-icon src="eye-outline"></ion-icon>
-      <ion-label>Visiblility</ion-label>
-      <ion-checkbox slot="start" [(ngModel)]="note.visible"></ion-checkbox>
+
+      <ion-icon [name]="visibilityIcon" slot="start"></ion-icon>
+      <ion-label>Share to Others</ion-label>
+      <ion-checkbox slot="start" [ngModel]="note.visible" (ionChange)="onChangeVisibility($event)" slot="end"></ion-checkbox>
+
     </ion-item>
 
     <ion-item>
@@ -48,7 +48,8 @@
     </ion-item>
 
   </ng-container>
-<!--
+
+  <!--
   <ion-item>
     <ion-buttons>
       <ion-button>
@@ -62,4 +63,3 @@
 
 
 </ion-content>
-

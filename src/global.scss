@@ -25,6 +25,16 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+/* Quill styles */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 /* Ionic Modals */
 
 .character-select-modal {
@@ -61,23 +71,6 @@ ion-avatar {
   }
 }
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the element in the app.
-
-/// Check the browser supports flexbox wrap property
-/// the containing style rules will only be triggered on browsers
-/// that offer support for this feature
 @supports (flex-wrap: wrap) {
   /// Parent container for the masonry tiles
   /// Uses flex columns with a set height to create

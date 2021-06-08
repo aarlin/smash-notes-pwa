@@ -21,7 +21,33 @@
 </ion-header>
 
 <ion-content [scrollEvents]="true">
-<!-- <ion-content [appParallaxHeader]="image" [scrollEvents]="true"> -->
+  <ion-list *ngIf="!dataLoaded">
+    <ng-container *ngFor="let skeletonRow of [].constructor(10)">
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <!-- <ion-content [appParallaxHeader]="image" [scrollEvents]="true"> -->
   <!-- <div #image class="fighter-bg">
     <div class="fighter-bg_inner">
       <div class="parallax-image">
@@ -41,7 +67,7 @@
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
-          <p>{{note.body}}</p>
+          <p [innerHTML]="note.body"></p>
         </ion-label>
       </ion-item>
     </ion-virtual-scroll>
@@ -54,32 +80,6 @@
         </ion-label>
       </ion-item>
     </ng-template>
-
-    <ion-list *ngIf="!dataLoaded">
-      <ng-container *ngFor="let skeletonRow of [].constructor(10)">
-        <ion-list-header>
-          <ion-label>
-            <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
-          </ion-label>
-        </ion-list-header>
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <ion-skeleton-text animated></ion-skeleton-text>
-          </ion-thumbnail>
-          <ion-label>
-            <h3>
-              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-            </h3>
-            <p>
-              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-            </p>
-            <p>
-              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-            </p>
-          </ion-label>
-        </ion-item>
-      </ng-container>
-    </ion-list>
   </div>
 
 

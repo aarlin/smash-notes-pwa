@@ -5,6 +5,11 @@ import { NoteService } from 'src/app/services/note.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
+// import { emojis } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/esm5/data/emojis';
+// import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
+
+// import { Emoji } from '@nutrify/quill-emoji-mart-picker';
+
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -21,10 +26,54 @@ export class FeatureMatchupNoteComponent implements OnInit {
   @Input() note: Note;
   @Input() update: boolean;
 
+  set = 'apple';
+
+  modules = {};
+  formats: string[] = [];
+  quill = null;
+
+  visibilityIcon: string;
+
+  customEmojis = [
+    {
+      name: 'Party Parrot',
+      shortNames: ['parrot'],
+      keywords: ['party'],
+      imageUrl: 'assets/emojis/ButtonIcon-GCN-B.svg',
+    },
+    {
+      name: 'Test Flag',
+      shortNames: ['test'],
+      keywords: ['test', 'flag'],
+      spriteUrl: 'https://unpkg.com/emoji-datasource-twitter@4.0.4/img/twitter/sheets-256/64.png',
+      sheet_x: 1,
+      sheet_y: 1,
+      size: 64,
+      sheetColumns: 52,
+      sheetRows: 52,
+    },
+  ];
+
   constructor(private modalController: ModalController,
     private noteService: NoteService, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService,
     public alertController: AlertController,
-    public toastController: ToastController) { }
+    public toastController: ToastController) {
+    // this.modules = {
+    //   'emoji-module': {
+    //     emojiData: emojis,
+    //     customEmojiData: this.customEmojis,
+    //     preventDrag: true,
+    //     showTitle: true,
+    //     indicator: '*',
+    //     convertEmoticons: true,
+    //     convertShortNames: true,
+    //     set: () => this.set
+    //   },
+    //   toolbar: false
+    // };
+
+    this.formats = ['emoji'];
+  }
 
   async ngOnInit() {
     console.log(this.note);
@@ -36,7 +85,17 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
     console.log(this.update)
+    this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
   }
+
+
+  created(quill: any) {
+    this.quill = quill;
+  }
+
+  // insertEmoji(event: EmojiEvent) {
+  //   Emoji.insertEmoji(this.quill, event);
+  // }
 
   assignIcons() {
     this.note?.player ?
@@ -69,6 +128,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   onChangeVisibility(event: any) {
     console.log(event);
+    this.note.visible = event.detail.checked;
+    this.visibilityIcon = event.detail.checked ? 'eye-outline' : 'eye-off-outline';
   }
 
   async changePlayer() {
@@ -145,11 +206,11 @@ export class FeatureMatchupNoteComponent implements OnInit {
   deleteNote(note) {
     // TODO: show alert message, delete, dismiss modal, show toast
     this.noteService.deleteNote(note)
-    .then(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    })
+      .then(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      })
 
   }
 
