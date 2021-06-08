@@ -2,7 +2,10 @@
   <app-feature-toolbar headerTitle="Smash Notes - Settings"></app-feature-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [scrollEvents]="true"
+(ionScrollStart)="logScrollStart()"
+(ionScroll)="logScrolling($event)"
+(ionScrollEnd)="logScrollEnd()">
   <ion-card>
     <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)" [value]="settings?.selectedHomeLayout">
       <ion-list-header>
