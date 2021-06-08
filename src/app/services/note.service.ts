@@ -85,7 +85,7 @@ export class NoteService {
     return this.firestore
       .collection("notes")
       .doc(note.id)
-      .set({ completed: true }, { merge: true });
+      .set({ ...note }, { merge: true });
   }
 
   deleteNote(note: any) {
