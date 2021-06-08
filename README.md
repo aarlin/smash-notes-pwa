@@ -55,6 +55,12 @@ ionViewDidLeave()
 wysiwyg
 custom emotes for buttons
 
+https://github.com/raphaelM-sudo/quill-emoji-mart-picker
+https://www.npmjs.com/package/firebaseui-angular
+https://app.quill.chat/
+
+https://www.fullstackfirebase.com/
+
 https://www.ssbwiki.com/Category:Button_icons_(GCN)
 
 https://www.linkedin.com/pulse/make-your-angular-ionic-app-offline-runnable-using-storage-takode/
