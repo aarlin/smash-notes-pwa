@@ -32,6 +32,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
   formats: string[] = [];
   quill = null;
 
+  visibilityIcon: string;
+
   customEmojis = [
     {
       name: 'Party Parrot',
@@ -83,6 +85,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
     console.log(this.update)
+    this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
   }
 
 
@@ -125,6 +128,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   onChangeVisibility(event: any) {
     console.log(event);
+    this.note.visible = event.detail.checked;
+    this.visibilityIcon = event.detail.checked ? 'eye-outline' : 'eye-off-outline';
   }
 
   async changePlayer() {

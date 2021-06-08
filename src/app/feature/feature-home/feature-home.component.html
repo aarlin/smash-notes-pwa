@@ -91,7 +91,7 @@
 
               </ion-item>
               <ion-card-subtitle>{{notes[j]?.title}}</ion-card-subtitle>
-              <ion-card-title>{{notes[j]?.body}}</ion-card-title>
+              <ion-card-title [innerHTML]="notes[j]?.body"></ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
