@@ -14,6 +14,7 @@ export class FeatureSettingsComponent implements OnInit {
   themeMode: string = 'sunny-outline';
   hideNotesIcon: string = 'eye-outline';
   dataSyncIcon: string = 'cloud-upload-outline';
+  shareIcon: string = 'share-outline';
   settings: Settings;
 
   constructor(private authenticationService: AuthenticationService, private router: Router, private storage: StorageService) { }

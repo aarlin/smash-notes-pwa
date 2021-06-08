@@ -29,7 +29,7 @@
       </ion-avatar>
       <ion-label>
         <h2>{{note.title}}</h2>
-        <p>{{note.body}}</p>
+        <p [innerHTML]="note.body"></p>
       </ion-label>
     </ion-item>
 

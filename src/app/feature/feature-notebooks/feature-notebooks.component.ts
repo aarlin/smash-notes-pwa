@@ -113,9 +113,10 @@ export class FeatureNotebooksComponent implements OnInit {
     return await modal.present();
   }
 
-  searchOpen() {
+  toggleSearch() {
     this.searchBarEnabled = !this.searchBarEnabled;
   }
+
 
   cancelSearch(event) {
     console.log(event);
