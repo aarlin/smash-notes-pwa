@@ -1,3 +1,7 @@
+// import '@nutrify/quill-emoji-mart-picker';
+import { QuillModule } from 'ngx-quill';
+// import { PickerModule } from '@nutrify/ngx-emoji-mart-picker';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -21,6 +25,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
+    QuillModule.forRoot(),
+    // PickerModule,
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
