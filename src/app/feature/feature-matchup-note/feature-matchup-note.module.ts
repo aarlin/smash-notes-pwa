@@ -5,6 +5,7 @@ import { FeatureMatchupNoteComponent } from './feature-matchup-note.component';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FighterService } from 'src/app/services/fighter.service';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [FeatureMatchupNoteComponent],
@@ -13,7 +14,8 @@ import { FighterService } from 'src/app/services/fighter.service';
     IonicModule,
     SharedPipesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    YouTubePlayerModule
   ],
   exports: [FeatureMatchupNoteComponent],
   providers: [FighterService]

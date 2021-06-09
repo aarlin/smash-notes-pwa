@@ -34,7 +34,12 @@
   <ion-item class="note-textarea">
     <ion-label position="floating">Your Note</ion-label>
     <ion-textarea placeholder="Your Note" position="stacked" [(ngModel)]="note.body"></ion-textarea>
+  </ion-item>
 
+  <ion-item>
+    <youtube-player videoId="GYAB4Td62zI" suggestedQuality="highres" [height]="250" [width]="500" [startSeconds]="4"
+      [endSeconds]="8">
+    </youtube-player>
   </ion-item>
 
   <ion-item>
