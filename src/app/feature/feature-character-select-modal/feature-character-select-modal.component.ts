@@ -63,6 +63,7 @@ export class FeatureCharacterSelectModalComponent  {
   }
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage');
     return this.fighterImagePipe.transform(fighterName, '')
   }
 
@@ -76,6 +77,7 @@ export class FeatureCharacterSelectModalComponent  {
   }
 
   isFighterSelected(fighter: Fighter) {
+    console.log('isFighterSelected')
     if (this.input === 'fighter') {
       if (fighter === this.currentFighter) {
         return 'selected-player';

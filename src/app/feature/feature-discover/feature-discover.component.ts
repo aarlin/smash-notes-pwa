@@ -69,6 +69,7 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage')
     return this.fighterImagePipe.transform(fighterName, '')
   }
 

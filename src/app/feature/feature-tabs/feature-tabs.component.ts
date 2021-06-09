@@ -49,6 +49,7 @@ export class FeatureTabsComponent implements OnInit {
   }
 
   getChosenFighter(fighter: string) {
+    console.log('getChosenFighter')
     if (fighter) {
       return `assets/stock-icons/svg/${fighter}.svg`;
     } else {

@@ -79,6 +79,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage')
     return this.fighterImagePipe.transform(fighterName, '')
   }
 
@@ -101,6 +102,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   setBackgroundImage(fighter: Fighter) {
+    console.log('setBackgroundImage')
     this.background = `assets/background/${fighter.name}.jpg`;
     this.fighterImage = `assets/portraits/fighter_image/${fighter.name}.png`;
 
@@ -110,6 +112,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   setSeriesIcon(fighter: Fighter) {
+    console.log('setSeriesIcon')
     this.fighterSeriesIcon = `assets/series-symbols/series-logo/${fighter.name}.svg`;
   }
 

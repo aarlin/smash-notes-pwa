@@ -93,6 +93,7 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage')
     return this.fighterImagePipe.transform(fighterName, '')
   }
 

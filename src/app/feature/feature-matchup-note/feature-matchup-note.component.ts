@@ -98,6 +98,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   // }
 
   assignIcons() {
+    console.log('assignIcons')
     this.note?.player ?
       this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg` :
       this.playerIcon = `assets/navigation/ico_fighter_g.svg`;
@@ -108,6 +109,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage')
     return this.fighterImagePipe.transform(fighterName, '')
   }
 
@@ -123,6 +125,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   hasOwnership() {
+    console.log('hasOwnership')
     return this.uid === this.note?.uid;
   }
 
