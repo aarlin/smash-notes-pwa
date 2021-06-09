@@ -62,7 +62,20 @@ export class FeatureHomeComponent implements OnInit {
     });
 
     this.storage.get('settings').then((settings: Settings) => {
-      this.layout = settings.selectedHomeLayout;
+      switch (settings.selectedHomeLayout) {
+        case 'list':
+          this.defaultLayout = true;
+          this.gridLayout, this.masonryLayout = false;
+          break;
+        case 'grid':
+          this.gridLayout = true;
+          this.defaultLayout, this.masonryLayout = false;
+          break;
+        case 'masonry':
+          this.masonryLayout = true;
+          this.defaultLayout, this.gridLayout = false;
+          break;
+      }
     });
   }
 
