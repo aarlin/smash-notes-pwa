@@ -6,6 +6,8 @@ import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
+import { StorageService } from 'src/app/services/storage.service';
+import { Settings } from 'src/app/shared/interface/settings.interface';
 
 
 @Component({
@@ -17,9 +19,7 @@ export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
   notes: Note[] = [];
-  gridLayout: boolean;
-  defaultLayout: boolean;
-  itemLayout: boolean;
+  layout: any;
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -30,8 +30,19 @@ export class FeatureHomeComponent implements OnInit {
   nextPipe = 0;
   screenWidth: number;
 
+  defaultLayout = false;
+  gridLayout = false;
+  masonryLayout = true;
+
+  masonryOptions = {
+    horizontalOrder: true,
+    gutter: 10,
+    fitWidth: true,
+    resize: true
+  }
+
   constructor(private noteService: NoteService, public modalController: ModalController,
-    private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform) {
+    private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
   }
 
@@ -44,11 +55,27 @@ export class FeatureHomeComponent implements OnInit {
 
     this.platform.ready().then(() => {
       if (this.platform.is('android') || this.platform.is('ios') || this.platform.is('mobileweb')) {
-        this.defaultLayout = true;
+        this.layout = 'list';
       } else {
-        this.gridLayout = true;
+        this.layout = 'grid';
       }
+    });
 
+    this.storage.get('settings').then((settings: Settings) => {
+      switch (settings.selectedHomeLayout) {
+        case 'list':
+          this.defaultLayout = true;
+          this.gridLayout, this.masonryLayout = false;
+          break;
+        case 'grid':
+          this.gridLayout = true;
+          this.defaultLayout, this.masonryLayout = false;
+          break;
+        case 'masonry':
+          this.masonryLayout = true;
+          this.defaultLayout, this.gridLayout = false;
+          break;
+      }
     });
   }
 

@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { FeatureToolbarModule } from '../feature-toolbar/feature-toolbar.module';
 import { NoteService } from 'src/app/services/note.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
+import { NgxMasonryModule } from 'ngx-masonry';
+
 
 @NgModule({
   declarations: [FeatureHomeComponent],
@@ -12,7 +14,8 @@ import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
     CommonModule,
     IonicModule,
     FeatureToolbarModule,
-    SharedPipesModule
+    SharedPipesModule,
+    NgxMasonryModule
   ],
   exports: [FeatureHomeComponent],
   providers: [NoteService]

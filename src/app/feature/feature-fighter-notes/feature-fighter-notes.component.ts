@@ -100,19 +100,6 @@ export class FeatureFighterNotesComponent implements OnInit {
     });
   }
 
-  chunkByGroup(notes: Note[]) {
-    let groups = {};
-    for (let note of notes) {
-      console.log(note, groups[note.groupName])
-      if (groups[note.groupName] === undefined) {
-        groups[note.groupName] = []
-      }
-      note.enemyImage = `https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${note.enemy}.png`
-      groups[note.groupName].push(note);
-    }
-    return groups;
-  }
-
   setBackgroundImage(fighter: Fighter) {
     this.background = `assets/background/${fighter.name}.jpg`;
     this.fighterImage = `assets/portraits/fighter_image/${fighter.name}.png`;
