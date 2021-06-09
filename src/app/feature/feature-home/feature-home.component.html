@@ -4,7 +4,7 @@
 
 <ion-content>
   <ion-list *ngIf="!dataLoaded">
-    <ng-container *ngIf="layout === 'list'">
+    <ng-container *ngIf="defaultLayout">
       <ion-item *ngFor="let j of [].constructor(10)">
         <ion-thumbnail slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -23,11 +23,11 @@
       </ion-item>
     </ng-container>
 
-    <ng-container *ngIf="layout === 'grid'">
+    <ng-container *ngIf="gridLayout || masonryLayout">
       <div *ngFor="let i of [].constructor(8)">
         <ion-row class="ion-nowrap">
           <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of [].constructor(3)">
-            <ion-card>
+            <ion-card *ngIf="gridLayout">
               <ion-card-header>
                 <ion-item lines="none">
                   <ion-avatar slot="start">
@@ -60,12 +60,48 @@
     </ion-item>
   </ng-template>
 
-  <ion-virtual-scroll *ngIf="dataLoaded && notes.length"
+  <ion-list *ngIf="dataLoaded && notes.length && defaultLayout">
+    <ion-item lines="full" class="col col-50" (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
+      <ion-avatar slot="start">
+        <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
+      </ion-avatar>
+      <ion-avatar slot="end">
+        <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{note.title}}</h2>
+        <p [innerHTML]="note.body"></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ngx-masonry [options]="masonryOptions" *ngIf="dataLoaded && notes.length && masonryLayout">
+    <div class="masonry-grid">
+      <div ngxMasonryItem lines="full" class="masonry-item" (click)="openNote(note)"
+        *ngFor="let note of notes; trackBy: trackNotes">
+        <ion-card-header>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
+            </ion-avatar>
+            <ion-avatar slot="end">
+              <ion-img alt={{note.enemy}} [src]="loadFighterImage(note.enemy)"></ion-img>
+            </ion-avatar>
+
+          </ion-item>
+          <ion-card-subtitle>{{note.title}}</ion-card-subtitle>
+          <ion-card-title [innerHTML]="note.body"></ion-card-title>
+        </ion-card-header>
+      </div>
+    </div>
+  </ngx-masonry>
+
+  <ion-virtual-scroll *ngIf="dataLoaded && notes.length && gridLayout"
     [items]="notes | virtualListIndex: exteraCol : nextPipe">
     <div *virtualItem="let note; let i = index">
       <ion-row class="ion-nowrap ion-align-self-start">
         <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of note;">
-          <ion-card *ngIf="gridLayout" (click)="openNote(notes[j])">
+          <ion-card class="grid-card" *ngIf="gridLayout" (click)="openNote(notes[j])">
             <ion-card-header>
               <ion-item lines="none">
                 <ion-avatar slot="start">
@@ -84,37 +120,6 @@
       </ion-row>
     </div>
   </ion-virtual-scroll>
-
-  <!-- <ngx-masonry [options]="masonryOptions" [ordered]="true" *ngIf="dataLoaded && notes.length && layout === 'masonry'">
-    <ion-item ngxMasonryItem lines="full" class="masonry-item" (click)="openNote(note)"
-      *ngFor="let note of notes; trackBy: trackNotes">
-      <ion-avatar slot="start">
-        <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
-      </ion-avatar>
-      <ion-avatar slot="end">
-        <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{note.title}}</h2>
-        <p [innerHTML]="note.body"></p>
-      </ion-label>
-    </ion-item>
-  </ngx-masonry> -->
-
-  <!-- <ion-list *ngIf="dataLoaded && notes.length && layout === 'list'">
-    <ion-item lines="full" class="col col-50" (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
-      <ion-avatar slot="start">
-        <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
-      </ion-avatar>
-      <ion-avatar slot="end">
-        <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{note.title}}</h2>
-        <p [innerHTML]="note.body"></p>
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
 
   <ion-infinite-scroll threshold="150px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">

@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -26,6 +28,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   entryComponents: [],
   imports: [BrowserModule,
     QuillModule.forRoot(),
+    BrowserAnimationsModule,
     // PickerModule,
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -28,7 +28,7 @@ img {
   height: 100%;
 }
 
-ion-card {
+.grid-card {
   padding: 7px;
   margin: 0px;
   max-height: 208px !important;
@@ -39,4 +39,20 @@ p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.masonry-grid {
+  margin: 0 auto;
+}
+
+.masonry-item {
+  width: calc(95vw / 4);
+  height: 100%;
+  margin: 15px;
+
+  ion-card-header {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: inset;
+  }
 }

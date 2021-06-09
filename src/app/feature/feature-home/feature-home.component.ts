@@ -30,9 +30,15 @@ export class FeatureHomeComponent implements OnInit {
   nextPipe = 0;
   screenWidth: number;
 
+  defaultLayout = false;
+  gridLayout = false;
+  masonryLayout = true;
+
   masonryOptions = {
     horizontalOrder: true,
-    gutter: 10
+    gutter: 10,
+    fitWidth: true,
+    resize: true
   }
 
   constructor(private noteService: NoteService, public modalController: ModalController,
