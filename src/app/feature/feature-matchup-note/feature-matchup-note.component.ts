@@ -22,6 +22,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   backArrowIcon: string;
   uid: string;
   dirty: boolean;
+  originalNote: Note;
 
   @Input() note: Note;
   @Input() update: boolean;
@@ -77,6 +78,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   async ngOnInit() {
     console.log(this.note);
+    this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
@@ -119,6 +121,11 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   onChange(event: any) {
     console.log(event);
+    this.dirty = true;
+  }
+
+  editorChanged(event: any) {
+    console.log(event)
     this.dirty = true;
   }
 
@@ -179,17 +186,17 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   dismissModal() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    console.log(this.dirty)
-    if (!this.dirty) {
-      this.modalController.dismiss({
-        'dismissed': true, 'note': this.note, 'updated': this.dirty
-      });
-    } else {
-      this.alertExitWithoutSaving();
-    }
+    this.modalController.dismiss({
+      'dismissed': true, 'note': this.note, 'modified': this.dirty
+    });
+  }
 
+  dismissNote() {
+    if (this.dirty) {
+      this.alertExitWithoutSaving();
+    } else {
+      this.dismissModal();
+    }
   }
 
   // select one least one character
@@ -201,11 +208,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
     console.log(this.note);
     console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
-    this.dirty = true;
     this.modalController.dismiss({
-      'dismissed': true, 'note': this.note, 'modified': this.dirty
+      'dismissed': true, 'note': this.note, 'modified': true
     });
-    this.presentToast('Your note has been saved.');
   }
 
   deleteNote(note) {
@@ -248,6 +253,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'No',
           cssClass: 'secondary',
           handler: (blah) => {
+            // console.log(this.note);
+            // this.note = { ...this.originalNote };
+            // this.note.body = this.originalNote.body;
+            // console.log(this.note);
             this.dismissModal();
           }
         }, {
@@ -255,6 +264,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
           cssClass: 'danger',
           handler: () => {
             this.saveNote();
+            this.presentToast('Your note has been saved.');
           }
         }
       ]
