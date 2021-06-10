@@ -49,7 +49,7 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] add vertical align to slides
 - [ ] fix settings tab
 
-heart / share
+heart / share - https://forum.ionicframework.com/t/ionic-v4-ondiddismis-result-which-type/135313/4
 specific note page
 stages
 
@@ -57,8 +57,11 @@ stages
 ionViewWillEnter()
 ionViewDidLeave()
 
+
 wysiwyg
 custom emotes for buttons
+
+https://www.positronx.io/add-dynamic-side-menu-in-ionic-with-active-class/
 
 https://github.com/raphaelM-sudo/quill-emoji-mart-picker
 https://www.npmjs.com/package/firebaseui-angular

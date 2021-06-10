@@ -130,6 +130,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     console.log(event);
     this.note.visible = event.detail.checked;
     this.visibilityIcon = event.detail.checked ? 'eye-outline' : 'eye-off-outline';
+    this.dirty = true;
   }
 
   async changePlayer() {
@@ -180,12 +181,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
   dismissModal() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
+    console.log(this.dirty)
     if (!this.dirty) {
       this.modalController.dismiss({
-        'dismissed': true, 'note': this.note
+        'dismissed': true, 'note': this.note, 'updated': this.dirty
       });
     } else {
-      this.exitWithoutSaving();
+      this.alertExitWithoutSaving();
     }
 
   }
@@ -199,8 +201,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
     console.log(this.note);
     console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
-    this.dirty = false;
-    this.dismissModal();
+    this.dirty = true;
+    this.modalController.dismiss({
+      'dismissed': true, 'note': this.note, 'modified': this.dirty
+    });
     this.presentToast('Your note has been saved.');
   }
 
@@ -234,7 +238,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
-  async exitWithoutSaving() {
+  async alertExitWithoutSaving() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Unsaved',
@@ -250,7 +254,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'Yes',
           cssClass: 'danger',
           handler: () => {
-            this.dirty = true;
             this.saveNote();
           }
         }

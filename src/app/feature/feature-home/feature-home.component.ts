@@ -8,7 +8,7 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
-import { NgxMasonryOptions } from 'ngx-masonry';
+import { NgxMasonryComponent, NgxMasonryOptions } from 'ngx-masonry';
 
 
 @Component({
@@ -24,6 +24,8 @@ export class FeatureHomeComponent implements OnInit {
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
+
 
   dataList = [];
   vColMinWidth = 200; // virtual list columns min width as pixel
@@ -143,7 +145,11 @@ export class FeatureHomeComponent implements OnInit {
     });
     modal.onWillDismiss().then(dataReturned => {
       // trigger when about to close the modal
-      console.log(dataReturned.data);
+      console.log(dataReturned?.data?.modified)
+      if (dataReturned?.data?.modified) {
+        this.masonry.reloadItems();
+        this.masonry.layout();
+      }
     });
     return await modal.present();
   }
@@ -155,7 +161,7 @@ export class FeatureHomeComponent implements OnInit {
   loadData(event: any) {
     setTimeout(() => {
       // load more data
-      this.virtualScroll.checkEnd(); // trigger end of virtual list
+      this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
       if (this.dataList.length === 1000) {
