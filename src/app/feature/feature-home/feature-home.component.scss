@@ -45,14 +45,11 @@ p {
   margin: 0 auto;
 }
 
-.masonry-item {
-  width: calc(95vw / 4);
-  height: 100%;
-  margin: 15px;
+ngx-masonry {
+  margin: 0 auto;
+}
 
-  ion-card-header {
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: inset;
-  }
+.masonry-layout {
+  width: 100% !important;
+  height: 100% !important;
 }

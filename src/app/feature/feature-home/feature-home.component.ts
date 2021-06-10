@@ -8,6 +8,7 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
+import { NgxMasonryOptions } from 'ngx-masonry';
 
 
 @Component({
@@ -34,13 +35,16 @@ export class FeatureHomeComponent implements OnInit {
   gridLayout = false;
   masonryLayout = true;
 
-  masonryOptions = {
-    horizontalOrder: true,
-    gutter: 10,
+  masonryOptions: NgxMasonryOptions = {
     fitWidth: true,
-    resize: true
+    horizontalOrder: true,
+    gutter: 15,
+    resize: true,
+    initLayout: true,
+    columnWidth: '.masonry-item',
+    percentPosition: true
   }
-
+  
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
@@ -62,7 +66,17 @@ export class FeatureHomeComponent implements OnInit {
     });
 
     this.storage.get('settings').then((settings: Settings) => {
-      switch (settings.selectedHomeLayout) {
+      // if (!settings) {
+      //   this.settings = {
+      //     selectedHomeLayout: 'list',
+      //     selectedNotebookLayout: 'virtual-div-grid',
+      //     onlineSync: false,
+      //     hideNotes: false,
+      //     darkMode: true
+      //   }
+      //   this.saveSettings();
+      // }
+      switch (settings?.selectedHomeLayout) {
         case 'list':
           this.defaultLayout = true;
           this.gridLayout, this.masonryLayout = false;

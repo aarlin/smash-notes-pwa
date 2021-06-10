@@ -20,8 +20,8 @@ export class FeatureSettingsComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService, private router: Router, private storage: StorageService) { }
 
   ngOnInit() {
-    this.storage.get('settings').then(val => {
-      if (!val) {
+    this.storage.get('settings').then((settings: Settings) => {
+      if (!settings) {
         this.settings = {
           selectedHomeLayout: 'list',
           selectedNotebookLayout: 'virtual-div-grid',
@@ -31,8 +31,8 @@ export class FeatureSettingsComponent implements OnInit {
         }
         this.saveSettings();
       }
-      this.settings = val;
-      console.log(val);
+      this.settings = settings;
+      console.log(settings);
     });
   }
 
@@ -45,7 +45,7 @@ export class FeatureSettingsComponent implements OnInit {
   }
 
   logScrollEnd() {
-    
+
   }
 
   signOut() {
@@ -85,7 +85,7 @@ export class FeatureSettingsComponent implements OnInit {
 
   async notebookLayoutChangeEvent(event: any) {
     console.log(event);
-    await this.storage.set('settings', { ...this.settings, selectedNotebookLayout: event.detail.value});
+    await this.storage.set('settings', { ...this.settings, selectedNotebookLayout: event.detail.value });
   }
 
   async homeLayoutChangeEvent(event: any) {
@@ -95,7 +95,7 @@ export class FeatureSettingsComponent implements OnInit {
 
   async onChangeDataSync(event) {
     console.log(event);
-    await this.storage.set('settings', { ...this.settings, onlineSync: event.detail.checked});
+    await this.storage.set('settings', { ...this.settings, onlineSync: event.detail.checked });
     this.dataSyncIcon = event.detail.checked ? 'cloud-upload-outline' : 'cloud-offline-outline';
   }
 

@@ -49,6 +49,11 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] add vertical align to slides
 - [ ] fix settings tab
 
+heart / share
+specific note page
+stages
+
+
 ionViewWillEnter()
 ionViewDidLeave()
 

@@ -6,10 +6,11 @@ import { FeatureToolbarModule } from '../feature-toolbar/feature-toolbar.module'
 import { NoteService } from 'src/app/services/note.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { MasonryCardComponent } from 'src/app/components/masonry-card/masonry-card.component';
 
 
 @NgModule({
-  declarations: [FeatureHomeComponent],
+  declarations: [FeatureHomeComponent, MasonryCardComponent],
   imports: [
     CommonModule,
     IonicModule,

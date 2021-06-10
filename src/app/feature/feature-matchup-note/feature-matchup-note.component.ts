@@ -201,6 +201,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
     this.dirty = false;
     this.dismissModal();
+    this.presentToast('Your note has been saved.');
   }
 
   deleteNote(note) {
@@ -279,7 +280,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
             this.deleteNote(this.note);
             this.dirty = false;
             this.dismissModal();
-            this.presentToast();
+            this.presentToast('Your note has been deleted.',);
           }
         }
       ]
@@ -289,9 +290,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
 
-  async presentToast() {
+  async presentToast(message: string) {
     const toast = await this.toastController.create({
-      message: 'Your note has been deleted.',
+      message: message,
       duration: 2000
     });
     toast.present();
