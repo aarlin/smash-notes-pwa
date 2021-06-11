@@ -8,9 +8,7 @@ import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-mat
 interface Discover {
   name: string,
   bg: string,
-  bgAlt: string,
-  svg: string,
-  indexed: string
+  class: string
 }
 
 @Component({
@@ -28,20 +26,21 @@ export class FeatureDiscoverComponent implements OnInit {
   discovery: Discover[] = [
     {
       name: 'Fighters',
-      svg: 'https://www.smashbros.com/assets_v2/img/common/ico_fighter_g.svg',
-      bg: `url('https://www.smashbros.com/assets_v2/img/top/globalnav__btn_bg_fighter_pc.png')`,
-      bgAlt: 'https://www.smashbros.com/assets_v2/img/top/globalnav__btn_bg_fighter_pc.png',
-      indexed: 'https://www.smashbros.com/assets_v2/img/common/sprite.svg#fighter_s'
+      bg: 'assets/carousel/ico_fighter_g.svg',
+      class: 'discover-fighter'
     },
     {
       name: 'Stage',
-      svg: 'https://www.smashbros.com/assets_v2/img/common/ico_stage_g.svg',
-      bg: `url('https://www.smashbros.com/assets_v2/img/top/globalnav__btn_bg_stage_pc.png')`,
-      bgAlt: 'https://www.smashbros.com/assets_v2/img/top/globalnav__btn_bg_stage_pc.png',
-      indexed: 'https://www.smashbros.com/assets_v2/img/common/sprite.svg#stage_s'
+      bg: '/assets/carousel/ico_stage_g.svg',
+      class: 'discover-stage'
     }
+  ];
 
-  ]
+  sliderConfig: {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 1.6
+  }
 
   constructor(private noteService: NoteService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) { }
 

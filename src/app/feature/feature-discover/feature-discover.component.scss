@@ -3,6 +3,53 @@ ion-col {
     display: inline-block; /* <= shrinks container to image size */
 }
 
+.discover-image {
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+}
+
+.discover-card {
+    &.discover-fighter {
+        border: #26dd62 1px solid;
+        &:hover {
+            background: #26dd62 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+            transition: height .25s cubic-bezier(0.165, 0.84, 0.44, 1)
+        }
+        .discover-text {
+            &:hover {
+                color: #26dd62;
+            }
+        }
+    }
+    &.discover-stage {
+        border: #ff9900 1px solid;
+        &:hover {
+            background: #ff9900 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+            transition: height .25s cubic-bezier(0.165, 0.84, 0.44, 1)
+        }
+        .discover-text {
+            &:hover {
+                color: #ff9900;
+            }
+        }
+    }
+    
+    height: 120px;
+    background: var(--ion-card-background);
+    background-size: auto;
+    width: 80vw;
+}
+
+
+.discover-slides {
+    height: 20vh;
+}
+
+.slide {
+    display: block;
+    align-items: center;
+}
 
 .discover-bg {
     z-index: 1;
@@ -44,4 +91,8 @@ ion-col {
         border-width: 0 0 8px 8px;
         border-color: transparent transparent #ffa60a transparent;
     }
+}
+
+.discover-text {
+    color: var(--ion-text-color);
 }

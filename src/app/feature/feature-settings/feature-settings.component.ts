@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -17,7 +17,9 @@ export class FeatureSettingsComponent implements OnInit {
   shareIcon: string = 'share-outline';
   settings: Settings;
 
-  constructor(private authenticationService: AuthenticationService, private router: Router, private storage: StorageService) { }
+  constructor(private authenticationService: AuthenticationService,
+    private router: Router, private storage: StorageService,
+    private renderer: Renderer2) { }
 
   ngOnInit() {
     this.storage.get('settings').then((settings: Settings) => {
@@ -69,13 +71,10 @@ export class FeatureSettingsComponent implements OnInit {
   }
 
   async onChangeDarkMode(event) {
-    let systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-    systemDark.addListener(this.colorTest);
     if (event.detail.checked) {
-      document.body.setAttribute('data-theme', 'dark');
-    }
-    else {
-      document.body.setAttribute('data-theme', 'light');
+      this.renderer.setAttribute(document.body, 'color-theme', 'dark')
+    } else {
+      this.renderer.setAttribute(document.body, 'color-theme', 'light')
     }
 
     this.themeMode = event.detail.checked ? 'moon-outline' : 'sunny-outline';
