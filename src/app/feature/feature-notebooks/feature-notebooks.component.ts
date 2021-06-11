@@ -52,17 +52,17 @@ export class FeatureNotebooksComponent implements OnInit {
         });
       });
     this.storage.get('settings').then((settings: Settings) => {
-      if (!settings) {
-        this.settings = {
-          selectedHomeLayout: 'list',
-          selectedNotebookLayout: 'virtual-div-grid',
-          onlineSync: false,
-          hideNotes: false,
-          darkMode: true
-        }
-        this.saveSettings();
-      }
-      this.notebookLayout = settings.selectedNotebookLayout;
+      // if (!settings) {
+      //   this.settings = {
+      //     selectedHomeLayout: 'list',
+      //     selectedNotebookLayout: 'virtual-div-grid',
+      //     onlineSync: false,
+      //     hideNotes: false,
+      //     darkMode: true
+      //   }
+      //   this.saveSettings();
+      // }
+      this.notebookLayout = settings?.selectedNotebookLayout;
     });
   }
 
