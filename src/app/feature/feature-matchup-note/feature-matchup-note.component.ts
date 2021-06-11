@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
@@ -22,10 +22,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
   backArrowIcon: string;
   uid: string;
   dirty: boolean;
+  originalNote: Note;
 
   @Input() note: Note;
   @Input() update: boolean;
-
   set = 'apple';
 
   modules = {};
@@ -77,6 +77,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   async ngOnInit() {
     console.log(this.note);
+    this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
     // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
@@ -124,6 +125,11 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.dirty = true;
   }
 
+  editorChanged(event: any) {
+    console.log(event)
+    this.dirty = true;
+  }
+
   hasOwnership() {
     console.log('hasOwnership')
     return this.uid === this.note?.uid;
@@ -133,6 +139,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     console.log(event);
     this.note.visible = event.detail.checked;
     this.visibilityIcon = event.detail.checked ? 'eye-outline' : 'eye-off-outline';
+    this.dirty = true;
   }
 
   async changePlayer() {
@@ -181,16 +188,17 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   dismissModal() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    if (!this.dirty) {
-      this.modalController.dismiss({
-        'dismissed': true, 'note': this.note
-      });
-    } else {
-      this.exitWithoutSaving();
-    }
+    this.modalController.dismiss({
+      'dismissed': true, 'note': this.note, 'modified': this.dirty
+    });
+  }
 
+  dismissNote() {
+    if (this.dirty) {
+      this.alertExitWithoutSaving();
+    } else {
+      this.dismissModal();
+    }
   }
 
   // select one least one character
@@ -202,8 +210,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
     console.log(this.note);
     console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
-    this.dirty = false;
-    this.dismissModal();
+    this.modalController.dismiss({
+      'dismissed': true, 'note': this.note, 'modified': true
+    });
   }
 
   deleteNote(note) {
@@ -236,7 +245,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
-  async exitWithoutSaving() {
+  async alertExitWithoutSaving() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Unsaved',
@@ -246,14 +255,18 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'No',
           cssClass: 'secondary',
           handler: (blah) => {
+            // console.log(this.note);
+            // this.note = { ...this.originalNote };
+            // this.note.body = this.originalNote.body;
+            // console.log(this.note);
             this.dismissModal();
           }
         }, {
           text: 'Yes',
           cssClass: 'danger',
           handler: () => {
-            this.dirty = true;
             this.saveNote();
+            this.presentToast('Your note has been saved.');
           }
         }
       ]
@@ -282,7 +295,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
             this.deleteNote(this.note);
             this.dirty = false;
             this.dismissModal();
-            this.presentToast();
+            this.presentToast('Your note has been deleted.',);
           }
         }
       ]
@@ -292,9 +305,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
 
-  async presentToast() {
+  async presentToast(message: string) {
     const toast = await this.toastController.create({
-      message: 'Your note has been deleted.',
+      message: message,
       duration: 2000
     });
     toast.present();

@@ -11,6 +11,32 @@ ion-content {
   }
 }
 
+@media only screen and (max-width: 992px) {
+  ion-avatar {
+    height: 5rem;
+    width: 5rem;
+  }
+  .masonry-layout {
+    display: none;
+  }
+  .list-layout {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 923px) {
+  ion-avatar {
+    height: 5rem;
+    width: 5rem;
+  }
+  .masonry-layout {
+    display: block;
+  }
+  .list-layout {
+    display: none;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-flow: column wrap;
@@ -45,14 +71,11 @@ p {
   margin: 0 auto;
 }
 
-.masonry-item {
-  width: calc(95vw / 4);
-  height: 100%;
-  margin: 15px;
+ngx-masonry {
+  margin: 0 auto;
+}
 
-  ion-card-header {
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: inset;
-  }
+.masonry-layout {
+  width: 100% !important;
+  height: 100% !important;
 }

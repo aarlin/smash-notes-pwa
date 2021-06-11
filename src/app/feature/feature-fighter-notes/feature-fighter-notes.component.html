@@ -4,8 +4,11 @@
       <ion-button (click)="close()" shape="round">
         <ion-icon (click)="dismissModal()" name="chevron-back-outline" size="large" slot="start"></ion-icon>
       </ion-button>
-      <ion-button (click)="close()" shape="round">
+      <ion-button shape="round">
         <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
+      </ion-button>
+      <ion-button shape="round">
+        <ion-icon [src]="loadFighterImage(fighter?.name)" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-label>{{fighter?.name | normalizeName}}</ion-label>

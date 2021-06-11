@@ -8,6 +8,7 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
+import { NgxMasonryComponent, NgxMasonryOptions } from 'ngx-masonry';
 
 
 @Component({
@@ -20,9 +21,12 @@ export class FeatureHomeComponent implements OnInit {
   dataLoaded: boolean;
   notes: Note[] = [];
   layout: any;
+  devWidth = this.platform.width();
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
+
 
   dataList = [];
   vColMinWidth = 200; // virtual list columns min width as pixel
@@ -34,13 +38,18 @@ export class FeatureHomeComponent implements OnInit {
   gridLayout = false;
   masonryLayout = true;
 
-  masonryOptions = {
-    horizontalOrder: true,
-    gutter: 10,
-    fitWidth: true,
-    resize: true
-  }
+  infiniteScrollThreshold: string = '150px';
 
+  masonryOptions: NgxMasonryOptions = {
+    fitWidth: true,
+    horizontalOrder: true,
+    gutter: 15,
+    resize: true,
+    initLayout: true,
+    columnWidth: '.masonry-item',
+    percentPosition: true
+  }
+  
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
@@ -62,7 +71,17 @@ export class FeatureHomeComponent implements OnInit {
     });
 
     this.storage.get('settings').then((settings: Settings) => {
-      switch (settings.selectedHomeLayout) {
+      // if (!settings) {
+      //   this.settings = {
+      //     selectedHomeLayout: 'list',
+      //     selectedNotebookLayout: 'virtual-div-grid',
+      //     onlineSync: false,
+      //     hideNotes: false,
+      //     darkMode: true
+      //   }
+      //   this.saveSettings();
+      // }
+      switch (settings?.selectedHomeLayout) {
         case 'list':
           this.defaultLayout = true;
           this.gridLayout, this.masonryLayout = false;
@@ -82,6 +101,13 @@ export class FeatureHomeComponent implements OnInit {
   @HostListener("window:resize", ["$event"])
   getScreenSize(event?) {
     this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth > 1024) {
+      this.infiniteScrollThreshold = '200px';
+    } else if (this.screenWidth <= 1024) {
+
+      this.infiniteScrollThreshold = '150px';
+    }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
     this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
@@ -130,7 +156,11 @@ export class FeatureHomeComponent implements OnInit {
     });
     modal.onWillDismiss().then(dataReturned => {
       // trigger when about to close the modal
-      console.log(dataReturned.data);
+      console.log(dataReturned?.data?.modified)
+      if (dataReturned?.data?.modified) {
+        this.masonry.reloadItems();
+        this.masonry.layout();
+      }
     });
     return await modal.present();
   }
@@ -142,7 +172,7 @@ export class FeatureHomeComponent implements OnInit {
   loadData(event: any) {
     setTimeout(() => {
       // load more data
-      this.virtualScroll.checkEnd(); // trigger end of virtual list
+      this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
       if (this.dataList.length === 1000) {

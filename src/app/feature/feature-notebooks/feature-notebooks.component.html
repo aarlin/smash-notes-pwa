@@ -30,7 +30,7 @@
       <div *virtualItem="let fighter; let i = index">
         <ion-row class="ion-nowrap">
           <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of fighter;">
-            <ion-item lines="inset" (click)="loadFighterPage(fighters[j])">
+            <ion-item lines="none" (click)="loadFighterPage(fighters[j])">
               <ion-img alt={{fighters[j]?.name}} class="stock-icon-image" [src]="loadFighterImage(fighters[j]?.name)"></ion-img>
               <ion-card-subtitle class="fighter-notebook">{{fighters[j]?.name | normalizeName | uppercase}}</ion-card-subtitle>
             </ion-item>

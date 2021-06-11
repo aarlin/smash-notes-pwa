@@ -1,22 +1,13 @@
-<!-- <ion-toolbar [color]="colorTheme[0]">
-  <ion-buttons slot="secondary">
-    <ion-button>
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-buttons slot="primary">
-    <ion-button color="secondary">
-      <ion-icon slot="icon-only" ios="settings-outline" md="settings-outline"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-searchbar placeholder="Search Notes"></ion-searchbar>
-</ion-toolbar> -->
-
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-button (click)="goHome()" shape="round">
+    <ion-menu-button autoHide="false">
+
       <ion-icon alt="home" [src]="homeIcon" size="large"></ion-icon>
-    </ion-button>
+    </ion-menu-button> 
+    <!-- <ion-button (click)="goHome()" shape="round">
+      <ion-icon alt="home" [src]="homeIcon" size="large"></ion-icon>
+
+    </ion-button> -->
   </ion-buttons>
   <ion-label>{{ headerTitle }}</ion-label>
   <ion-buttons slot="end">

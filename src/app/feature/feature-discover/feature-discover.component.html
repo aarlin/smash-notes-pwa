@@ -9,14 +9,18 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-item *ngFor="let block of discovery; index as position">
-    <ion-thumbnail slot="start">
-      <ion-img [src]="block.svg"></ion-img>
-    </ion-thumbnail>
-    <ion-label>
-      <h2>{{block.name}}</h2>
-    </ion-label>
-  </ion-item>
+  <ion-slides class="discover-slides" [options]="sliderConfig">
+    <ion-slide *ngFor="let discover of discovery; index as position">
+      <ion-card [ngClass]="discover.class" class="discover-card">
+        <ion-card-header>
+          <ion-img class="discover-image" [src]="discover.bg"></ion-img>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-text class="discover-text">{{discover.name}}</ion-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 
 
   <ion-list>
@@ -36,9 +40,7 @@
   </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data...">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
