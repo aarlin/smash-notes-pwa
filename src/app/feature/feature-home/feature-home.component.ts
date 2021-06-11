@@ -21,6 +21,7 @@ export class FeatureHomeComponent implements OnInit {
   dataLoaded: boolean;
   notes: Note[] = [];
   layout: any;
+  devWidth = this.platform.width();
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -36,6 +37,8 @@ export class FeatureHomeComponent implements OnInit {
   defaultLayout = false;
   gridLayout = false;
   masonryLayout = true;
+
+  infiniteScrollThreshold: string = '150px';
 
   masonryOptions: NgxMasonryOptions = {
     fitWidth: true,
@@ -98,6 +101,13 @@ export class FeatureHomeComponent implements OnInit {
   @HostListener("window:resize", ["$event"])
   getScreenSize(event?) {
     this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth > 1024) {
+      this.infiniteScrollThreshold = '200px';
+    } else if (this.screenWidth <= 1024) {
+
+      this.infiniteScrollThreshold = '150px';
+    }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
     this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count

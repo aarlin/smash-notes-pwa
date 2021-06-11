@@ -23,6 +23,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   background: string;
   fighterImage: string;
   fighterSeriesIcon: string;
+  fighterIcon: string;
 
   dataLoaded: boolean;
 

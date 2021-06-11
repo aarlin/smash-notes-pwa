@@ -26,20 +26,27 @@
 
   <ion-item lines="none">
     <ion-label position="floating">Note Title</ion-label>
-    <ion-input type="text" clearInput [(ngModel)]="note.title" placeholder="Note Title"></ion-input>
+    <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title" placeholder="Note Title">
+    </ion-input>
   </ion-item>
 
-  <!-- <ion-item lines="none"> -->
+  <ion-item lines="none">
+    <ion-label position="floating">Note Body</ion-label>
+    <ion-input *ngIf="!hasOwnership()" [attr.readonly]="!hasOwnership()" type="text" [innerHTML]="note.body">
+    </ion-input>
+  </ion-item>
 
-    <quill-editor (onContentChanged)="editorChanged($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
-  <!-- </ion-item> -->
+
+  <quill-editor *ngIf="hasOwnership()" (onContentChanged)="editorChanged($event)" [style]="{ height: '100px' }"
+    [(ngModel)]="note.body"></quill-editor>
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item>
 
       <ion-icon [name]="visibilityIcon" slot="start"></ion-icon>
       <ion-label>Share to Others</ion-label>
-      <ion-checkbox slot="start" [ngModel]="note.visible" (ionChange)="onChangeVisibility($event)" slot="end"></ion-checkbox>
+      <ion-checkbox slot="start" [ngModel]="note.visible" (ionChange)="onChangeVisibility($event)" slot="end">
+      </ion-checkbox>
 
     </ion-item>
 

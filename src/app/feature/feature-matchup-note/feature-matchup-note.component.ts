@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
@@ -26,7 +26,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   @Input() note: Note;
   @Input() update: boolean;
-
   set = 'apple';
 
   modules = {};
