@@ -54,10 +54,11 @@
 
   <ng-container *ngIf="dataLoaded && notes.length === 0">
     <!-- <ion-list> -->
-      <ion-item class="ion-justify-content-center slides" lines="none">
-        <h2>You don't have any notes.</h2>
-        <h2 fill="clear">Get started by creating a note<ion-icon slot="end" name="arrow-downward"></ion-icon>
-        </h2>
+      <ion-item lines="none">
+        <ion-label>
+          <h2>No Notes</h2>
+          <p>Start adding a note by clicking <ion-icon size="large" src='assets/navigation/plus-square-outline.svg'></ion-icon> at the bottom</p>
+        </ion-label>
       </ion-item>
 
     <!-- </ion-list> -->
