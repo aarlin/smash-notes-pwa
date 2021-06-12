@@ -36,7 +36,6 @@ export class FeatureNotebooksComponent implements OnInit {
 
   constructor(private fighterService: FighterService,
     private modalController: ModalController,
-    private fighterImagePipe: FighterImagePipe,
     private storage: StorageService) {
     this.getScreenSize();
   }
@@ -90,11 +89,6 @@ export class FeatureNotebooksComponent implements OnInit {
       }
     });
     return await modal.present();
-  }
-
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '');
   }
 
   // Dummy refresher function

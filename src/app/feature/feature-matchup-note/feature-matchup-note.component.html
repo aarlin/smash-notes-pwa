@@ -16,11 +16,11 @@
 
   <div class="versus-container">
     <ion-avatar (click)="changePlayer()" slot="start">
-      <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
+      <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
     </ion-avatar>
 
     <ion-avatar (click)="changeEnemy()" slot="end">
-      <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
+      <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
     </ion-avatar>
   </div>
 
@@ -37,7 +37,7 @@
   </ion-item>
 
 
-  <quill-editor *ngIf="hasOwnership()" (onContentChanged)="editorChanged($event)" [style]="{ height: '100px' }"
+  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)" [style]="{ height: '100px' }"
     [(ngModel)]="note.body"></quill-editor>
 
   <ng-container *ngIf="hasOwnership()">

@@ -2,10 +2,7 @@
   <app-feature-toolbar headerTitle="Smash Notes - Settings"></app-feature-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" [scrollEvents]="true"
-(ionScrollStart)="logScrollStart()"
-(ionScroll)="logScrolling($event)"
-(ionScrollEnd)="logScrollEnd()">
+<ion-content overflow-scroll="true">
   <ion-card>
     <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)" [value]="settings?.selectedHomeLayout">
       <ion-list-header>
@@ -44,21 +41,9 @@
       </ion-list-header>
 
       <ion-item>
-        <ion-icon name="list-outline" slot="start"></ion-icon>
-        <ion-label>Virtual Div Grid</ion-label>
-        <ion-radio value="virtual-div-grid"></ion-radio>
-      </ion-item>
-
-      <ion-item>
         <ion-icon name="grid-outline" slot="start"></ion-icon>
         <ion-label>Virtual Grid</ion-label>
         <ion-radio value="virtual-grid"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="list-outline" slot="start"></ion-icon>
-        <ion-label>Virtual Item</ion-label>
-        <ion-radio value="virtual-item"></ion-radio>
       </ion-item>
 
       <ion-item>

@@ -86,3 +86,7 @@ https://fdezromero.com/tips-and-tricks-for-ionic-on-desktop/
 
 I'm really late on this, but I did some digging and found it to be FOT-RodinBokutohPro-EB rather than UB. They look very similar, but both are actually used. EB is used for the Nicknames (Player 1, etc.) while UB is the character names.
 
+hasOwnership
+carousel show a bit
+notebook
+less options for wysiwyg

@@ -26,7 +26,7 @@ export class FeatureCharacterSelectModalComponent  {
 
   @Input() input: string;
 
-  constructor(private fighterService: FighterService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {
+  constructor(private fighterService: FighterService, private modalController: ModalController) {
     this.searchControl = new FormControl();
   }
 
@@ -60,11 +60,6 @@ export class FeatureCharacterSelectModalComponent  {
       return fighter?.name?.toLowerCase().startsWith(searchTerm.toLowerCase());
     });
     console.log(this.fighters);
-  }
-
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage');
-    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   applyFighter(fighter: Fighter) {
