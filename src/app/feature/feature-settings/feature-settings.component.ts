@@ -38,18 +38,6 @@ export class FeatureSettingsComponent implements OnInit {
     });
   }
 
-  logScrollStart() {
-
-  }
-
-  logScrolling(event) {
-
-  }
-
-  logScrollEnd() {
-
-  }
-
   signOut() {
     this.authenticationService.signOutUser()
       .then((response) => {

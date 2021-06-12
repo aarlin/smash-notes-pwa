@@ -15,6 +15,7 @@ export class MasonryCardComponent implements OnInit {
   ngOnInit() {}
 
   loadFighterImage(fighterName: string) {
+    console.log('loadFighterImage')
     return this.fighterImagePipe.transform(fighterName, '')
   }
 
