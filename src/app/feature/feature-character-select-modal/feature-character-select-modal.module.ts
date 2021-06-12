@@ -5,6 +5,7 @@ import { FeatureCharacterSelectModalComponent } from './feature-character-select
 import { ReactiveFormsModule } from '@angular/forms';
 import { FighterService } from 'src/app/services/fighter.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
+import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 
 
 
@@ -14,7 +15,8 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedPipesModule
   ],
   providers: [FighterService, FighterImagePipe]
 })

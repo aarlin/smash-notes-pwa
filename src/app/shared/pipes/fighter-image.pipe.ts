@@ -1,13 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'fighterImage'
+  name: 'fighterImage',
+  pure: true
 })
 export class FighterImagePipe implements PipeTransform {
+  dlcFighters = ['homura', 'sephiroth', 'steve', 'minmin', 'byleth', 'terry', 'banjo_and_kazooie', 'dq_hero']
 
   transform(value: string, ...args: unknown[]): unknown {
-    const dlcFighters = ['homura', 'sephiroth', 'steve', 'minmin', 'byleth', 'terry', 'banjo_and_kazooie', 'dq_hero']
-    if (dlcFighters.includes(value)) {
+    console.count('fighterimage')
+    if (this.dlcFighters.includes(value)) {
       return `assets/stock-icons/webp/${value}.webp`
     }
     if (!value) {

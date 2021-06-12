@@ -7,6 +7,7 @@ import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-mat
 
 interface Discover {
   name: string,
+  filter: string,
   bg: string,
   class: string
 }
@@ -26,11 +27,13 @@ export class FeatureDiscoverComponent implements OnInit {
   discovery: Discover[] = [
     {
       name: 'Fighters',
+      filter: 'fighter',
       bg: 'assets/carousel/ico_fighter_g.svg',
       class: 'discover-fighter'
     },
     {
       name: 'Stage',
+      filter: 'stage',
       bg: '/assets/carousel/ico_stage_g.svg',
       class: 'discover-stage'
     }
@@ -52,6 +55,12 @@ export class FeatureDiscoverComponent implements OnInit {
     console.log('discover')
   }
 
+  filterBy(filter: string): void {
+    this.notes = this.notes.filter(note => {
+      note.body.includes(filter);
+    })
+  }
+
   loadData(event) {
     // setTimeout(() => {
     // console.log('Done');
@@ -65,11 +74,6 @@ export class FeatureDiscoverComponent implements OnInit {
     // event.target.disabled = true;
     // }
     // }, 500);
-  }
-
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '')
   }
 
   getNotesByOthers(isFirstLoad, event) {

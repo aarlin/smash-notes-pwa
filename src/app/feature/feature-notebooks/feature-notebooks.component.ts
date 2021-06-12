@@ -92,11 +92,6 @@ export class FeatureNotebooksComponent implements OnInit {
     return await modal.present();
   }
 
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '');
-  }
-
   // Dummy refresher function
   doRefresh(event) {
     setTimeout(() => {

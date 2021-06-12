@@ -118,11 +118,6 @@ export class FeatureHomeComponent implements OnInit {
     return 215;
   }
 
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '')
-  }
-
   getNotesByUser() {
     this.noteService.getNotesByUser().then((snapshot) => {
       const data = snapshot.docs.map(doc => {

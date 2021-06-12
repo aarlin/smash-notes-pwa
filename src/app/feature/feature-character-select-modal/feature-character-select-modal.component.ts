@@ -62,11 +62,6 @@ export class FeatureCharacterSelectModalComponent  {
     console.log(this.fighters);
   }
 
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage');
-    return this.fighterImagePipe.transform(fighterName, '')
-  }
-
   applyFighter(fighter: Fighter) {
     if (fighter?.name !== this.currentFighter?.name) {
       this.currentFighter = fighter;

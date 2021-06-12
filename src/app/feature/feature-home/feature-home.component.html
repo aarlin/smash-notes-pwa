@@ -65,10 +65,10 @@
       <ion-item lines="full" class="col col-50" (click)="openNote(note)"
         *ngFor="let note of notes; trackBy: trackNotes">
         <ion-avatar slot="start">
-          <ion-img alt={{note?.player}} [src]="loadFighterImage(note?.player)"></ion-img>
+          <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
         </ion-avatar>
         <ion-avatar slot="end">
-          <ion-img alt={{note?.enemy}} [src]="loadFighterImage(note?.enemy)"></ion-img>
+          <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
@@ -95,10 +95,10 @@
               <ion-card-header>
                 <ion-item lines="none">
                   <ion-avatar slot="start">
-                    <ion-img alt={{notes[j]?.player}} [src]="loadFighterImage(notes[j]?.player)"></ion-img>
+                    <ion-img alt={{notes[j]?.player}} [src]="notes[j]?.player | fighterImage"></ion-img>
                   </ion-avatar>
                   <ion-avatar slot="end">
-                    <ion-img alt={{notes[j]?.enemy}} [src]="loadFighterImage(notes[j]?.enemy)"></ion-img>
+                    <ion-img alt={{notes[j]?.enemy}} [src]="notes[j]?.enemy | fighterImage"></ion-img>
                   </ion-avatar>
 
                 </ion-item>

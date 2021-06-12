@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FeatureDiscoverComponent } from './feature-discover.component';
 import { NoteService } from 'src/app/services/note.service';
+import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 
 
 
@@ -10,7 +11,8 @@ import { NoteService } from 'src/app/services/note.service';
   declarations: [FeatureDiscoverComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    SharedPipesModule
   ],
   exports: [FeatureDiscoverComponent],
   providers: [NoteService]

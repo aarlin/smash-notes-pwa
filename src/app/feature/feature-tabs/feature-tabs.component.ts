@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Note as NoteInterface } from 'src/app/shared/interface/note.interface';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 
 class Note implements NoteInterface {
+  uid?: string;
   groupName: string;
   player: string;
   enemy: string;
@@ -32,7 +34,8 @@ export class FeatureTabsComponent implements OnInit {
   tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
-  constructor(public actionSheetController: ActionSheetController, private modalController: ModalController, private platform: Platform) {
+  constructor(public actionSheetController: ActionSheetController, 
+    private modalController: ModalController, private platform: Platform, private authenication: AuthenticationService) {
     if (!this.platform.is('mobile')) {
       this.tabsPlacement = 'top';
       this.tabsLayout = 'icon-left';
@@ -93,7 +96,9 @@ export class FeatureTabsComponent implements OnInit {
   }
 
   async openNote() {
+    const uid = await this.authenication.getUid();
     let newNote: Note = new Note();
+    newNote.uid = uid;
     console.log(newNote);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,

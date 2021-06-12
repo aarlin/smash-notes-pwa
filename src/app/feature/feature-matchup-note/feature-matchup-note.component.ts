@@ -109,11 +109,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
       this.enemyIcon = `assets/navigation/ico_fighter_g.svg`;
   }
 
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '')
-  }
-
   changeTitle(event) {
     console.log(event);
     this.note.title = event.target.value;

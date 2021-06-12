@@ -79,11 +79,6 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   }
 
-  loadFighterImage(fighterName: string) {
-    console.log('loadFighterImage')
-    return this.fighterImagePipe.transform(fighterName, '')
-  }
-
   getNotesByFighter(fighterName) {
     this.noteService.getNotesByFighter(fighterName)
     .then((snapshot) => {
