@@ -26,7 +26,7 @@ export class FeatureCharacterSelectModalComponent  {
 
   @Input() input: string;
 
-  constructor(private fighterService: FighterService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) {
+  constructor(private fighterService: FighterService, private modalController: ModalController) {
     this.searchControl = new FormControl();
   }
 

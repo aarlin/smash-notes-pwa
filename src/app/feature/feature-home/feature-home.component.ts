@@ -51,7 +51,7 @@ export class FeatureHomeComponent implements OnInit {
   }
   
   constructor(private noteService: NoteService, public modalController: ModalController,
-    private router: Router, private fighterImagePipe: FighterImagePipe, public platform: Platform, private storage: StorageService) {
+    private router: Router, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
   }
 
@@ -110,7 +110,7 @@ export class FeatureHomeComponent implements OnInit {
     }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
-    this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
+    this.exteraCol = this.exteraCol > 4 ? 4 : this.exteraCol; // if we want to have max virtual column count
   }
 
   itemHeightFn(item, index) {

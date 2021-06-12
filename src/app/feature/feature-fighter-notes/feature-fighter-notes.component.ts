@@ -6,8 +6,6 @@ import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-mat
 import { Note } from '../../shared/interface/note.interface';
 import { NavigationEnd, Router } from '@angular/router';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
-import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
-
 
 interface ChunkedData {
   [key: string]: Note[];
@@ -37,8 +35,7 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   constructor(public alertController: AlertController,
     public modalController: ModalController,
-    private noteService: NoteService, private router: Router,
-    private fighterImagePipe: FighterImagePipe) { }
+    private noteService: NoteService, private router: Router) { }
 
   async presentModal() {
     const modal = await this.modalController.create({

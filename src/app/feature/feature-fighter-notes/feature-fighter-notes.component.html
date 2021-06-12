@@ -4,11 +4,11 @@
       <ion-button (click)="close()" shape="round">
         <ion-icon (click)="dismissModal()" name="chevron-back-outline" size="large" slot="start"></ion-icon>
       </ion-button>
-      <ion-button shape="round">
+      <!-- <ion-button shape="round">
         <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
-      </ion-button>
-      <ion-button shape="round">
-        <ion-icon [src]="loadFighterImage(fighter?.name)" size="large"></ion-icon>
+      </ion-button> -->
+      <ion-button>
+        <ion-icon [src]="fighter?.name | fighterImage" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-label>{{fighter?.name | normalizeName}}</ion-label>
@@ -66,7 +66,7 @@
     <ion-virtual-scroll *ngIf="dataLoaded && notes.length > 0; else noNotes" [items]="notes">
       <ion-item #note (click)="openNote(note)" *virtualItem="let note">
         <ion-avatar slot="start">
-          <ion-img [src]="loadFighterImage(note.enemy)"></ion-img>
+          <ion-img [src]="note.enemy | fighterImage"></ion-img>
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>

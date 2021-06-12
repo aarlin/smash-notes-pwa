@@ -45,7 +45,7 @@ export class FeatureDiscoverComponent implements OnInit {
     slidesPerView: 1.6
   }
 
-  constructor(private noteService: NoteService, private modalController: ModalController, private fighterImagePipe: FighterImagePipe) { }
+  constructor(private noteService: NoteService, private modalController: ModalController) { }
 
   ngOnInit() {
     this.getNotesByOthers(false, "");

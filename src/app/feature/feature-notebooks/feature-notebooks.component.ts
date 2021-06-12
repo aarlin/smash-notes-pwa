@@ -36,7 +36,6 @@ export class FeatureNotebooksComponent implements OnInit {
 
   constructor(private fighterService: FighterService,
     private modalController: ModalController,
-    private fighterImagePipe: FighterImagePipe,
     private storage: StorageService) {
     this.getScreenSize();
   }

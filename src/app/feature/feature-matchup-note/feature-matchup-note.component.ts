@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NoteService } from 'src/app/services/note.service';
@@ -9,12 +9,14 @@ import { FeatureCharacterSelectModalComponent } from '../feature-character-selec
 // import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
 
 // import { Emoji } from '@nutrify/quill-emoji-mart-picker';
+import 'quill-emoji/dist/quill-emoji.js'
+import Quill from 'quill';
 
 
 @Component({
   selector: 'smash-feature-matchup-note',
   templateUrl: './feature-matchup-note.component.html',
-  styleUrls: ['./feature-matchup-note.component.scss'],
+  styleUrls: ['./feature-matchup-note.component.scss']
 })
 export class FeatureMatchupNoteComponent implements OnInit {
   playerIcon: string;
@@ -24,11 +26,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
   dirty: boolean;
   originalNote: Note;
 
+  modules = {}
+  content = ''
+
   @Input() note: Note;
   @Input() update: boolean;
   set = 'apple';
 
-  modules = {};
   formats: string[] = [];
   quill = null;
 
@@ -55,22 +59,26 @@ export class FeatureMatchupNoteComponent implements OnInit {
   ];
 
   constructor(private modalController: ModalController,
-    private noteService: NoteService, private fighterImagePipe: FighterImagePipe, private authenticationService: AuthenticationService,
+    private noteService: NoteService, private authenticationService: AuthenticationService,
     public alertController: AlertController,
     public toastController: ToastController) {
-    // this.modules = {
-    //   'emoji-module': {
-    //     emojiData: emojis,
-    //     customEmojiData: this.customEmojis,
-    //     preventDrag: true,
-    //     showTitle: true,
-    //     indicator: '*',
-    //     convertEmoticons: true,
-    //     convertShortNames: true,
-    //     set: () => this.set
-    //   },
-    //   toolbar: false
-    // };
+      this.modules = {
+        'emoji-shortname': true,
+        'emoji-textarea': true,
+        'emoji-toolbar': true,
+        'toolbar': [
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          ['blockquote', 'code-block'],
+          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+          [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+          ['clean'],                                         // remove formatting button
+          // ['link', 'image', 'video'],                         // link and image, video
+          ['link', 'video', 'emoji'],
+  
+        ]
+      }
 
     this.formats = ['emoji'];
   }
@@ -85,6 +93,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
     // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
+    console.log(this.uid)
     console.log(this.update)
     this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
   }
@@ -126,7 +135,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   hasOwnership() {
-    console.log('hasOwnership')
+    console.count('hasOwnership')
     return this.uid === this.note?.uid;
   }
 
