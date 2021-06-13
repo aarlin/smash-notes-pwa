@@ -16,33 +16,42 @@
 
   <div class="versus-container">
     <ion-avatar (click)="changePlayer()" slot="start">
-      <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
+      <ion-img class="fighter-image" alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
+    </ion-avatar>
+
+    <ion-avatar (click)="swapCharacters()" slot="start">
+      <ion-icon class="swap-icon" size="large" name="swap-horizontal-outline"></ion-icon>
     </ion-avatar>
 
     <ion-avatar (click)="changeEnemy()" slot="end">
-      <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
+      <ion-img class="enemy-image" alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
     </ion-avatar>
   </div>
 
   <ion-item lines="none">
-    <ion-label position="floating">Note Title</ion-label>
-    <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title" placeholder="Note Title">
+    <ion-label class="form-field" position="fixed">Note Title</ion-label>
+    <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title">
     </ion-input>
   </ion-item>
+
+  <!-- Item Labels -->
+  <ion-item lines="none">
+    <ion-label class="form-field" position="fixed">Note Body</ion-label>
+  </ion-item>
+
+  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)"
+  (onEditorCreated)="created($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
+
 
   <ion-item lines="none">
-    <ion-label position="floating">Note Body</ion-label>
-    <ion-input *ngIf="!hasOwnership()" [attr.readonly]="!hasOwnership()" type="text" [innerHTML]="note.body">
-    </ion-input>
+    <quill-view-html *ngIf="!hasOwnership()" [content]="note.body" theme="snow"></quill-view-html>
   </ion-item>
 
 
-  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)" [style]="{ height: '100px' }"
-    [(ngModel)]="note.body"></quill-editor>
+  <!-- <emoji-mart [custom]="customEmojis"></emoji-mart> -->
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item>
-
       <ion-icon [name]="visibilityIcon" slot="start"></ion-icon>
       <ion-label>Share to Others</ion-label>
       <ion-checkbox slot="start" [ngModel]="note.visible" (ionChange)="onChangeVisibility($event)" slot="end">

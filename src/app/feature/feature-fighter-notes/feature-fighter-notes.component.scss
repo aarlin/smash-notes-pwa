@@ -1,8 +1,6 @@
 ion-content {
-    height: 100vh;
+    height: calc(100vh - var(--offset-bottom));
 }
-
-
 
 ion-avatar {
   height: 5rem;

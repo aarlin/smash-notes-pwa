@@ -1,7 +1,7 @@
 ion-content {
-  height: 100vh;
+  height: calc(100vh - var(--offset-bottom));
   --padding-start: 20px;
-  --padding-end: 20px;
+  // --padding-end: 20px;
 }
 
 @media only screen and (min-width: --ion-grid-width-sm) {

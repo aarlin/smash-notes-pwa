@@ -53,6 +53,15 @@ export class AuthenticationService {
     })
   }
 
+  deleteAccount() {
+    return new Promise<void>((resolve, reject) => {
+      resolve();
+      if (this.angularFireAuth.currentUser) {
+
+      }
+    })
+  }
+
   getUid() {
     return new Promise<any>((resolve, reject) => {
       this.userDetails().subscribe(response => {
