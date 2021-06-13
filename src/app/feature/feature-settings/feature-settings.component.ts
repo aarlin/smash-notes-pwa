@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
@@ -19,7 +20,7 @@ export class FeatureSettingsComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService,
     private router: Router, private storage: StorageService,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2, private alertController: AlertController, private toastController: ToastController) { }
 
   ngOnInit() {
     this.storage.get('settings').then((settings: Settings) => {
@@ -38,6 +39,32 @@ export class FeatureSettingsComponent implements OnInit {
     });
   }
 
+  async deleteAccount() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Delete Account',
+        message: 'Are you sure you want to delete your account?',
+        buttons: [
+          {
+            text: 'No',
+            cssClass: 'secondary',
+            handler: () => {
+              this.router.navigateByUrl('login');
+            }
+          }, {
+            text: 'Yes',
+            cssClass: 'danger',
+            handler: () => {
+              this.authenticationService.deleteAccount();
+              this.presentToast('Your account has been deleted');
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
+  }
+
   signOut() {
     this.authenticationService.signOutUser()
       .then((response) => {
@@ -48,6 +75,14 @@ export class FeatureSettingsComponent implements OnInit {
         // this.errorMsg = error.message;
         // this.successMsg = "";
       })
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
   }
 
   colorTest(systemInitiatedDark) {

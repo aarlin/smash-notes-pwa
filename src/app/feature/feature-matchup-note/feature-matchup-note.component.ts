@@ -5,12 +5,14 @@ import { NoteService } from 'src/app/services/note.service';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
-// import { emojis } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/esm5/data/emojis';
-// import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
 
-// import { Emoji } from '@nutrify/quill-emoji-mart-picker';
 import 'quill-emoji/dist/quill-emoji.js'
-import Quill from 'quill';
+// import { emojis } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/esm5/data/emojis';
+import { emojis } from '@ctrl/ngx-emoji-mart/esm2015/ngx-emoji/data/emojis'
+
+import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
+
+import { Emoji } from '@nutrify/quill-emoji-mart-picker/esm2015/emoji.model';
 
 
 @Component({
@@ -28,6 +30,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   modules = {}
   content = ''
+  excludeGroups: string[];
 
   @Input() note: Note;
   @Input() update: boolean;
@@ -46,39 +49,45 @@ export class FeatureMatchupNoteComponent implements OnInit {
       imageUrl: 'assets/emojis/ButtonIcon-GCN-B.svg',
     },
     {
-      name: 'Test Flag',
-      shortNames: ['test'],
-      keywords: ['test', 'flag'],
-      spriteUrl: 'https://unpkg.com/emoji-datasource-twitter@4.0.4/img/twitter/sheets-256/64.png',
-      sheet_x: 1,
-      sheet_y: 1,
-      size: 64,
-      sheetColumns: 52,
-      sheetRows: 52,
-    },
+      name: 'Octocat',
+      shortNames: ['octocat'],
+      text: '',
+      emoticons: [],
+      keywords: ['github'],
+      imageUrl: 'https://github.githubassets.com/images/icons/emoji/octocat.png',
+    }
   ];
 
   constructor(private modalController: ModalController,
     private noteService: NoteService, private authenticationService: AuthenticationService,
     public alertController: AlertController,
     public toastController: ToastController) {
-      this.modules = {
-        'emoji-shortname': true,
-        'emoji-textarea': true,
-        'emoji-toolbar': true,
-        'toolbar': [
-          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-          ['blockquote', 'code-block'],
-          [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-          [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-          ['clean'],                                         // remove formatting button
-          // ['link', 'image', 'video'],                         // link and image, video
-          ['link', 'video', 'emoji'],
-  
-        ]
-      }
+    this.modules = {
+      // 'emoji-module': {
+      //   emojiData: emojis,
+      //   customEmojiData: this.customEmojis,
+      //   preventDrag: true,
+      //   showTitle: true,
+      //   indicator: '*',
+      //   convertEmoticons: true,
+      //   convertShortNames: true,
+      //   set: () => this.set
+      // },
+      'emoji-shortname': true,
+      'emoji-toolbar': true,
+      'toolbar': [
+        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+        ['blockquote', 'code-block'],
+        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+        ['clean'],                                         // remove formatting button
+        // ['link', 'image', 'video'],                         // link and image, video
+        ['link', 'video'],
+        // ['emoji']
+      ]
+    }
 
     this.formats = ['emoji'];
   }
@@ -95,17 +104,15 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.uid = await this.authenticationService.getUid();
     console.log(this.uid)
     console.log(this.update)
+    this.excludeGroups = [
+      'search', 'recent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags'
+    ]
     this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
   }
-
 
   created(quill: any) {
     this.quill = quill;
   }
-
-  // insertEmoji(event: EmojiEvent) {
-  //   Emoji.insertEmoji(this.quill, event);
-  // }
 
   assignIcons() {
     console.log('assignIcons')
@@ -132,6 +139,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
   editorChanged(event: any) {
     console.log(event)
     this.dirty = true;
+  }
+
+  insertEmoji(event: EmojiEvent) {
+    Emoji.insertEmoji(this.quill, event);
   }
 
   hasOwnership() {
@@ -262,7 +273,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
         {
           text: 'No',
           cssClass: 'secondary',
-          handler: (blah) => {
+          handler: () => {
             // console.log(this.note);
             // this.note = { ...this.originalNote };
             // this.note.body = this.originalNote.body;
@@ -293,7 +304,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
+          handler: () => {
             console.log('Confirm Cancel: blah');
           }
         }, {

@@ -1,6 +1,7 @@
-// import '@nutrify/quill-emoji-mart-picker';
+import '@nutrify/quill-emoji-mart-picker/esm2015/quill-emoji-mart-picker';
 import { QuillModule } from 'ngx-quill';
-// import { PickerModule } from '@nutrify/ngx-emoji-mart-picker';
+import { PickerModule } from '@nutrify/ngx-emoji-mart-picker';
+// import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +16,6 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -29,7 +29,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   imports: [BrowserModule,
     QuillModule.forRoot(),
     BrowserAnimationsModule,
-    // PickerModule,
+    PickerModule,
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

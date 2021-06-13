@@ -4,7 +4,7 @@
 
 <ion-content >
   <ion-list *ngIf="!dataLoaded">
-    <ng-container *ngIf="!dataLoaded && defaultLayout">
+    <ng-container *ngIf="defaultLayout">
       <ion-item *ngFor="let j of [].constructor(10)">
         <ion-thumbnail slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -23,11 +23,11 @@
       </ion-item>
     </ng-container>
 
-    <ng-container *ngIf="!dataLoaded && (gridLayout || masonryLayout)">
+    <ng-container *ngIf="gridLayout || masonryLayout">
       <div *ngFor="let i of [].constructor(8)">
         <ion-row class="ion-nowrap">
-          <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of [].constructor(3)">
-            <ion-card *ngIf="gridLayout">
+          <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of [].constructor(4)">
+            <ion-card>
               <ion-card-header>
                 <ion-item lines="none">
                   <ion-avatar slot="start">

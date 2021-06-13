@@ -40,9 +40,11 @@
     </ion-input>
   </ion-item>
 
+  <emoji-mart [custom]="customEmojis"></emoji-mart>
 
-  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)"
+  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)" (onEditorCreated)="created($event)"
     [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
+
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item>
