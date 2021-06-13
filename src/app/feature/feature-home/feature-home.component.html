@@ -2,7 +2,7 @@
   <app-feature-toolbar headerTitle="Smash Notes - Home"></app-feature-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content >
   <ion-list *ngIf="!dataLoaded">
     <ng-container *ngIf="!dataLoaded && defaultLayout">
       <ion-item *ngFor="let j of [].constructor(10)">

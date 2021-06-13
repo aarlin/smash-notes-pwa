@@ -26,3 +26,7 @@
 .enemy-character {
     justify-content: flex-end;
 }
+
+.toolbar {
+    padding-top: env(safe-area-inset-top);
+}

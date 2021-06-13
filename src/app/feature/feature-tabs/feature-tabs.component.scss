@@ -3,3 +3,7 @@ ion-tab-button {
     background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
   }
 }
+
+.tabs {
+  padding-bottom: env(safe-area-inset-bot tom);
+}

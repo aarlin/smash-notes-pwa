@@ -1,5 +1,5 @@
-<ion-tabs [slot]="tabsPlacement">
-  <ion-tab-bar slot="bottom">
+<ion-tabs class="tabs" [slot]="tabsPlacement">
+  <ion-tab-bar translucent="true" slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon [src]="homeIcon" size="default"></ion-icon>
       <ion-label>Home</ion-label>
@@ -18,11 +18,6 @@
       <ion-icon [src]="fighterIcon" size="default"></ion-icon>
       <ion-label>Fighters</ion-label>
     </ion-tab-button>
-
-    <!-- <ion-tab-button tab="tab4">
-      <ion-icon [src]="notebookIcon" size="default"></ion-icon>
-      <ion-label>Notebook</ion-label>
-    </ion-tab-button> -->
 
     <ion-tab-button tab="settings">
       <ion-icon [src]="settingsIcon" size="default"></ion-icon>

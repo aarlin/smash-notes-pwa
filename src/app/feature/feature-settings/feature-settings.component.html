@@ -2,7 +2,7 @@
   <app-feature-toolbar headerTitle="Smash Notes - Settings"></app-feature-toolbar>
 </ion-header>
 
-<ion-content overflow-scroll="true">
+<ion-content [fullscreen]="true" overflow-scroll="true">
   <ion-card>
     <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)" [value]="settings?.selectedHomeLayout">
       <ion-list-header>
