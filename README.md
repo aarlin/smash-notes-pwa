@@ -90,3 +90,6 @@ hasOwnership
 carousel show a bit
 notebook
 less options for wysiwyg
+
+https://github.com/raphaelM-sudo/quill-emoji-mart-picker
+https://quill-emoji-mart-picker.netlify.app/
