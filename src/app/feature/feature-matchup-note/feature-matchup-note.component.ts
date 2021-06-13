@@ -139,6 +139,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
     return this.uid === this.note?.uid;
   }
 
+  swapCharacters() {
+    [this.note.player, this.note.enemy] = [this.note.enemy, this.note.player];
+  }
+
   onChangeVisibility(event: any) {
     console.log(event);
     this.note.visible = event.detail.checked;

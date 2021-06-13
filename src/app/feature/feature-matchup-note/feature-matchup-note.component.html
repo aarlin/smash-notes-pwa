@@ -19,7 +19,7 @@
       <ion-img class="fighter-image" alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
     </ion-avatar>
 
-    <ion-avatar slot="start">
+    <ion-avatar (click)="swapCharacters()" slot="start">
       <ion-icon class="swap-icon" size="large" name="swap-horizontal-outline"></ion-icon>
     </ion-avatar>
 
