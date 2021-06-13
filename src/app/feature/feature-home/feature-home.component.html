@@ -131,9 +131,11 @@
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
-                <ion-card-content>
+                <quill-view-html [content]="notes[j]?.body" theme="snow"></quill-view-html>
+
+                <!-- <ion-card-content>
                   <p [innerHTML]="notes[j]?.body"></p>
-                </ion-card-content>
+                </ion-card-content> -->
               </ion-card-header>
             </ion-card>
           </ion-col>
