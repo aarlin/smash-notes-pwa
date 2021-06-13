@@ -10,3 +10,7 @@
 ion-badge {
   --padding-start: 5px;
 }
+
+ion-content {
+  height: calc(100vh - var(--offset-bottom));
+}

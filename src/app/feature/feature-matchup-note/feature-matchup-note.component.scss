@@ -1,6 +1,6 @@
 .versus-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .dismiss {
@@ -52,4 +52,24 @@
     width: 300px;
     margin-left:auto;
     margin-right: auto;
+}
+
+.fighter-image {
+    --border-radius: 0.5rem;
+    background: #bd2e41 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
+
+.enemy-image {
+    --border-radius: 0.5rem;
+    background: #31559e url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+}
+
+.swap-icon {
+    height: 100px;
+    width: 80px;
+}
+
+ion-avatar {
+    height: 100px;
+    width: 100px;
 }
