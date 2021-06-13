@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
+import { IonInfiniteScroll, IonSearchbar, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
@@ -33,8 +33,7 @@ export class FeatureNotebooksComponent implements OnInit {
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
-
-
+  @ViewChild('searchbar', { static: false }) searchbar: IonSearchbar;
 
   constructor(private fighterService: FighterService,
     private modalController: ModalController,
@@ -140,6 +139,13 @@ export class FeatureNotebooksComponent implements OnInit {
 
   toggleSearch() {
     this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
+  focusSearchbar() {
+    setTimeout(() => {
+      // Set the focus to the input box of the ion-Searchbar component
+      this.searchbar?.setFocus();
+    }, 500);
   }
 
 

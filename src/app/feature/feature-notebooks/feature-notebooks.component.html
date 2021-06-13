@@ -6,13 +6,13 @@
       </ion-button>
     </ion-buttons>
     <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
-    <ion-searchbar *ngIf="searchBarEnabled" (ionInput)="setFilteredItems($event)" (ionCancel)="cancelSearch($event)" type="text"
+    <ion-searchbar #seachbar *ngIf="searchBarEnabled" (ionInput)="setFilteredItems($event)" (ionCancel)="cancelSearch($event)" type="text"
       placeholder="Search text" clearInput [value]="searchValue">
     </ion-searchbar>
 
     
     <ion-buttons slot="end">
-      <ion-button *ngIf="!searchBarEnabled" (click)="toggleSearch()" shape="round">
+      <ion-button *ngIf="!searchBarEnabled" (click)="toggleSearch(); focusSearchbar()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button *ngIf="searchBarEnabled" (click)="toggleSearch()" shape="round">
