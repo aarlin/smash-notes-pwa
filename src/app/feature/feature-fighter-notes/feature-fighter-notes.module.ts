@@ -8,6 +8,7 @@ import { FeatureMatchupNoteModule } from '../feature-matchup-note/feature-matchu
 import { NoteService } from 'src/app/services/note.service';
 import { FighterService } from 'src/app/services/fighter.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [FeatureFighterNotesComponent],
@@ -17,7 +18,8 @@ import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
     SharedDirectivesModule,
     FeatureCharacterSelectModalModule,
     FeatureMatchupNoteModule,
-    SharedPipesModule
+    SharedPipesModule,
+    QuillModule
   ],
   exports: [FeatureFighterNotesComponent],
   providers: [NoteService, FighterService]
