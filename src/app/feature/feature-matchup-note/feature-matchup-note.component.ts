@@ -46,7 +46,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       name: 'Party Parrot',
       shortNames: ['parrot'],
       keywords: ['party'],
-      imageUrl: 'assets/emojis/ButtonIcon-GCN-B.svg',
+      imageUrl: './assets/emojis/ButtonIcon-GCN-B.svg',
     },
     {
       name: 'Octocat',
@@ -77,17 +77,13 @@ export class FeatureMatchupNoteComponent implements OnInit {
       'emoji-toolbar': true,
       'toolbar': [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-        ['blockquote', 'code-block'],
-        [{ 'header': 1 }, { 'header': 2 }],               // custom button values
         [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-        ['clean'],                                         // remove formatting button
         // ['link', 'image', 'video'],                         // link and image, video
         ['link', 'video'],
         // ['emoji']
       ]
     }
+
 
     this.formats = ['emoji'];
   }

@@ -36,11 +36,10 @@
 
   <ion-item lines="none">
     <ion-label position="floating">Note Body</ion-label>
-    <ion-input *ngIf="!hasOwnership()" [attr.readonly]="!hasOwnership()" type="text" [innerHTML]="note.body">
-    </ion-input>
+    <quill-view-html *ngIf="!hasOwnership()" [content]="note.body" theme="snow"></quill-view-html>
   </ion-item>
 
-  <emoji-mart [custom]="customEmojis"></emoji-mart>
+  <!-- <emoji-mart [custom]="customEmojis"></emoji-mart> -->
 
   <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)" (onEditorCreated)="created($event)"
     [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
