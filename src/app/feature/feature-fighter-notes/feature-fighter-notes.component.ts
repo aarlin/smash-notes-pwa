@@ -116,6 +116,10 @@ export class FeatureFighterNotesComponent implements OnInit {
     });
   }
 
+  searchFighterNotes() {
+    
+  }
+
   async openNote(note: Note) {
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,

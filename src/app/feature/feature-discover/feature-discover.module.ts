@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FeatureDiscoverComponent } from './feature-discover.component';
 import { NoteService } from 'src/app/services/note.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
+import { QuillModule } from 'ngx-quill';
 
 
 
@@ -12,7 +13,8 @@ import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
   imports: [
     CommonModule,
     IonicModule,
-    SharedPipesModule
+    SharedPipesModule,
+    QuillModule
   ],
   exports: [FeatureDiscoverComponent],
   providers: [NoteService]

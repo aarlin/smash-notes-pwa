@@ -13,7 +13,7 @@
     </ion-buttons>
     <ion-label>{{fighter?.name | normalizeName}}</ion-label>
     <ion-buttons slot="end">
-      <ion-button (click)="close()" shape="round">
+      <ion-button (click)="searchFighterNotes()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">
@@ -70,7 +70,8 @@
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
-          <p [innerHTML]="note.body"></p>
+          <!-- <p [innerHTML]="note.body"></p> -->
+          <quill-view-html [content]="note.body"></quill-view-html>
         </ion-label>
       </ion-item>
     </ion-virtual-scroll>

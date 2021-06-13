@@ -7,6 +7,7 @@ import { NoteService } from 'src/app/services/note.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { MasonryCardComponent } from 'src/app/components/masonry-card/masonry-card.component';
+import { QuillModule } from 'ngx-quill';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MasonryCardComponent } from 'src/app/components/masonry-card/masonry-ca
     IonicModule,
     FeatureToolbarModule,
     SharedPipesModule,
-    NgxMasonryModule
+    NgxMasonryModule,
+    QuillModule
   ],
   exports: [FeatureHomeComponent],
   providers: [NoteService]

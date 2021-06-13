@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, IonVirtualScroll, ModalController } from '@ionic/angular';
+import { IonInfiniteScroll, IonSearchbar, IonVirtualScroll, ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
@@ -16,10 +16,12 @@ import { FilterModalComponent } from '../feature-filter-select/filter-modal.comp
 })
 export class FeatureNotebooksComponent implements OnInit {
   fighters: Fighter[] = [];
+  backupFighters: Fighter[] = [];
   hideHeader = false;
   showLocationDetail = false;
   homeIcon: string;
   searchBarEnabled = false;
+  searchValue: string;
 
   notebookLayout: any;
 
@@ -31,8 +33,7 @@ export class FeatureNotebooksComponent implements OnInit {
 
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
-
-
+  @ViewChild('searchbar', { static: false }) searchbar: IonSearchbar;
 
   constructor(private fighterService: FighterService,
     private modalController: ModalController,
@@ -49,6 +50,7 @@ export class FeatureNotebooksComponent implements OnInit {
           fighter.stockIcon = `assets/stock-icons/svg/${fighter.name}.svg`;
           return fighter;
         });
+        this.backupFighters = [...this.fighters];
       });
     this.storage.get('settings').then((settings: Settings) => {
       // if (!settings) {
@@ -71,6 +73,23 @@ export class FeatureNotebooksComponent implements OnInit {
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
     this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
+  }
+
+  setFilteredItems(event: any) {
+    this.fighters = this.backupFighters;
+    this.searchValue = event.srcElement.value;
+
+    console.log(this.searchValue);
+
+    if (!this.searchValue) {
+      return;
+    }
+
+    console.log(this.fighters);
+    this.fighters = this.fighters.filter(fighter => {
+      return fighter?.name?.toLowerCase().startsWith(this.searchValue.toLowerCase());
+    });
+    console.log(this.fighters);
   }
 
   itemHeightFn(item, index) {
@@ -120,6 +139,13 @@ export class FeatureNotebooksComponent implements OnInit {
 
   toggleSearch() {
     this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
+  focusSearchbar() {
+    setTimeout(() => {
+      // Set the focus to the input box of the ion-Searchbar component
+      this.searchbar?.setFocus();
+    }, 500);
   }
 
 
