@@ -43,8 +43,8 @@
   (onEditorCreated)="created($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
 
 
-  <ion-item lines="none">
-    <quill-view-html *ngIf="!hasOwnership()" [content]="note.body"></quill-view-html>
+  <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
+    <quill-view-html [content]="note.body"></quill-view-html>
   </ion-item>
 
 

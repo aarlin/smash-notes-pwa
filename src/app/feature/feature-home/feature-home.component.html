@@ -131,7 +131,7 @@
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
-                <quill-view-html [content]="notes[j]?.body" theme="snow"></quill-view-html>
+                <quill-view-html *ngIf="notes[j]?.body" [content]="notes[j]?.body" theme="snow"></quill-view-html>
 
                 <!-- <ion-card-content>
                   <p [innerHTML]="notes[j]?.body"></p>
