@@ -1,5 +1,27 @@
-<ion-content>
+<ion-header class="toolbar" transparent="true" #discoverToolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false">
+        <ion-icon alt="home" src="assets/navigation/header_bar_ico.svg" size="large"></ion-icon>
+      </ion-menu-button> 
+      <!-- <ion-button (click)="goHome()" shape="round">
+        <ion-icon alt="home" [src]="homeIcon" size="large"></ion-icon>
+  
+      </ion-button> -->
+    </ion-buttons>
+    <ion-label class="header-label">Smash Notes - Discover</ion-label>
+    <ion-buttons slot="end">
+      <ion-button shape="round">
+        <ion-icon alt="search" slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button shape="round">
+        <ion-icon alt="options" slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="discoverToolbar">
   <ion-segment (ionChange)="segmentChanged($event)">
     <ion-segment-button value="friends">
       <ion-label>Friends</ion-label>
