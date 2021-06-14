@@ -4,7 +4,7 @@
   "defaultProject": "smash-notes",
   "newProjectRoot": "projects",
   "projects": {
-    "app": {
+    "smash-notes": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
