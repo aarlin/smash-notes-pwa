@@ -1,6 +1,6 @@
 {
   "name": "smash-notes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Note recording application for Super Smash Bros. Ultimate",
   "homepage": "https://ionicframework.com/",
   "scripts": {

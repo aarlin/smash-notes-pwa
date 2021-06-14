@@ -35,13 +35,15 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
-    HttpClientModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
+    HttpClientModule, IonicModule.forRoot(), AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })],
+      // registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: "registerImmediately"
 
+    })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestoreModule],
   bootstrap: [AppComponent],
 })
