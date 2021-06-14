@@ -75,13 +75,19 @@
       <ion-toggle [checked]="settings?.hideNotes" (ionChange)="onChangeHideNotes($event)" slot="end"></ion-toggle>
     </ion-item>
 
-
     <ion-item>
       <ion-icon [name]="themeMode" slot="start"></ion-icon>
       <ion-label>Dark Mode</ion-label>
       <ion-toggle [checked]="settings?.darkMode" (ionChange)="onChangeDarkMode($event)" slot="end"></ion-toggle>
     </ion-item>
 
+  </ion-card>
+
+  <ion-card>
+    <ion-item class="ion-activated">
+      <ion-icon [name]="shareIcon" slot="start"></ion-icon>
+      <ion-label>Export All Notes</ion-label>
+    </ion-item>
   </ion-card>
 
   <ion-card>

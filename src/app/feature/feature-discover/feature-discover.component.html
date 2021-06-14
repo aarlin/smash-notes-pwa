@@ -34,7 +34,7 @@
       <ion-label>
         <h2>{{note.title}}</h2>
         <!-- <p [innerHTML]="note.body"></p> -->
-        <quill-view-html [content]="note.body"></quill-view-html>
+        <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
       </ion-label>
     </ion-item>
 
