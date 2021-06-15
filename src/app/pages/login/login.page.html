@@ -1,166 +1,181 @@
-<ion-header>
-  <ion-toolbar color="success">
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content class="ion-padding">
-  <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" formControlName="email"></ion-input>
-    </ion-item>
+  <ion-grid>
+    <ion-row>
+      <!-- Size=12 is the size the col will be below the sm breakpoint, 
+        whilst 3 is the size above the breakpoint -->
+      <ion-col size="12" size-sm="6">
+        <div class="blog__contents">
 
-    <ng-container *ngFor="let error of error_msg.email">
-      <div
-        *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
-        {{ error.message }}
+        <div class="blog__bg">
+          <div class="blog__bg-img"><span id="js-blog-bg" style="transform: translate3d(0px, -27.6225px, 0px);"></span></div>
+        </div>
+        <div class="blog-header">
+          <h2 class="blog-header__title"><span class="u-ir app-title">SUPER SMASH NOTES</span></h2>
+        </div>
       </div>
-    </ng-container>
 
-    <ion-item>
-      <ion-label position="floating" color="primary">Password</ion-label>
-      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
-    </ion-item>
+      </ion-col>
+      <ion-col size="12" size-sm="6" class="login-form">
+        <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of error_msg.email">
+            <div
+              *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+      
+          <ion-item>
+            <ion-label position="floating" color="primary">Password</ion-label>
+            <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+          </ion-item>
+      
+          <ng-container *ngFor="let error of error_msg.password">
+            <div
+              *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+      
+          <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Sign In</ion-button>
+      
+          <label class="ion-text-center" color="danger">{{errorMsg}}</label>
+        </form>
+        <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
+        <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button>
+      
+        <ul class="sns-bnr">
+          <li class="sns-bnr__item sns-bnr__item--twitter">
+            <a href="https://twitter.com/NintendoVS" class="sns-bnr__btn js-twitterModal" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__twitter" role="img" title="twitter">
+                        <use xlink:href="/assets/navigation/login/twitter.svg"></use>
+                      </svg> -->
+                  <ion-img alt="twitter" class="sns-bnr__twitter" src="assets/navigation/login/twitter.svg"></ion-img>
+      
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Twitter</span>
+                <!-- <i class="sns-bnr__arrow">
+                      <svg role="img" title="">
+                         <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                      </svg>
+                   </i> -->
+              </span>
+            </a>
+          </li>
+          <li class="sns-bnr__item sns-bnr__item--facebook">
+            <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                         <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                      </svg> -->
+                  <ion-img alt="facebook" class="sns-bnr__facebook" src="assets/navigation/login/facebook.svg"></ion-img>
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Facebook</span>
+                <!-- <i class="sns-bnr__arrow">
+                      <svg role="img" title="">
+                         <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                      </svg>
+                   </i> -->
+              </span>
+            </a>
+          </li>
+          <li class="sns-bnr__item sns-bnr__item--microsoft">
+            <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                        <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                     </svg> -->
+                  <ion-img alt="microsoft" class="sns-bnr__microsoft" src="assets/navigation/login/microsoft.svg"></ion-img>
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Microsoft</span>
+                <!-- <i class="sns-bnr__arrow">
+                     <svg role="img" title="">
+                        <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                     </svg>
+                  </i> -->
+              </span>
+            </a>
+          </li>
+      
+          <li class="sns-bnr__item sns-bnr__item--google">
+            <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                      <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                   </svg> -->
+                  <ion-img alt="google" class="sns-bnr__google" src="assets/navigation/login/google.svg"></ion-img>
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Google</span>
+                <!-- <i class="sns-bnr__arrow">
+                   <svg role="img" title="">
+                      <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                   </svg>
+                </i> -->
+              </span>
+            </a>
+          </li>
+          <li class="sns-bnr__item sns-bnr__item--github">
+            <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                    <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                 </svg> -->
+                  <ion-img alt="github" class="sns-bnr__github" src="assets/navigation/login/github.svg"></ion-img>
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Github</span>
+                <!-- <i class="sns-bnr__arrow">
+                 <svg role="img" title="">
+                    <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                 </svg>
+              </i> -->
+              </span>
+            </a>
+          </li>
+          <li class="sns-bnr__item sns-bnr__item--apple">
+            <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
+              <span class="sns-bnr__btn-ico">
+                <i class="sns-bnr__sns-ico">
+                  <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
+                    <use xlink:href="/assets/navigation/login/facebook.svg"></use>
+                 </svg> -->
+                  <ion-img alt="apple" class="sns-bnr__apple" src="assets/navigation/login/Apple_logo.svg"></ion-img>
+                </i>
+              </span>
+              <span class="sns-bnr__body">
+                <span class="sns-bnr__label">Sign in with Apple</span>
+                <!-- <i class="sns-bnr__arrow">
+                 <svg role="img" title="">
+                    <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
+                 </svg>
+              </i> -->
+              </span>
+            </a>
+          </li>
+        </ul>
+      </ion-col>
 
-    <ng-container *ngFor="let error of error_msg.password">
-      <div
-        *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
-        {{ error.message }}
-      </div>
-    </ng-container>
-
-    <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Signin</ion-button>
-
-    <label class="ion-text-center" color="danger">{{errorMsg}}</label>
-  </form>
-  <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
-  <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button>
-
-  <ul class="sns-bnr">
-    <li class="sns-bnr__item sns-bnr__item--twitter">
-      <a href="https://twitter.com/NintendoVS" class="sns-bnr__btn js-twitterModal" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__twitter" role="img" title="twitter">
-                  <use xlink:href="/assets/navigation/login/twitter.svg"></use>
-                </svg> -->
-            <ion-img alt="twitter" class="sns-bnr__twitter" src="assets/navigation/login/twitter.svg"></ion-img>
-
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Twitter</span>
-          <!-- <i class="sns-bnr__arrow">
-                <svg role="img" title="">
-                   <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-                </svg>
-             </i> -->
-        </span>
-      </a>
-    </li>
-    <li class="sns-bnr__item sns-bnr__item--facebook">
-      <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
-                   <use xlink:href="/assets/navigation/login/facebook.svg"></use>
-                </svg> -->
-            <ion-img alt="facebook" class="sns-bnr__facebook" src="assets/navigation/login/facebook.svg"></ion-img>
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Facebook</span>
-          <!-- <i class="sns-bnr__arrow">
-                <svg role="img" title="">
-                   <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-                </svg>
-             </i> -->
-        </span>
-      </a>
-    </li>
-    <li class="sns-bnr__item sns-bnr__item--microsoft">
-      <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
-                  <use xlink:href="/assets/navigation/login/facebook.svg"></use>
-               </svg> -->
-            <ion-img alt="microsoft" class="sns-bnr__microsoft" src="assets/navigation/login/microsoft.svg"></ion-img>
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Microsoft</span>
-          <!-- <i class="sns-bnr__arrow">
-               <svg role="img" title="">
-                  <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-               </svg>
-            </i> -->
-        </span>
-      </a>
-    </li>
-
-    <li class="sns-bnr__item sns-bnr__item--google">
-      <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
-                <use xlink:href="/assets/navigation/login/facebook.svg"></use>
-             </svg> -->
-            <ion-img alt="google" class="sns-bnr__google" src="assets/navigation/login/google.svg"></ion-img>
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Google</span>
-          <!-- <i class="sns-bnr__arrow">
-             <svg role="img" title="">
-                <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-             </svg>
-          </i> -->
-        </span>
-      </a>
-    </li>
-    <li class="sns-bnr__item sns-bnr__item--github">
-      <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
-              <use xlink:href="/assets/navigation/login/facebook.svg"></use>
-           </svg> -->
-            <ion-img alt="github" class="sns-bnr__github" src="assets/navigation/login/github.svg"></ion-img>
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Github</span>
-          <!-- <i class="sns-bnr__arrow">
-           <svg role="img" title="">
-              <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-           </svg>
-        </i> -->
-        </span>
-      </a>
-    </li>
-    <li class="sns-bnr__item sns-bnr__item--apple">
-      <a href="https://www.facebook.com/SmashBros/" class="sns-bnr__btn" target="_blank">
-        <span class="sns-bnr__btn-ico">
-          <i class="sns-bnr__sns-ico">
-            <!-- <svg class="sns-bnr__facebook" role="img" title="twitter">
-              <use xlink:href="/assets/navigation/login/facebook.svg"></use>
-           </svg> -->
-            <ion-img alt="apple" class="sns-bnr__apple" src="assets/navigation/login/Apple_logo.svg"></ion-img>
-          </i>
-        </span>
-        <span class="sns-bnr__body">
-          <span class="sns-bnr__label">Sign in with Apple</span>
-          <!-- <i class="sns-bnr__arrow">
-           <svg role="img" title="">
-              <use xlink:href="/assets_v2/img/common/sprite.svg#arrow_s"></use>
-           </svg>
-        </i> -->
-        </span>
-      </a>
-    </li>
-  </ul>
+    </ion-row>
+  </ion-grid>
 
   <!-- logo-twitter, logo-apple, logo-google, logo-facebook, logo-microsoft -->
   
