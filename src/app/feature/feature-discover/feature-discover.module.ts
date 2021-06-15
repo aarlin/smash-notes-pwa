@@ -5,6 +5,8 @@ import { FeatureDiscoverComponent } from './feature-discover.component';
 import { NoteService } from 'src/app/services/note.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { QuillModule } from 'ngx-quill';
+import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
+import { FeatureToolbarModule } from '../feature-toolbar/feature-toolbar.module';
 
 
 
@@ -13,6 +15,8 @@ import { QuillModule } from 'ngx-quill';
   imports: [
     CommonModule,
     IonicModule,
+    FeatureToolbarModule,
+    SharedDirectivesModule,
     SharedPipesModule,
     QuillModule
   ],

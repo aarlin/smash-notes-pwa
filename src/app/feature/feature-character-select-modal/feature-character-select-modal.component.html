@@ -15,7 +15,7 @@
 
   <ion-list>
     <ion-row>
-      <ion-col size-xl="2" size-lg="2" size-md="2" size-sm="2" size="12"
+      <ion-col size-xs="4" size-sm="3" size-md="3" size-lg="2" size-xl="2" size="12"
         *ngFor="let fighter of fighters; index as position; trackBy: trackItems">
         <ion-img alt={{fighter?.name}} (click)="applyFighter(fighter)" [ngClass]="isFighterSelected(fighter)"
           class="avatar" [src]="fighter?.name | fighterImage"></ion-img>

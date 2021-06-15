@@ -113,6 +113,10 @@ export class FeatureHomeComponent implements OnInit {
     this.exteraCol = this.exteraCol > 4 ? 4 : this.exteraCol; // if we want to have max virtual column count
   }
 
+  onScroll(ev) {
+    const offset = ev.detail.scrollTop;
+  }
+
   itemHeightFn(item, index) {
     // better performance if setting item height
     return 215;

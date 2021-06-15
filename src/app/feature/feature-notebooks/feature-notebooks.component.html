@@ -1,22 +1,22 @@
-<ion-header transparent="true" #toolbar>
+<ion-header transparent="true" #notebooksToolbar>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="close()" shape="round">
-        <ion-icon [src]="homeIcon" size="large"></ion-icon>
+        <ion-icon src="assets/navigation/header_bar_ico.svg" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-label *ngIf="!searchBarEnabled">Smash Notes - Fighters</ion-label>
-    <ion-searchbar #seachbar *ngIf="searchBarEnabled" (ionInput)="setFilteredItems($event)" (ionCancel)="cancelSearch($event)" type="text"
-      placeholder="Search text" clearInput [value]="searchValue">
+    <ion-searchbar #seachbar *ngIf="searchBarEnabled" (ionInput)="setFilteredItems($event)"
+      (ionCancel)="cancelSearch($event)" type="text" placeholder="Search text" clearInput [value]="searchValue">
     </ion-searchbar>
 
-    
+
     <ion-buttons slot="end">
       <ion-button *ngIf="!searchBarEnabled" (click)="toggleSearch(); focusSearchbar()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
       <ion-button *ngIf="searchBarEnabled" (click)="toggleSearch()" shape="round">
-       Cancel
+        Cancel
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">
         <ion-icon slot="icon-only" name="options"></ion-icon>
@@ -25,36 +25,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="toolbar">
-
-  <ng-container *ngIf="notebookLayout === 'virtual-grid'">
-    <ion-virtual-scroll [items]="fighters | virtualListIndex: exteraCol : nextPipe">
-      <ion-row *virtualItem="let fighter; let i = index">
-        <ion-col *ngFor="let j of fighter" size-xl="3" size-lg="3" size-md="6" size-sm="12" size="12">
-          <ion-item lines="inset" (click)="loadFighterPage(fighters[j])">
-            <ion-img alt={{fighters[j]?.name}} class="stock-icon-image" [src]="fighters[j]?.name | fighterImage"></ion-img>
-            <ion-card-subtitle class="fighter-notebook">{{fighters[j]?.name | normalizeName }}</ion-card-subtitle>
-            <!-- <ion-badge color="primary">40</ion-badge> -->
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-virtual-scroll>
-  </ng-container>
-
-
-    <ng-container *ngIf="notebookLayout === 'grid'">
-      <ion-grid>
-        <ion-row>
-          <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" size-xl="3" size-lg="4" size-md="6" size-sm="12" size="12">
-            <ion-item lines="inset" (click)="loadFighterPage(fighter)">
-              <ion-img alt={{fighter?.name}} class="stock-icon-image" [src]="fighter?.name | fighterImage"></ion-img>
-              <ion-card-subtitle class="fighter-notebook">{{fighter?.name | normalizeName }}</ion-card-subtitle>
-              <!-- <ion-badge color="primary">40</ion-badge> -->
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ng-container>
+<ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="notebooksToolbar">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" 
+      size-xs="6" size-sm="4" size-md="4" size-lg="3" size-xl="2" size="12">
+        <ion-item lines="inset" (click)="loadFighterPage(fighter)">
+          <ion-img alt={{fighter?.name}} class="stock-icon-image" [src]="fighter?.name | fighterImage"></ion-img>
+          <ion-card-subtitle class="fighter-notebook">{{fighter?.name | normalizeName }}</ion-card-subtitle>
+          <!-- <ion-badge color="primary">40</ion-badge> -->
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
 

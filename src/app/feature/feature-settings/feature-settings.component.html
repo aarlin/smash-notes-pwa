@@ -33,29 +33,6 @@
   </ion-card>
 
   <ion-card>
-    <ion-radio-group (ionChange)="notebookLayoutChangeEvent($event)" [value]="settings?.selectedNotebookLayout">
-      <ion-list-header>
-        <ion-label>
-          Notebook Layout Configuration
-        </ion-label>
-      </ion-list-header>
-
-      <ion-item>
-        <ion-icon name="grid-outline" slot="start"></ion-icon>
-        <ion-label>Virtual Grid</ion-label>
-        <ion-radio value="virtual-grid"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="grid-outline" slot="start"></ion-icon>
-        <ion-label>Grid</ion-label>
-        <ion-radio value="grid"></ion-radio>
-      </ion-item>
-
-    </ion-radio-group>
-  </ion-card>
-
-  <ion-card>
     <ion-item class="ion-activated">
       <ion-icon [name]="dataSyncIcon" slot="start"></ion-icon>
       <ion-label>Online Sync</ion-label>

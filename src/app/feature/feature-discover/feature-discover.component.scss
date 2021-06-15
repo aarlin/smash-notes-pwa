@@ -1,3 +1,10 @@
+ion-content {
+    height: calc(100vh - var(--offset-bottom));
+    --padding-start: 20px;
+    // --padding-end: 20px;
+  }
+  
+
 ion-col {
     position: relative;
     display: inline-block; /* <= shrinks container to image size */

@@ -8,6 +8,7 @@ import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { MasonryCardComponent } from 'src/app/components/masonry-card/masonry-card.component';
 import { QuillModule } from 'ngx-quill';
+import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { QuillModule } from 'ngx-quill';
     CommonModule,
     IonicModule,
     FeatureToolbarModule,
+    SharedDirectivesModule,
     SharedPipesModule,
     NgxMasonryModule,
     QuillModule

@@ -52,19 +52,7 @@ export class FeatureNotebooksComponent implements OnInit {
         });
         this.backupFighters = [...this.fighters];
       });
-    this.storage.get('settings').then((settings: Settings) => {
-      // if (!settings) {
-      //   this.settings = {
-      //     selectedHomeLayout: 'list',
-      //     selectedNotebookLayout: 'virtual-div-grid',
-      //     onlineSync: false,
-      //     hideNotes: false,
-      //     darkMode: true
-      //   }
-      //   this.saveSettings();
-      // }
-      this.notebookLayout = settings?.selectedNotebookLayout;
-    });
+
   }
 
   @HostListener("window:resize", ["$event"])
