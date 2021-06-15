@@ -17,22 +17,14 @@ export class HideHeaderDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     this.header = this.header.el;
     this.children = this.header.children;
+    this.renderer.setStyle(this.header, 'webkitTransition', 'top 800ms');
   }
  
   @HostListener('ionScroll', ['$event']) onContentScroll($event: any) {
-    const scrollTop: number = $event.detail.scrollTop;
-    let newPosition = -scrollTop;
- 
-    if (newPosition < -this.headerHeight) {
-      newPosition = -this.headerHeight;
+    if ($event.detail.scrollTop >= 50 && $event.detail.deltaY > 0) {
+      this.renderer.setStyle(this.header, 'top', `-76px`);
+    } else if ($event.detail.deltaY <= 0) {
+        this.renderer.setStyle(this.header, 'top', `0px`);
     }
-    let newOpacity = 1 - (newPosition / -this.headerHeight);
- 
-    this.domCtrl.write(() => {
-      this.renderer.setStyle(this.header, 'top', newPosition + 'px');
-      for (let c of this.children) {
-        this.renderer.setStyle(c, 'opacity', newOpacity);
-      }
-    });
   }
 }
