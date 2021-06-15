@@ -72,3 +72,17 @@ ion-avatar {
 }
 
 ion-content { --offset-bottom: 100px !important; }
+
+ion-router-outlet > .ion-page { 
+  animation: fadeIn 0.5s 1 forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3vh, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
