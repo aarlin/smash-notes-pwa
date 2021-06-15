@@ -15,7 +15,7 @@
       <ion-button *ngIf="!searchBarEnabled" (click)="toggleSearch(); focusSearchbar()" shape="round">
         <ion-icon slot="icon-only" name="search"></ion-icon>
       </ion-button>
-      <ion-button *ngIf="searchBarEnabled" (click)="toggleSearch()" shape="round">
+      <ion-button *ngIf="searchBarEnabled" (click)="cancelSearch($event); resetFighters()" shape="round">
         Cancel
       </ion-button>
       <ion-button (click)="presentModal()" shape="round">
@@ -32,7 +32,7 @@
       size-xs="6" size-sm="4" size-md="4" size-lg="3" size-xl="2" size="12">
         <ion-item lines="inset" (click)="loadFighterPage(fighter)">
           <ion-img alt={{fighter?.name}} class="stock-icon-image" [src]="fighter?.name | fighterImage"></ion-img>
-          <ion-card-subtitle class="fighter-notebook">{{fighter?.name | normalizeName }}</ion-card-subtitle>
+          <ion-card-subtitle class="ion-text-uppercase fighter-notebook">{{fighter?.name | normalizeName }}</ion-card-subtitle>
           <!-- <ion-badge color="primary">40</ion-badge> -->
         </ion-item>
       </ion-col>
