@@ -28,8 +28,8 @@
 <ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appHideHeader]="notebooksToolbar">
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" size-xl="3" size-lg="4" size-md="6" size-sm="12"
-        size="12">
+      <ion-col *ngFor="let fighter of fighters; trackBy: trackFighters" 
+      size-xs="6" size-sm="4" size-md="4" size-lg="3" size-xl="2" size="12">
         <ion-item lines="inset" (click)="loadFighterPage(fighter)">
           <ion-img alt={{fighter?.name}} class="stock-icon-image" [src]="fighter?.name | fighterImage"></ion-img>
           <ion-card-subtitle class="fighter-notebook">{{fighter?.name | normalizeName }}</ion-card-subtitle>
