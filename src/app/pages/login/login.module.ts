@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { FirebaseUIModule } from 'firebaseui-angular';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { LoginPage } from './login.page';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FirebaseUIModule
   ],
   declarations: [LoginPage]
 })
