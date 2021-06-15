@@ -80,6 +80,10 @@ export class FeatureNotebooksComponent implements OnInit {
     console.log(this.fighters);
   }
 
+  resetFighters() {
+    this.fighters = this.backupFighters;
+  }
+
   itemHeightFn(item, index) {
     // better performance if setting item height
     return 215;
@@ -139,6 +143,10 @@ export class FeatureNotebooksComponent implements OnInit {
 
   cancelSearch(event) {
     console.log(event);
+    console.log(this.searchValue)
+
+    this.searchValue = null;
+    console.log(this.searchValue)
     this.searchBarEnabled = !this.searchBarEnabled;
   }
 
