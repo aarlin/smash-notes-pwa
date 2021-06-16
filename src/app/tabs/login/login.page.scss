@@ -1,8 +1,10 @@
 .app-title {
     font-size: 6vw;
-    // font-family: "Rodin";
-    // -webkit-mask-image: url("/assets/portraits/page_title_bg.svg");
+    font-weight: bold;
+    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    color: var(--ion-color-primary);
 }
+
 
 .login-form {
     background-color: transparent;
