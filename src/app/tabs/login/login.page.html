@@ -1,10 +1,9 @@
 <ion-content>
 
-  <ion-grid class="grid1" [ngStyle]="{'background-image': 'url(' + backgroundLogo + ')'}">
+  <ion-grid class="grid1">
     <ion-row [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}" class="row1">
       <ion-col class="img-container">
-        <!-- <img class="logo" src="/assets/navigation/ico_about_g.svg"> -->
-        <img class="logo" src="/assets/logo/bg_cover_1.webp">
+        <img class="logo">
       </ion-col>
       
     </ion-row>
@@ -16,19 +15,13 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <h1 class="app-title">Smash Notes</h1>
+            <h1 class="app-title ion-text-uppercase">Login</h1>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-list>
               <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
-                <ion-label>
-                  <!-- <div class="blog-header">
-                    <h2 class="blog-header__title"><span class="u-ir app-title">SUPER SMASH NOTES</span></h2>
-                  </div> -->
-                </ion-label>
-          
                 <ion-item>
                   <ion-icon name="mail-outline" slot="start" class="icon-login"></ion-icon>
                   <ion-label position="floating">Email</ion-label>

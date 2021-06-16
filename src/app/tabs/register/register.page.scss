@@ -1,0 +1,44 @@
+.app-title {
+    font-size: 6vw;
+    // font-family: "Rodin";
+}
+
+.contaier-login {
+    width: 90%;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+ion-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    top: -50px !important;
+}
+
+ion-grid, ion-row {
+    height: 100%;
+}
+
+ion-col {
+    background-repeat: repeat;
+}
+
+.logo {
+    background: url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.row1 {
+    background-size: cover;
+}
+
+.grid1 {
+    padding: 0px;
+}

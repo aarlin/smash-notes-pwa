@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { BackgroundService } from 'src/app/services/background.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
 
-export class RegisterPage implements OnInit {
+export class LoginPage implements OnInit {
 
   userForm: FormGroup;
   successMsg: string = '';
   errorMsg: string = '';
 
+  backgroundImage: string;
 
   error_msg = {
     'email': [
@@ -42,10 +44,13 @@ export class RegisterPage implements OnInit {
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private backgroundService: BackgroundService
   ) { }
 
   ngOnInit() {
+    this.checkIfLoggedIn();
+
     this.userForm = this.fb.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -56,21 +61,48 @@ export class RegisterPage implements OnInit {
         Validators.required
       ])),
     });
+
+    this.backgroundImage = this.backgroundService.getRandomBackground();
   }
 
-  signUp(value) {
-    this.authenticationService.createUser(value)
+  checkIfLoggedIn() {
+    this.authenticationService.userDetails().subscribe(response => {
+      if (response !== null) {
+        console.log(response);
+        this.router.navigateByUrl('dashboard');
+      }
+    }, error => {
+      console.log(error);
+    })
+
+  }
+
+  signIn(value) {
+    this.authenticationService.signInUser(value)
       .then((response) => {
+        console.log(response)
         this.errorMsg = "";
-        this.successMsg = "New user created.";
+        this.router.navigateByUrl('dashboard');
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = "";
       })
   }
 
-  goToLogin() {
-    this.router.navigateByUrl('login');
+  signInAnonymously() {
+    this.authenticationService.signInAnonymously()
+      .then((response) => {
+        console.log(response)
+        this.errorMsg = "";
+        this.router.navigateByUrl('dashboard');
+      }, error => {
+        this.errorMsg = error.message;
+        this.successMsg = "";
+      })
+  }
+
+  goToSignup() {
+    this.router.navigateByUrl('register');
   }
 
 }

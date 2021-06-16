@@ -24,6 +24,14 @@ const routes: Routes = [
         loadChildren: () => import('./tab-settings/tab4.module').then(m => m.Tab4PageModule)
       },
       {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+      },
+      {
+        path: 'register',
+        loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
