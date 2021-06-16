@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: true
 })
 export class FighterImagePipe implements PipeTransform {
-  dlcFighters = ['homura', 'sephiroth', 'steve', 'minmin', 'byleth', 'terry', 'banjo_and_kazooie', 'dq_hero']
+  dlcFighters = ['homura', 'sephiroth', 'steve', 'minmin', 'byleth', 'terry', 'banjo_and_kazooie', 'dq_hero', 'kazuya']
 
   transform(value: string, ...args: unknown[]): unknown {
     console.count('fighterimage')

@@ -81,5 +81,6 @@ export enum Fighters {
     BYLETH = 'byleth',
     TERRY = 'terry',
     BANJO_AND_KAZOOIE = 'banjo_and_kazooie',
-    DQ_HERO = 'hero'
+    DQ_HERO = 'hero',
+    KAZUYA = 'kazuya'
 }
