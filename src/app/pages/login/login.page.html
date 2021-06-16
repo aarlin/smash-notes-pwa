@@ -58,12 +58,12 @@
           
                 <label class="ion-text-center" color="danger">{{errorMsg}}</label>
               </form>
-              <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
-              <!-- <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button> -->
               <ion-item>
                 <firebase-ui></firebase-ui>
-                
+
               </ion-item>
+              <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
+
               <!-- Size=12 is the size the col will be below the sm breakpoint, 
                 whilst 3 is the size above the breakpoint -->
             </ion-list>
