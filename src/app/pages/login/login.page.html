@@ -1,60 +1,85 @@
-<ion-content class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <!-- Size=12 is the size the col will be below the sm breakpoint, 
-        whilst 3 is the size above the breakpoint -->
-      <ion-col size="12" size-sm="6">
-        <div class="blog__contents">
+<ion-content>
 
-        <div class="blog__bg">
-          <div class="blog__bg-img"><span id="js-blog-bg" style="transform: translate3d(0px, -27.6225px, 0px);"></span></div>
-        </div>
-        <div class="blog-header">
-          <h2 class="blog-header__title"><span class="u-ir app-title">SUPER SMASH NOTES</span></h2>
-        </div>
-      </div>
+  <ion-grid class="grid1">
 
+    <ion-row [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}" class="row1">
+      <ion-col class="img-container">
+        <img class="logo" src="/assets/navigation/ico_about_g.svg">
       </ion-col>
-      <ion-col size="12" size-sm="6" class="login-form">
-        <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="text" formControlName="email"></ion-input>
-          </ion-item>
-      
-          <ng-container *ngFor="let error of error_msg.email">
-            <div
-              *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
-              {{ error.message }}
-            </div>
-          </ng-container>
-      
-          <ion-item>
-            <ion-label position="floating" color="primary">Password</ion-label>
-            <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
-          </ion-item>
-      
-          <ng-container *ngFor="let error of error_msg.password">
-            <div
-              *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
-              {{ error.message }}
-            </div>
-          </ng-container>
-      
-          <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Sign In</ion-button>
-      
-          <label class="ion-text-center" color="danger">{{errorMsg}}</label>
-        </form>
-        <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
-        <!-- <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button> -->
-        <firebase-ui></firebase-ui>
-      </ion-col>
-
     </ion-row>
+
+    <ion-row class="row2">
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 
-  <!-- logo-twitter, logo-apple, logo-google, logo-facebook, logo-microsoft -->
-  
+  <ion-slide>
+    <div class="contaier-login">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1>Smash Notes</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-list>
 
-
-</ion-content>
+              <!-- <ion-item>
+                <ion-icon name="person" class="icon-login"></ion-icon>
+                <ion-input name="user" type="text" required placeholder="Usuario"></ion-input>
+              </ion-item>
+              <br />
+              <ion-item>
+                <ion-icon name="lock" class="icon-login"></ion-icon>
+                <ion-input name="password" type="password" required placeholder="Contraseña"></ion-input>
+              </ion-item> -->
+              <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
+                <ion-label>
+                  <!-- <div class="blog-header">
+                    <h2 class="blog-header__title"><span class="u-ir app-title">SUPER SMASH NOTES</span></h2>
+                  </div> -->
+                </ion-label>
+          
+                <ion-item>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input type="text" formControlName="email"></ion-input>
+                </ion-item>
+          
+                <ng-container *ngFor="let error of error_msg.email">
+                  <div
+                    *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+          
+                <ion-item>
+                  <ion-label position="floating" color="primary">Password</ion-label>
+                  <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+                </ion-item>
+          
+                <ng-container *ngFor="let error of error_msg.password">
+                  <div
+                    *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+          
+                <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Sign In</ion-button>
+          
+                <label class="ion-text-center" color="danger">{{errorMsg}}</label>
+              </form>
+              <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
+              <!-- <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button> -->
+              <firebase-ui></firebase-ui>
+              <!-- Size=12 is the size the col will be below the sm breakpoint, 
+                whilst 3 is the size above the breakpoint -->
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-slide>

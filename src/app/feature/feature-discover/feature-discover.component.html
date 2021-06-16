@@ -45,7 +45,7 @@
   </ion-slides>
 
 
-  <ion-list>
+  <ion-list *ngIf="notes.length > 0">
     <ion-item (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
       <ion-avatar slot="start">
         <ion-img alt={{note.player}} [src]="note.player | fighterImage"></ion-img>
