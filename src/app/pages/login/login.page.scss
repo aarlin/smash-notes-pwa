@@ -70,16 +70,18 @@ ion-row {
 .contaier-login {
     width: 90%;
     padding: 10px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
 }
 
-
 .row1 {
-    height: 100%;
+    background-size: cover;
+    &::after {
+        background: url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+    }
 }
 
 ion-icon {
@@ -107,4 +109,15 @@ ion-slide {
     display: flex;
     justify-content: center;
     // align-items: center; this only if you want to vertical align it to the center too
- }
+}
+
+ion-grid {
+    &::after {
+            background: url("/assets/background/bg_cover.webp");
+            background-size: cover;
+            height: 800px;
+            width: 800px;
+            background-color: transparent;
+            background-repeat: no-repeat;
+    }
+}

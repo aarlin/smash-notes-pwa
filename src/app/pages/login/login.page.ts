@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   errorMsg: string = '';
 
   backgroundImage: string;
+  backgroundLogo: string;
 
   potentialBackgroundImages = [
     "/assets/background/banjo_and_kazooie.jpg",
@@ -144,7 +145,7 @@ export class LoginPage implements OnInit {
     });
 
     this.backgroundImage = this.potentialBackgroundImages[Math.floor(Math.random() * this.potentialBackgroundImages.length)];
-
+    this.backgroundLogo = "/assets/logo/bg_cover.webp";
   }
 
   checkIfLoggedIn() {

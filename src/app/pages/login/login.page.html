@@ -1,11 +1,12 @@
 <ion-content>
 
-  <ion-grid class="grid1">
-
+  <ion-grid class="grid1" [ngStyle]="{'background-image': 'url(' + backgroundLogo + ')'}">
     <ion-row [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}" class="row1">
       <ion-col class="img-container">
-        <img class="logo" src="/assets/navigation/ico_about_g.svg">
+        <!-- <img class="logo" src="/assets/navigation/ico_about_g.svg"> -->
+        <img class="logo" src="/assets/logo/bg_cover_1.webp">
       </ion-col>
+      
     </ion-row>
 
   </ion-grid>

@@ -99,9 +99,10 @@ firebase-ui, .firebaseui-card-content {
 
 .firebaseui-idp-button {
   min-width: 100% !important;
-  height: 100px !important;
+  height: 50px !important;
+  border-radius: 4px !important;
 }
 
 .firebaseui-idp-icon {
-  height: 80px !important;
+  height: 25px !important;
 }
