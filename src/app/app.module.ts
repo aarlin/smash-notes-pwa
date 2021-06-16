@@ -43,12 +43,12 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     },
     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    {
-      requireDisplayName: false,
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
-    },
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+    // {
+    //   requireDisplayName: false,
+    //   provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
+    // },
+    // firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+    // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
   ],
   tosUrl: '',
   privacyPolicyUrl: '',
