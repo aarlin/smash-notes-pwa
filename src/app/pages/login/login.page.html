@@ -8,12 +8,6 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="row2">
-      <ion-col>
-
-      </ion-col>
-    </ion-row>
-
   </ion-grid>
 
   <ion-slide>
@@ -21,22 +15,12 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <h1>Smash Notes</h1>
+            <h1 class="app-title">Smash Notes</h1>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-list>
-
-              <!-- <ion-item>
-                <ion-icon name="person" class="icon-login"></ion-icon>
-                <ion-input name="user" type="text" required placeholder="Usuario"></ion-input>
-              </ion-item>
-              <br />
-              <ion-item>
-                <ion-icon name="lock" class="icon-login"></ion-icon>
-                <ion-input name="password" type="password" required placeholder="Contraseña"></ion-input>
-              </ion-item> -->
               <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
                 <ion-label>
                   <!-- <div class="blog-header">
@@ -45,18 +29,20 @@
                 </ion-label>
           
                 <ion-item>
+                  <ion-icon name="mail-outline" slot="start" class="icon-login"></ion-icon>
                   <ion-label position="floating">Email</ion-label>
                   <ion-input type="text" formControlName="email"></ion-input>
                 </ion-item>
-          
+                
                 <ng-container *ngFor="let error of error_msg.email">
                   <div
-                    *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
-                    {{ error.message }}
-                  </div>
-                </ng-container>
-          
-                <ion-item>
+                  *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+              
+              <ion-item>
+                  <ion-icon name="key-outline" slot="start" class="icon-login"></ion-icon>
                   <ion-label position="floating" color="primary">Password</ion-label>
                   <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
                 </ion-item>
@@ -74,7 +60,10 @@
               </form>
               <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
               <!-- <ion-button type="submit" (click)="signInAnonymously()" expand="block">Sign in Anonymously</ion-button> -->
-              <firebase-ui></firebase-ui>
+              <ion-item>
+                <firebase-ui></firebase-ui>
+                
+              </ion-item>
               <!-- Size=12 is the size the col will be below the sm breakpoint, 
                 whilst 3 is the size above the breakpoint -->
             </ion-list>
