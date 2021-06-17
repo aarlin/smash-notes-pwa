@@ -8,7 +8,7 @@
         <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
       </ion-button> -->
       <ion-button>
-        <ion-icon [src]="fighter?.name | fighterImage" size="large"></ion-icon>
+        <img class="fighterIcon" [src]="fighter?.name | fighterImage"/>
       </ion-button>
     </ion-buttons>
     <ion-label>{{fighter?.name | normalizeName}}</ion-label>

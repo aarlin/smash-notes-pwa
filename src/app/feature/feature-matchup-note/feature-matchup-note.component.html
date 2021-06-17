@@ -16,7 +16,7 @@
 
   <div class="versus-container">
     <ion-avatar (click)="changePlayer()" slot="start">
-      <ion-img class="fighter-image" alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
+      <img class="fighter-image" alt={{note?.player}} [src]="note?.player | fighterImage"/>
     </ion-avatar>
 
     <ion-avatar (click)="swapCharacters()">
@@ -24,7 +24,7 @@
     </ion-avatar>
 
     <ion-avatar (click)="changeEnemy()" slot="end">
-      <ion-img class="enemy-image" alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
+      <img class="enemy-image" alt={{note?.enemy}} [src]="note?.enemy | fighterImage"/>
     </ion-avatar>
   </div>
 

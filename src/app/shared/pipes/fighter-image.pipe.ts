@@ -10,6 +10,7 @@ export class FighterImagePipe implements PipeTransform {
   transform(value: string, ...args: unknown[]): unknown {
     console.count('fighterimage')
     if (this.dlcFighters.includes(value)) {
+      console.log(`assets/stock-icons/webp/${value}.webp`)
       return `assets/stock-icons/webp/${value}.webp`
     }
     if (!value) {
