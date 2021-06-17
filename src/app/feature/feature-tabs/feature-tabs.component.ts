@@ -14,6 +14,17 @@ class Note implements NoteInterface {
   enemyImage?: string;
   playerImage?: string;
   visible?: boolean;
+  
+  constructor(uid?: string, groupName?: string, title: string = '', 
+    body: string = '', player?: string, enemy?: string, visible: boolean = false) {
+    this.uid = uid;
+    this.groupName = groupName;
+    this.title = title;
+    this.body = body;
+    this.player = player;
+    this.enemy = enemy;
+    this.visible = visible;
+  }
 }
 
 @Component({
@@ -97,8 +108,7 @@ export class FeatureTabsComponent implements OnInit {
 
   async openNote() {
     const uid = await this.authenication.getUid();
-    let newNote: Note = new Note();
-    newNote.uid = uid;
+    let newNote: Note = new Note(uid, '', '', '', '', '');
     console.log(newNote);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,

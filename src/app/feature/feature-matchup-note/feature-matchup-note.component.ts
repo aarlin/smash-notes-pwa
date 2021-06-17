@@ -230,7 +230,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     });
   }
 
-  deleteNote(note) {
+  deleteNote(note: Note): void {
     // TODO: show alert message, delete, dismiss modal, show toast
     this.noteService.deleteNote(note)
       .then(response => {
@@ -241,7 +241,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   }
 
-  updateNote(note) {
+  updateNote(note: Note): void {
     console.log(note);
     this.noteService.updateNote(note)
       .then(response => {
@@ -251,7 +251,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
-  createNote(note) {
+  createNote(note: Note): void {
     this.noteService.createNote(note)
       .then(response => {
         console.log(response);

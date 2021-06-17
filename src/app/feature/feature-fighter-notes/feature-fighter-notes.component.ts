@@ -121,6 +121,7 @@ export class FeatureFighterNotesComponent implements OnInit {
   }
 
   async openNote(note: Note) {
+    console.log(note);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,
