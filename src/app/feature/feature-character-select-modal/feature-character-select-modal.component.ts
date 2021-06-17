@@ -65,8 +65,6 @@ export class FeatureCharacterSelectModalComponent  {
   applyFighter(fighter: Fighter) {
     if (fighter?.name !== this.currentFighter?.name) {
       this.currentFighter = fighter;
-    } else {
-      this.currentFighter = undefined;
     }
     this.dismissModal();
   }
@@ -88,7 +86,7 @@ export class FeatureCharacterSelectModalComponent  {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
-      'fighter': this.currentFighter
+      'fighter': this.currentFighter ?? ''
     });
   }
 

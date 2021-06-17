@@ -93,10 +93,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
-    // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
-    // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
-    // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
-    // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
     console.log(this.uid)
     console.log(this.update)
@@ -168,9 +164,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
+      console.log(modelData);
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
-        this.note.player = modelData.data?.fighter?.name;
+        this.note.player = modelData.data?.fighter?.name ?? '';
         this.assignIcons();
         this.dirty = true;
       }
@@ -190,10 +187,12 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
+      console.log(modelData);
+
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
-        this.note.enemy = modelData.data?.fighter?.name;
+        this.note.enemy = modelData.data?.fighter?.name ?? '';
         this.assignIcons();
         this.dirty = true;
       }
