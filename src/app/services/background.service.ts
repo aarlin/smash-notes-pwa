@@ -1,23 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+@Injectable({
+  providedIn: 'root'
 })
-
-export class LoginPage implements OnInit {
-
-  userForm: FormGroup;
-  successMsg: string = '';
-  errorMsg: string = '';
-
-  backgroundImage: string;
-  backgroundLogo: string;
-
+export class BackgroundService {
   potentialBackgroundImages = [
     "/assets/background/banjo_and_kazooie.jpg",
     "/assets/background/bayonetta.jpg,bg_img.png,bowser.jpg",
@@ -101,91 +87,10 @@ export class LoginPage implements OnInit {
     "/assets/background/zero_suit_samus.jpg",
   ]
 
-  error_msg = {
-    'email': [
-      {
-        type: 'required',
-        message: 'Provide email.'
-      },
-      {
-        type: 'pattern',
-        message: 'Email is not valid.'
-      }
-    ],
-    'password': [
-      {
-        type: 'required',
-        message: 'Password is required.'
-      },
-      {
-        type: 'minlength',
-        message: 'Password length should be 6 characters long.'
-      }
-    ]
-  };
+  constructor() { }
 
-  constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private fb: FormBuilder
-  ) { }
-
-  ngOnInit() {
-    this.checkIfLoggedIn();
-
-    this.userForm = this.fb.group({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.minLength(6),
-        Validators.required
-      ])),
-    });
-
-    this.backgroundImage = this.potentialBackgroundImages[Math.floor(Math.random() * this.potentialBackgroundImages.length)];
-    this.backgroundLogo = "/assets/logo/bg_cover.webp";
+  getRandomBackground(): string {
+    console.log(this.potentialBackgroundImages[Math.floor(Math.random() * this.potentialBackgroundImages.length)])
+    return this.potentialBackgroundImages[Math.floor(Math.random() * this.potentialBackgroundImages.length)];
   }
-
-  checkIfLoggedIn() {
-    this.authenticationService.userDetails().subscribe(response => {
-      if (response !== null) {
-        console.log(response);
-        this.router.navigateByUrl('dashboard');
-      }
-    }, error => {
-      console.log(error);
-    })
-
-  }
-
-  signIn(value) {
-    this.authenticationService.signInUser(value)
-      .then((response) => {
-        console.log(response)
-        this.errorMsg = "";
-        this.router.navigateByUrl('dashboard');
-      }, error => {
-        this.errorMsg = error.message;
-        this.successMsg = "";
-      })
-  }
-
-  signInAnonymously() {
-    this.authenticationService.signInAnonymously()
-      .then((response) => {
-        console.log(response)
-        this.errorMsg = "";
-        this.router.navigateByUrl('dashboard');
-      }, error => {
-        this.errorMsg = error.message;
-        this.successMsg = "";
-      })
-  }
-
-  goToSignup() {
-    this.router.navigateByUrl('register');
-  }
-
 }
