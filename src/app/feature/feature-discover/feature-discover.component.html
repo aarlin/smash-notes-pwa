@@ -44,8 +44,40 @@
     </ion-slide>
   </ion-slides>
 
+  <ion-list *ngIf="!dataLoaded">
+    <div class="skeleton-list">
+      <ion-item *ngFor="let j of [].constructor(15)">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-thumbnail slot="end">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
 
-  <ion-list *ngIf="notes.length > 0">
+  <ion-list *ngIf="dataLoaded">
+    <ng-container *ngIf="notes.length === 0">
+      <ion-item lines="none">
+        <ion-label class="ion-text-center ion-text-wrap">
+          <h2>No Notes Found By Others</h2>
+          <p>Why not create and share a note?</p>
+          <p>
+            Start adding a note by clicking <ion-icon size="large" src='assets/navigation/plus-square-outline.svg'>
+            </ion-icon> at the bottom
+          </p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
     <ion-item (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
       <ion-avatar slot="start">
         <ion-img alt={{note.player}} [src]="note.player | fighterImage"></ion-img>
