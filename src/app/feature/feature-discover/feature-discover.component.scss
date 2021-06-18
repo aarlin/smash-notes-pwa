@@ -41,6 +41,30 @@ ion-col {
             }
         }
     }
+    &.discover-fighter {
+        border: #26dd62 1px solid;
+        &:hover {
+            background: #26dd62 url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+            transition: height .25s cubic-bezier(0.165, 0.84, 0.44, 1)
+        }
+        .discover-text {
+            &:hover {
+                color: #26dd62;
+            }
+        }
+    }
+    &.discover-liked {
+        border: #e75fbe 1px solid;
+        &:hover {
+            background: #e75fbe url("/assets/portraits/ptn_diagonal_12.webp") 0 0;
+            transition: height .25s cubic-bezier(0.165, 0.84, 0.44, 1)
+        }
+        .discover-text {
+            &:hover {
+                color: #e75fbe;
+            }
+        }
+    }
     
     height: 120px;
     background: var(--ion-card-background);

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { IonInfiniteScroll, IonVirtualScroll, ModalController, Platform } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
@@ -22,6 +22,7 @@ export class FeatureHomeComponent implements OnInit {
   notes: Note[] = [];
   layout: any;
   devWidth = this.platform.width();
+  lastNoteLoaded: any;
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -49,7 +50,7 @@ export class FeatureHomeComponent implements OnInit {
     columnWidth: '.masonry-item',
     percentPosition: true
   }
-  
+
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
@@ -110,7 +111,7 @@ export class FeatureHomeComponent implements OnInit {
     }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
-    this.exteraCol = this.exteraCol > 4 ? 4 : this.exteraCol; // if we want to have max virtual column count
+    this.exteraCol = this.exteraCol > 6 ? 6 : this.exteraCol; // if we want to have max virtual column count
   }
 
   onScroll(ev) {
@@ -122,8 +123,13 @@ export class FeatureHomeComponent implements OnInit {
     return 215;
   }
 
-  getNotesByUser() {
-    this.noteService.getNotesByUser().then((snapshot) => {
+  logNote(index: number, note: Note) {
+    console.log('logNote')
+    console.log(index, note);
+  }
+
+  getNotesByUser(lastNoteLoaded?) {
+    this.noteService.getNotesByUser(lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
           id: doc.id,
@@ -131,18 +137,52 @@ export class FeatureHomeComponent implements OnInit {
         };
       });
       console.table(data);
-      this.notes = data;
-      this.dataLoaded = !this.dataLoaded;
+      this.notes = [...this.notes, ...data];
+
+      this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
+      console.log(this.lastNoteLoaded);
+
+      this.dataLoaded = true;
       console.log(this.dataLoaded);
     }, error => {
       console.log(error);
-      this.dataLoaded = !this.dataLoaded;
+      this.dataLoaded = true;
       console.log(this.dataLoaded);
 
     });
   }
 
+  async openMasonryNote(index: number) {
+    console.log('open note from home')
+    console.log(index);
+    if (index === this.notes.length) {
+      console.log('same index');
+      index -= 1;
+    }
+    const modal = await this.modalController.create({
+      component: FeatureMatchupNoteComponent,
+      showBackdrop: true,
+      backdropDismiss: true,
+      cssClass: 'character-select-modal',
+      componentProps: {
+        note: this.notes[index],
+        update: true
+      }
+    });
+    modal.onWillDismiss().then(dataReturned => {
+      // trigger when about to close the modal
+      console.log(dataReturned?.data?.modified)
+      if (dataReturned?.data?.modified) {
+        this.masonry.reloadItems();
+        this.masonry.layout();
+      }
+    });
+    return await modal.present();
+  }
+
   async openNote(note: Note) {
+    console.log('open note from home')
+    console.log(note);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,
@@ -174,7 +214,13 @@ export class FeatureHomeComponent implements OnInit {
       this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
-      if (this.dataList.length === 1000) {
+      this.getNotesByUser(this.lastNoteLoaded);
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      console.log(this.notes.length)
+
+      if (this.notes.length > 20) {
         event.target.disabled = true;
       }
     }, 500);

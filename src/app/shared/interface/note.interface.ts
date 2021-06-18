@@ -9,4 +9,5 @@ export interface Note {
     playerImage?: string
     uid?: string;
     visible?: boolean;
+    timestamp?: Date;
 }

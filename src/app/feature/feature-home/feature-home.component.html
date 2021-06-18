@@ -41,7 +41,7 @@
     <ng-container *ngIf="gridLayout || masonryLayout">
       <div class="skeleton-grid" *ngFor="let i of [].constructor(8)">
         <ion-row class="ion-nowrap">
-          <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of [].constructor(4)">
+          <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of [].constructor(exteraCol)">
             <ion-card>
               <ion-card-header>
                 <ion-item lines="none">
@@ -92,8 +92,7 @@
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
-          <p [innerHTML]="note.body"></p>
-          <!-- <p>{{note.body}}</p> -->
+          <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
         </ion-label>
       </ion-item>
     </ion-list>
@@ -111,8 +110,7 @@
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
-          <p [innerHTML]="note.body"></p>
-          <!-- <p>{{note.body}}</p> -->
+          <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
         </ion-label>
       </ion-item>
     </ion-list>
@@ -132,7 +130,26 @@
       <div *virtualItem="let note; let i = index">
         <ion-row class="ion-nowrap ion-align-self-start">
           <ion-col class="home-col" [size]="12 / exteraCol" *ngFor="let j of note;">
-            <ion-card class="ion-padding" (click)="openNote(notes[j])">
+            <!-- Card that is last index -->
+            <ion-card *ngIf="j === notes.length" class="ion-padding" (click)="openNote(notes[j-1])">
+              <ion-card-header>
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <ion-img alt={{notes[j-1]?.player}} [src]="notes[j-1]?.player | fighterImage"></ion-img>
+                  </ion-avatar>
+                  <ion-avatar slot="end">
+                    <ion-img alt={{notes[j-1]?.enemy}} [src]="notes[j-1]?.enemy | fighterImage"></ion-img>
+                  </ion-avatar>
+
+                </ion-item>
+                <ion-card-title>
+                  <p>{{notes[j]?.title}}</p>
+                </ion-card-title>
+                <quill-view-html *ngIf="notes[j-1]?.body" [content]="notes[j-1]?.body" theme="snow"></quill-view-html>
+              </ion-card-header>
+            </ion-card>
+            <!-- Cards that are not last index -->
+            <ion-card *ngIf="j !== notes.length" class="ion-padding" (click)="openNote(notes[j])">
               <ion-card-header>
                 <ion-item lines="none">
                   <ion-avatar slot="start">
@@ -147,10 +164,6 @@
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
                 <quill-view-html *ngIf="notes[j]?.body" [content]="notes[j]?.body" theme="snow"></quill-view-html>
-
-                <!-- <ion-card-content>
-                  <p [innerHTML]="notes[j]?.body"></p>
-                </ion-card-content> -->
               </ion-card-header>
             </ion-card>
           </ion-col>

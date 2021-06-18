@@ -28,10 +28,11 @@ export class NoteService {
     const uid = await this.authenticationService.getUid();
     return new Promise<any>((resolve, reject) => {
       let newNoteRef = this.firestore.collection("notes").doc();
-      let id = newNoteRef.ref.id
+      let id = newNoteRef.ref.id;
+      let timestamp = new Date();
 
       newNoteRef
-        .set({ ...note, uid, id })
+        .set({ ...note, uid, id, timestamp })
         .then(ref => {
           console.log(ref);
         }, error => {
@@ -49,13 +50,24 @@ export class NoteService {
     });
   }
 
-  async getNotesByUser() {
+  async getNotesByUser(startKey?: any) {
     let uid = await this.authenticationService.getUid();
     console.log(uid);
 
-    return this.firestore.collection("notes").ref
-      .where('uid', '==', uid)
-      .get();
+    if (startKey) {
+      return this.firestore.collection("notes").ref
+        .where('uid', '==', uid)
+        .orderBy('timestamp', 'desc')
+        .limit(10)
+        .startAfter(startKey)
+        .get();
+    } else {
+      return this.firestore.collection("notes").ref
+        .where('uid', '==', uid)
+        .orderBy('timestamp', 'desc')
+        .limit(10)
+        .get();
+    }
   }
 
   async getNotesByFighter(fighter: any) {
@@ -67,14 +79,31 @@ export class NoteService {
       .get();
   }
 
-  async getNotesByOthers() {
+  async getNotesByOthers(last?: any) {
     let uid = await this.authenticationService.getUid();
     console.log('uid', uid)
 
-    return this.firestore.collection("notes").ref
-      .where('uid', '!=', uid)
-      .where('visible', '==', true)
-      .get();
+    console.log({ last });
+
+    if (last) {
+      return this.firestore.collection("notes").ref
+        .where('uid', '!=', uid)
+        .where('visible', '==', true)
+        .orderBy('uid', 'desc')
+        .orderBy('timestamp', 'desc')
+        .startAfter(last)
+        .limit(15)
+        .get();
+    } else {
+      return this.firestore.collection("notes").ref
+        .where('uid', '!=', uid)
+        .where('visible', '==', true)
+        .orderBy('uid', 'desc')
+        .orderBy('timestamp', 'desc')
+        .limit(15)
+        .get();
+    }
+
   }
 
   updateNote(note: any) {
@@ -82,10 +111,11 @@ export class NoteService {
     console.log(this.firestore
       .collection("notes")
       .doc(note.id))
+    const timestamp = new Date();
     return this.firestore
       .collection("notes")
       .doc(note.id)
-      .set({ ...note }, { merge: true });
+      .set({ ...note, timestamp }, { merge: true });
   }
 
   deleteNote(note: any) {

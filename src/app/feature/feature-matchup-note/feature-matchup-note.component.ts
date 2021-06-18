@@ -93,20 +93,16 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
-    // this.playerIcon = `assets/portraits/thumb_h/${this.note.player}.svg`;
-    // this.enemyIcon = `assets/portraits/thumb_h/${this.note.enemy}`;
-    // this.playerIcon = `assets/portraits/vertical/byleth.webp`;
-    // this.enemyIcon = `assets/portraits/vertical/fox.webp`;
     this.uid = await this.authenticationService.getUid();
     console.log(this.uid)
     console.log(this.update)
     this.excludeGroups = [
       'search', 'recent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags'
     ]
-    this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
+    this.visibilityIcon = this.note?.visible ? 'eye-outline' : 'eye-off-outline';
   }
 
-  created(quill: any) {
+  editorCreated(quill: any) {
     this.quill = quill;
   }
 
@@ -133,6 +129,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   editorChanged(event: any) {
+    if (!event.html) {
+      this.note.body = '';
+    }
+    console.log('editorCahnged');
     console.log(event)
     this.dirty = true;
   }
@@ -168,9 +168,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
+      console.log(modelData);
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
-        this.note.player = modelData.data?.fighter?.name;
+        this.note.player = modelData.data?.fighter?.name ?? '';
         this.assignIcons();
         this.dirty = true;
       }
@@ -190,10 +191,12 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
+      console.log(modelData);
+
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
-        this.note.enemy = modelData.data?.fighter?.name;
+        this.note.enemy = modelData.data?.fighter?.name ?? '';
         this.assignIcons();
         this.dirty = true;
       }
@@ -230,7 +233,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     });
   }
 
-  deleteNote(note) {
+  deleteNote(note: Note): void {
     // TODO: show alert message, delete, dismiss modal, show toast
     this.noteService.deleteNote(note)
       .then(response => {
@@ -241,7 +244,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   }
 
-  updateNote(note) {
+  updateNote(note: Note): void {
     console.log(note);
     this.noteService.updateNote(note)
       .then(response => {
@@ -251,7 +254,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
       })
   }
 
-  createNote(note) {
+  createNote(note: Note): void {
     this.noteService.createNote(note)
       .then(response => {
         console.log(response);

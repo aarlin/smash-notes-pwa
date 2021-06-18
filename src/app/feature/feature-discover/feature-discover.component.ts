@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { IonInfiniteScroll, ModalController, ToastController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { Note } from 'src/app/shared/interface/note.interface';
 import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
@@ -23,6 +23,7 @@ export class FeatureDiscoverComponent implements OnInit {
 
   public dataLoaded: boolean;
   public notes: Note[] = [];
+  lastNoteLoaded: any;
 
   discovery: Discover[] = [
     {
@@ -36,6 +37,12 @@ export class FeatureDiscoverComponent implements OnInit {
       filter: 'stage',
       bg: '/assets/carousel/ico_stage_g.svg',
       class: 'discover-stage'
+    },
+    {
+      name: 'Liked',
+      filter: 'liked',
+      bg: '/assets/carousel/menu_icon_assistfigure_pc.webp',
+      class: 'discover-liked'
     }
   ];
 
@@ -45,10 +52,12 @@ export class FeatureDiscoverComponent implements OnInit {
     slidesPerView: 1.6
   }
 
-  constructor(private noteService: NoteService, private modalController: ModalController) { }
+  constructor(private noteService: NoteService,
+    private modalController: ModalController,
+    private toastController: ToastController) { }
 
   ngOnInit() {
-    this.getNotesByOthers(false, "");
+    this.getNotesByOthers(null);
   }
 
   discover() {
@@ -62,22 +71,34 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   loadData(event) {
-    // setTimeout(() => {
-    // console.log('Done');
-    // event.target.complete();
+    setTimeout(() => {
+      // console.log('Done');
+      event.target.complete();
+      console.log({ event }, this.lastNoteLoaded)
 
-    this.getNotesByOthers(true, event);
+      this.getNotesByOthers(event, this.lastNoteLoaded);
 
-    // App logic to determine if all data is loaded
-    // and disable the infinite scroll
-    // if (data.length == 1000) {
-    // event.target.disabled = true;
-    // }
-    // }, 500);
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      console.log(this.notes.length)
+      if (this.notes.length > 7) {
+        console.log(this.notes.length)
+        event.target.disabled = true;
+        this.presentToast('No more notes');
+      }
+    }, 200);
   }
 
-  getNotesByOthers(isFirstLoad, event) {
-    this.noteService.getNotesByOthers().then((snapshot) => {
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  getNotesByOthers(event, lastNoteLoaded?) {
+    this.noteService.getNotesByOthers(lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
           id: doc.id,
@@ -85,12 +106,14 @@ export class FeatureDiscoverComponent implements OnInit {
         };
       });
       console.log("All data discovered in 'notes' collection", data);
-      this.notes = [...data, ...this.notes];
-      this.dataLoaded = !this.dataLoaded;
+      this.notes = [...this.notes, ...data];
+      this.dataLoaded = true;
 
-      if (isFirstLoad) {
-        event.target.complete();
-      }
+      this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
+      console.log(this.lastNoteLoaded);
+      // if (isFirstLoad) {
+      //   event.target.complete();
+      // }
 
     }, error => {
       console.log(error);
@@ -103,6 +126,7 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   async openNote(note: Note) {
+    console.log(note);
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,

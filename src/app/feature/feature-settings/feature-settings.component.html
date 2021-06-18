@@ -1,8 +1,19 @@
-<ion-header>
-  <app-feature-toolbar headerTitle="Smash Notes - Settings"></app-feature-toolbar>
+<ion-header class="toolbar" transparent="true" #discoverToolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false">
+        <ion-icon alt="home" src="assets/navigation/header_bar_ico.svg" size="large"></ion-icon>
+      </ion-menu-button> 
+      <!-- <ion-button (click)="goHome()" shape="round">
+        <ion-icon alt="home" [src]="homeIcon" size="large"></ion-icon>
+  
+      </ion-button> -->
+    </ion-buttons>
+    <ion-label class="header-label">Smash Notes - Settings</ion-label>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" overflow-scroll="true">
+<ion-content [fullscreen]="true">
   <ion-card>
     <ion-radio-group (ionChange)="homeLayoutChangeEvent($event)" [value]="settings?.selectedHomeLayout">
       <ion-list-header>
@@ -80,3 +91,11 @@
 
 
 </ion-content>
+
+<!-- <ion-footer>
+  <ion-item lines=none>
+    <a href="https://www.buymeacoffee.com/aarlin" target="_blank">
+      <img class="coffee" src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee">
+    </a>
+  </ion-item>
+</ion-footer> -->
