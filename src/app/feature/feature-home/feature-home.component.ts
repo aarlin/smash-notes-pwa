@@ -22,6 +22,7 @@ export class FeatureHomeComponent implements OnInit {
   notes: Note[] = [];
   layout: any;
   devWidth = this.platform.width();
+  lastNoteLoaded: any;
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -49,7 +50,7 @@ export class FeatureHomeComponent implements OnInit {
     columnWidth: '.masonry-item',
     percentPosition: true
   }
-  
+
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
@@ -127,8 +128,8 @@ export class FeatureHomeComponent implements OnInit {
     console.log(index, note);
   }
 
-  getNotesByUser() {
-    this.noteService.getNotesByUser().then((snapshot) => {
+  getNotesByUser(lastNoteLoaded?) {
+    this.noteService.getNotesByUser(lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
           id: doc.id,
@@ -136,7 +137,11 @@ export class FeatureHomeComponent implements OnInit {
         };
       });
       console.table(data);
-      this.notes = data;
+      this.notes = [...this.notes, ...data];
+
+      this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
+      console.log(this.lastNoteLoaded);
+
       this.dataLoaded = true;
       console.log(this.dataLoaded);
     }, error => {
@@ -209,7 +214,13 @@ export class FeatureHomeComponent implements OnInit {
       this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
-      if (this.dataList.length === 1000) {
+      this.getNotesByUser(this.lastNoteLoaded);
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      console.log(this.notes.length)
+
+      if (this.notes.length > 20) {
         event.target.disabled = true;
       }
     }, 500);

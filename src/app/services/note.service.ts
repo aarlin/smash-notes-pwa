@@ -50,15 +50,24 @@ export class NoteService {
     });
   }
 
-  async getNotesByUser(startKey?: string) {
+  async getNotesByUser(startKey?: any) {
     let uid = await this.authenticationService.getUid();
     console.log(uid);
 
-    return this.firestore.collection("notes").ref
-      .where('uid', '==', uid)
-      .orderBy('timestamp', 'desc')
-      .limit(20)
-      .get();
+    if (startKey) {
+      return this.firestore.collection("notes").ref
+        .where('uid', '==', uid)
+        .orderBy('timestamp', 'desc')
+        .limit(10)
+        .startAfter(startKey)
+        .get();
+    } else {
+      return this.firestore.collection("notes").ref
+        .where('uid', '==', uid)
+        .orderBy('timestamp', 'desc')
+        .limit(10)
+        .get();
+    }
   }
 
   async getNotesByFighter(fighter: any) {
@@ -75,24 +84,24 @@ export class NoteService {
     console.log('uid', uid)
 
     console.log({ last });
-    
+
     if (last) {
       return this.firestore.collection("notes").ref
-      .where('uid', '!=', uid)
-      .where('visible', '==', true)
-      .orderBy('uid', 'desc')
-      .orderBy('timestamp', 'desc')
-      .startAfter(last)
-      .limit(15)
-      .get();
+        .where('uid', '!=', uid)
+        .where('visible', '==', true)
+        .orderBy('uid', 'desc')
+        .orderBy('timestamp', 'desc')
+        .startAfter(last)
+        .limit(15)
+        .get();
     } else {
       return this.firestore.collection("notes").ref
-      .where('uid', '!=', uid)
-      .where('visible', '==', true)
-      .orderBy('uid', 'desc')
-      .orderBy('timestamp', 'desc')
-      .limit(15)
-      .get();
+        .where('uid', '!=', uid)
+        .where('visible', '==', true)
+        .orderBy('uid', 'desc')
+        .orderBy('timestamp', 'desc')
+        .limit(15)
+        .get();
     }
 
   }
