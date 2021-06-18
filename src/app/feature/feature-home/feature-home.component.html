@@ -133,15 +133,18 @@
             <!-- Card that is last index -->
             <ion-card *ngIf="j === notes.length" class="ion-padding" (click)="openNote(notes[j-1])">
               <ion-card-header>
-                <ion-item lines="none">
-                  <ion-avatar slot="start">
-                    <ion-img alt={{notes[j-1]?.player}} [src]="notes[j-1]?.player | fighterImage"></ion-img>
-                  </ion-avatar>
-                  <ion-avatar slot="end">
-                    <ion-img alt={{notes[j-1]?.enemy}} [src]="notes[j-1]?.enemy | fighterImage"></ion-img>
-                  </ion-avatar>
+                <!-- <ion-item lines="none"> -->
+                  <!-- <ion-avatar slot="start"> -->
+                    <div class="card-fighters">
 
-                </ion-item>
+                      <ion-img alt={{notes[j-1]?.player}} [src]="notes[j-1]?.player | fighterImage"></ion-img>
+                      <ion-img alt={{notes[j-1]?.enemy}} [src]="notes[j-1]?.enemy | fighterImage"></ion-img>
+                    </div>
+                  <!-- </ion-avatar> -->
+                  <!-- <ion-avatar slot="start"> -->
+                  <!-- </ion-avatar> -->
+
+                <!-- </ion-item> -->
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
@@ -151,15 +154,18 @@
             <!-- Cards that are not last index -->
             <ion-card *ngIf="j !== notes.length" class="ion-padding" (click)="openNote(notes[j])">
               <ion-card-header>
-                <ion-item lines="none">
-                  <ion-avatar slot="start">
-                    <ion-img alt={{notes[j]?.player}} [src]="notes[j]?.player | fighterImage"></ion-img>
-                  </ion-avatar>
-                  <ion-avatar slot="end">
-                    <ion-img alt={{notes[j]?.enemy}} [src]="notes[j]?.enemy | fighterImage"></ion-img>
-                  </ion-avatar>
+                <!-- <ion-item lines="none"> -->
+                  <!-- <ion-avatar slot="start"> -->
+                    <div class="card-fighters">
 
-                </ion-item>
+                      <ion-img alt={{notes[j-1]?.player}} [src]="notes[j-1]?.player | fighterImage"></ion-img>
+                      <ion-img alt={{notes[j-1]?.enemy}} [src]="notes[j-1]?.enemy | fighterImage"></ion-img>
+                    </div>
+                  <!-- </ion-avatar> -->
+                  <!-- <ion-avatar slot="start"> -->
+                  <!-- </ion-avatar> -->
+
+                <!-- </ion-item> -->
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>

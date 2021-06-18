@@ -11,35 +11,10 @@ import { BackgroundService } from 'src/app/services/background.service';
 })
 
 export class LoginPage implements OnInit {
-
   userForm: FormGroup;
   successMsg: string = '';
   errorMsg: string = '';
-
   backgroundImage: string;
-
-  error_msg = {
-    'email': [
-      {
-        type: 'required',
-        message: 'Provide email.'
-      },
-      {
-        type: 'pattern',
-        message: 'Email is not valid.'
-      }
-    ],
-    'password': [
-      {
-        type: 'required',
-        message: 'Password is required.'
-      },
-      {
-        type: 'minlength',
-        message: 'Password length should be 6 characters long.'
-      }
-    ]
-  };
 
   constructor(
     private router: Router,
