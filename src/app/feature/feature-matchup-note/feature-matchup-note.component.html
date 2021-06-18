@@ -40,7 +40,7 @@
   </ion-item>
 
   <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)"
-  (onEditorCreated)="created($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
+  (onEditorCreated)="editorCreated($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
 
 
   <ion-item *ngIf="note.body && !hasOwnership()" lines="none">

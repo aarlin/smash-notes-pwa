@@ -56,7 +56,8 @@ export class NoteService {
 
     return this.firestore.collection("notes").ref
       .where('uid', '==', uid)
-      .limit(10)
+      .orderBy('timestamp', 'desc')
+      .limit(20)
       .get();
   }
 

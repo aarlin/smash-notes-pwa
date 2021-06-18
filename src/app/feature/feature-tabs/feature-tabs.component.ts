@@ -109,7 +109,8 @@ export class FeatureTabsComponent implements OnInit {
   async openNote() {
     const uid = await this.authenication.getUid();
     let newNote: Note = new Note(uid, '', '', '', '', '');
-    console.log(newNote);
+    console.log('openNote - newNote')
+    console.log({newNote});
     const modal = await this.modalController.create({
       component: FeatureMatchupNoteComponent,
       showBackdrop: true,

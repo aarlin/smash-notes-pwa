@@ -99,10 +99,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.excludeGroups = [
       'search', 'recent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags'
     ]
-    this.visibilityIcon = this.note.visible ? 'eye-outline' : 'eye-off-outline';
+    this.visibilityIcon = this.note?.visible ? 'eye-outline' : 'eye-off-outline';
   }
 
-  created(quill: any) {
+  editorCreated(quill: any) {
     this.quill = quill;
   }
 
@@ -129,6 +129,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   editorChanged(event: any) {
+    if (!event.html) {
+      this.note.body = '';
+    }
+    console.log('editorCahnged');
     console.log(event)
     this.dirty = true;
   }
