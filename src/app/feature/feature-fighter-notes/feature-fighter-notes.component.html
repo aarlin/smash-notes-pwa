@@ -4,9 +4,6 @@
       <ion-button (click)="close()" shape="round">
         <ion-icon (click)="dismissModal()" name="chevron-back-outline" size="large" slot="start"></ion-icon>
       </ion-button>
-      <!-- <ion-button shape="round">
-        <ion-icon [src]="fighterSeriesIcon" size="large"></ion-icon>
-      </ion-button> -->
       <ion-button>
         <img class="fighterIcon" [src]="fighter?.name | fighterImage"/>
       </ion-button>
@@ -50,18 +47,6 @@
     </ng-container>
   </ion-list>
 
-  <!-- <ion-content [appParallaxHeader]="image" [scrollEvents]="true"> -->
-  <!-- <div #image class="fighter-bg">
-    <div class="fighter-bg_inner">
-      <div class="parallax-image">
-        <ion-img alt="background" class="fighter-bg" alt="Background Image" [src]="background"></ion-img>
-      </div>
-      <div class="fighter-main">
-        <ion-img alt="fighter-image" class="fighter-image" [src]="fighterImage"></ion-img>
-      </div>
-    </div>
-  </div> -->
-
   <div class="main">
     <ion-virtual-scroll *ngIf="dataLoaded && notes.length > 0; else noNotes" [items]="notes">
       <ion-item #note (click)="openNote(note)" *virtualItem="let note">
@@ -70,7 +55,6 @@
         </ion-avatar>
         <ion-label>
           <h2>{{note.title}}</h2>
-          <!-- <p [innerHTML]="note.body"></p> -->
           <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
         </ion-label>
       </ion-item>
