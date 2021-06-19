@@ -68,7 +68,6 @@
   </ion-list>
 
   <ng-container *ngIf="dataLoaded && notes.length === 0">
-    <!-- <ion-list> -->
     <ion-item lines="none">
       <ion-label class="ion-text-center ion-text-wrap">
         <h2>No Notes</h2>
@@ -76,13 +75,11 @@
           </ion-icon> at the bottom</p>
       </ion-label>
     </ion-item>
-
-    <!-- </ion-list> -->
   </ng-container>
 
   <ng-container *ngIf="dataLoaded && notes.length && defaultLayout">
     <ion-list class="list-layout">
-      <ion-virtual-scroll class="grid-layout" [items]="notes">
+      <ion-virtual-scroll [items]="notes">
         <ion-item lines="full" class="col col-50" (click)="openNote(note)" *virtualItem="let note">
           <ion-avatar slot="start">
             <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
@@ -97,7 +94,6 @@
         </ion-item>
       </ion-virtual-scroll>
     </ion-list>
-
   </ng-container>
 
   <ng-container *ngIf="dataLoaded && notes.length && masonryLayout">
