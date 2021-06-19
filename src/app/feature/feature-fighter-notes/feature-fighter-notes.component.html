@@ -48,17 +48,19 @@
   </ion-list>
 
   <div class="main">
-    <ion-virtual-scroll *ngIf="dataLoaded && notes.length > 0; else noNotes" [items]="notes">
-      <ion-item #note (click)="openNote(note)" *virtualItem="let note">
-        <ion-avatar slot="start">
-          <ion-img [src]="note.enemy | fighterImage"></ion-img>
-        </ion-avatar>
-        <ion-label>
-          <h2>{{note.title}}</h2>
-          <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
-        </ion-label>
-      </ion-item>
-    </ion-virtual-scroll>
+    <ion-list>
+      <ion-virtual-scroll *ngIf="dataLoaded && notes.length > 0; else noNotes" [items]="notes">
+        <ion-item #note (click)="openNote(note)" *virtualItem="let note">
+          <ion-avatar slot="start">
+            <ion-img [src]="note.enemy | fighterImage"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{note.title}}</h2>
+            <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
+          </ion-label>
+        </ion-item>
+      </ion-virtual-scroll>
+    </ion-list>
 
     <ng-template #noNotes>
       <ion-item lines="none">
