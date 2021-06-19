@@ -110,10 +110,10 @@ export class FeatureHomeComponent implements OnInit {
     this.screenWidth = window.innerWidth;
 
     if (this.screenWidth > 1024) {
-      this.infiniteScrollThreshold = '200px';
+      this.infiniteScrollThreshold = '10%';
     } else if (this.screenWidth <= 1024) {
 
-      this.infiniteScrollThreshold = '150px';
+      this.infiniteScrollThreshold = '10%';
     }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;

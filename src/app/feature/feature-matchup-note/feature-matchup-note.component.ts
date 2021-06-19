@@ -88,12 +88,12 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.formats = ['emoji'];
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     console.log(this.note);
     this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
-    this.uid = await this.authenticationService.getUid();
+    this.uid = this.authenticationService.userId;
     console.log(this.uid)
     console.log(this.update)
     this.excludeGroups = [

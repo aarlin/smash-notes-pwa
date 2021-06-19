@@ -64,7 +64,7 @@ export class RegisterPage implements OnInit {
   }
 
   signUp(value) {
-    this.authenticationService.createUser(value)
+    this.authenticationService.createUser(value.email, value.password)
       .then((response) => {
         this.errorMsg = "";
         this.successMsg = "New user created.";

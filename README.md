@@ -51,11 +51,15 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 
 heart / share - https://forum.ionicframework.com/t/ionic-v4-ondiddismis-result-which-type/135313/4
 specific note page
+
+https://medium.com/wizdm-genesys/realtime-likes-with-angular-and-firebase-3b49e4ef23a
 stages
 
 
 ionViewWillEnter()
 ionViewDidLeave()
+
+distributed counter & batch
 
 
 wysiwyg

@@ -22,10 +22,11 @@ export class NoteService {
       );
   }
 
-  async createNote(note: any) {
+  createNote(note: any) {
     console.log('create', note);
 
-    const uid = await this.authenticationService.getUid();
+    const uid = this.authenticationService.userId;
+    console.log(uid);
     return new Promise<any>((resolve, reject) => {
       let newNoteRef = this.firestore.collection("notes").doc();
       let id = newNoteRef.ref.id;
@@ -50,8 +51,8 @@ export class NoteService {
     });
   }
 
-  async getNotesByUser(searchLimit: number, startKey?: any) {
-    let uid = await this.authenticationService.getUid();
+  getNotesByUser(searchLimit: number, startKey?: any) {
+    const uid = this.authenticationService.userId;
     console.log(uid);
 
     if (startKey) {
@@ -70,8 +71,8 @@ export class NoteService {
     }
   }
 
-  async getNotesByFighter(fighter: any) {
-    let uid = await this.authenticationService.getUid();
+  getNotesByFighter(fighter: any) {
+    const uid = this.authenticationService.userId;
 
     return this.firestore.collection("notes").ref
       .where('uid', '==', uid)
@@ -79,8 +80,8 @@ export class NoteService {
       .get();
   }
 
-  async getNotesByOthers(last?: any) {
-    let uid = await this.authenticationService.getUid();
+  getNotesByOthers(last?: any) {
+    const uid = this.authenticationService.userId;
     console.log('uid', uid)
 
     console.log({ last });

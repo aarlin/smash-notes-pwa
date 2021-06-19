@@ -1,27 +1,38 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Subscription } from 'rxjs';
+import { User } from '../shared/interface/user.interface';
 // import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthenticationService {
+export class AuthenticationService implements OnDestroy{
+  public user: User = null;
+  private userSubscription: Subscription;
 
-  constructor(
-    private angularFireAuth: AngularFireAuth
-  ) { }
+  constructor(readonly angularFireAuth: AngularFireAuth) {
+    this.userSubscription = this.angularFireAuth.user.subscribe(user => {
+      this.user = user;
+    });
+  }
 
-  createUser(value) {
+  ngOnDestroy() {
+    this.userSubscription.unsubscribe();
+  }
+
+  createUser(email: string, password: string): Promise<void> {
+    console.log('Registering new user', email);
     return new Promise<any>((resolve, reject) => {
-      this.angularFireAuth.createUserWithEmailAndPassword(value.email, value.password)
+      this.angularFireAuth.createUserWithEmailAndPassword(email, password)
         .then(
           res => resolve(res),
           err => reject(err))
     })
   }
 
-  signInUser(value) {
+  signInUser(value): Promise<User> {
     return new Promise<any>((resolve, reject) => {
       this.angularFireAuth.signInWithEmailAndPassword(value.email, value.password)
         .then(
@@ -83,17 +94,15 @@ export class AuthenticationService {
     return this.angularFireAuth.user
   }
 
-  doGoogleLogin() {
-    return new Promise<any>((resolve, reject) => {
-      const provider = this.angularFireAuth
-      return this.oAuthLogin(provider)
-        .then(value => resolve(value),
-          err => reject(err))
-    })
+  get authenticated(): boolean {
+    return !!this.user;
   }
 
-  private oAuthLogin(provider) {
-    return this.angularFireAuth.signInWithPopup(provider);
+  get userId(): string {
+    return this.authenticated ? this.user.uid : '';
   }
+
+
+
 
 }
