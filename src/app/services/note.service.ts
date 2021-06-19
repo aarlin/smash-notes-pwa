@@ -58,8 +58,8 @@ export class NoteService {
       return this.firestore.collection("notes").ref
         .where('uid', '==', uid)
         .orderBy('timestamp', 'desc')
-        .limit(10)
         .startAfter(startKey)
+        .limit(10)
         .get();
     } else {
       return this.firestore.collection("notes").ref

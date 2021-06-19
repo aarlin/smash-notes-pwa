@@ -26,6 +26,7 @@ import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     {

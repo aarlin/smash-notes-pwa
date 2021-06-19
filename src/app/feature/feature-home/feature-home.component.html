@@ -80,40 +80,24 @@
     <!-- </ion-list> -->
   </ng-container>
 
-  <ng-container *ngIf="dataLoaded && notes.length">
-    <ion-list class="list-layout">
-      <ion-item lines="full" class="col col-50" (click)="openNote(note)"
-        *ngFor="let note of notes; trackBy: trackNotes">
-        <ion-avatar slot="start">
-          <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
-        </ion-avatar>
-        <ion-avatar slot="end">
-          <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
-        </ion-avatar>
-        <ion-label>
-          <h2>{{note.title}}</h2>
-          <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ng-container>
-
   <ng-container *ngIf="dataLoaded && notes.length && defaultLayout">
-    <ion-list>
-      <ion-item lines="full" class="col col-50" (click)="openNote(note)"
-        *ngFor="let note of notes; trackBy: trackNotes">
-        <ion-avatar slot="start">
-          <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
-        </ion-avatar>
-        <ion-avatar slot="end">
-          <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
-        </ion-avatar>
-        <ion-label>
-          <h2>{{note.title}}</h2>
-          <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
-        </ion-label>
-      </ion-item>
+    <ion-list class="list-layout">
+      <ion-virtual-scroll class="grid-layout" [items]="notes">
+        <ion-item lines="full" class="col col-50" (click)="openNote(note)" *virtualItem="let note">
+          <ion-avatar slot="start">
+            <ion-img alt={{note?.player}} [src]="note?.player | fighterImage"></ion-img>
+          </ion-avatar>
+          <ion-avatar slot="end">
+            <ion-img alt={{note?.enemy}} [src]="note?.enemy | fighterImage"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{note.title}}</h2>
+            <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
+          </ion-label>
+        </ion-item>
+      </ion-virtual-scroll>
     </ion-list>
+
   </ng-container>
 
   <ng-container *ngIf="dataLoaded && notes.length && masonryLayout">
