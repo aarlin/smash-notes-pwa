@@ -50,7 +50,7 @@ export class NoteService {
     });
   }
 
-  async getNotesByUser(startKey?: any) {
+  async getNotesByUser(searchLimit: number, startKey?: any) {
     let uid = await this.authenticationService.getUid();
     console.log(uid);
 
@@ -59,13 +59,13 @@ export class NoteService {
         .where('uid', '==', uid)
         .orderBy('timestamp', 'desc')
         .startAfter(startKey)
-        .limit(10)
+        .limit(searchLimit)
         .get();
     } else {
       return this.firestore.collection("notes").ref
         .where('uid', '==', uid)
         .orderBy('timestamp', 'desc')
-        .limit(10)
+        .limit(searchLimit)
         .get();
     }
   }

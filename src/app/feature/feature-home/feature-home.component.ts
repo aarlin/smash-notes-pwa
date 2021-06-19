@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild, ɵCodegenComponentFactoryResolver } from '@angular/core';
-import { IonInfiniteScroll, IonVirtualScroll, ModalController, Platform } from '@ionic/angular';
+import { IonInfiniteScroll, IonSearchbar, IonVirtualScroll, ModalController, Platform } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
@@ -9,6 +9,7 @@ import { Fighter } from 'src/app/shared/interface/fighter.interface';
 import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
 import { NgxMasonryComponent, NgxMasonryOptions } from 'ngx-masonry';
+import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
 
 
 @Component({
@@ -20,14 +21,16 @@ export class FeatureHomeComponent implements OnInit {
 
   dataLoaded: boolean;
   notes: Note[] = [];
+  backupNotes: Note[] = [];
   layout: any;
   devWidth = this.platform.width();
   lastNoteLoaded: any;
+  notesPerSearch: number = 15;
 
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
-
+  @ViewChild('searchbar', { static: false }) searchbar: IonSearchbar;
 
   dataList = [];
   vColMinWidth = 200; // virtual list columns min width as pixel
@@ -39,7 +42,7 @@ export class FeatureHomeComponent implements OnInit {
   gridLayout = false;
   masonryLayout = true;
 
-  infiniteScrollThreshold: string = '150px';
+  infiniteScrollThreshold: string = '10%';
 
   masonryOptions: NgxMasonryOptions = {
     fitWidth: true,
@@ -51,18 +54,21 @@ export class FeatureHomeComponent implements OnInit {
     percentPosition: true
   }
 
+  searchBarEnabled = false;
+  searchValue: string;
+
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, public platform: Platform, private storage: StorageService) {
     this.getScreenSize();
   }
 
   ngOnInit() {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        this.getNotesByUser();
-      }
-    });
-
+    // this.router.events.subscribe((event: any) => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.getNotesByUser();
+    //   }
+    // });
+    this.getNotesByUser(this.notesPerSearch);
     this.platform.ready().then(() => {
       if (this.platform.is('android') || this.platform.is('ios') || this.platform.is('mobileweb')) {
         this.layout = 'list';
@@ -128,8 +134,8 @@ export class FeatureHomeComponent implements OnInit {
     console.log(index, note);
   }
 
-  getNotesByUser(lastNoteLoaded?) {
-    this.noteService.getNotesByUser(lastNoteLoaded).then((snapshot) => {
+  getNotesByUser(searchLimit, lastNoteLoaded?) {
+    this.noteService.getNotesByUser(searchLimit, lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
           id: doc.id,
@@ -138,6 +144,7 @@ export class FeatureHomeComponent implements OnInit {
       });
       console.table(data);
       this.notes = [...this.notes, ...data];
+      this.backupNotes = this.notes;
 
       this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
       console.log(this.lastNoteLoaded);
@@ -211,20 +218,76 @@ export class FeatureHomeComponent implements OnInit {
   loadData(event: any) {
     setTimeout(() => {
       // load more data
-      this.virtualScroll?.checkEnd(); // trigger end of virtual list
+      // this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
-      this.getNotesByUser(this.lastNoteLoaded);
+      this.getNotesByUser(this.notesPerSearch, this.lastNoteLoaded);
 
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
       console.log(this.notes.length)
 
-      if (this.notes.length > 20) {
+      if (this.notes.length < this.notesPerSearch) {
         event.target.disabled = true;
       }
     }, 500);
   }
+
+  setFilteredItems(event: any) {
+    this.notes = this.backupNotes;
+    this.searchValue = event.srcElement.value;
+
+    console.log(this.searchValue);
+
+    if (!this.searchValue) {
+      return;
+    }
+    
+
+    console.log(this.notes);
+    this.notes = this.notes.filter(note => {
+      return note?.player?.toLowerCase().startsWith(this.searchValue.toLowerCase())
+            || note?.enemy?.toLowerCase().startsWith(this.searchValue.toLowerCase())
+            || note?.title?.toLowerCase().includes(this.searchValue.toLowerCase())
+            || note?.body?.toLowerCase().includes(this.searchValue.toLowerCase());
+    });
+    console.log(this.notes);
+  }
+
+  resetNotes() {
+    this.notes = this.backupNotes;
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: FilterModalComponent,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+      presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
+    });
+    return await modal.present();
+  }
+
+  toggleSearch() {
+    this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
+  focusSearchbar() {
+    setTimeout(() => {
+      // Set the focus to the input box of the ion-Searchbar component
+      this.searchbar?.setFocus();
+    }, 500);
+  }
+
+  cancelSearch(event) {
+    console.log(event);
+    console.log(this.searchValue)
+
+    this.searchValue = null;
+    console.log(this.searchValue)
+    this.searchBarEnabled = !this.searchBarEnabled;
+  }
+
 
 }
 
