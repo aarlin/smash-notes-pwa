@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, ViewChild, ɵCodegenComponentFactoryResolver } from '@angular/core';
-import { IonInfiniteScroll, IonSearchbar, IonVirtualScroll, ModalController, Platform } from '@ionic/angular';
+import { IonInfiniteScroll, IonSearchbar, IonVirtualScroll, ModalController, Platform, ToastController } from '@ionic/angular';
 import { NoteService } from 'src/app/services/note.service';
 import { FeatureMatchupNoteComponent } from '../feature-matchup-note/feature-matchup-note.component';
 import { Note } from '../../shared/interface/note.interface';
@@ -58,22 +58,12 @@ export class FeatureHomeComponent implements OnInit {
   searchValue: string;
 
   constructor(private noteService: NoteService, public modalController: ModalController,
-    private router: Router, public platform: Platform, private storage: StorageService) {
+    private router: Router, public platform: Platform, private storage: StorageService, public toastController: ToastController) {
     this.getScreenSize();
   }
 
   ngOnInit() {
-    // this.router.events.subscribe((event: any) => {
-    //   if (event instanceof NavigationEnd) {
-    //     this.getNotesByUser();
-    //   }
-    // });
-    const [notesReturned, lastNoteLoaded, error] = this.getNotesByUser(this.notesPerSearch);
-    if (!error) {
-      this.notes = [...this.notes, ...notesReturned];
-      this.backupNotes = this.notes;
-      this.lastNoteLoaded = lastNoteLoaded;
-    }
+    this.getNotesByUser(this.notesPerSearch);
 
     this.platform.ready().then(() => {
       if (this.platform.is('android') || this.platform.is('ios') || this.platform.is('mobileweb')) {
@@ -84,16 +74,6 @@ export class FeatureHomeComponent implements OnInit {
     });
 
     this.storage.get('settings').then((settings: Settings) => {
-      // if (!settings) {
-      //   this.settings = {
-      //     selectedHomeLayout: 'list',
-      //     selectedNotebookLayout: 'virtual-div-grid',
-      //     onlineSync: false,
-      //     hideNotes: false,
-      //     darkMode: true
-      //   }
-      //   this.saveSettings();
-      // }
       switch (settings?.selectedHomeLayout) {
         case 'list':
           this.defaultLayout = true;
@@ -139,7 +119,7 @@ export class FeatureHomeComponent implements OnInit {
     console.log(index, note);
   }
 
-  async getNotesByUser(searchLimit, lastNoteLoaded?): any {
+  async getNotesByUser(searchLimit, lastNoteLoaded?) {
     this.noteService.getNotesByUser(searchLimit, lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
@@ -149,16 +129,16 @@ export class FeatureHomeComponent implements OnInit {
       });
       console.table(data);
 
-      const lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
+      this.notes = [...this.notes, ...data];
+      this.backupNotes = this.notes;
 
-      
+      this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
+
       this.dataLoaded = true;
 
-      return [data, lastNoteLoaded, null];
     }, error => {
       console.log(error);
       this.dataLoaded = true;
-      return [null, null, error];
 
     });
   }
@@ -227,41 +207,44 @@ export class FeatureHomeComponent implements OnInit {
 
       console.log(this.lastNoteLoaded);
 
-      const [data, lastNoteReturned, error] = this.getNotesByUser(this.notesPerSearch, this.lastNoteLoaded);
-      if (!error) {
-        if (data.length < this.notesPerSearch) {
-          event.target.disabled = true;
-        }
-        this.notes = [...this.notes, ...data];
-        this.backupNotes = this.notes;
-        this.lastNoteLoaded = lastNoteReturned;
-      }
+      const notesLengthBefore = this.notes.length;
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      console.log(this.notes.length)
-    }, 500);
+      this.getNotesByUser(this.notesPerSearch, this.lastNoteLoaded);
+
+      const notesLengthAfter = this.notes.length;
+      
+      console.log(notesLengthAfter - notesLengthBefore < this.notesPerSearch)
+
+      if (notesLengthAfter - notesLengthBefore < this.notesPerSearch) {
+        event.target.disabled = true;
+        this.presentToast('Loaded all notes');
+      }
+    }, 200);
   }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
+  }
+
 
   setFilteredItems(event: any) {
     this.notes = this.backupNotes;
     this.searchValue = event.srcElement.value;
 
-    console.log(this.searchValue);
-
     if (!this.searchValue) {
       return;
     }
-    
 
-    console.log(this.notes);
     this.notes = this.notes.filter(note => {
       return note?.player?.toLowerCase().startsWith(this.searchValue.toLowerCase())
-            || note?.enemy?.toLowerCase().startsWith(this.searchValue.toLowerCase())
-            || note?.title?.toLowerCase().includes(this.searchValue.toLowerCase())
-            || note?.body?.toLowerCase().includes(this.searchValue.toLowerCase());
+        || note?.enemy?.toLowerCase().startsWith(this.searchValue.toLowerCase())
+        || note?.title?.toLowerCase().includes(this.searchValue.toLowerCase())
+        || note?.body?.toLowerCase().includes(this.searchValue.toLowerCase());
     });
-    console.log(this.notes);
   }
 
   resetNotes() {
