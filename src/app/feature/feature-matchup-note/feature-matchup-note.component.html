@@ -28,16 +28,15 @@
     </ion-avatar>
   </div>
 
-  <ion-item lines="none">
+  <ion-item lines="full">
     <ion-label class="form-field" position="fixed">Note Title</ion-label>
-    <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title">
-    </ion-input>
+    <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title"></ion-input>
   </ion-item>
 
   <!-- Item Labels -->
   <ion-item lines="none">
     <ion-label class="form-field" position="fixed">Note Body</ion-label>
-  </ion-item>
+  </ion-item> 
 
   <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)"
   (onEditorCreated)="editorCreated($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>

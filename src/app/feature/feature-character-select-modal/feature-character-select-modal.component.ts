@@ -3,8 +3,6 @@ import { FormControl } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { FighterService } from 'src/app/services/fighter.service';
 import { Fighter } from 'src/app/shared/interface/fighter.interface';
-import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
-
 
 @Component({
   selector: 'smash-feature-character-select-modal',
