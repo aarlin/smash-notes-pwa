@@ -68,7 +68,13 @@ export class FeatureHomeComponent implements OnInit {
     //     this.getNotesByUser();
     //   }
     // });
-    this.getNotesByUser(this.notesPerSearch);
+    const [notesReturned, lastNoteLoaded, error] = this.getNotesByUser(this.notesPerSearch);
+    if (!error) {
+      this.notes = [...this.notes, ...notesReturned];
+      this.backupNotes = this.notes;
+      this.lastNoteLoaded = lastNoteLoaded;
+    }
+
     this.platform.ready().then(() => {
       if (this.platform.is('android') || this.platform.is('ios') || this.platform.is('mobileweb')) {
         this.layout = 'list';
@@ -130,11 +136,10 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   logNote(index: number, note: Note) {
-    console.log('logNote')
     console.log(index, note);
   }
 
-  getNotesByUser(searchLimit, lastNoteLoaded?) {
+  async getNotesByUser(searchLimit, lastNoteLoaded?): any {
     this.noteService.getNotesByUser(searchLimit, lastNoteLoaded).then((snapshot) => {
       const data = snapshot.docs.map(doc => {
         return {
@@ -143,18 +148,17 @@ export class FeatureHomeComponent implements OnInit {
         };
       });
       console.table(data);
-      this.notes = [...this.notes, ...data];
-      this.backupNotes = this.notes;
 
-      this.lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
-      console.log(this.lastNoteLoaded);
+      const lastNoteLoaded = snapshot.docs[snapshot.docs.length - 1];
 
+      
       this.dataLoaded = true;
-      console.log(this.dataLoaded);
+
+      return [data, lastNoteLoaded, null];
     }, error => {
       console.log(error);
       this.dataLoaded = true;
-      console.log(this.dataLoaded);
+      return [null, null, error];
 
     });
   }
@@ -221,15 +225,21 @@ export class FeatureHomeComponent implements OnInit {
       // this.virtualScroll?.checkEnd(); // trigger end of virtual list
       event.target.complete();
 
-      this.getNotesByUser(this.notesPerSearch, this.lastNoteLoaded);
+      console.log(this.lastNoteLoaded);
+
+      const [data, lastNoteReturned, error] = this.getNotesByUser(this.notesPerSearch, this.lastNoteLoaded);
+      if (!error) {
+        if (data.length < this.notesPerSearch) {
+          event.target.disabled = true;
+        }
+        this.notes = [...this.notes, ...data];
+        this.backupNotes = this.notes;
+        this.lastNoteLoaded = lastNoteReturned;
+      }
 
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
       console.log(this.notes.length)
-
-      if (this.notes.length < this.notesPerSearch) {
-        event.target.disabled = true;
-      }
     }, 500);
   }
 
@@ -280,11 +290,7 @@ export class FeatureHomeComponent implements OnInit {
   }
 
   cancelSearch(event) {
-    console.log(event);
-    console.log(this.searchValue)
-
     this.searchValue = null;
-    console.log(this.searchValue)
     this.searchBarEnabled = !this.searchBarEnabled;
   }
 

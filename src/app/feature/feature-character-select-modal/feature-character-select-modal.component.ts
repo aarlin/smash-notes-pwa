@@ -49,17 +49,13 @@ export class FeatureCharacterSelectModalComponent  {
     this.fighters = this.backupFighters;
     const searchTerm = event.srcElement.value;
 
-    console.log(searchTerm);
-
     if (!searchTerm) {
       return;
     }
 
-    console.log(this.fighters);
     this.fighters = this.fighters.filter(fighter => {
       return fighter?.name?.toLowerCase().startsWith(searchTerm.toLowerCase());
     });
-    console.log(this.fighters);
   }
 
   applyFighter(fighter: Fighter) {

@@ -56,7 +56,7 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] create with just fighter, no title or body or enemy. errors
 - [ ] console logs
 - [ ] fix icons on resize
-- [ ] batch & increment
+- [ ] batch & distributed counters
 - [ ] full text search using elastic
 - [ ] filters
 

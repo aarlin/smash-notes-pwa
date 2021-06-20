@@ -61,7 +61,6 @@ export class FeatureDiscoverComponent implements OnInit {
   }
 
   discover() {
-    console.log('discover')
   }
 
   filterBy(filter: string): void {
@@ -72,7 +71,6 @@ export class FeatureDiscoverComponent implements OnInit {
 
   loadData(event) {
     setTimeout(() => {
-      // console.log('Done');
       event.target.complete();
       console.log({ event }, this.lastNoteLoaded)
 
@@ -80,9 +78,7 @@ export class FeatureDiscoverComponent implements OnInit {
 
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
-      console.log(this.notes.length)
       if (this.notes.length > 7) {
-        console.log(this.notes.length)
         event.target.disabled = true;
         this.presentToast('No more notes');
       }
