@@ -7,14 +7,14 @@ ion-content {
 @media only screen and (min-width: --ion-grid-width-sm) {
   ion-avatar {
     height: 5rem;
-    width: 5rem;
+    width: 3rem;
   }
 }
 
 @media only screen and (max-width: 992px) {
   ion-avatar {
     height: 5rem;
-    width: 5rem;
+    width: 3rem;
   }
   .masonry-layout {
     display: none;

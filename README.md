@@ -42,12 +42,23 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] micro interactions
 - [ ] document read cache
 - [ ] offline support
-- [ ] ssr
-- [ ] seo
 - [ ] fix issue with dataLoaded with global store
 - [ ] add no notes on fighter notebooks, add back button
 - [ ] add vertical align to slides
 - [ ] fix settings tab
+- [ ] notebook
+- [ ] stages
+- [ ] cache load
+- [ ] like note, report note
+- [ ] search discover by liked, fighters, stages, 
+- [ ] note should appear after creation w/o reload
+- [ ] set default fighter
+- [ ] create with just fighter, no title or body or enemy. errors
+- [ ] console logs
+- [ ] fix icons on resize
+- [ ] batch & increment
+- [ ] full text search using elastic
+- [ ] filters
 
 heart / share - https://forum.ionicframework.com/t/ionic-v4-ondiddismis-result-which-type/135313/4
 specific note page

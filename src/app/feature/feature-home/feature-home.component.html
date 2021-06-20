@@ -79,13 +79,13 @@
     <ion-item lines="none">
       <ion-label class="ion-text-center ion-text-wrap">
         <h2>No Notes</h2>
-        <p>Start adding a note by clicking <ion-icon size="large" src='assets/navigation/plus-square-outline.svg'>
+        <p>Start adding a note by clicking <ion-icon src='assets/navigation/plus-square-outline.svg'>
           </ion-icon> at the bottom</p>
       </ion-label>
     </ion-item>
   </ng-container>
 
-  <ng-container *ngIf="dataLoaded && notes.length && defaultLayout">
+  <ng-container *ngIf="dataLoaded && notes.length">
     <ion-list class="list-layout">
       <ion-virtual-scroll [items]="notes">
         <ion-item lines="full" class="col col-50" (click)="openNote(note)" *virtualItem="let note">
