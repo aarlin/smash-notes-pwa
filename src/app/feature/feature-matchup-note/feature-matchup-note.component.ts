@@ -34,7 +34,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   @Input() note: Note;
   @Input() update: boolean;
-  set = 'apple';
 
   formats: string[] = [];
   quill = null;
@@ -93,7 +92,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
     this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
-    const uid = await this.authenticationService.getUid();
+    this.uid = await this.authenticationService.getUid();
     console.log(this.uid)
     console.log(this.update)
     this.excludeGroups = [
