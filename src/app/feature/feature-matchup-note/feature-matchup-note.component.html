@@ -47,7 +47,7 @@
   </ion-item>
 
   <ng-container *ngIf="hasOwnership()">
-    <ion-item>
+    <ion-item lines="full">
       <ion-icon [name]="visibilityIcon" slot="start"></ion-icon>
       <ion-label>Share to Others</ion-label>
       <ion-checkbox slot="start" [ngModel]="note.visible" (ionChange)="onChangeVisibility($event)" slot="end">
@@ -55,7 +55,7 @@
 
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-button color="danger" fill="outline" expand="block" (click)="deleteConfirm()">Delete Note</ion-button>
     </ion-item>
 
