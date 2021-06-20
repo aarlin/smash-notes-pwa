@@ -33,6 +33,9 @@ export class FeatureFighterNotesComponent implements OnInit {
 
   @Input() fighter: Fighter;
 
+  searchBarEnabled = false;
+  searchValue: string;
+
   constructor(public alertController: AlertController,
     public modalController: ModalController,
     private noteService: NoteService, private router: Router) { }

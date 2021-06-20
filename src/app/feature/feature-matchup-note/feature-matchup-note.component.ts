@@ -34,7 +34,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   @Input() note: Note;
   @Input() update: boolean;
-  set = 'apple';
 
   formats: string[] = [];
   quill = null;

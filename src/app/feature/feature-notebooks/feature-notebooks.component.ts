@@ -63,27 +63,6 @@ export class FeatureNotebooksComponent implements OnInit {
     this.exteraCol = this.exteraCol > 3 ? 3 : this.exteraCol; // if we want to have max virtual column count
   }
 
-  setFilteredItems(event: any) {
-    this.fighters = this.backupFighters;
-    this.searchValue = event.srcElement.value;
-
-    console.log(this.searchValue);
-
-    if (!this.searchValue) {
-      return;
-    }
-
-    console.log(this.fighters);
-    this.fighters = this.fighters.filter(fighter => {
-      return fighter?.name?.toLowerCase().startsWith(this.searchValue.toLowerCase());
-    });
-    console.log(this.fighters);
-  }
-
-  resetFighters() {
-    this.fighters = this.backupFighters;
-  }
-
   itemHeightFn(item, index) {
     // better performance if setting item height
     return 215;
@@ -115,8 +94,29 @@ export class FeatureNotebooksComponent implements OnInit {
     this.showLocationDetail = offset > 40;
   }
 
-  close() {
+  trackFighters(index: number, itemObject: any) {
+    return itemObject.name;
+  }
 
+  setFilteredItems(event: any) {
+    this.fighters = this.backupFighters;
+    this.searchValue = event.srcElement.value;
+
+    console.log(this.searchValue);
+
+    if (!this.searchValue) {
+      return;
+    }
+
+    console.log(this.fighters);
+    this.fighters = this.fighters.filter(fighter => {
+      return fighter?.name?.toLowerCase().startsWith(this.searchValue.toLowerCase());
+    });
+    console.log(this.fighters);
+  }
+
+  resetFighters() {
+    this.fighters = this.backupFighters;
   }
 
   async presentModal() {
@@ -140,7 +140,6 @@ export class FeatureNotebooksComponent implements OnInit {
     }, 500);
   }
 
-
   cancelSearch(event) {
     console.log(event);
     console.log(this.searchValue)
@@ -148,10 +147,6 @@ export class FeatureNotebooksComponent implements OnInit {
     this.searchValue = null;
     console.log(this.searchValue)
     this.searchBarEnabled = !this.searchBarEnabled;
-  }
-
-  trackFighters(index: number, itemObject: any) {
-    return itemObject.name;
   }
 
 }
