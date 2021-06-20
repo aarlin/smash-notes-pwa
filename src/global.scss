@@ -87,6 +87,12 @@ ion-router-outlet > .ion-page {
   }
 }
 
+// Ionic Defaults Override
+
+.inner-scroll {
+  --padding-inline-start: unset !important;
+}
+
 // Firebase UI CSS Overrides
 
 firebase-ui, .firebaseui-card-content {

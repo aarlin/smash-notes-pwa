@@ -33,21 +33,18 @@
     <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title"></ion-input>
   </ion-item>
 
-  <!-- Item Labels -->
   <ion-item lines="none">
     <ion-label class="form-field" position="fixed">Note Body</ion-label>
   </ion-item> 
 
-  <quill-editor *ngIf="hasOwnership()" [modules]="modules" (onContentChanged)="editorChanged($event)"
-  (onEditorCreated)="editorCreated($event)" [style]="{ height: '100px' }" [(ngModel)]="note.body"></quill-editor>
-
+  <ion-item *ngIf="hasOwnership()" class="note-body" lines="none">
+    <quill-editor class="quill-editor" [modules]="modules" (onContentChanged)="editorChanged($event)"
+    (onEditorCreated)="editorCreated($event)" [(ngModel)]="note.body"></quill-editor>  
+  </ion-item>
 
   <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
     <quill-view-html [content]="note.body"></quill-view-html>
   </ion-item>
-
-
-  <!-- <emoji-mart [custom]="customEmojis"></emoji-mart> -->
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item>

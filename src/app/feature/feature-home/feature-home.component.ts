@@ -225,7 +225,7 @@ export class FeatureHomeComponent implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000
+      duration: 20000
     });
     toast.present();
   }

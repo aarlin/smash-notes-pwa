@@ -78,7 +78,7 @@
         </ion-label>
       </ion-item>
     </ng-container>
-    <ion-item (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
+    <ion-item lines="full" (click)="openNote(note)" *ngFor="let note of notes; trackBy: trackNotes">
       <ion-avatar slot="start">
         <ion-img alt={{note.player}} [src]="note.player | fighterImage"></ion-img>
       </ion-avatar>
@@ -87,7 +87,6 @@
       </ion-avatar>
       <ion-label>
         <h2>{{note.title}}</h2>
-        <!-- <p [innerHTML]="note.body"></p> -->
         <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
       </ion-label>
     </ion-item>
