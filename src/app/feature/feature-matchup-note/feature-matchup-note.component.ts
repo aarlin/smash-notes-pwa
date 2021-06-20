@@ -88,13 +88,10 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   async ngOnInit() {
-    console.log(this.note);
     this.originalNote = { ...this.note };
     this.backArrowIcon = `assets/navigation/ico_arrow_s.svg`;
     this.assignIcons();
     this.uid = await this.authenticationService.getUid();
-    console.log(this.uid)
-    console.log(this.update)
     this.excludeGroups = [
       'search', 'recent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags'
     ]
@@ -106,7 +103,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   assignIcons() {
-    console.log('assignIcons')
     this.note?.player ?
       this.playerIcon = `assets/stock-icons/svg/${this.note?.player}.svg` :
       this.playerIcon = `assets/navigation/ico_fighter_g.svg`;
@@ -117,13 +113,11 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   changeTitle(event) {
-    console.log(event);
     this.note.title = event.target.value;
     this.dirty = true;
   }
 
   onChange(event: any) {
-    console.log(event);
     this.dirty = true;
   }
 
@@ -131,8 +125,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
     if (!event.html) {
       this.note.body = '';
     }
-    console.log('editorCahnged');
-    console.log(event)
     this.dirty = true;
   }
 
@@ -150,7 +142,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   onChangeVisibility(event: any) {
-    console.log(event);
     this.note.visible = event.detail.checked;
     this.visibilityIcon = event.detail.checked ? 'eye-outline' : 'eye-off-outline';
     this.dirty = true;
@@ -167,7 +158,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
-      console.log(modelData);
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
         this.note.player = modelData.data?.fighter?.name ?? '';
@@ -190,8 +180,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
       }
     });
     modal.onDidDismiss().then((modelData) => {
-      console.log(modelData);
-
       if (modelData !== null) {
         console.log('Modal Data : ' + JSON.stringify(modelData.data));
 
@@ -224,8 +212,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
 
   saveNote() {
-    console.log(this.note);
-    console.log(this.update)
     this.update ? this.updateNote(this.note) : this.createNote(this.note);
     this.modalController.dismiss({
       'dismissed': true, 'note': this.note, 'modified': true
@@ -244,7 +230,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
   }
 
   updateNote(note: Note): void {
-    console.log(note);
     this.noteService.updateNote(note)
       .then(response => {
         console.log(response);
@@ -272,10 +257,6 @@ export class FeatureMatchupNoteComponent implements OnInit {
           text: 'No',
           cssClass: 'secondary',
           handler: () => {
-            // console.log(this.note);
-            // this.note = { ...this.originalNote };
-            // this.note.body = this.originalNote.body;
-            // console.log(this.note);
             this.dismissModal();
           }
         }, {
@@ -325,7 +306,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000
+      duration: 20000,
+      cssClass: 'toast-message'
     });
     toast.present();
   }

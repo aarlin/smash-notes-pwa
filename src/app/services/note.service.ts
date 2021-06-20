@@ -23,10 +23,7 @@ export class NoteService {
   }
 
   async createNote(note: any) {
-    console.log('create', note);
-
     const uid = await this.authenticationService.getUid();
-    console.log(uid);
     return new Promise<any>((resolve, reject) => {
       let newNoteRef = this.firestore.collection("notes").doc();
       let id = newNoteRef.ref.id;
@@ -39,22 +36,11 @@ export class NoteService {
         }, error => {
           console.log(error);
         })
-
-      // this.firestore
-      //   .collection("notes")
-      //   .add({ uid, ...note })
-      //   .then(ref => {
-      //     console.log(res)
-      //   }, err => {
-      //     reject(err)
-      //   });
     });
   }
 
   async getNotesByUser(searchLimit: number, startKey?: any) {
     const uid = await this.authenticationService.getUid();
-    console.log(uid);
-
     if (startKey) {
       return this.firestore.collection("notes").ref
         .where('uid', '==', uid)
@@ -82,10 +68,6 @@ export class NoteService {
 
   async getNotesByOthers(last?: any) {
     const uid = await this.authenticationService.getUid();
-    console.log('uid', uid)
-
-    console.log({ last });
-
     if (last) {
       return this.firestore.collection("notes").ref
         .where('uid', '!=', uid)
@@ -108,10 +90,6 @@ export class NoteService {
   }
 
   updateNote(note: any) {
-    console.log('update', note);
-    console.log(this.firestore
-      .collection("notes")
-      .doc(note.id))
     const timestamp = new Date();
     return this.firestore
       .collection("notes")
@@ -120,7 +98,6 @@ export class NoteService {
   }
 
   deleteNote(note: any) {
-    console.log(note.id)
     return this.firestore
       .collection("notes")
       .doc(note.id)

@@ -102,17 +102,13 @@ export class FeatureNotebooksComponent implements OnInit {
     this.fighters = this.backupFighters;
     this.searchValue = event.srcElement.value;
 
-    console.log(this.searchValue);
-
     if (!this.searchValue) {
       return;
     }
 
-    console.log(this.fighters);
     this.fighters = this.fighters.filter(fighter => {
       return fighter?.name?.toLowerCase().startsWith(this.searchValue.toLowerCase());
     });
-    console.log(this.fighters);
   }
 
   resetFighters() {
@@ -141,11 +137,7 @@ export class FeatureNotebooksComponent implements OnInit {
   }
 
   cancelSearch(event) {
-    console.log(event);
-    console.log(this.searchValue)
-
     this.searchValue = null;
-    console.log(this.searchValue)
     this.searchBarEnabled = !this.searchBarEnabled;
   }
 

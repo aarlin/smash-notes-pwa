@@ -76,7 +76,6 @@ export class AuthenticationService implements OnDestroy{
   getUid() {
     return new Promise<any>((resolve, reject) => {
       this.userDetails().subscribe(response => {
-        console.log(response);
         if (response !== null) {
           resolve(response.uid);
         } else {

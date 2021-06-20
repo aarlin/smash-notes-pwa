@@ -80,7 +80,7 @@ export class FeatureSettingsComponent implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000
+      duration: 20000
     });
     toast.present();
   }
@@ -106,23 +106,19 @@ export class FeatureSettingsComponent implements OnInit {
   }
 
   async notebookLayoutChangeEvent(event: any) {
-    console.log(event);
     await this.storage.set('settings', { ...this.settings, selectedNotebookLayout: event.detail.value });
   }
 
   async homeLayoutChangeEvent(event: any) {
-    console.log(event);
     await this.storage.set('settings', { ...this.settings, selectedHomeLayout: event.detail.value });
   }
 
   async onChangeDataSync(event) {
-    console.log(event);
     await this.storage.set('settings', { ...this.settings, onlineSync: event.detail.checked });
     this.dataSyncIcon = event.detail.checked ? 'cloud-upload-outline' : 'cloud-offline-outline';
   }
 
   async onChangeHideNotes(event: any) {
-    console.log(event);
     await this.storage.set('settings', { ...this.settings, hideNotes: event.detail.checked });
     this.hideNotesIcon = event.detail.checked ? 'eye-off-outline' : 'eye-outline'
   }
