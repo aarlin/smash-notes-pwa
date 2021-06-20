@@ -1,10 +1,9 @@
 .app-title {
     font-size: 6vw;
     font-weight: bold;
-    font-family: "Roboto",-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
     color: var(--ion-color-primary);
 }
-
 
 .login-form {
     background-color: transparent;
@@ -32,11 +31,22 @@ ion-row {
 .container-login {
     width: 90%;
     padding: 10px;
-    background: var(--ion-background-color);
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+@media (prefers-color-scheme: dark) {
+    .container-login {
+        background: var(--ion-background-color);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .container-login {
+        background: #ffffff;
+    }
 }
 
 .row1 {
