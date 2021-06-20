@@ -74,11 +74,15 @@ export class FeatureDiscoverComponent implements OnInit {
       event.target.complete();
       console.log({ event }, this.lastNoteLoaded)
 
+      const notesLengthBefore = this.notes.length;
+
       this.getNotesByOthers(event, this.lastNoteLoaded);
+
+      const notesLengthAfter = this.notes.length;
 
       // App logic to determine if all data is loaded
       // and disable the infinite scroll
-      if (this.notes.length > 7) {
+      if (notesLengthAfter - notesLengthBefore < 15) {
         event.target.disabled = true;
         this.presentToast('No more notes');
       }
