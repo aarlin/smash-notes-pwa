@@ -1,6 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators';
 import { User } from '../shared/interface/user.interface';
 // import * as firebase from 'firebase/app';
 
@@ -20,6 +21,10 @@ export class AuthenticationService implements OnDestroy{
 
   ngOnDestroy() {
     this.userSubscription.unsubscribe();
+  }
+
+  public isLoggedIn() {
+    return this.angularFireAuth.authState.pipe(first()).toPromise();
   }
 
   createUser(email: string, password: string): Promise<void> {

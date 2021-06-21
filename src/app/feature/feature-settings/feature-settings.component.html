@@ -22,19 +22,19 @@
         </ion-label>
       </ion-list-header>
 
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="list-outline" slot="start"></ion-icon>
         <ion-label>List</ion-label>
         <ion-radio value="list"></ion-radio>
       </ion-item>
 
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="grid-outline" slot="start"></ion-icon>
         <ion-label>Grid</ion-label>
         <ion-radio value="grid"></ion-radio>
       </ion-item>
 
-      <ion-item>
+      <ion-item lines="none">
         <ion-icon name="grid-outline" slot="start"></ion-icon>
         <ion-label>Masonry</ion-label>
         <ion-radio value="masonry"></ion-radio>
@@ -44,26 +44,25 @@
   </ion-card>
 
   <ion-card>
-    <ion-item>
+    <ion-item lines="none">
       <ion-icon [name]="dataSyncIcon" slot="start"></ion-icon>
       <ion-label>Online Sync</ion-label>
       <ion-toggle [checked]="settings?.onlineSync" (ionChange)="onChangeDataSync($event)" slot="end"></ion-toggle>
-
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-icon [name]="hideNotesIcon" slot="start"></ion-icon>
       <ion-label>Hide Notes</ion-label>
       <ion-toggle [checked]="settings?.hideNotes" (ionChange)="onChangeHideNotes($event)" slot="end"></ion-toggle>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-icon [name]="shareIcon" slot="start"></ion-icon>
       <ion-label>Share Notes By Default</ion-label>
       <ion-toggle [checked]="settings?.hideNotes" (ionChange)="onChangeHideNotes($event)" slot="end"></ion-toggle>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="none">
       <ion-icon [name]="themeMode" slot="start"></ion-icon>
       <ion-label>Dark Mode</ion-label>
       <ion-toggle [checked]="settings?.darkMode" (ionChange)="onChangeDarkMode($event)" slot="end"></ion-toggle>
@@ -72,24 +71,22 @@
   </ion-card>
 
   <ion-card>
-    <ion-item>
+    <ion-item lines="none">
       <ion-icon [name]="shareIcon" slot="start"></ion-icon>
       <ion-label>Export All Notes</ion-label>
     </ion-item>
   </ion-card>
 
   <ion-card>
-    <ion-item (click)="deleteAccount()">
+    <ion-item lines="none" (click)="deleteAccount()">
       <ion-icon name="close-circle-outline" slot="start"></ion-icon>
       <ion-label>Delete Account</ion-label>
     </ion-item>
-    <ion-item (click)="signOut()">
+    <ion-item lines="none" (click)="signOut()">
       <ion-icon src="assets/navigation/signout.svg" slot="start"></ion-icon>
       <ion-label>Sign out</ion-label>
     </ion-item>
   </ion-card>
-
-
 </ion-content>
 
 <!-- <ion-footer>
