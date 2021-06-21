@@ -66,6 +66,7 @@ specific note page
 https://medium.com/wizdm-genesys/realtime-likes-with-angular-and-firebase-3b49e4ef23a
 stages
 
+https://itnext.io/build-a-production-ready-pwa-with-angular-and-firebase-8f2a69824fcc
 
 ionViewWillEnter()
 ionViewDidLeave()

@@ -20,10 +20,11 @@ export class AuthGuard implements CanActivate {
   ): boolean | Observable<boolean> | Promise<boolean> {
     return new Promise((resolve, reject) => {
       this.authenticationService.isLoggedIn().then((value) => {
+        console.log(value);
         if (value) {
           resolve(true);
         } else {
-          this.router.navigate(['./login']);
+          this.router.navigate(['login']);
           resolve(false);
         }
       });
