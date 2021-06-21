@@ -306,8 +306,9 @@ export class FeatureMatchupNoteComponent implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 20000,
-      cssClass: 'toast-message'
+      duration: 2000,
+      position: 'bottom',
+      cssClass: 'tabs-bottom'
     });
     toast.present();
   }

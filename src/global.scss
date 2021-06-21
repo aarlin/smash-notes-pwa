@@ -87,11 +87,24 @@ ion-router-outlet > .ion-page {
   }
 }
 
-// Ionic Defaults Override
+// Ionic Toast Override
 
-.inner-scroll {
-  --padding-inline-start: unset !important;
+.md .tabs-bottom {
+  transform: translateY(-56px) !important;
 }
+.ios .tabs-bottom {
+  transform: translateY(-50px) !important;
+}
+.md .header-top {
+  top: 56px !important;
+}
+.ios .header-top {
+  top: 44px !important;
+}
+.tabs-bottom {
+  transform: translateY(-50px) !important;
+}
+
 
 // Firebase UI CSS Overrides
 

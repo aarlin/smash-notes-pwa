@@ -65,12 +65,6 @@ ion-avatar {
     font-size: 16px;
 }
 
-.toast-message {
-    padding-bottom: var(--ion-safe-area-bottom, 0);
-    bottom: env(safe-area-inset-bottom);
-    height: var(--offset-bottom);
-}
-
 .note-body {
     height: 100%;
     --min-height: 100%;
@@ -79,3 +73,4 @@ ion-avatar {
 .quill-editor {
     height: 370px;
 }
+
