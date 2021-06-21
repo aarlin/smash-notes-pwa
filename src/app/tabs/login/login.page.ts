@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
     this.authenticationService.userDetails().subscribe(response => {
       if (response !== null) {
         console.log(response);
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('');
       }
     }, error => {
       console.log(error);
@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
       .then((response) => {
         console.log(response)
         this.errorMsg = "";
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('');
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = "";
@@ -69,7 +69,7 @@ export class LoginPage implements OnInit {
       .then((response) => {
         console.log(response)
         this.errorMsg = "";
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('');
       }, error => {
         this.errorMsg = error.message;
         this.successMsg = "";

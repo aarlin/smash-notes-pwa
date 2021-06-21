@@ -20,7 +20,7 @@ export class IntroPage implements OnInit {
   }
 
   goToDashboard() {
-    this.router.navigateByUrl('dashboard');
+    this.router.navigateByUrl('');
   }
 
   
