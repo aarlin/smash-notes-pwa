@@ -37,8 +37,9 @@
     (onContentChanged)="editorChanged($event)" (onEditorCreated)="editorCreated($event)" [(ngModel)]="note.body">
   </quill-editor>
 
-  <ion-item lines="none">
-    <quill-view-html *ngIf="note.body && !hasOwnership()" [content]="note.body"></quill-view-html>
+  <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
+    <ion-label class="form-field" position="floating">Note Body</ion-label><br>
+    <quill-view-html [content]="note.body"></quill-view-html>
   </ion-item>
 
   <ng-container *ngIf="hasOwnership()">
