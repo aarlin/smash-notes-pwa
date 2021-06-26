@@ -56,18 +56,6 @@ export class FeatureFighterNotesComponent implements OnInit {
 
     this.setSeriesIcon(this.fighter);
     this.setBackgroundImage(this.fighter);
-
-    // this.noteService.load()
-    //   .subscribe((notes: Note[]) => {
-    //     this.chunkedData = this.chunkByGroup(notes);
-    //     this.notes = notes;
-    //     console.log(notes);
-    //     console.log(this.chunkedData);
-    //   }, err => {
-    //     console.log('error')
-    //   }, () => {
-    //     this.dataLoaded = !this.dataLoaded;
-    //   })
     this.getNotesByFighter(this.fighter.name);
 
 

@@ -20,13 +20,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
-import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
+import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
 
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
+import * as cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  signInFlow: 'popup',
+  // signInFlow: 'popup',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     {
@@ -56,19 +59,22 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     QuillModule.forRoot(),
     BrowserAnimationsModule,
     PickerModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      driverOrder: [cordovaSQLiteDriver._driver, Drivers.IndexedDB]
+    }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
+    AngularFireFunctionsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     HttpClientModule, IonicModule.forRoot(), AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      // registrationStrategy: 'registerWhenStable:30000'
-      registrationStrategy: "registerImmediately"
+      registrationStrategy: 'registerWhenStable:30000'
+      // registrationStrategy: "registerImmediately"
 
     })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFirestoreModule],
