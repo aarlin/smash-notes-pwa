@@ -60,6 +60,8 @@ https://info-golab.medium.com/ionic-virtual-scroll-with-dynamic-multi-columns-70
 - [ ] full text search using elastic
 - [ ] filters
 
+search by names not working for some characters, combine echo fighters
+
 heart / share - https://forum.ionicframework.com/t/ionic-v4-ondiddismis-result-which-type/135313/4
 specific note page
 

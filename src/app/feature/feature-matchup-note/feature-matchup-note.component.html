@@ -28,14 +28,18 @@
     </ion-avatar>
   </div>
 
-  <ion-item lines="full">
-    <ion-label class="form-field" position="floating">Note Title</ion-label>
+  <ion-item lines="none">
+    <ion-label class="form-field" position="fixed">Note Title</ion-label>
     <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title"></ion-input>
   </ion-item>
 
-  <div *ngIf="hasOwnership()" [froalaEditor]="froalaOptions" [(froalaModel)]="note.body"></div>
-  
-  <div *ngIf="note.body && !hasOwnership()" [froalaView]="note.body"></div>
+  <ion-item *ngIf="hasOwnership()" lines="none">
+    <div class="froala-editor" [froalaEditor]="froalaOptions" [(froalaModel)]="note.body"></div>
+  </ion-item>
+
+  <ion-item *ngIf="note.body && !hasOwnership()">
+    <div class="froala-editor" [froalaView]="note.body"></div>
+  </ion-item>
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item lines="full">
