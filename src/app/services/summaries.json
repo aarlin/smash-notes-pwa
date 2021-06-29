@@ -1,0 +1,3829 @@
+{
+    "results": [
+        {
+            "address": {
+                "street_address": "135 Sagecrest Dr",
+                "city": "Hollywood Pk",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "135 Sagecrest Dr",
+                "geometry": {
+                    "latitude": 29.6055886,
+                    "longitude": -98.4769156
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1518353",
+            "listing_id": "1518353",
+            "photos_data": [
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/aBt4Oq4GQoRBor0veuTX0WLDdIpK80wP_ylN8UkHvnM.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XrOT5gnjgnVzzGbKdghtLVKiKcx_gz979ZU7PkAV6t8.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99979,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/G_L1Qk8_NcJqkF6kiQS8n03NWhvTP-pRrPb0X9kDzwg.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99572,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/K3Q-Wqb7fhA-uM3deNBg4iyRI4WiG0Nw4tmJhNsPjKI.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99503,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fC_zfmXeoCMhN_RmyVCGEwKoU9UaWtLSlcqnuHiaLLw.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.88519,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/W4NoVQKmqIz5PSZy1Wm4rJLMlk78anQCVXNNa--9zhs.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99146,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/or5hJY7uVr9ASOHLye_WLYInGv3u9YcpQoSSeQJpR_w.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.97671,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4VLH1856vontzNTazTZX9X7l8iznMPu81PmibQ-hAWw.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.96159,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/0oHPm2--vU2aMm_x7nxw7Mc3F5icSyEYn-jYSXiBOZQ.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sx6l7AcAwAytng5un3h7o_2HTyLq5KiefeMdcT-g3u0.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.62137,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/iWGPawG03AcQ7VM0qYIlH5SmKQCFdx1ygCHz3HAY1dg.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.64061,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/xLIN-ximlP5otDLZPTsxIP6cgRLkTdxDJeG0l-cx6LI.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99961,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ap3jXQhBVbCzSycW1zpNwHIPLcjYKv72-UXaaGKngKY.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99927,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/0Plpt2hGbWbJ2M3Q-k_clJRNsHjqRnYdBo75hmv8Qns.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99617,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/HkTjNr8TbxB1pKgMpK46CykPUuIL-DIpGr9NKRzicd4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.94309,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JeTru0OPgBLJymjB5WY23E_EhGybyPLmF-NGu8ZxwSc.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.73426,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JM2XD5fnqxUprBPG1XJ0PnHfDZ0dZVMgmkEW9bxmQ5s.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.75916,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WRl8QHl6g3PslDuaMSZaZv81wSjfN_TusEebqCqtdtE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.79966,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/a45NYsNKIOIJ980RhIJxR8A_OfVxcq9fLGtREubF88s.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99828,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/76RCX-zNe7IofgRfero92FesH1utdOiUI27rC8KpKIw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.86539,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mm_2zSG3e4nNvdUt-jk32yfyUsSw_g_Shu0NBO0xYQQ.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.98001,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ftH9ZetZjIdybv5enhJNxjDWx4feLQZrfBi_iwWeMWI.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.94895,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/v3J_8j8esAx4yzuRlys1_dx7vcDmKq9gOOhrqXiWcdY.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.42865,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JTRJSjbIi7xpBlWmsxfy8xnZPVa7qhaQ0vi-dktL_9U.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.55384,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YFUKdp4UFNI-YwA08sBNOCYGDNj9Lo_yVujstpkNvvE.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.5437,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/6GZJbHO6AKLu9CjRqOoJFDKfXUbkiALvagQFLasQjqg.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.86121,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WM9PQq4CxrfMGSnkgBtLd7g9kSgCDFQEMGcfepch_V4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.7239,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IK8T8T4cXa9fFWPMbXeT3CCWzaxKEQcesu1yvsXGdKU.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.5827,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2vovWL5fZoImqM9yPhCDPHW6JaHv1_bv0ODJG1-K7jg.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.97336,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jLVbhGZDpw3kYZoNz0LxEHDs8EJWNDqROju7cgfpmy0.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.76743,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YIDGA4cako2Ncsm1vOzch9bNGFgKH-xfnJRJi4eXk48.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.87858,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/bFe1eM7WfPBruEf3xZjO4W8eoZNg9soMWCd3WganHCM.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.92842,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/BGhdenabA5YOiMNB_0MPodZF08U3lnRnRS_3me6OOas.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99662,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Baca7U5h8VZECdgxpxd2GxrdnHlhTn1-4gosRXFBz7o.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99486,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4KhNxm3SQokx7XWrqDWJfPL3jSLNLF0j4FC1KrLZ128.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "ECAYELPJFBUV2UXHPD6YE2VTSA",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 549000.0,
+            "listing_office_name": "Keller Williams Laredo",
+            "status": "Price Change",
+            "bedrooms": 4,
+            "half_bathrooms": 1,
+            "sqft": 3400,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-04-05T11:46:03.831034+00:00",
+            "score": 0.9444444,
+            "notification_updated_timestamp": "2021-04-05T11:56:44.599257+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "618 Wagon Wheel Dr",
+                "city": "Canyon Lake",
+                "state": "TX",
+                "zipcode": "78133",
+                "unit_number": null,
+                "full_street_address": "618 Wagon Wheel Dr",
+                "geometry": {
+                    "latitude": 29.8820132,
+                    "longitude": -98.2638403
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1535960",
+            "listing_id": "1535960",
+            "photos_data": [
+                {
+                    "score": 0.99899,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7TQH2i5uEbC0_01P35jEP23NY5ErPYlPNjCSGocvtfQ.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99775,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7GPN-Jsj5xkPXcLIK5lCpvkBrlUn1Fc_SkW7mMZt3JU.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99989,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NI3uMINYGvhHP4Oha0gfYafr-L8dgYT-zgRtnrOKZMk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99894,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/eNfD_Pk7sD1SGJVlNQ1RFM-gUO93QKyhLHOE2zbOhp8.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99958,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3ZYXOUQswdkDamIo7Hv6YYexVbsaFwZakvMm3uKCEYU.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.98525,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PM9wcUo_tJ-VRCTbbGTthSmAzC_y_EmlmnWYoJcvq-s.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.96966,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WH5k7bfpDj8_Spag339kpU5nvnR8xKe12qvg98jSwa4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.95618,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/06pP9aOZlJM7uz5q7rLgi4EbYme1zONCrSmqiTE-daA.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.64058,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1jJIW-WYJvJeELsnByKar-794EqF4GtWMMjLKvthagw.jpg",
+                    "room": "not_home_or_property"
+                },
+                {
+                    "score": 0.9999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/V_xeCC32NwCMz59u3fW1N9MXafWGF5BJbESX9IG-oVY.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.9997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/bAUy4cFJIJldWh6jZJu9IWK7tuzcm68lQ33rOnGOiuk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.96269,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/g1sSyAGcJz0cb-JBdxzruzxV23q6SwKaj8OB9l8d9tg.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.51219,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FCNxcLQskYSj8x3WjoPy4kPqtpkRiuzxj4b6AnMHNxs.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99889,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/nrQuo0A2FUy0SSgnwvpSJmEY3VTJypFLpPNujMyLJLk.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.98288,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ebYND5Yeu-3A4LaGNkW7yRAXBsKP5Ik5OBouzds6P7U.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.97153,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/f7S-8lgK6I0yWetxMEdWtzk_R9O_Qsqh7P9vYOZfG7M.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99822,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FuYUvPa7yM05ksDOD6qW5Xw070Ew1ejpqGvkNdAznmU.jpg",
+                    "room": "not_home_or_property"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "U2BE3YSWRMAHMMRIOYDRLZMYBY",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 550000.0,
+            "listing_office_name": "JPAR New Braunfels",
+            "status": "Active",
+            "bedrooms": 3,
+            "half_bathrooms": 1,
+            "sqft": 2125,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-02T19:50:42.146089+00:00",
+            "score": 0.9166667,
+            "notification_updated_timestamp": "2021-06-02T20:11:43.867252+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "3933 Habersham",
+                "city": "Schertz",
+                "state": "TX",
+                "zipcode": "78154",
+                "unit_number": null,
+                "full_street_address": "3933 Habersham",
+                "geometry": {
+                    "latitude": 29.5882236,
+                    "longitude": -98.272646
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1533939",
+            "listing_id": "1533939",
+            "photos_data": [
+                {
+                    "score": 0.99648,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mZfXAKTDwAb6tvwKWHAErjj-dxKCXKiNviVh5fgiqS0.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.95511,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YePKShpI0NPG8OAQU7ksFG66exyhTS1hHhAR64cafvw.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99981,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cnnfR2acpBVtyUvLte_WqOQdPkEtA1-QsRbVhqIP9LY.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.62889,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IqipZPM8A9hmyf6VXqCNnmx9ELhFh9EDEt4wsmhKhOI.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.98491,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kvPAhNV6a9rIrKEEki-tBicI93rVsObr2uyV6X21CRE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.5209,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Oln3i12172xKLyQxGliH2KhpGzdLQJwhclJQ9pM8ohE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.73896,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4WxjwVkmPnkxM0Rd0Qcveek2czoi-GDIMwYa2BkLG7M.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99399,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/E8D2Ojb3mgB1rdRdS_HTmRYvJd7_jy6jX5XQGso1NWY.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.9987,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/itRNjPiTN3-Kwo5Y5rGf2FqfWnBZcmtkTbAk77SCzp8.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99045,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cv-7wKqnRJZm1LU1YMqfCotaFiOCB5Al4uxyzqgRz1Q.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99985,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/GGzjDaGc-9Tn5aHEIZuP_6Cto1xrnptnW4e5Nf1Vuy4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.98878,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/AAxMW_6yw65KDVXWjsBhUfoCm3ONdzn0EiNjrm_qdwM.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.87192,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YfPcsbiq8S6cbPZYmOa8aQDJonkbg-NWwvbAPeCjXWs.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99978,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/EGNSfMfTuEBE56QrzVt8wx8UPztLeE-b4qZOgR2Ubk4.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.53901,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/52RfHLKyPo5iOaUKv4YbdUzW1jAsvFpRMkqWgXSa2gs.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.69768,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ySsp7vWoqFlEzPQIX2D_bvaDPPtflv69h33sU7k4Hc0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99872,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8PGv_2GgCo7QyfVXtMHXLoSa4aDbhrjrJjYJtvvjLLk.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99943,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/INQsGlDCjFWKJq1wMJwSIPl4SvYRHMYp77FPyGphN5Y.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9616,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/SsmZb06G6ieTrK-XQWeGTl6efHW76O1aahewmxd-YlM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99975,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NQQdEy-_oLbJdrCkw9FyAlz7KQrFvPL_L_SfY3WOFkA.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.83993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/DJv8lrcVlnc2bqrhhEnoetpjtqaMfm7EI8rXFLQhSq4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.84163,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XMKchySVDwrWQrTbQB2kFWlzlSlGDtQbLki5fBS3xok.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.97985,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WhpyuOaj234x3A1XjuEOzraXX98J25HW7_ZCFHtpgo0.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.8833,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/eGLsMdmGQlF0WqQX3MexnvjiiEsZUhKfpkF7-TgFzCI.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PYkUI-c_xttBA-Q1rlO85tm8jib5kSOZogiNU1J2IHA.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99939,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/B5RQ-9DVu9E5VD6DLMzn_d2LBBzyv0st_sY_LO370_U.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99524,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/R-IGdIcSZyOG2EAfnio6-PkCpP6Jg3jul9CUEcgVTSg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.9997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-1D4tiZlBPtpI4OSFz0Wg_A7Oz3omQZJOgsFulu4Vts.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99955,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2HJ1b6H7WAdSRdFg_10qByjUjDWmtnB0trc1QiYdoUA.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "E5SN66TYPAJ4BSUUQSFASE2VXI",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 300000.0,
+            "listing_office_name": "Kimberly Howell Properties",
+            "status": "Back on Market",
+            "bedrooms": 4,
+            "half_bathrooms": 1,
+            "sqft": 2604,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-05-23T17:31:05.340892+00:00",
+            "score": 0.9166667,
+            "notification_updated_timestamp": "2021-05-23T17:41:47.486336+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "733 Harwood Dr",
+                "city": "San Marcos",
+                "state": "TX",
+                "zipcode": "78666",
+                "unit_number": null,
+                "full_street_address": "733 Harwood Dr",
+                "geometry": {
+                    "latitude": 29.946223,
+                    "longitude": -97.897747
+                }
+            },
+            "market": "AUS",
+            "mls_name": "ACTRIS",
+            "mls_id": "522728692",
+            "listing_id": "9098328",
+            "photos_data": [
+                {
+                    "score": 0.99993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/jchf0Z3ULjrrc3t8Oyw_UnSJqtwiw-d6QoJz3155AKM.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/RLSm8K-68A6w9SGxceRy8ZH0KKDcQY7CK6NtTap51nU.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99766,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/CMLWWmpNguBV_XAW7-kixUYr5g7cKTO3tDc3Vff5J8Y.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99975,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/WVKrjxYIwQAK_rxq9GrQhVyenhcNbLZiOFTKr-RSOWQ.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/BkF8JjFiv1iFUvjK0KJX4-GTzuhx-OirOwkq7CLw7_s.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.9998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/yEgBpA-I-fm55f6TgnjA1KJGXzUxxukGksyaEcje6jQ.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/L0itXyGo6Vp2ZilKWcKt-5jysveiyWmuEb8eWTAN1Qk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.81226,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/G-8dxuKps4nOVp41f8QRuwrQRv8--MviBm8QVVClJhE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99976,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/LZJ3M84H0p-SI-GcTpVx9wxqhwvf3OOdHIHiGt7il1U.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99947,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/phCePYNbBwq4JdKZiNyMUlwPXfKa9rPPU2NxUAcCnBU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99886,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/IJHG97YvNRfJgtjpSnmmv5svPwFDIFoG8mv5vEfx9l4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99871,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/977ubx5GxsFxZWiNFD7k6iQZxpOu-lo3GhkRWYS34ro.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.55504,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/bmal7ggatNVqP5BwJs76HQRtq8U7YILo585wqfZBarg.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.64051,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/pdS2qdgBdLl_U6ONsYytJR3vF6ut7Ig_gO7G2vUtmYw.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.82749,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/JFZEJHs2rHGwMwI1U7_URgRjiefygffakgemvF0HoEo.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.96257,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/MTGYzK6vHGj6ywpHn7R_DlB-OTWk0YeHWdTDd7jLVZo.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.97479,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/RY210p6xf53ZyFIPqXjvMvUV_sVieZMH4shJl-2a1bo.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.52972,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/zZTFE6EFugfwLDrbsKeOlmySROXDIYYOP0BQ1oBi3Pk.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.71428,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/bG4LPj_oeEB7hGjWTbpgctkf2cOlPaHMn2XcOeuG9B4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.88326,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/VpZ-Vtp7yFLN9E-BGPXQMeo0Kaghv5dJck0oeUxxi-s.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99933,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ISBk9WmZ4ak_bxpFJh0DUeNgYaxqdAACRCNJKYGxNjY.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.70229,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/iyAHqBKmqCX-bWqBlN0CdxNAyXWa5fyQw-egYDULS3M.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/yMRTl98_6Ex24b-B8E9BmOgpECYyLzqVHLyWaGd15fc.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.51022,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/mUgunDcTK5X8xDzk182bUuYZX4YoCJ-Vh7-Snmy_cI4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.56601,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/gdIGaQDrMYv1qdGlMN2TaRMfK9M6J7FoqIGq5KKIZjw.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.8403,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/v9K2hBu1_cR49NRMGDCZBz8RFnn3DrblcsmHXMRZ3wo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.45879,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/162-b-6WboIbfzPObASJu-8VveS5O5HXXloXli3QCTQ.jpg",
+                    "room": "basement_or_garage"
+                },
+                {
+                    "score": 0.88149,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/7S88jswJbvRTQ1ki_Lzml05PAv3PotaL-SVtvXgJy7A.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.91304,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/cgLlObE3ghGWRwQwBJSTZexnP99MYpnmh3ePC8v2aFc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.95206,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Tem1Hnw-kvpFlf51RnteII4iRm56CuevA6NtI_bLDK0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99373,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/y9SRJlIjYTyu5v4gEk3wxCYl3dyeNibf4jfXuMwuI8c.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.93664,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/KDjVc33Vg42hTJaXih4eWNIul44yIbKt9M_3dl2IiU8.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.50641,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/6nx2M3UZKP7JEZWncWOBCWXSRkZ9ACIIvckEAdkrH44.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99437,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/LhZeSDHfJs9k2_MAK6UDWuXw33AV13JPUOM6Zsjvxjs.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.9998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/5YzbwPrXc-dOaLx4DtCyaPkl5bH5tzD4V3QPGTWEMbs.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/oIp-U10Kp7qRJJMbJ6xj2VljLNXGbmb64HG1IRVIjQE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99909,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/FZggyuIuFf58uz_7UPYrdJ1NwIwtB29P-393Z1XAyBw.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99986,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/wIHJYeALkutv2fdOvpDROnmK22diDsMeaMSZNDXqG80.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "B2K4EWWRNJTWRBJW4DOKW2RWWM",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 439000.0,
+            "listing_office_name": "Lone Star Realty",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 1,
+            "sqft": 2786.0,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-10T15:35:31.437704+00:00",
+            "score": 0.90625,
+            "notification_updated_timestamp": "2021-06-10T15:35:56.799929+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "6502 Prime Time",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78233",
+                "unit_number": null,
+                "full_street_address": "6502 Prime Time",
+                "geometry": {
+                    "latitude": 29.5779282,
+                    "longitude": -98.3635917
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1541023",
+            "listing_id": "1541023",
+            "photos_data": [
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JGxWb61WnvZv2XJ_kCB5G3Cq4TReAeJlQKdCGWSZP50.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fOtP4XszrNFCt9dX0IryRL7TYSljmPWpeQiBuvbLGMs.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/829r-v79cGYKX7caNvY9IJX5jrM4eThhExkJIqgoUnM.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99984,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ZWbEKl05NG6Od3YP58hMr7tTG_PIy87KAFn7fWdsmpQ.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.77669,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PO34q0NcqmZmrpzw6C72RH5_7MjGkVhdNR0H3UlqFE0.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.9955,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yGy7EPeJ91wp48cXTa98LtxfP4BnY4Np6YNXrCe1R5E.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.91899,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CM-sEOk_qMBSe3P3JefNqMlaFx2ZHz-LZFIkRjEdX_w.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.67609,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-f6qwDeZ7QNKYFejILK6pr0VsmT4dhvU0XkBjvrSpK0.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.91885,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/W1CLuSeNj-zswtV_SLLDSEzPbeZN8n6F4Cku6MDi7TE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99879,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/9C3F0NIBb_oh19hTz-q6CTgofTY32HpucryhGI61OSM.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99272,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yzDIFM6pPHVJbiCXzyczW9JBZyJXkRRqdsTkQFvn1RQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Aa8vGKujYGKZV9hvyYXjBbuT9tCcDJTQHrN0eTUynAs.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99985,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QJtDiI2oIAAonLJC_JSUe0r5vH7OZe_3fLFPzCi4sw4.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.9991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/rJneW1bOxOGTflm_sRlLxyMf23IZaf5R8Nb80hVB7bk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/q9UWOV8taEzP5BS7QP_ig4szc4fQyjp_ov9gjY5GW7E.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99963,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Msxsu0UkKgY55mKNutsc3ioTWuwDhttumrkR4O8XK5E.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cKlfzHrfK2NS8nWXGB6LX4rl7hUkwoNQfY2G6kN1RVI.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jk1TQzFuEQPuutQ7PoClc_47Q11X-EZUc0_sWY2HDqY.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Zp4FdNL9tOiWU-dQk6BH3NuiZbDzuQ9iKcMAgYMaGOo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.96386,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/0jB795LsSwgPJpUF_-4U5aJqQcfKC7J7EKw73RLyAog.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99589,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/nnELm4zzKS0Tw4UlddL4PIor5C87iGM4vYwAD58p8as.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.95883,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/icVP9fTOvlIWR6hKr1vag3XhewKPr8ozWFglRPCuKQM.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99421,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CecZAmXHxTGBTi3aVo6XpjqWydPSLGAdLvS-6bEJvWQ.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.9714,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/uYEdibKgdXMnwmq4P3eemRDnkawY-cN3CLFCT-HU_SA.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "LC4DOPIUHRC6HYJ7MG3634NN5Y",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 225000.0,
+            "listing_office_name": "Keller Williams Legacy",
+            "status": "New",
+            "bedrooms": 3,
+            "half_bathrooms": 1,
+            "sqft": 1566,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-24T16:45:45.668312+00:00",
+            "score": 0.8888889,
+            "notification_updated_timestamp": "2021-06-24T16:56:42.094743+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "16210 Deer Pass",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "16210 Deer Pass",
+                "geometry": {
+                    "latitude": 29.589777,
+                    "longitude": -98.452629
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1537201",
+            "listing_id": "1537201",
+            "photos_data": [
+                {
+                    "score": 0.99973,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dHzKpmBqp9tJabya_SCOPjKY4p8O3DekGUsbIj4G9NA.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.35309,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XmMM0D2w5_0lDRAc0GaO4WXvuT2w5_0gGocwPkPTBWs.jpg",
+                    "room": "exterior_other"
+                },
+                {
+                    "score": 0.99865,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/29eLb0hnHsfigpoSuVi0MneEmnNHD6P_M37QI1rXbVg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99983,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/6XV1fWtO_0SDXbo-VRGhmoOK5bAW3XIip2YImAYljZ4.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99938,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8hrE-4Ety22X3C_qxbHMos5jlUQGTMU3nHbruql7xqM.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99476,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Osbjh6QpsHzxutz8B-XmTRxRl9ZbWe552zO0DB9xMJw.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.97483,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1fIWqqzzIH0udZgimxpbvj9oFgj0KtOY-MdoNkExnZ4.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99507,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/s5tziomeEqdmC0pVCvGTtc0hVsxF62_frHwl24aaYV0.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.59353,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/l4jl4_L4hUTXMQJ83jk9ZqQtSCHaJW5XETlTIBzu70Q.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99257,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/v-hKoeb6FmVI30NtJqKFTn2xldvHkj8vZC6OENz9Hk4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99778,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/xg35HigwFeLx9N7DEw_7yQDNzqd6jS-4gNYO501WWsY.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.98656,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Wc48SXLzthc4-pkQDKwyEaVn8g1rhbF1A2z5B7rYSYI.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.94006,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/nJJw25_mSH-pHU0bexk5kVO18LokQxmaCGoPDBEO9ks.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.67786,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4mzskhi_3P5AM9-2_vVE7Dhqi7FhUwttbJKWRKjNvJ4.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.68631,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Ic3XnQjcCZ390klyQ3fdwqK6rfX_3b8z26rb3Plgt88.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.55858,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kmyi5_osZcGGIzKQo-Ld1ttbZ1I--Qm7iHy4E7BDhoA.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.58485,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Gq4A7viQv_PATtYCBbOveMSX-IYwH5cmUNMflnX57RA.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.77515,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/HdZ20VJ5MQ3RBGX_TV8HKPJIMgLMA9ebX2JwvmbgCKM.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.98497,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NEKhki5ND_zyT7FmnFQe04GVAfmmVwG2fQmoVXRRmtc.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99945,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8MLTpDOObDZLcShx3rMzYN-c3NIsz-xiEh8u2FOUFWU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99954,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NPCMieS2QxzVXStglHyAjGjL0znvclxCAY6kZdWXcgk.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.87875,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/LxjlA4JpupfQaSAUISvkllEwgyOMzjjJdXAgLfQBkQs.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.9995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mHLe5X3I0ntTyrcB5BMXvb40_C2-ez5CTVu_TR9Ji_E.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.63452,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/gigw-PsJOA2EMpsLP8boGAqKFa6jBvifdtmBY-UkQ_s.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.95727,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MAKdlaCOlbJY6PdbkerCSSpXjQwfMS7y1QXxRTSyLcU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.9649,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/guQT1EcfNb2s-eUYevdJxV06tPSg8YX_ZTuhswa7b18.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.98381,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/_OXLATQM4E6yM5BeMqWtsQwxNJ-doWLTSHj2yYxUxYc.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99893,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/5xZtN4XMfQKg0b5SCdDNAbnVMygAVqb_C4audRZuA70.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.59322,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/AVUtATpMh-pfGLDqEhTDhOCNO5oPKm9GmWzA6PjQfhM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.72942,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PufGZBZQTIZfHu5OZdZhKroe-CN2kiSvPO0dJn1A9ss.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.6312,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/nTfGKdXs0FX3MOzXRjc8zpwDoi11hrYZ4ter7kRL5wg.jpg",
+                    "room": "not_home_or_property"
+                },
+                {
+                    "score": 0.8904,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/aYXGgmvH0oBPs-NEJ6p4vQl6XqA81CVDCiThuNjz_og.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.62846,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3PL_-QiQhDe0f8K1WY4r5ga9Jp0ybCocCzv6Zz0DLmM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.35948,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/clDsSdN2-4ZOCtQGg1Dgjc3gQJwrMf_Zlww8QZqOPiI.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99464,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CmomLY7xGkmpSK2SVsdsIiGJpFB1RLqw2TR5lbipyj4.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.97515,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/g7LlNnknTlt5Sm2gThjU4a4xxfpD6B6uHCXgB4gb2EA.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "R3XLOGYM6BZPMC3U6OTRN2IGH4",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 325000.0,
+            "listing_office_name": "Keller Williams Legacy",
+            "status": "Active",
+            "bedrooms": 3,
+            "half_bathrooms": 1,
+            "sqft": 2010,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-08T01:50:35.755038+00:00",
+            "score": 0.8888889,
+            "notification_updated_timestamp": "2021-06-08T02:11:35.962050+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "13810 Jess Gdns",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "13810 Jess Gdns",
+                "geometry": {
+                    "latitude": 29.5656094,
+                    "longitude": -98.4634345
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1536587",
+            "listing_id": "1536587",
+            "photos_data": [
+                {
+                    "score": 0.99966,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/B3sr1zF1iBpFPCzV7igMeo7B9kpqfHdgkccurchHufo.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/oD4Lf2LeQMYk3xsbTyysLQ_zyZgTugw0RwzKrPmGIkI.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.78202,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Sh8ctN1mbwfXweB9-UOcyWCBgE7OS38dP5N4C0QhF5o.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.98682,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/oKwWj91YCT6uNyCE6MiAe7mOq3pvxVJ6wYtNsYbBluw.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.83379,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/9h2xgONVZK6onoi98ku9shU8LT9WAXhTxpWXAzhGyuk.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.98309,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/q2eepUNMCuEllFmw8arOBQAne9b_xbbE28Ylul3P1O4.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99901,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/SsVCZnr9S4-gmWW7KkCIdv-Ly_wBTCBgqrdbYezwYgg.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.87729,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-bF8sHM6aZpucMrcHYJ8siONEuA9HpUPL7P937SHeWE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99888,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/GPtcfHi535YnWGna8FcHdvscdaCDK8UTu1IT2zc0mDE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.93471,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/delxychMuR1gb1Mi5AKDVGUq2mocfc6dXS6EhJgZxtQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99937,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YxL2KtFSuXPAUBW392qgfbsfvEExxshoo9Fz3zAdAgk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.79495,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CMUkPym8B9MRJ3A-DKa3apoN2FMEHKNY0q7dLodKBRM.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99672,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/bow_lGgtOQ1Td0_PBG9tYngjTBRfJkGYfkKh8LiQclk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99946,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ZZ4EgJCv_JttJ72jdiPAfX0KV7bigaf_z-kinIYqkXo.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.9999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/rgbZVk1j9xfEO6QqmrTgQ3w7AbB_eS3T95MbFXXQk6g.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.66129,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YqKdmQTiU1FMvlJnKFFtHweGb6-WXwlWwwcKxMvMSak.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.65667,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WgO5w2syfKkvLagQeICvLfMFT8mqXEuNu5vN7dkmYAE.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ARbgvoeqwBpW9mv-xkLY6QV9c3hGxwuiUSiZvar5mLI.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.9965,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fU0YLbskOvsnbJQdHeEUrFdqUIdpCe_mbDNiFHOTyPE.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/P3LNwE92OXeM9TRhEYoI-Zaw76tHr6lXOzfJGCG_HWo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/p_c1ETseX2EvC7wUr-nF-qBARenvXrdhDmrlnL4l03k.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99798,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XNPcfMR7xJ8iOoeU_GTvUNLZE3N7oh5prTmFA0MdDR0.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/6X_exwSKRrlfCOGtTrG8ZblPHM-K1JrFLSZvIU20Dak.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.66339,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-eqb4CuiJBGrqZrdd86h0F_Cn_Uu3wTyJDhEUMQGsZI.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99942,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yR4KrLxWij5Yp82bYYguDcQ-n6Q-eCV4M9-bjXEfrLg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99983,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/V3TpvLeyc9eKNWZT70MlnR1uZrjyzbCrxlOeWLb8XqU.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fQMP_VaZNESDE5tKtxOCfxxTSErnToRMwLVMBTxrI7A.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99061,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jyVrGDb6KvnjSo9xZgn2LU7z4AMl2wIU4ASjOyb4fes.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "TTFV4SNMHQCH7Q22XCKULYWOYA",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 415000.0,
+            "listing_office_name": "Kuper Sotheby's Int'l Realty",
+            "status": "Back on Market",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 3022,
+            "full_bathrooms": 3,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-04T18:20:41.409782+00:00",
+            "score": 0.8888889,
+            "notification_updated_timestamp": "2021-06-04T18:41:58.492131+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "130 Encino Grande St",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "130 Encino Grande St",
+                "geometry": {
+                    "latitude": 29.5799158,
+                    "longitude": -98.4734862
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1538335",
+            "listing_id": "1538335",
+            "photos_data": [
+                {
+                    "score": 0.99995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/TduO1Z4quAH34wZYds7yMjV6Widiy9-E5KH22YGxgVQ.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99983,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/xNGKoo2XYeGFXKOn8Rw7i22Tr1NsCf7ww_lbntVBpjk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.90294,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/u2Zc_VaGZ73OoiDZrx1cxFkhZ45uiWq7YY0b13cwBas.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.80997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Hv4ocW1U-yw6JItZei8G97WgM4iGLBLTskuM4hFXyjg.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.80691,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MBdCDaBahyoTjdxJ61wMwJj7WCdG13KNZzMAb066t-A.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.80997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8w3IN90Iz-BzKJuekvKLwxyDovxfdnOhCW0jlGMjg4s.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.65702,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/P0BSZZkO63w8r5fGBpNvAQVMtrKCKEAyQeZkhVHfBfQ.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.91482,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/E8Zbr46Mr10pKeRov4UTUw47buXPBZtcf8YMrGC4f34.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.77694,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dNc7jxOyEZW5csArbZGhskW9xnBEbDSgZZJnetg-GS0.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.80997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Rdln9f91XaKp3T4DiJn1WCuzpGIrLz3W8NKhywXD6r8.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.91102,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/OGpCOZ3cm39Zfb3nIgiYa1VnXlCiiw1sYEXTn6a5IGY.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.97838,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-wyU8_dM1WxZQjJM6KBxdMRcoXPY6MrA4Z3MqngRo20.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.97838,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/DAVZWKgxRyN78VcR3buO-YIQKMjbgW-G58V3iUSYxbQ.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.54894,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Jl8z35-BTzuyX-x9qyTrEDVnIyJoW07rNda_WIl0WLk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3IkxdQ4P6Tztwx0uKVUobMa9lQ8h9HWxt65_IYscXC0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.84351,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2nATgtaPKoxayMOtEt4Fl9GJuWOpoBMg2ePUCZybFQM.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99953,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/qzq3gzyAc2nQ5A93QsPT70hAD-wYzud4_EisUqcEnxc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99937,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sNXJ7xvUpxYQHOdChYoigT5ChxaFyNu4H22umj8Ea7o.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99768,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/uVHq9fE5puPpipaqlbaiq4Ih-xa4UvkiGjcMF_n2mDw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99915,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IZx3KB9Mhcft4Hj9XlnivSJ9FYUXriJ8FcHO3GoJjZk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99797,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MkB4OZ-hcihpk6qqfAQwk1YAtwAtDIh2LtYvjEEsW2E.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99939,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cgwCLh0W_ElYONuLacnjXw9pHUoUJVdTK8j3-4XETk8.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99924,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/k56uSKuNC1to-Q9BhBC2PajsjNKFMTZy_qrXOAvSMH0.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "3AJR6UJRI2JF5IZP62IKTYSIIM",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 337000.0,
+            "listing_office_name": "Real Estate Connection",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 1953,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-12T00:25:45.128620+00:00",
+            "score": 0.8857143,
+            "notification_updated_timestamp": "2021-06-12T00:42:25.006828+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "2507 Canon Perdido",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78261",
+                "unit_number": null,
+                "full_street_address": "2507 Canon Perdido",
+                "geometry": {
+                    "latitude": 29.6844166,
+                    "longitude": -98.4480186
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1541693",
+            "listing_id": "1541693",
+            "photos_data": [
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/_DjykMEt4WJRC7IZK6ZCvCSB8AdHHedkfT6LY_d2DX8.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jXXZ6sth3HLd8owyKZIYsjwH3eIF_f8bBsuUgfoaNFo.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/xwge-oWrlRLYUz8qawjSsjqg-hk3I45YLasjyQKYwSg.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ov_CG07Jaf1pCizHl6ZGGyxyDnoej0WGgaP_B0c63yY.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.71591,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1G--4cIJE_UUNlJoMWycZbvRmrTcm_0q5ecmqVvXz3o.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.94579,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zJ89wghJYw4WDC_wdYgZO9pWjacBp2lYavoB5W3EFFU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99318,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mENGr_JLW-nnq-qVOG8OGXpZAVvbXzdG-hD93u1834g.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.9737,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PeOS9MSxJ52DXrhb7RBZgIoTp3lHubM1rw1AMFWEQOc.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99354,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4E3jA2V7iSV1-9Y3ZOawJjdCbXHmw2xq3Q8MLgTLJdc.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99935,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/hTv9VIc5dtTN92MQZxv4K1SB5kzFsfkGosq9sHLnrB8.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99912,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1lta5CIWv5nI9yai493iOCd9SzU-GncDcRDydGDH2yk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.92814,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-BJHQMeFJpX-rVDVrvECXm9UqiqVTWlr-f3L147n9Tk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.9665,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/5GKl6tJG0w56CqoZwq46T-JrgJQ0y_ZXfVvNqgGBZAs.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99893,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/pC7iCy4ZIRmTiWZgfUGJBMo_hMuEOo02wlHCLd7nBJU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99979,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fAgTrlJiRUFEXxwEH3srJ3QQmm3Lf3d6dnCOwBnFTrE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.65222,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/H7dh4C4yaJ7X6N6CqGr7sxwu-WESwj_P5Mp4llwfKPc.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.67488,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/80kl1Ien1gyaPCC8lrviy5VHljI5UfoHaAj9GHvZTQI.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/smxgimsBPCPDsjMdowdtCX1ELmKSgPuYK4fwQF8Td6o.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99944,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/iL6gbSzLWw-FgcqsZXf_KCjFegCIQOvUDP9Zr7ena54.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/gYIz2nMhE2F7r7lcfM_Jd7d0cOJJLWzB2JXnciuiJRM.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YV9WgeZTuNN11NRRoBnlpLVPsq-X5AlkIgVpSfnRA2E.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.90219,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QJDi9HJzKJB5z3kVd3-6LbvZuekWmTgMWLZiORj8MVo.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99921,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/EnIUHpY2AWFijIk9UcMWgu9rak39KTudzLXdbJvfiaY.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.70746,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8fhHdxnym0SveOtGyzyzHPALpVgM2aTY2kcJ04dgO0A.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99995,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jg-xU-ExEF3RS9p9_k_Dg43VlR8xiGpW5U2FYoLOyV4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JMbV08rXv7WpQEgpodBIhm973-IEwUIaxpy8keSYD3Q.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.51174,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PQ9KL-0yHHmCr901cscHS-aBEWVJdvJ-DwlL-_Jjpbk.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99786,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7dyu4JRgxFoCUNAnWC8OrvFNMnhhWc4zi8UkYHMejVc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.87113,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/k7ultp7U1dOby4x94Z9odVO-w0NVy9ypgZkp0nY1dq8.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.74827,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ehnyieRkPHbs_kkgYe93X8X94V0UMhqGNIpa20cvE5Q.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zaYHdfx7ds_TYrrdKG47Sd66iDUeyOHlAqtnw022j3s.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.54233,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2sneNqxgVNNju3Dic31IjC6hcZkjoi7MvgaWGlYAWBc.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/K0QdIwQ0uLfrXMOQfQP_DDo5kKMchPRey3-Sr60SDOM.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/BzcSTTPosR4kdVeGjK6I3QkEMS9_vG03xmtfEnINKCs.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99942,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/EAatxp9MoMTs9i0apTIxsBi6BKzPLxsyQ204sESTWSc.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99979,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4buBOv_1K4o9ihyAidRaUHA7X587WmMt946tLmRYVY8.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99961,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/veiDc6NCbUFaVff6zzdwx_MuAxsbFSQtn04jXyOqkNc.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99971,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Cb_6bFzFE889Acy9eQLrethl-c7fPoJcc1gYuucp7XU.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "7AOJQZHWT5YFZ3UUL6PTDIPO2M",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 390000.0,
+            "listing_office_name": "Springfield Realty LLC",
+            "status": "New",
+            "bedrooms": 4,
+            "half_bathrooms": 1,
+            "sqft": 2493,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-26T15:25:36.107960+00:00",
+            "score": 0.8787879,
+            "notification_updated_timestamp": "2021-06-26T15:42:33.763585+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "6700 FM 2720",
+                "city": "Maxwell",
+                "state": "TX",
+                "zipcode": "78656",
+                "unit_number": null,
+                "full_street_address": "6700 FM 2720",
+                "geometry": {
+                    "latitude": 29.943183,
+                    "longitude": -97.789581
+                }
+            },
+            "market": "AUS",
+            "mls_name": "ACTRIS",
+            "mls_id": "523339274",
+            "listing_id": "5267100",
+            "photos_data": [
+                {
+                    "score": 0.45174,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/hQjuNeYI-DOYK9UPoKl6n6Mp6SmaM_JvGKbEN774bto.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99955,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ZDQpkiaUum8kugtze79AnSv07m9vkvFfYH53hjnjMnk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.9997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/sRc75KBBsD0O8ZVUn8SZK_9bsUcrMRC1gTki5E9XvFE.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99415,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/j-k2CWq2Hqf0dxGckX568Ejp4O_go55E6G3v_YJ3rVE.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.40052,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/wVGix8Ps2c6l7Jj2snC2GIqkdz01zeICjqLV4iJLJ7w.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.45407,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/e0VPJmsaBySs8msVnadSNd4RAqVEy_eKel3iSowHpNo.jpg",
+                    "room": "basement_or_garage"
+                },
+                {
+                    "score": 0.48727,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/TAZOUwhPvkeAfkZtWM3Y0wD9hzqdLXKelgCaOm0vMQE.jpg",
+                    "room": "basement_or_garage"
+                },
+                {
+                    "score": 0.91799,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/9Ub1rPdrUbjb7LmtcohHUjbvZ4-vcuRdl3dOVoUkAMc.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.98663,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/zK6zP1nFquoV26PSQr4xk3OgJLNY9R-JYv4tVzBaxzk.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.91571,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/zgARrOsvEw_sl_xYon0B3brG4PHZ92gN5ZjjQqPDh6g.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99912,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/PHnKJ3qY9gU5MAmJEmiaYR0U3X8AhTaj1eez2fJjmFc.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99987,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/E7Y6NmLmGswfB2rdhSVePvkzWZe-ZGAWIbqteeB1Ic4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99975,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/c8vjBollOMcQSdqedWet-rY3rGNIRbHOBQardtxEjOg.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99963,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/BY8c-B8LORs0LcZ0FAuwvbZIV2OgpXLbRzOHrXyLRQg.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.48384,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/VaLc9xFZEYzbuL38CvnE9def_8r3WerWZCZvDMA9A-M.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.96303,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/bIwcCw9-T802rwsWruS-F2n8rbbcZ1rViKrq4wqcefI.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/gdD21NCkE4isc9-gsbsZ-9nodrsoQhS2zqOhhr7nNCw.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.98779,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/sdYXmt64pMP0aTNLWcwBLUAjmXBme-AEY-fNf2rZaG8.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.78233,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/wgHmMwhAAMh8skG_I2NIycweIeAcf8heEP7e1BoXv-c.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.973,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/H_WvsU6RXn-4IjMQ3Froobdgoit4s6sbxWzVyYVUHD4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/QaVDG5W7ZeDxTRUaJPnCPbSzsZUxf7at9ARKLA7uYPU.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.97219,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/02DGgVAPAqTieE20of_Xk-U1Ni_28lhRE5obnFyB3ms.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.56981,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/tNQKpLpNfqQygP42JqIr6WeDpt3hYDzN0624u-9qhrs.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99704,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/CnOdMMPIUz3Abjkc0p2r-kXAWg7KwffbXUUsArFhoUc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.98907,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/RSc4ac9P11AZ6gKpDZmF-2q1uLxA9un0PfNwOqPMyeU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.69359,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/_pvQ8QsqWlitF30m_BN99vntSB9DSbh_lDBsr43Rfg4.jpg",
+                    "room": "basement_or_garage"
+                },
+                {
+                    "score": 0.92687,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ewNz1As326ZPewxuH-6BwKrpciiA_z3GQAfr3GspMUU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.97693,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Lv-BsbZMu17TY16cnIORIZEw-HuMI3PDEKzBbPutGLU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99966,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/GY1z7z7bqLN9Kp3D-PNFqv82wiNTu-AiIrJFT1QcKEw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/8PQAvgqA4RVl-Gk88T9UXYwjZLIRO7MbV-lyaQa1HMM.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.51317,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/dj0U7cCT6aNAxRJVPjZsXcWU-FOlwgL1wVh599IInPo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.38353,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/SeN-w8Eqw-jPS2Em-BIpDJoRVZhMiEQm51fOKMbWHDA.jpg",
+                    "room": "basement_or_garage"
+                },
+                {
+                    "score": 0.69078,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/2yDKMrCoxAMPXz2el-koLisy0RROcfEPYnjncBP7UDs.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.92397,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/PGbBSYIhrVIUA7e1GkC6l96MqTrOHtjM5OazALAT2as.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99646,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Ypxuh97VqO1IOITt4d3Tj7Vs6vbVlKiNk2WeggCuvC4.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99957,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/xMCeWI5LQtA3DqII6x3msUVGWYhH16aY-rIlaywS6us.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.8585,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ub5elN7F_FHFP_5nvAuFPjiJLVcUgLbJGZocjlAUPUg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.38751,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/qSaIFqZgEO1cUyH3ua_jh1QSKysi9MXlJBjMKuGTshA.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99502,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/A-tGESzanFCMTFw_1yGjmj4BJLp4aOefXMr3GQ9BKbE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99537,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/SsloFKTPYHTD4fDp_llGGMHm825RUsiKcvzKOXhS7wg.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "BMTLJV2D4DJVT2CTROOAWHGY5Y",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 429900.0,
+            "listing_office_name": "Keller Williams City-View",
+            "status": "Active",
+            "bedrooms": 3,
+            "half_bathrooms": 1,
+            "sqft": 2152.0,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-22T15:30:31.017219+00:00",
+            "score": 0.875,
+            "notification_updated_timestamp": "2021-06-22T15:30:58.604050+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "2114 Chittim Trail Dr",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "2114 Chittim Trail Dr",
+                "geometry": {
+                    "latitude": 29.573316,
+                    "longitude": -98.459907
+                }
+            },
+            "market": "AUS",
+            "mls_name": "ACTRIS",
+            "mls_id": "522143477",
+            "listing_id": "1712529",
+            "photos_data": [
+                {
+                    "score": 0.99804,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/2ZOrr8eC2cAJjCC5SAwlNKbWr1zNR4mcp6i9j9lBptc.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/_8Soj9hOyBln3cFBdRsmPFveBlDYe3FfsPWevBZzm5s.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/o_vEd99Dw6ISOB3ql2b1q0sLzFKRJqP-Ulxc-0htMv0.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99939,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/mBaJwY2yOS7m198zKk_4uHXK-rGy_7Ewugc0etsdiRE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99518,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/henN-QqRpo22NbvvJT9bu5P--FNbCh2Z_DQrpB8ZZTI.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99632,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/5s10aF_JGOdxFb8Affha-u_CNIHzF-u-8s9bhoypSkY.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.70111,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/bvKUyFivx_CQ9X16gT0gu1gXFffezx2neMWv-78fFiM.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.97415,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/i8YrnFcpptKWyskQJ5Ga98pjE97DJY8P3HbwcADlc34.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.89825,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/PmN-qkwhu05tG3PsEzYS8ZKJ0lUQBIRnRaF8WnIb2u0.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/4ayb4Al13InGxmEd367yjCeCOQSLrWgp3ozcGqC8n9g.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99945,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/wAO78Ab6hsoBqbYWR0znwSULV33SWNjQteWRL7tFJEU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99212,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/6cDbqQ6IIwXvGNBTbkzNq_GLDBsdesmQJ-hr78lxK_Q.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.96833,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/yPNl9XaBkrqCRPmctz0rvj1PHKgsbbO1ya-NNsFYddo.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.76812,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/iOQjKKJuk4Al0_IiO0_25wWNJ5YCnjmSDr4pu1IjeEc.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.76719,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/WA1gYWt3G5Om_iCuAcV8Kq47mZ0LuDWn5i6zmP3nEqI.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.97703,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/GQrVxosaq0ApH7w3uGmtij-PFI4He0O8GuVgt3c9brM.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99946,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/cfuTrTd48RRntebcQLOFdw4qfALiEKyw4h39NIM0dGU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/AuosrOfXicGzLPPo5D5yCVW70QznX9yVBz5oAuwaFZU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/OVgei20L-iPAOt_SmhckMicQ7aKrlv9OijlrYGT8y6c.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ILWPeNr4TJsXR8UtKxMxinXgTwIbW-YoWxFxBIeV2fQ.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ZLKgKZ6bJRqmzn4dltSLFtUnTxCbqhMtDy32RTlbpX4.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99792,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/hIYelsLtW7IclPqKp50wQyOCMYl2a9fKxJ6XwlivjWs.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99728,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/mx1Af0B5XBHP7-ACcBpuv88kwFTHI0xzSeWXmvbEsHc.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.6903,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/i2RJIBNZsnVWKWKGzwjbl4nPU2TbYeRD4XyXClLyyj4.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.9999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/8kE4JEzlpltOlfpV9Gvr8idAeXxgvU__rLzr2cKEH2k.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/WixSX10dEX4A0SPKy5AQDlhViiNXThm5hA_f4gZfrxI.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99735,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/6u_YsJywMfcxIQGJdTELooHXtn5Is8TL-vGF_-IHHgI.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.92814,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/kjs0We4UVWBi_Qogwo1f1jvFbF4oLCPr89FsNs8NUWg.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.98154,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/V4Ag0bYoeb06v4kJbo7zS9VC_8pUzCVo2dJs2ErfytA.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.6096,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/4f2zx0uheZ8uebhbjtONQLu35kEhx3gJ5jfpYc1MglQ.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99826,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Uz6Icyw9ufyhhmh3yqodd6Y-wRf2t-pReSzLg2Vwbtc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99971,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/BIfjHeq7HGIUCeOqwFwUsWGKTME6rtO6x_Cy_z14vfs.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99965,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/7nLWvG58XDBK11K_rUiCXiS4UrlelTHDptVkS8jWm1s.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/KWv7vzVH1Z1ne_200Vw_DQVpvMh6jyVpSgQ8erReaA8.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/vkbj9eKH3dR6q6QH2pzAAStENyaTaHMltJupgmD6w0o.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99971,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Cvo1EKtXyr4kgUj3U3qopcHnd4iQsYZSf7SnRa3g4WI.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "Y7RVFCYO3P3F3NUIU3LGJ55V34",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 359900.0,
+            "listing_office_name": "Coldwell Banker D'Ann Harper,",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 2659.0,
+            "full_bathrooms": 3,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-05-29T15:15:32.524518+00:00",
+            "score": 0.875,
+            "notification_updated_timestamp": "2021-05-29T15:15:57.939087+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "3306 Rosetti Dr",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78247",
+                "unit_number": null,
+                "full_street_address": "3306 Rosetti Dr",
+                "geometry": {
+                    "latitude": 29.5700995,
+                    "longitude": -98.4296675
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1541105",
+            "listing_id": "1541105",
+            "photos_data": [
+                {
+                    "score": 0.99985,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/U9xW7fyHJDgF6u1wvB1MNEPfi7cWHjWG4cZ_i2xUt1w.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Kc_j2GqbjljKgSin5Yu-aWFvWNOy8YJZCS4UoTJalNc.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99901,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/u8MBgFt0tf8VKbghmBeaIPCOXXem4RlbltIwDV2qetU.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.47735,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cCC9KiNXlxg39JzjL2p_ZIb0MUMzmn729nmZGUFnYMo.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.98751,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Mw8t_smgLRpq5bGiBXyGhI9BZ8cLwv87J--CDMibiNs.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.56223,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/E_q_C_TaCw7SaKK1MtNKPqFTJLKWLOMGtmhRTfkcKIg.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99876,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Zs9mztPsD4ZRF57Uk-YINRez3Da9qmaYV-nnYuFa5vQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99944,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ukbjajknyee9HOzftF4OhVZJgcgUS9vhg1LqmsvTQQQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.51028,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2_FdhE7HVBGKDLryORk69iojVymq-fABt6s33Z2s3Es.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.47391,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/53Ko9tR6Tp6MkiFas1vCQpMRtVgEX2heQpcpQmU-Ir0.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.60264,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fWVpDtG_Yj_uynx-qUYPxe3H8jdb4VrfDvx5Ab3im74.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.72179,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/0454hl2AZmw1RpI8VsZOzv8-loPx61-rlLHezq-6nng.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.98363,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/nEfz9osuQvOMzDLVdaAtjdVQ2Y1IUYbtu3t3LfEcFmw.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4QtsjN695ubYERkTLLS4RQyrpLkTN5Bv4sc5m8qPvJQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/vW7JB5cn6S6MFEusM8TUAQFaO-DSi_zw9kMWV3SUY3M.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.8284,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/wi2DNweX8_G-aaGprblOZYvTuDjBzqUPELLOaIJ9iiU.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.49639,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MtpPSOY8oRIdTOjZn6KgW6tHiNF9ftrHpTdrPRHplMo.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.95098,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PSsOtpdIy2o4KTFCK1zYUI0kFevU7srDNb0WdULKw0I.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.9777,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/5afHBhI0uXHI8jQp7XiM4F2Lr-jca6RePfqSa4qH1fg.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/e4ZVO4X_G-8qX18cIstlJAy3X-oqRaAMiPB3fmB5RCQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.9997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/T8vrRYf-GJp7XFkUCKBuo_bcUyLZgbqyKVY8THXOKrQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.45717,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/TyAC0OwS2ORkTW0VEalg56Q5ZR_6_OK14jKxupci05Y.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99606,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Aj6F38NmlcHUYbTcaYdw0ygrbaXiZpCmqn6j9L6pmw4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.63811,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zSRR0HzE00kKmf29u5G9cpCm3CR3Y2LdmMl-wjHs5QY.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.94483,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MT6b2AjQz9FSchtkt4c1yDQ3YExrRblr21NMvG9g9OQ.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.99894,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sa_34AVMprd231WXAAGVj3_r2Sy2B3s0jRR4KT7fUyU.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99859,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fAHgYcN17Qhwtx24UDGN4WKpuCPeRnoD0iCdp-mFWCI.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YhByaEbvYKvBU_p9IaxLCHlvp-xdOJ0Gw0_fG6OHYVY.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "QICSLCEQKCKO6N4ODJIMVHN7PM",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 285000.0,
+            "listing_office_name": "Keller Williams Legacy",
+            "status": "New",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 2022,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-24T19:40:46.043357+00:00",
+            "score": 0.8611111,
+            "notification_updated_timestamp": "2021-06-24T20:12:37.016760+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "3329 Foxbriar Ln",
+                "city": "Schertz",
+                "state": "TX",
+                "zipcode": "78108",
+                "unit_number": null,
+                "full_street_address": "3329 Foxbriar Ln",
+                "geometry": {
+                    "latitude": 29.6247967,
+                    "longitude": -98.2326841
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1539645",
+            "listing_id": "1539645",
+            "photos_data": [
+                {
+                    "score": 0.82045,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mmQ1ITkQ-bB5M4yd2YEluLpIvBj2B-GCie68GcCds5Q.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.9993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/w0wyDkrUH-viOkxBYLO1MalA7fZY2VUCLPByhehdxbs.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.67702,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/q6raIZ1rMU7XeVExTOkh_G6HsLNvPKQBl0E8OIqK7pI.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.90456,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mjpx48oNE-pnxKC-vG0Hz6gOT6YRq2XYM52pScNPZwY.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.673,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/N3y0Qch_vqTeZcLHYlamxooIgR7aLZhRtXTJx9xorbc.jpg",
+                    "room": "exterior_other"
+                },
+                {
+                    "score": 0.99916,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2pDT90RS0RvJt15XUzNvWqgZH_nsr706ifsLdtpEips.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.5608,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/oVypbyBG6sb-bomd5iDscuXSmoZ-RvFYpN-wipcYrR8.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.80633,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/BTXzNR7i3WhrrF0VHG-13AeGNK-L8n8aOuWudzGNbM8.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.91767,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/wQmhObT0vcmc12M1DGREyRKPTYpkREirwbdRGbR9QEc.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.88398,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PtAgxQTkGgL1VdP0HHuVC0RK3C1Osso3hB4NWFv7MyM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99692,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jO2FOgjydMjJ6Zv7VojwB2JCc9-c6KHVxrc5ogH_T3g.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99703,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Qr_SBqBDiDz34r3J4cChfSsaQVH8H2CithYGOOQaB1w.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99854,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yvpBZiqpqN6f34manzd1r-QG8ZXCTHLFO9gR6DBosN8.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.45412,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/TvAR54N6h1T1Exf5bQPtG1zohlUyPXjVPD0ZAx8gI5U.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.92378,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MonaNAeK6F84JarjjrAmxX02jOq-uSPosTA70tESL5A.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.55634,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/70gSZwv50nkumYMgSVeW1-VzERt3Iv9sHYOK4N7ThNU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.9976,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sVUtleSESR0ka5A10-U128oxtpoTo09lvTGFOPKbUMI.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99929,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Wbca5ySPnwtT8ooypQNdGXv97RZBOMEulGWQ0d9yeNQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.98425,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3xS5GKDzTj08jRTW-rXWdJ4rJrQ0nsA3pzVp17Qaq7U.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99956,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fN6bhrJM_I9Hf9MlInXNjCOyEsInuQN6BNS5PZ3C0G4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.98765,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/WaYHiUJA7TtwPJ_JYvovjI1JjGGT3wagVdf6myyKLpM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/DDl21gjQrgGNEr0RTA0Vyx9y72wZBe4Qaa4Dm5Q3J44.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.60519,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/9gr5z0KKyK5WPpsnooZdbVzIq05WshXx_PrM0NJweW8.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.89644,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/t58zrLt_Ve4y7YPo6RnOnE7h3AqK1fLZ9eaXl024yz0.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.54492,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dzKYZNO3HePqg4WNacBbokQJsHudtfkeursx1aJuXKw.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.99957,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/La_g1CP4yXI4ZltNmYnYRTi0FeG4KhUIl6pFSr2numc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99978,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/iHbSqTZ_pPF8KJopik7J9GJiSXcM3J3_XKTOGoldcnQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99888,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CanIlQQv_JNGFuRpJnVD2lUkz4MP0haJjsoehveS2ls.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.9992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/K_h59UlSL4lTTJmgGBIji8tCc2iAL0EKKHmlElJwh2M.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.98836,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cK0AaZS05rb7cH9_cfrJLX0kTM1rCjcvjttcuw-Jk-c.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.97662,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/pci2GVQ_HiQlQ5FzNcX1qXckrtlV-NTpPThBt8BIy0g.jpg",
+                    "room": "exterior_other"
+                },
+                {
+                    "score": 0.99977,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CJzdznqjanO0hTtQ94OCoG1n0EB436eW4BhdLYHW9vo.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.51302,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/HvdQrSOUUxDSA04t5XWZk78lbqmSD7nnzXMVIviE4eQ.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.9944,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dFcJ6chndwey4ph8KNKhof5ky2K-GwB1zBKF7bY11cc.jpg",
+                    "room": "not_home_or_property"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "XGDGI56WLWJMZR44OPWIHPUD3I",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 335000.0,
+            "listing_office_name": "Brandi Cook Real Estate Group",
+            "status": "Back on Market",
+            "bedrooms": 3,
+            "half_bathrooms": 1,
+            "sqft": 2088,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-18T05:30:36.319484+00:00",
+            "score": 0.8611111,
+            "notification_updated_timestamp": "2021-06-18T05:42:24.028242+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "570 Forest Crst",
+                "city": "Canyon Lake",
+                "state": "TX",
+                "zipcode": "78133",
+                "unit_number": null,
+                "full_street_address": "570 Forest Crst",
+                "geometry": {
+                    "latitude": 29.865501,
+                    "longitude": -98.262454
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1541267",
+            "listing_id": "1541267",
+            "photos_data": [
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sud2r3BBtN5QZIouzle_8-axQ6mkDvgv8_FzVNUGMN8.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99587,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/hl8R3lpNVtBmMdWgIqdLWagU--wmK-w7tcn65IWXdvk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.9996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IkvdcVyIotcYTSoWpwJf9FOKoI3P9iuIEE9ybKAOoco.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.96937,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FZhxvMCn116VToufzAiIcbiK9TdsAQYuDHkpaT9tI54.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.98419,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zur9XYAXz7Of3RDadPCg5svMyLSmbyUg0kGCi21Eb0w.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99723,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/UkzgJSujhG6tkWKzraoTAMGm40yHgmqEmvRyb9umX2A.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99731,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7Winv-mzj8HlCa83Xxzvj33Qpu5NS_Mk7TrnfMhBbCA.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.96638,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/uk-sw7kK4PWk5VJMpPFcB59WUyfejH4XGaDHy9GMYrg.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99675,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/bghVQcaqT6kajAOUIf6BoXTXQXNldYJW-4x6Pwpz3tU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7d_wd0O4PE_U_gkL99LIvrTh76q1gnm3thTGGYR3VVU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.7287,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3SZ9EMs89SWVddHFtv96JxyM6Lx3PIfhh07Hh7fRtdw.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.66063,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QtY-MIRn3SMa74TbAOio-0sChhDved6ahhHq5jSY7tw.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.8724,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Wr1Ff3yohCg_MfpfCA07mVCwnoLfgsfzPfE2ZDxgXNs.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/T3K1MsDbN7IS57xLJl2hVHpo75GWi0MlrxQsm1iKTsU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99397,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-1LcnVS423wzEam-85l-VLI5sWcJBGXqOcyt-912LfU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99935,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jXNp62t8LUW-fu8ZOPWGkfUty4rJWQQ40nyJ2hLUzgk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99982,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dwRBpDaxjYsCX1oCJNXT1sxewEf4H24NfWjDDvlxudQ.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99986,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JFu9-dCNYgrbEHFzzwYd63Gi_qI-Y8V1O8Hm79vL4qM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/EDH6ExVClZJGoHUpWF0J0HvssQeXEJaDUY1eOQxm31g.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Y6AJtRiwOycqXedJxzTX-tKnijfZ2wtRn2fBGX8iztg.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.84657,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/u9q6b0nLFMLJGf6JUIDKt0nx3cNMFh26kpHSwlvYksU.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9987,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kO264HVQhJ2BcPuWnWB0nx0hxXCNdabgRvJvoQhXjkc.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9461,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/RciJMLIqMSc7vr9K0l_16KUyG1qI1i6c2Wr4ZD4Vsv0.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fMr02kzacvBipmEMsJPMZmjesfX_zelV9L85Xg2Muk8.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YxB_Lc2uP_KtewJ9ZFekHyyzc10BOoeauvfHRJJ9DFA.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.96565,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sxMAQVGN01zKbx89P-vOSfS0KKErzVaNeDxRXiXLgDM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1_iSHxwcJoD7ENz5JhljLHtkQWhb4xFHjkHq0YxgDQA.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FETzgsJBs9GNO_AUakvT2gwqPYtH6cYwaYM1fUAjbG0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99737,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zoynvmnMfdvaiUV8JfIGc-wkjzkuLwWxVMD-aptqRaw.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.87054,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kuKcSw0oEzyFdchkEriIXiqLRFt4ZDHvo8g1khH5hKE.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.91959,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QskYKdYrUhQFN1WfujYq5YGQpKVH0aVPixc352P65EI.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99423,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/LMXe87sbqnvJo_qSK7JSP3TDrFvPkYRXGY_GnQ57I7A.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.63758,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dO7rioxALEab3ctwQgdYKY2Ibby7oSFwiam3UgYGs-8.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99955,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/SWz6QUrwiOh7BCto40WisQIvXMSg0EN9fhavhaimkAQ.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.96104,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XICVAU46V96kL5FhT8CVwMY1lurflwFuA5wNzZkED0A.jpg",
+                    "room": "exterior_other"
+                },
+                {
+                    "score": 0.65549,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/b2xEfyB6XeQVobbTXxZmjeQkU_4erqRejYDChKmTWT4.jpg",
+                    "room": "exterior_other"
+                },
+                {
+                    "score": 0.5244,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zmWHXLJqcICrhiMVhZ6qB9STkC7q_rogtH5g30qZEmo.jpg",
+                    "room": "not_home_or_property"
+                },
+                {
+                    "score": 0.99979,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/6obYny6AKg27VddyCgLhJgAlILVu2kBwGxDp4l6IsGY.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.68415,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kSK1XRYZLWZIhrsgsOf9qGfiMog0rSdHduzN8tAIUas.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zOZw2h_L1rsQReV0XKfa1YfLYY6ptmmtkfIdmSLM0YI.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99638,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/e10vT_VxkCQdEnT4YohxH1Zxt-10oR5-wQrdYtW6pmc.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99761,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/lwmz54_ev4STTLQP43wUjtYdCS-X_oYNxnK85GJByAg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99983,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yA5nr_XGCCU7_ja5jPRf12KCUkOrdfzbEfbG3pam62w.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99854,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/mXx7Re5qcX_ez39dGNpb453PHrfkEZs0Wol5in_dvzU.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "CFKTXMF5P2I72ED6HGEVTQR3DI",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 325000.0,
+            "listing_office_name": "Becker Properties, LLC",
+            "status": "New",
+            "bedrooms": 3,
+            "half_bathrooms": 0,
+            "sqft": 1607,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-25T04:35:34.442852+00:00",
+            "score": 0.8484849,
+            "notification_updated_timestamp": "2021-06-25T04:56:50.940789+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "4607 Cobble Crest St",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78217",
+                "unit_number": null,
+                "full_street_address": "4607 Cobble Crest St",
+                "geometry": {
+                    "latitude": 29.5654019,
+                    "longitude": -98.4009689
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1540391",
+            "listing_id": "1540391",
+            "photos_data": [
+                {
+                    "score": 0.9986,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dLvpk5bJMhSEYlZJqkz4ScDahrSclGG5HcPsmocPe_A.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99508,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/L2eKELSofF9X-fFm7qx1HCet0hGi5OCA2DF-xZ-Eyjw.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.71134,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/0SLLtVXFlmY10eiFkA_sS4XcZ3LO10KfuEknnkfgR_s.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.83207,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/rMp80tNFMe7PZJfl_VWyS1t0wlESeaTSt4EOSRdQaIM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.96663,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/y5zjOHkz03-1bSgPl1Py2cT-pQ3UYZbtm41V9tYJu0c.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.8491,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JNacQVGE4YeA1TPbCYTM1nMlPukRq1fpHlP1hisA5H4.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99783,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3rlrNwi1w7sZDRn2QM0xQZTrCbBA8woBl3Ssc9JlNU0.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.62137,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FvhUQA4XgENcYeOgCRocg4HuNaJvDQGMKq7dPdFleIE.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.53315,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/HpzxZ43jPUDTudpZk9x5NXbbsCF_82ZyAVQERnJtNfE.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99622,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/a6ih67bT-XqscNICHfzQ0TGkDN0eFWhIRXxyNX0HMXc.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.98689,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/pzfMLldPzeugjuavoqp-shV8SFynGXjqWmmtuw96T6U.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.78101,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/LLT8PqfEKN2AyLBxh-7i6bcy-LdcuNeAfmlqE3UNbCA.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.5278,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fhX5XYpguV-8eVErhOjA42N0w5kIBInbMtGQDlTFGgs.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.60832,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/iIsEc6fnhBycW-6rFqrHzvF905k_2TqNhejAtuSWFkU.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99326,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IsHZR3yzuuVrpLcm1Rj7EHSJOn9guCWWpvcbi1kh4T4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PpTHv_-hqNDLXI7hywFsDgM71AH-8RRjd9_Z_RUEYxs.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.9996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MZgTkO51AZjCn_cPFsUjZKY1ozXdqg5JZiXa1T-De9k.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.86309,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/s1RhFfktlFhC-2kdU87eaQ2QaQTpy1NYbu0AQN8KqzQ.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9392,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NUObRdYjwFWZUIJ0g_dUtJPxzLFc4rOsA2_AGS-wc2Q.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/TtNppC2B3bZFoATi9DotYPjYdrdQFqTg7gatRCGSXoM.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MlIASU68qtB-rLxWP1S3Q8wqz08HzSU4JEvloFhVkWg.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99827,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/de32ulzXzBZ8hiE_Reb3ObTcfu9aORL8yvcz1OL9IE4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99957,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jqi11RF5i2Um6esdhEgFkhkeEWPTUDWstRYiGEaIu80.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99911,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CGeyfzU2FOs07urMCKZPoB3Mmzm_TFH08ppZF9jttIE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99892,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/psnYZjnoC4AZQWJMUpECXVf1LjaC6B35uumwcPahEHA.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99983,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/RUXDsKn2yIal97jNUwvPI31T1NLuEG_tRVnPd8PPGOU.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99028,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Oh55G9LvKwT2w0C2Ll8IkYxKTj_6GJRQ0FGq7JtlLS8.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "ER5SJBDR6Q7QNIMWYXVBDHIGQU",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 299500.0,
+            "listing_office_name": "Keller Williams Heritage",
+            "status": "New",
+            "bedrooms": 3,
+            "half_bathrooms": 0,
+            "sqft": 1666,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-21T23:25:34.512363+00:00",
+            "score": 0.8484849,
+            "notification_updated_timestamp": "2021-06-21T23:42:21.580364+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "2924 Coral Way",
+                "city": "Seguin",
+                "state": "TX",
+                "zipcode": "78155",
+                "unit_number": null,
+                "full_street_address": "2924 Coral Way",
+                "geometry": {
+                    "latitude": 29.6101587,
+                    "longitude": -98.0013007
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1533199",
+            "listing_id": "1533199",
+            "photos_data": [
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/xmGy6IggZEVoFg1yvMq7Y0f8CAteDQPgQlvlPHG51rE.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99695,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QuZVfe7WucQ3jt97Zi1UcR0J7b4xQrGKO0quBXCZcMc.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.79951,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/sj6yn2aM7N8XJHpAMzgLKKkYAPVuH52n61yVgan9nT8.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.68711,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/T1NM-ZylLh-lHukOhTxjsdTbP-vwIeUlN8MTWgx_ZIM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.54003,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QalkLaumE6bDFzcc5c-5jgUvUKu7qmGxnLTw-j3e0C0.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.9931,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ijiuNTvK4MwYpfXIBhzAQzoy1o7TV8wam__OXOcJHPI.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.95713,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7MZPlU51Mn7kXK9IJIngn7tVdJ0JtPxhJhrspRmdphg.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.76147,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/YGKkVGPnHV2QTQuNXjz7yz3te9QR18zpfpE2OvFkrLU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99683,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CcB6Q4-9pEkjoBZsevhA-SD1KuYzDqVe9MszGriBDNs.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99687,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/iMKFSNOmgIXaADlvflE05NrKyeYMJ2jqZKuWSXXpaAk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99884,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zJCPDtgOJTzHfT5_jmjXW5mwT5gY5nCpipHGqgBGKsw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/_B6z5pvPyrnHva3FVKTRz_18nsL4iuahERBsJMy4OBs.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99996,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/vM7PDdRtlHssTV56Fmq_ViRPEWQHzEOjxLB36M0pOPQ.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.89209,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/azWPhfA0fEv76iy_ZV5XVRPlKDahzZwOM5JYFb8EexI.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.75885,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/HNnVyXaWU8r9IZaFJTIEja8YQAda4qiSCTee8wyc3_0.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.7477,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/TJ8Kn2_btpS3oIYI_GzTl3v0kCSGlAfh6UY1q7wrOYQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99979,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zNyiCsvDKiRjuKAqV2UsWbmoBVX1-Q0rm5bwX6oSNQ4.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99941,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/v63Web1u0QlCiqnBBfJmhp3RtvtlcIaNXdMIFViGbvE.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99987,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/htpoS5U4yabw5ienF3PNi_M7Q1BnUAt4SfQICHfTtQE.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.963,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/DJq2RQ3YSeyg2_IH2BgRG4NdaERsu0VyPyiEXqNp-Z8.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.63286,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ekDtpPRYQpwOAP6egVuRoCImx6ZKNoIEQm9Q7XkHTeQ.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.98663,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-8EF3UrStHfayAVuFR0L9jHbUdBxjU1Qs8zW0wCNTrM.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99986,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/2AMILIL6r7mopfBTOTP-jaZ2ScevHSk8Ab6ma92CBhk.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99719,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1928XyzJxJeWKJ79OlEx69Xpb4Evsvf8anGjp5ms-RE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99845,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/V-eYQ4ZUJF22AQW4aj19I-OnyNmgLy4LSDQCt-ZGPKE.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "67YGZJSQ6TGNEVSSJISKZFSQN4",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 379500.0,
+            "listing_office_name": "Keller Williams Heritage",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 2166,
+            "full_bathrooms": 3,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-05-20T16:21:20.863202+00:00",
+            "score": 0.8484849,
+            "notification_updated_timestamp": "2021-05-20T16:42:11.330441+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "13710 Chittim Mdws",
+                "city": "San Antonio",
+                "state": "TX",
+                "zipcode": "78232",
+                "unit_number": null,
+                "full_street_address": "13710 Chittim Mdws",
+                "geometry": {
+                    "latitude": 29.5702658,
+                    "longitude": -98.46022
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1525205",
+            "listing_id": "1525205",
+            "photos_data": [
+                {
+                    "score": 0.53242,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/KWbBjHul4iULA55qG99GRWItAcpv0dM95W0oeA1MJDI.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.8378,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/dOaWloYhb5WZWmtOTgZEcbqR-vAowI8ZEpSmwW-noXI.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99989,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/jNSpxl7jdQaAj9rrX6z2J7RR5pxAT2Rl3-lktDNktsQ.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99912,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yWcQC1I4m-0eVh6JqXQha9-k2baAdNOmhVThkFIUwfM.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99013,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/OlKHJLZO5RPGVimdHiX5PAsjLfsy69pZhP-DXMcKNDY.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 1.0,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1nfQmACcMh3YjzGclxNTUuZ0w80_ZvXQX7S2PnA4P8k.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.9991,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/rOwdD0QUI1svp853M-0FYmNxZT7Ot3_nbCmpBkWN22Q.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99874,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XT1AAR-eljY-Hm_DTW0mAHvuZRHg5wDSFqUFD0xFvJ4.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.6276,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QC2uOaiHkuIhtso_vUqKaOUCzzfW1UdBoa__UyHUQvk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.90547,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ceiJYYfx0Ew5n-uF6TgzMKe74-ez9WJLjodlkxTKz0Y.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99812,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cWs-0CyrUgi3vFran9_ZH4_A2kKll8aCbf2CHeZ8X9Y.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99639,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/NvVId2VKZcmo03Gs2n_UvcxWjL1tDI1SH57f7WGrQ50.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.71563,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/01VwXWHgtK6pbbvuHrCGSYmD9x1DIsKjf2ZnRQFcoDA.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99667,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/BApkR6x4E-jXb4LSyIQQbgDMKamq59gyw4NCUmUnTpk.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99916,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/XKpsyRBa_ljsCg0_ijyA_oFiwL2F7ocZ6KfSHOKbf9s.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.98157,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/9sF68zzY3wK6me6gyxzW4zkmHXejtJ-Al2p39pDm7_k.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99984,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/3q4x9pN___rUp7etCm3FKYXdJ1tP6xyk-1Jl1S3R9m8.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99736,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/pKNaxIlT-u_SFk8FCDhw5iR-ZUrkNcH5zr9LMuJ1jg0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99922,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1WlynxC7hKMyHCfqELZIqvrZh85jkm0_7SslmE_zOZA.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99935,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/A7jfiGpZ7c3-eMs5IVTswDVDkVAgJjbdWRrtd4MuNuA.jpg",
+                    "room": "front_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "43R6OZYIPNUSUPEF5WWG6367FA",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 336000.0,
+            "listing_office_name": "Opendoor Brokerage LLC",
+            "status": "Active",
+            "bedrooms": 3,
+            "half_bathrooms": 0,
+            "sqft": 2095,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-05-06T23:36:11.901853+00:00",
+            "score": 0.8484849,
+            "notification_updated_timestamp": "2021-05-06T23:56:46.685501+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "1654 Sunblossom Cir",
+                "city": "New Braunfels",
+                "state": "TX",
+                "zipcode": "78130",
+                "unit_number": null,
+                "full_street_address": "1654 Sunblossom Cir",
+                "geometry": {
+                    "latitude": 29.663378,
+                    "longitude": -98.122921
+                }
+            },
+            "market": "AUS",
+            "mls_name": "ACTRIS",
+            "mls_id": "525589610",
+            "listing_id": "6685627",
+            "photos_data": [
+                {
+                    "score": 0.93972,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/JEAAiznyyHmBmK6TtLt8T5HtsrSBHjH-kihLiUsM1i8.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99951,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Wgc1SWZyMh6bUd_8xXrKiD8h0Tt2KSHsRt74AgsHLrI.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99909,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/4t3k_k88wEP08OsMjFyu6SVffDPLrliKNB-8oPLtggc.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.49843,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/itr2CzNuIPVbOvBYpPb5AE_LdBpLqcig0wqxeTmmYLY.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.72803,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/64k_vAiJjaNGxv6q8mCLhNhdmD1rhMh8AJNhGGFGpGE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.74659,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/bB_kGg1BBT6niXoxCBZqyIMMfCgFnEhPGHSavqRghdM.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.95656,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/yNqHcKaKChfDAEjWRTx3jAmSb8r3_DJubKqdJPuUY6g.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.95535,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/jLlfMKxS4174En2MCZYbL5VNpQaCOFbLBOX3saAQV6s.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.93434,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/2ofVPSvjjoP1Wxpi5U73_X2gKDI_H5CS8DLclLyM2qs.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99807,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/Rdnxa0FhIfFr9tHFvIYAkC5l5I_NrfhZIUHvLTB7dzc.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.42338,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/JGf4Jc044HGZF4mcQYfaAq3gsYzRxNJjY6nRPqNEiTk.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.60324,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/HPiM_e1SxJJNAzyJeyvp-8qYRy0ocOqZ0P0dxjkP6GM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.5789,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/tKMmgZwa0wmct-2HHRfJhZkQguzFjcClQwWk4b526MU.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.993,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/wFx0EQL__ZJh4-ff8DqRcJ8SDFbhexVAQsOzWSLc5Vo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99934,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/KxHctChpYDT41S_0zTFtbZqCUsqZ7vMmgLEX4sHNrFc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.96253,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/0i0iLZYCQAypQOkVrcMIEc3j-Uz9Vzk4utGirl1qxi0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.72787,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/nhN81ARzyO_KF8S_gg8CxTT6Q04VjjjOALgbrEF5Nbk.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99988,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/f13sfosdtYyJf_QkEAAoYFPbrZZqFtxGOaJMnKngbxU.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.96582,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/plyqv3hnJbY6hWWyN5rXxxxmC7x0XyE5NptQ4aXcO8E.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99997,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/dtSRxbYbgWRyFFnO9tpfhB9A_S0Qq4u-gAf99n1wtok.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.98136,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/7ym0SHj2gYx91SeInJG5d1liFCL1DNObR9RV8OHhod4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99975,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/pUYX7z3iKIwxv8W547jL-lyTMDNXlUJftVkgvpSN5_k.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99278,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/RNxxq_v2_RmrjgfTd5iilTiw7gZPGb2MzXRdBqak-Jo.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99829,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/5XZACczI3qAphGWe_9lX4lLVOWLfK1939zTd9_n7Thw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.97855,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/4wbXjB7D5pPrRAsT1LztlkeVNmtz0Nx0FeOiL0XolXg.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99344,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/S9OSoujJrwHNfF-1tr2h4A0mNGk-9FS-NkHxbC2DZ-k.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99973,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/ufRu7ezI9rr7tTWcRm1776QRe5RpLpCWtOLdQzUu16g.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99987,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/AH3cTBZldkioRiY-LpQt4p5C4Fdhv-lYYjGs3KTTRpE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.98964,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/mdD5jdsKB789ptvrVbk7aYS3U2mzTA6J152I39LNOLE.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.9398,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/reso/tx/actris/KA8F2c6cWGGEgEkX17YSXsD9E9j8Y0nZN3sg1ziLjtQ.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "TAUUQ5R6QNEES6YDOQQI4H7LBA",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 335000.0,
+            "listing_office_name": "Keller Williams Heritage",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 0,
+            "sqft": 2214.0,
+            "full_bathrooms": 3,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-25T22:10:24.625144+00:00",
+            "score": 0.84375,
+            "notification_updated_timestamp": "2021-06-25T22:10:51.357194+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "1755 Oakmont Cir",
+                "city": "New Braunfels",
+                "state": "TX",
+                "zipcode": "78132",
+                "unit_number": null,
+                "full_street_address": "1755 Oakmont Cir",
+                "geometry": {
+                    "latitude": 29.7204457,
+                    "longitude": -98.1637955
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1538139",
+            "listing_id": "1538139",
+            "photos_data": [
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7g8InOptKWRZ9Stieg14aOD0xKQ3tujosJi-deF4_yk.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.57565,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/kQlYU7xXmK2SQS9Zk5v34gZeDXEVuhChVF-xjpH5XeY.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.77128,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/O9UVrpQNhw3upVV-yOtsnS9D0tJIsbp6mx_aS0IfnPY.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.7525,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7-enMTBMKq-u4bLZyJl245Cf7oHL4ub5gzhKULwSdhE.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.98937,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/pmeMuGaRRNl0YCNvn4Om7JDDbi_Xe6ap4XVdz0R_YTM.jpg",
+                    "room": "main_living_area"
+                },
+                {
+                    "score": 0.99845,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/JcYPNXYfiUs1IHXIrwizTHas5lWr2yySTwi36muzu34.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99933,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Pcs9F5gUEfmXx_BaBvbjpUz14CiW9xnRFs2vaNxAd5Y.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.93118,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/El5r6BqSQfASKcol-TeKHCYAQfC8bww9UK-GE2JZQ_4.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.65227,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4wXzVFqE5nF0k4ye0Niw6u74fpRgKtC7yM9JopJ4lTg.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.99922,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/KceqtPUofBR1Txvh67E5rUTfxtzwere3vuczmmGH0RA.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99992,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/fZRWfQu8tioc3he-4BRNF14cRjQJCX3fC1X9aQ9m-Ow.jpg",
+                    "room": "bath_master"
+                },
+                {
+                    "score": 0.99978,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/SXkCuAiwTVtMgezOtSQmwEPWhHgdUzDGB0QzOhKtvfw.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.98798,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/IKshLMVMh9MfKuHhwRNeRlOJ2qy5YRcRWXGSGA-K9xk.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99588,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/MKhEVy2GuiqZuRgJFfF2OeFhkxWArZ9PES3CiberBNU.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99998,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/BwJusbFku3nJOO1M7TypbgYEbimQQFZazny5GrU5hM4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99988,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/8rwrDCvr7RVG3dNci9ux2FB-t6huNFThqKm3tJ1ECBs.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99974,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/oXWM5Av-m2TQvwB00Sy5YFoA6MTfxK-dx9NbAnzUugg.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.99999,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/OVchs6VcIrCvQm-aSoemq9kaoBNqOYV8NYF6FT_A09w.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "6NBU7R43653UF2GAS76YYNPNXY",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 445000.0,
+            "listing_office_name": "All City Real Estate, Ltd. Co.",
+            "status": "Active",
+            "bedrooms": 5,
+            "half_bathrooms": 1,
+            "sqft": 3323,
+            "full_bathrooms": 3,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-11T17:00:35.716740+00:00",
+            "score": 0.84375,
+            "notification_updated_timestamp": "2021-06-11T17:11:52.382489+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        },
+        {
+            "address": {
+                "street_address": "1763 Joy Spg",
+                "city": "New Braunfels",
+                "state": "TX",
+                "zipcode": "78130",
+                "unit_number": null,
+                "full_street_address": "1763 Joy Spg",
+                "geometry": {
+                    "latitude": 29.6681911,
+                    "longitude": -98.1292262
+                }
+            },
+            "market": "SAT",
+            "mls_name": "SABOR",
+            "mls_id": "1536233",
+            "listing_id": "1536233",
+            "photos_data": [
+                {
+                    "score": 0.70527,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/FJVBKJbS3XKt57Gad1iVtsMS8Zll8vVDDBMA3lVx2OU.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.66462,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/zqlMwNz3PFWF9zPfL71aH34LRvqeOmGgudVpB7ekpEo.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.99945,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/EDn_Gcv3kUBAcXAlI41_SLVQdHdbkPd20QsVrb5dDhc.jpg",
+                    "room": "front_of_house"
+                },
+                {
+                    "score": 0.65162,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/9ln0UqdgY9uKp4CLD0suPTa79A69jZWku0Gl6XdkBe8.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.40021,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/v1e2XBcT6suAfCWkB2mB4QQK3Vr1UW5Rcrym4JhrG8k.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.55375,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/yQua32U7nrq_cWXs2Vw4CCfyMVr90KSCwHe983ArV-k.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.78953,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/1KaV1la2tetn-p9Dg_Nsh3vsxsjIfNpToDXuOhascIQ.jpg",
+                    "room": "kitchen_and_main_living_area"
+                },
+                {
+                    "score": 0.99899,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/AqnPtmAtu1S-GimefCLyx5U6wSVO6CDvx0EQj8GOlSU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.99826,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/c1qSIIhquX6OlP4ANKez7UO3DUFLQudZdcd9y4Hrm54.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.97635,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/4Xh21sQOLtsVEagjoOg_UzYhGNdpbs1zp0kn2mVxfyU.jpg",
+                    "room": "kitchen"
+                },
+                {
+                    "score": 0.97285,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Lrhk8exx2USI4El8sGqJ6tEVijCP_ih9qyG6p4xI_6E.jpg",
+                    "room": "laundry_area"
+                },
+                {
+                    "score": 0.89489,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/PDzty7DeZ2Uw5w_YydplzLH4qBWbnHAJbke9zeFaGf0.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.90745,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CqB6q-9T1MPEy3zxxYbNVwyPnTa2L1qKLqMwi4uSK9Q.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.6252,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/Kh7Eq0HgX2rbcQA-Lqx5asIwSZ7zBWxlpw6VDQ6L55Y.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.99964,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/5WbZEl3nh4ZK9jL3YsIj8QDKL55WG-owBgXdjBLRWSM.jpg",
+                    "room": "interior_other"
+                },
+                {
+                    "score": 0.51771,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/-RXnRJwmgnneXf3sZNzz1V6AcxrpjC2MRcr2nGExq6s.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.76143,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/C_I4ciyP-8hqpW1MVZQmCEr0si84WmQbI_Z3Px6g_1M.jpg",
+                    "room": "bath_half"
+                },
+                {
+                    "score": 0.99994,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/CBdfschZHvKwAqFSACpOGBz8kZghVsOiElkOR97Ll-E.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99879,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/SqvLaEnFpC45cPmWv9Ul6MBwIQ84Xw2dxvxADJBHd_o.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99945,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/cj5Vy90U0PqkLsHKDLUV9IjzQ_L4nry9Shw00IUc4Z4.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99985,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/ct372yUl5Hb66wyMs7ULnKUpESdGPeMGg2cwQmf2AAY.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.77012,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/7hKqGQvPYVESzJDPAQyI7Rm-xdt3GfLMeKYSx6rUBxU.jpg",
+                    "room": "bath_near_full"
+                },
+                {
+                    "score": 0.99868,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/uSDdghh1zCj-UE_De4PBXyROLdax_fgnRipJgjGvBjE.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.99964,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/QPv8P9FMULkKIhkL0GQEYUGLvV0zPX1qSVbMK2H-6cc.jpg",
+                    "room": "bedroom"
+                },
+                {
+                    "score": 0.86446,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/DphR5O4IdqbpuQJJe0gTYmtlpguhx6FFfttvvKYpJAA.jpg",
+                    "room": "back_of_house"
+                },
+                {
+                    "score": 0.98959,
+                    "url": "https://s3.amazonaws.com/perch-mls-photos/tx/sabor/KAtdzi1kOVHC5_IR_azKoAn-ru7ffi6yv7yybIp1TmA.jpg",
+                    "room": "back_of_house"
+                }
+            ],
+            "photos_count": 0,
+            "unique_id": "JQLED4SOLTABOFZBYVVGUPCOBY",
+            "property_type": "HOUSE",
+            "normalized_mls_status": "Active",
+            "price": 309000.0,
+            "listing_office_name": "Keller Williams Heritage",
+            "status": "Active",
+            "bedrooms": 4,
+            "half_bathrooms": 1,
+            "sqft": 2086,
+            "full_bathrooms": 2,
+            "extra_details": {
+                "listing_info": {
+                    "virtual_tour_link": null
+                }
+            },
+            "updated_timestamp": null,
+            "db_created_timestamp": "2021-06-03T18:40:42.008667+00:00",
+            "score": 0.84375,
+            "notification_updated_timestamp": "2021-06-03T18:57:00.374722+00:00",
+            "is_perch": false,
+            "lot_size_acres": null
+        }
+    ],
+    "page": 1,
+    "page_size": 20,
+    "count": 20,
+    "total": 420,
+    "total_pages": 21
+}

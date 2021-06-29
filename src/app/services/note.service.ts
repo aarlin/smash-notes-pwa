@@ -113,12 +113,12 @@ export class NoteService {
     //   });
   }
 
-  private getData(url, forceRefresh): Observable<any> {
-    if (forceRefresh) {
-      // return this.http.get(url);
-    } else {
-      this.cachingService.getCachedRequest(url);
-    }
-  }
+  // private getData(url, forceRefresh): Observable<any> {
+  //   if (forceRefresh) {
+  //     // return this.http.get(url);
+  //   } else {
+  //     this.cachingService.getCachedRequest(url);
+  //   }
+  // }
 
 }

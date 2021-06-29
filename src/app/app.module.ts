@@ -1,6 +1,8 @@
 import '@nutrify/quill-emoji-mart-picker/esm2015/quill-emoji-mart-picker';
 import { QuillModule } from 'ngx-quill';
 import { PickerModule } from '@nutrify/ngx-emoji-mart-picker';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 // import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 import { NgModule } from '@angular/core';
@@ -59,6 +61,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     QuillModule.forRoot(),
     BrowserAnimationsModule,
     PickerModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     IonicStorageModule.forRoot({
       driverOrder: [cordovaSQLiteDriver._driver, Drivers.IndexedDB]
     }),

@@ -6,13 +6,27 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 
-import 'quill-emoji/dist/quill-emoji.js'
-// import { emojis } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/esm5/data/emojis';
-import { emojis } from '@ctrl/ngx-emoji-mart/esm2015/ngx-emoji/data/emojis'
-
 import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
 
 import { Emoji } from '@nutrify/quill-emoji-mart-picker/esm2015/emoji.model';
+
+import "froala-editor/js/plugins/align.min.js";
+import "froala-editor/js/plugins/char_counter.min.js";
+import "froala-editor/js/plugins/code_beautifier.min.js";
+import "froala-editor/js/plugins/code_view.min.js";
+import "froala-editor/js/plugins/emoticons.min.js";
+import "froala-editor/js/plugins/image.min.js";
+import "froala-editor/js/plugins/image_manager.min.js";
+import "froala-editor/js/third_party/image_tui.min.js";
+import "froala-editor/js/plugins/inline_class.min.js";
+import "froala-editor/js/plugins/line_breaker.min.js";
+import "froala-editor/js/plugins/link.min.js";
+import "froala-editor/js/plugins/lists.min.js";
+import "froala-editor/js/plugins/quick_insert.min.js";
+import "froala-editor/js/plugins/table.min.js";
+import "froala-editor/js/plugins/url.min.js";
+import "froala-editor/js/plugins/video.min.js";
+import "froala-editor/js/plugins/word_paste.min.js";
 
 
 @Component({
@@ -40,22 +54,39 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   visibilityIcon: string;
 
-  customEmojis = [
-    {
-      name: 'Party Parrot',
-      shortNames: ['parrot'],
-      keywords: ['party'],
-      imageUrl: './assets/emojis/ButtonIcon-GCN-B.svg',
-    },
-    {
-      name: 'Octocat',
-      shortNames: ['octocat'],
-      text: '',
-      emoticons: [],
-      keywords: ['github'],
-      imageUrl: 'https://github.githubassets.com/images/icons/emoji/octocat.png',
-    }
-  ];
+  froalaOptions: Object = {
+    placeholderText: 'Note body',
+    charCounterMax: 1000,
+    charCounterCount: true,
+    linkInsertButtons: ['linkBack'],
+    videoResponsive: false,
+    videoResize: false,
+    videoMove: false,
+    videoInsertButtons: ['videoEmbed'],
+    attribution: false,
+    quickInsertButtons: ['video', 'embedly'],
+    toolbarButtons: [
+      ['bold', 'italic', 'underline', 'strikeThrough'],
+      ['formatOL', 'formatUL', 'insertTable', 'emoticons', 'embedly', 'insertVideo', 'insertLink'],
+    ],
+    toolbarSticky: false,
+    emoticonsStep: 4,
+    emoticonsSet: [{
+      id: 'direction',
+      name: 'Directions',
+      code: '2b06',
+      emoticons: [
+        { code: '2b06', desc: 'Up Arrow' },
+        { code: '2197', desc: 'Up Right Arrow' },
+        { code: '27a1', desc: 'Right Arrow' },
+        { code: '2198', desc: 'Down Right Arrow' },
+        { code: '2b07', desc: 'Down Arrow' },
+        { code: '2199', desc: 'Down Left Arrow' },
+        { code: '2b05', desc: 'Left Arrow' },
+        { code: '2196', desc: 'Up Left Arrow' }
+      ]
+    }],
+  };
 
   constructor(private modalController: ModalController,
     private noteService: NoteService, private authenticationService: AuthenticationService,

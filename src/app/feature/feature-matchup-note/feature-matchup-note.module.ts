@@ -10,6 +10,7 @@ import { FighterService } from 'src/app/services/fighter.service';
 import { QuillModule } from 'ngx-quill';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [FeatureMatchupNoteComponent],
@@ -19,6 +20,8 @@ import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
     SharedPipesModule,
     FormsModule,
     ReactiveFormsModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     QuillModule.forRoot(),
     PickerModule,
     EmojiModule
