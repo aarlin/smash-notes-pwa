@@ -14,6 +14,24 @@ import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api'
 
 import { Emoji } from '@nutrify/quill-emoji-mart-picker/esm2015/emoji.model';
 
+import "froala-editor/js/plugins/align.min.js";
+import "froala-editor/js/plugins/char_counter.min.js";
+import "froala-editor/js/plugins/code_beautifier.min.js";
+import "froala-editor/js/plugins/code_view.min.js";
+import "froala-editor/js/plugins/emoticons.min.js";
+import "froala-editor/js/plugins/image.min.js";
+import "froala-editor/js/plugins/image_manager.min.js";
+import "froala-editor/js/third_party/image_tui.min.js";
+import "froala-editor/js/plugins/inline_class.min.js";
+import "froala-editor/js/plugins/line_breaker.min.js";
+import "froala-editor/js/plugins/link.min.js";
+import "froala-editor/js/plugins/lists.min.js";
+import "froala-editor/js/plugins/quick_insert.min.js";
+import "froala-editor/js/plugins/table.min.js";
+import "froala-editor/js/plugins/url.min.js";
+import "froala-editor/js/plugins/video.min.js";
+import "froala-editor/js/plugins/word_paste.min.js";
+
 
 @Component({
   selector: 'smash-feature-matchup-note',
@@ -40,22 +58,58 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   visibilityIcon: string;
 
-  customEmojis = [
-    {
-      name: 'Party Parrot',
-      shortNames: ['parrot'],
-      keywords: ['party'],
-      imageUrl: './assets/emojis/ButtonIcon-GCN-B.svg',
-    },
-    {
-      name: 'Octocat',
-      shortNames: ['octocat'],
-      text: '',
-      emoticons: [],
-      keywords: ['github'],
-      imageUrl: 'https://github.githubassets.com/images/icons/emoji/octocat.png',
-    }
-  ];
+  froalaOptions: Object = {
+    placeholderText: 'Note body',
+    charCounterCount: false,
+    fileUpload: false,
+    fileBrowse: false,
+    attribution: false,
+    toolbarButtons: [
+      ['bold', 'italic', 'underline', 'strikeThrough'],
+      ['specialCharacters'],
+      ['formatOL', 'formatUL', 'emoticons', 'fontAwesome', 'embedly'],
+      ['insertImage', 'insertVideo', 'embedly', 'insertTable', 'insertLink'],
+    ],
+    toolbarSticky: false,
+    emoticonsStep: 4,
+    emoticonsSet: [{
+      id: 'people',
+      name: 'Smileys & People',
+      code: '1f600',
+      emoticons: [
+        { code: '1f600', desc: 'Grinning face' },
+        { code: '1f601', desc: 'Grinning face with smiling eyes' },
+        { code: '1f602', desc: 'Face with tears of joy' },
+        { code: '1f603', desc: 'Smiling face with open mouth' },
+        { code: '1f604', desc: 'Smiling face with open mouth and smiling eyes' },
+        { code: '1f605', desc: 'Smiling face with open mouth and cold sweat' },
+        { code: '1f606', desc: 'Smiling face with open mouth and tightly-closed eyes' },
+        { code: '1f607', desc: 'Smiling face with halo' }
+      ]
+    }, {
+      'id': 'nature',
+      'name': 'Animals & Nature',
+      'code': '1F435',
+      'emoticons': [
+        { code: '1F435', desc: 'Monkey Face' },
+        { code: '1F412', desc: 'Monkey' },
+        { code: '1F436', desc: 'Dog Face' },
+        { code: '1F415', desc: 'Dog' },
+        { code: '1F429', desc: 'Poodle' },
+        { code: '1F43A', desc: 'Wolf Face' },
+        { code: '1F431', desc: 'Cat Face' },
+        { code: '1F408', desc: 'Cat' },
+        { code: '1F42F', desc: 'Tiger Face' },
+        { code: '1F405', desc: 'Tiger' },
+        { code: '1F406', desc: 'Leopard' },
+        { code: '1F434', desc: 'Horse Face' },
+        { code: '1F40E', desc: 'Horse' },
+        { code: '1F42E', desc: 'Cow Face' },
+        { code: '1F402', desc: 'Ox' },
+        { code: '1F403', desc: 'Water Buffalo' },
+      ]
+    }],
+  };
 
   constructor(private modalController: ModalController,
     private noteService: NoteService, private authenticationService: AuthenticationService,

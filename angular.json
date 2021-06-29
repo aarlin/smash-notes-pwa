@@ -30,6 +30,26 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
+              {
+                "glob": "**/*",
+                "input": "node_modules/froala-editor/css",
+                "output": "css"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/font-awesome/css",
+                "output": "css"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/font-awesome/fonts",
+                "output": "fonts"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/froala-editor/js",
+                "output": "js"
+              },
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -41,7 +61,9 @@
               "node_modules/quill-emoji/dist/quill-emoji.css",
               "node_modules/@nutrify/quill-emoji-mart-picker/emoji.quill.css",
               "node_modules/@ctrl/ngx-emoji-mart/picker.css",
-              "node_modules/firebaseui/dist/firebaseui.css"
+              "node_modules/firebaseui/dist/firebaseui.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
               "node_modules/quill/dist/quill.min.js"

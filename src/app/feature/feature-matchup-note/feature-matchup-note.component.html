@@ -33,14 +33,18 @@
     <ion-input type="text" [attr.readonly]="!hasOwnership()" [(ngModel)]="note.title"></ion-input>
   </ion-item>
 
-  <quill-editor *ngIf="hasOwnership()" class="quill-editor" placeholder="Enter note text here" [modules]="modules"
+  <div *ngIf="hasOwnership()" [froalaEditor]="froalaOptions" [(froalaModel)]="note.body"></div>
+
+  <!-- <quill-editor *ngIf="hasOwnership()" class="quill-editor" placeholder="Enter note text here" [modules]="modules"
     (onContentChanged)="editorChanged($event)" (onEditorCreated)="editorCreated($event)" [(ngModel)]="note.body">
-  </quill-editor>
+  </quill-editor> -->
 
   <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
     <ion-label class="form-field" position="floating">Note Body</ion-label><br>
     <quill-view-html [content]="note.body"></quill-view-html>
   </ion-item>
+  
+  <div *ngIf="note.body && !hasOwnership()" [froalaView]="note.body"></div>
 
   <ng-container *ngIf="hasOwnership()">
     <ion-item lines="full">
