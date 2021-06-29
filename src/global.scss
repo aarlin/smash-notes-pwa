@@ -131,8 +131,11 @@ firebase-ui, .firebaseui-card-content {
   & div:first-child {
     display: none;
   }
+  & div:only-of-type {
+    display: block;
+  }
 }
 
-.fr-logo {
+#fr-logo {
   display: none;
 }

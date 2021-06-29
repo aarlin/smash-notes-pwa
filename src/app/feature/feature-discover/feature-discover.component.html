@@ -87,7 +87,8 @@
       </ion-avatar>
       <ion-label>
         <h2>{{note.title}}</h2>
-        <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html>
+        <div *ngIf="note?.body" [froalaView]="note?.body"></div>
+        <!-- <quill-view-html *ngIf="note?.body" [content]="note?.body"></quill-view-html> -->
       </ion-label>
     </ion-item>
 

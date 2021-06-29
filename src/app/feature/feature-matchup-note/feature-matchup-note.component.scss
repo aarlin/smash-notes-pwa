@@ -74,3 +74,11 @@ ion-avatar {
     height: 370px;
 }
 
+@media only screen and (min-width: 923px) {
+    .fr-video {
+        & iframe {
+            width: 210px;
+            height: 400px;
+        }
+    }
+}

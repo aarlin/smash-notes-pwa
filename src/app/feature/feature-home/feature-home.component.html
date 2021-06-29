@@ -97,7 +97,8 @@
           </ion-avatar>
           <ion-label>
             <h2>{{note.title}}</h2>
-            <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html>
+            <div *ngIf="note?.body" [froalaView]="note.body"></div>
+            <!-- <quill-view-html *ngIf="note?.body" [content]="note?.body" theme="snow"></quill-view-html> -->
           </ion-label>
         </ion-item>
       </ion-virtual-scroll>
@@ -128,7 +129,8 @@
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
-                <quill-view-html *ngIf="notes[j-1]?.body" [content]="notes[j-1]?.body" theme="snow"></quill-view-html>
+                <div *ngIf="notes[j-1]?.body" [froalaView]="notes[j-1]?.body"></div>
+                <!-- <quill-view-html *ngIf="notes[j-1]?.body" [content]="notes[j-1]?.body" theme="snow"></quill-view-html> -->
               </ion-card-header>
             </ion-card>
             <!-- Cards that are not last index -->
@@ -141,7 +143,8 @@
                 <ion-card-title>
                   <p>{{notes[j]?.title}}</p>
                 </ion-card-title>
-                <quill-view-html *ngIf="notes[j]?.body" [content]="notes[j]?.body" theme="snow"></quill-view-html>
+                <div *ngIf="notes[j]?.body" [froalaView]="notes[j]?.body"></div>
+                <!-- <quill-view-html *ngIf="notes[j]?.body" [content]="notes[j]?.body" theme="snow"></quill-view-html> -->
               </ion-card-header>
             </ion-card>
           </ion-col>

@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/note.service';
 import { FighterService } from 'src/app/services/fighter.service';
 import { SharedPipesModule } from 'src/app/shared/pipes/shared-pipes.module';
 import { QuillModule } from 'ngx-quill';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [FeatureFighterNotesComponent],
@@ -19,7 +20,9 @@ import { QuillModule } from 'ngx-quill';
     FeatureCharacterSelectModalModule,
     FeatureMatchupNoteModule,
     SharedPipesModule,
-    QuillModule
+    QuillModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
   ],
   exports: [FeatureFighterNotesComponent],
   providers: [NoteService, FighterService]

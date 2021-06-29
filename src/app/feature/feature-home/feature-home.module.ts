@@ -9,7 +9,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { MasonryCardComponent } from 'src/app/components/masonry-card/masonry-card.component';
 import { QuillModule } from 'ngx-quill';
 import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directives.module';
-
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   declarations: [FeatureHomeComponent, MasonryCardComponent],
@@ -20,7 +20,9 @@ import { SharedDirectivesModule } from 'src/app/shared/directives/shared-directi
     SharedDirectivesModule,
     SharedPipesModule,
     NgxMasonryModule,
-    QuillModule
+    QuillModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
   ],
   exports: [FeatureHomeComponent],
   providers: [NoteService]
