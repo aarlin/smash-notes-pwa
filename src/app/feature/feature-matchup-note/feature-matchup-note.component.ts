@@ -6,10 +6,6 @@ import { FighterImagePipe } from 'src/app/shared/pipes/fighter-image.pipe';
 import { Note } from '../../shared/interface/note.interface';
 import { FeatureCharacterSelectModalComponent } from '../feature-character-select-modal/feature-character-select-modal.component';
 
-import 'quill-emoji/dist/quill-emoji.js'
-// import { emojis } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/esm5/data/emojis';
-import { emojis } from '@ctrl/ngx-emoji-mart/esm2015/ngx-emoji/data/emojis'
-
 import { EmojiEvent } from '@nutrify/ngx-emoji-mart-picker/ngx-emoji/public_api';
 
 import { Emoji } from '@nutrify/quill-emoji-mart-picker/esm2015/emoji.model';
@@ -60,53 +56,34 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   froalaOptions: Object = {
     placeholderText: 'Note body',
-    charCounterCount: false,
-    fileUpload: false,
-    fileBrowse: false,
+    charCounterMax: 1000,
+    charCounterCount: true,
+    linkInsertButtons: ['linkBack'],
+    videoResponsive: false,
+    videoResize: false,
+    videoMove: false,
+    videoInsertButtons: ['videoEmbed'],
     attribution: false,
+    quickInsertButtons: ['video', 'embedly'],
     toolbarButtons: [
       ['bold', 'italic', 'underline', 'strikeThrough'],
-      ['specialCharacters'],
-      ['formatOL', 'formatUL', 'emoticons', 'fontAwesome', 'embedly'],
-      ['insertImage', 'insertVideo', 'embedly', 'insertTable', 'insertLink'],
+      ['formatOL', 'formatUL', 'insertTable', 'emoticons', 'embedly', 'insertVideo', 'insertLink'],
     ],
     toolbarSticky: false,
     emoticonsStep: 4,
     emoticonsSet: [{
-      id: 'people',
-      name: 'Smileys & People',
-      code: '1f600',
+      id: 'direction',
+      name: 'Directions',
+      code: '2b06',
       emoticons: [
-        { code: '1f600', desc: 'Grinning face' },
-        { code: '1f601', desc: 'Grinning face with smiling eyes' },
-        { code: '1f602', desc: 'Face with tears of joy' },
-        { code: '1f603', desc: 'Smiling face with open mouth' },
-        { code: '1f604', desc: 'Smiling face with open mouth and smiling eyes' },
-        { code: '1f605', desc: 'Smiling face with open mouth and cold sweat' },
-        { code: '1f606', desc: 'Smiling face with open mouth and tightly-closed eyes' },
-        { code: '1f607', desc: 'Smiling face with halo' }
-      ]
-    }, {
-      'id': 'nature',
-      'name': 'Animals & Nature',
-      'code': '1F435',
-      'emoticons': [
-        { code: '1F435', desc: 'Monkey Face' },
-        { code: '1F412', desc: 'Monkey' },
-        { code: '1F436', desc: 'Dog Face' },
-        { code: '1F415', desc: 'Dog' },
-        { code: '1F429', desc: 'Poodle' },
-        { code: '1F43A', desc: 'Wolf Face' },
-        { code: '1F431', desc: 'Cat Face' },
-        { code: '1F408', desc: 'Cat' },
-        { code: '1F42F', desc: 'Tiger Face' },
-        { code: '1F405', desc: 'Tiger' },
-        { code: '1F406', desc: 'Leopard' },
-        { code: '1F434', desc: 'Horse Face' },
-        { code: '1F40E', desc: 'Horse' },
-        { code: '1F42E', desc: 'Cow Face' },
-        { code: '1F402', desc: 'Ox' },
-        { code: '1F403', desc: 'Water Buffalo' },
+        { code: '2b06', desc: 'Up Arrow' },
+        { code: '2197', desc: 'Up Right Arrow' },
+        { code: '27a1', desc: 'Right Arrow' },
+        { code: '2198', desc: 'Down Right Arrow' },
+        { code: '2b07', desc: 'Down Arrow' },
+        { code: '2199', desc: 'Down Left Arrow' },
+        { code: '2b05', desc: 'Left Arrow' },
+        { code: '2196', desc: 'Up Left Arrow' }
       ]
     }],
   };

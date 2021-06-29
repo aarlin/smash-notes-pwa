@@ -39,10 +39,10 @@
     (onContentChanged)="editorChanged($event)" (onEditorCreated)="editorCreated($event)" [(ngModel)]="note.body">
   </quill-editor> -->
 
-  <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
+  <!-- <ion-item *ngIf="note.body && !hasOwnership()" lines="none">
     <ion-label class="form-field" position="floating">Note Body</ion-label><br>
     <quill-view-html [content]="note.body"></quill-view-html>
-  </ion-item>
+  </ion-item> -->
   
   <div *ngIf="note.body && !hasOwnership()" [froalaView]="note.body"></div>
 
