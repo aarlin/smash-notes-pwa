@@ -10,6 +10,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
 import { NgxMasonryComponent, NgxMasonryOptions } from 'ngx-masonry';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -56,6 +57,7 @@ export class FeatureHomeComponent implements OnInit {
 
   searchBarEnabled = false;
   searchValue: string;
+  listStyle: string;
 
   constructor(private noteService: NoteService, public modalController: ModalController,
     private router: Router, public platform: Platform, private storage: StorageService, public toastController: ToastController) {
@@ -76,6 +78,7 @@ export class FeatureHomeComponent implements OnInit {
     this.storage.get('settings').then((settings: Settings) => {
       switch (settings?.selectedHomeLayout) {
         case 'list':
+          this.listStyle = 'display:block';
           this.defaultLayout = true;
           this.gridLayout, this.masonryLayout = false;
           break;

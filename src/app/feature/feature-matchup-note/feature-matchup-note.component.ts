@@ -18,6 +18,7 @@ import "froala-editor/js/plugins/emoticons.min.js";
 import "froala-editor/js/plugins/image.min.js";
 import "froala-editor/js/plugins/image_manager.min.js";
 import "froala-editor/js/third_party/image_tui.min.js";
+import "froala-editor/js/third_party/embedly.min.js";
 import "froala-editor/js/plugins/inline_class.min.js";
 import "froala-editor/js/plugins/line_breaker.min.js";
 import "froala-editor/js/plugins/link.min.js";
@@ -55,6 +56,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
   visibilityIcon: string;
 
   froalaOptions: Object = {
+    theme: 'royal',
     placeholderText: 'Note body',
     charCounterMax: 1000,
     charCounterCount: true,
@@ -117,6 +119,8 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
 
     this.formats = ['emoji'];
+
+    this.froalaOptions = { ...this.froalaOptions, theme: 'royal'};
   }
 
   async ngOnInit() {

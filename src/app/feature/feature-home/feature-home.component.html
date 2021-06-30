@@ -85,8 +85,8 @@
     </ion-item>
   </ng-container>
 
-  <ng-container *ngIf="dataLoaded && notes.length">
-    <ion-list class="list-layout">
+  <ng-container *ngIf="(dataLoaded && notes.length) || defaultLayout && (!masonryLayout || !gridLayout)">
+    <ion-list [style]="listStyle" class="list-layout">
       <ion-virtual-scroll [items]="notes">
         <ion-item lines="full" class="col col-50" (click)="openNote(note)" *virtualItem="let note">
           <ion-avatar slot="start">
