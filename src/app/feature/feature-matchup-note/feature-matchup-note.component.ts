@@ -57,6 +57,7 @@ export class FeatureMatchupNoteComponent implements OnInit {
 
   froalaOptions: Object = {
     theme: 'royal',
+    height: 300,
     placeholderText: 'Note body',
     charCounterMax: 1000,
     charCounterCount: true,

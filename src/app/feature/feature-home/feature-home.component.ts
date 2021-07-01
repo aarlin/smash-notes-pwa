@@ -10,8 +10,25 @@ import { StorageService } from 'src/app/services/storage.service';
 import { Settings } from 'src/app/shared/interface/settings.interface';
 import { NgxMasonryComponent, NgxMasonryOptions } from 'ngx-masonry';
 import { FilterModalComponent } from '../feature-filter-select/filter-modal.component';
-import { ThrowStmt } from '@angular/compiler';
 
+import "froala-editor/js/plugins/align.min.js";
+import "froala-editor/js/plugins/char_counter.min.js";
+import "froala-editor/js/plugins/code_beautifier.min.js";
+import "froala-editor/js/plugins/code_view.min.js";
+import "froala-editor/js/plugins/emoticons.min.js";
+import "froala-editor/js/plugins/image.min.js";
+import "froala-editor/js/plugins/image_manager.min.js";
+import "froala-editor/js/third_party/image_tui.min.js";
+import "froala-editor/js/third_party/embedly.min.js";
+import "froala-editor/js/plugins/inline_class.min.js";
+import "froala-editor/js/plugins/line_breaker.min.js";
+import "froala-editor/js/plugins/link.min.js";
+import "froala-editor/js/plugins/lists.min.js";
+import "froala-editor/js/plugins/quick_insert.min.js";
+import "froala-editor/js/plugins/table.min.js";
+import "froala-editor/js/plugins/url.min.js";
+import "froala-editor/js/plugins/video.min.js";
+import "froala-editor/js/plugins/word_paste.min.js";
 
 @Component({
   selector: 'smash-feature-home',
@@ -106,7 +123,7 @@ export class FeatureHomeComponent implements OnInit {
     }
     this.exteraCol = Math.trunc(this.screenWidth / this.vColMinWidth) - 1;
     this.exteraCol = this.exteraCol < 0 ? 0 : this.exteraCol;
-    this.exteraCol = this.exteraCol > 6 ? 6 : this.exteraCol; // if we want to have max virtual column count
+    this.exteraCol = this.exteraCol > 4 ? 4 : this.exteraCol; // if we want to have max virtual column count
   }
 
   onScroll(ev) {
