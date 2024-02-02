@@ -1,8 +1,10 @@
 # Smash Notes 
 
+<p align="center">
+  <img src="./src/assets/logo/app_logo.png" alt="Logo" 
+    width="300" height="200" />
+</p>
 
-<img src="./src/assets/logo/app_logo.png" alt="Logo" 
-    width="300" height="200" style="display: block; margin: 0 auto" />
 > Store your Super Smash Bros. notes on matchups
 
 ## Install
